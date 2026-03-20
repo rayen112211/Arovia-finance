@@ -7,7 +7,7 @@ import { Section, SectionHeader } from "@/components/Section";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { AnimatedNumber } from "@/components/AnimatedNumber";
 
-const heroImgUrl = "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=2400";
+const heroImgUrl = "https://images.unsplash.com/photo-1758518729371-5ee28c4ddf60?auto=format&fit=crop&q=80&w=2400";
 const advisorImgUrl = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1200";
 const propertyImgUrl = "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1200";
 const fallbackMediaImgUrl = "https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?auto=format&fit=crop&q=80&w=1400";
@@ -125,7 +125,7 @@ export default function HomePage() {
           <img
             src={heroImgUrl}
             alt="Independent mortgage advisor in a bright office"
-            className="w-full h-full object-cover object-[76%_22%]"
+            className="w-full h-full object-cover object-top sm:object-center"
             onError={(e) => {
               e.currentTarget.src = fallbackPortraitImgUrl;
             }}
