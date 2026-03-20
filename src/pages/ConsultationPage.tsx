@@ -69,7 +69,7 @@ export default function ConsultationPage() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           
           {/* Left: What Happens */}
-          <div className="lg:pr-10 sticky top-32">
+          <div className="lg:pr-10 lg:sticky lg:top-32">
             <ScrollReveal direction="left">
               <span className="eyebrow mb-6 inline-flex text-primary">
                 <span className="w-8 h-px bg-primary/30" />

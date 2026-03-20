@@ -56,7 +56,7 @@ export default function ExperiencePage() {
           {/* Left Column: Sticky Image */}
           <div className="lg:col-span-2">
             <ScrollReveal direction="left">
-              <div className="sticky top-32">
+              <div className="lg:sticky lg:top-32">
                 <div className="relative rounded-sm shadow-xl img-zoom mb-8">
                   <img 
                     src={advisorImg} 
