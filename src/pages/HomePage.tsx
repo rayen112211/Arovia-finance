@@ -7,7 +7,7 @@ import { Section, SectionHeader } from "@/components/Section";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { AnimatedNumber } from "@/components/AnimatedNumber";
 
-const heroImgUrl = "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=2400";
+const heroImgUrl = "https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?auto=format&fit=crop&q=80&w=2400";
 const advisorImgUrl = "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=1200";
 const propertyImgUrl = "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1200";
 const fallbackMediaImgUrl = "https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?auto=format&fit=crop&q=80&w=1400";
@@ -119,18 +119,18 @@ export default function HomePage() {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="relative pt-24 lg:pt-28 pb-16 lg:pb-20 border-b border-border/40 overflow-hidden">
+      <section className="relative pt-24 lg:pt-28 pb-14 lg:pb-0 border-b border-border/40 overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={heroImgUrl}
-            alt="Mortgage advisor in a professional office"
-            className="w-full h-full object-cover object-[72%_35%]"
+            alt="Independent mortgage advisor in a bright office"
+            className="w-full h-full object-cover object-[72%_28%]"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,30,68,0.62)_0%,rgba(11,30,68,0.55)_34%,rgba(11,30,68,0.2)_62%,rgba(11,30,68,0.08)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(242,246,251,0.96)_0%,rgba(242,246,251,0.91)_36%,rgba(242,246,251,0.52)_56%,rgba(242,246,251,0.14)_72%,rgba(242,246,251,0.04)_100%)]" />
         </div>
 
-        <div className="section-padding section-container relative min-h-[72vh] lg:min-h-[78vh] flex items-center">
-          <div className="max-w-[680px] bg-background/85 nav-blur border border-white/40 rounded-sm p-7 sm:p-10 lg:p-12 shadow-[0_18px_48px_rgba(0,0,0,0.12)]">
+        <div className="section-padding section-container relative min-h-[70vh] lg:min-h-[78vh] grid lg:grid-cols-2 items-center">
+          <div className="max-w-[640px] py-10 lg:py-16">
             <ScrollReveal>
               <span className="eyebrow mb-5 inline-flex">
                 <span className="w-8 h-px bg-gold" />
@@ -138,7 +138,7 @@ export default function HomePage() {
               </span>
             </ScrollReveal>
             <ScrollReveal delay={120}>
-              <h1 className="font-display text-[38px] sm:text-[50px] lg:text-[60px] text-foreground leading-[1.08] tracking-tight mb-5">
+              <h1 className="font-display text-[38px] sm:text-[54px] lg:text-[66px] text-foreground leading-[1.04] tracking-tight mb-5">
                 {t.hero.title}
               </h1>
             </ScrollReveal>
@@ -146,7 +146,7 @@ export default function HomePage() {
               <p className="font-medium text-foreground/80 text-base lg:text-lg mb-4">{t.hero.trustBadges}</p>
             </ScrollReveal>
             <ScrollReveal delay={300}>
-              <p className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-8 max-w-[56ch]">
+              <p className="text-base lg:text-lg text-foreground/70 leading-relaxed mb-8 max-w-[54ch]">
                 {t.hero.description}
               </p>
             </ScrollReveal>
@@ -156,6 +156,7 @@ export default function HomePage() {
               </Button>
             </ScrollReveal>
           </div>
+          <div className="hidden lg:block" aria-hidden="true" />
         </div>
       </section>
 
