@@ -57,13 +57,13 @@ export default function OpinionsPage() {
     <>
       {/* ─── HERO ─── */}
       <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 bg-primary overflow-hidden">
-        {/* Abstract dark gradient bg */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-navy-light to-primary" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent opacity-60" />
+        {/* Abstract dark gradient bg - simplified */}
+        <div className="absolute inset-0 bg-primary" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent opacity-60" />
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
         
         {/* Decorative line */}
-        <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gold/30 to-transparent" />
+        <div className="absolute left-1/3 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-border/10 to-transparent" />
 
         <div className="relative section-padding section-container">
           <div className="max-w-3xl">
@@ -88,9 +88,9 @@ export default function OpinionsPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {testimonials.map((item, i) => (
             <ScrollReveal key={i} delay={i * 80}>
-              <div className="premium-card p-8 h-full flex flex-col group bg-card">
+              <div className="bg-card rounded-md p-8 h-full flex flex-col group border border-border/40 hover:shadow-[0_8px_32px_rgba(0,0,0,0.02)] transition-shadow duration-400">
                 <div className="mb-5 flex justify-between items-start">
-                  <Quote size={32} className="text-gold/40 group-hover:text-gold/60 transition-colors duration-300" strokeWidth={1} />
+                  <Quote size={32} className="text-foreground/10 group-hover:text-gold/40 transition-colors duration-400" strokeWidth={1} />
                   <div className="flex gap-0.5 mt-2">
                     {[...Array(item.rating)].map((_, j) => (
                       <span key={j} className="text-gold text-sm">★</span>
@@ -102,9 +102,9 @@ export default function OpinionsPage() {
                   "{item.text}"
                 </p>
                 
-                <div className="pt-5 border-t border-border flex items-center gap-4">
-                  <div className="w-11 h-11 rounded-full bg-primary flex items-center justify-center flex-shrink-0 group-hover:bg-gold transition-colors duration-300">
-                    <span className="text-sm font-semibold text-primary-foreground group-hover:text-primary">
+                <div className="pt-5 border-t border-border/40 flex items-center gap-4">
+                  <div className="w-11 h-11 rounded-full bg-muted/60 flex items-center justify-center flex-shrink-0 group-hover:bg-gold/10 transition-colors duration-400">
+                    <span className="text-sm font-semibold text-foreground/70 group-hover:text-gold transition-colors duration-400">
                       {item.initials}
                     </span>
                   </div>
@@ -121,12 +121,12 @@ export default function OpinionsPage() {
 
       {/* ─── CTA BANNER ─── */}
       <section className="relative py-24 lg:py-32 bg-primary overflow-hidden">
-        {/* Abstract dark background */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-primary via-navy-light to-primary" />
-        <div className="absolute inset-0 bg-primary/40" />
-        {/* Soft grid/line effect */}
-        <div className="absolute top-0 left-1/3 w-px h-full bg-gradient-to-b from-transparent via-gold/15 to-transparent" />
-        <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-gold/10 to-transparent" />
+        {/* Abstract dark background - simplified */}
+        <div className="absolute inset-0 bg-primary" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent opacity-80" />
+        
+        {/* Soft line effect */}
+        <div className="absolute top-0 left-1/3 w-px h-full bg-gradient-to-b from-transparent via-border/10 to-transparent" />
 
         <div className="relative section-padding section-container text-center max-w-3xl mx-auto">
           <ScrollReveal>

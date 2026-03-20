@@ -3,22 +3,24 @@ import { Section } from "@/components/Section";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
-import signingImg from "@/assets/signing-documents.jpg";
-import propertyImg from "@/assets/property.jpg";
-import heroImg from "@/assets/hero-consultation.jpg";
-import advisorImg from "@/assets/advisor-portrait.jpg";
+import { ArrowRight } from "lucide-react";
+
+// Authentic stock images for Media
+const handshakeImgUrl = "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2532&auto=format&fit=crop"; 
+const propertyImgUrl = "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2670&auto=format&fit=crop"; 
+const heroImgUrl = "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2670&auto=format&fit=crop"; 
+const advisorImgUrl = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1288&auto=format&fit=crop";
 
 export default function MediaPage() {
   const { t } = useLanguage();
 
   const mediaItems = [
-    { title: "How Banks Really Assess Your Mortgage Application", outlet: "Financial Times Poland", date: "March 2025", image: signingImg },
-    { title: "Self-Employed? Here's How to Strengthen Your Mortgage Case", outlet: "Business Insider PL", date: "January 2025", image: propertyImg },
-    { title: "Bringing International Expertise to the Polish Mortgage Market", outlet: "Puls Biznesu", date: "November 2024", image: heroImg },
-    { title: "Complex Structures: A Guide for Business Owners Seeking Finance", outlet: "Forbes Poland", date: "September 2024", image: advisorImg },
-    { title: "The Advantage of Working With an Independent Broker", outlet: "Rzeczpospolita", date: "July 2024", image: propertyImg },
-    { title: "Understanding Refinancing Opportunities in Today's Market", outlet: "Gazeta Wyborcza", date: "May 2024", image: heroImg },
+    { title: "How Banks Really Assess Your Mortgage Application", outlet: "Financial Times Poland", date: "March 2025", image: handshakeImgUrl },
+    { title: "Self-Employed? Here's How to Strengthen Your Mortgage Case", outlet: "Business Insider PL", date: "January 2025", image: propertyImgUrl },
+    { title: "Bringing International Expertise to the Polish Mortgage Market", outlet: "Puls Biznesu", date: "November 2024", image: heroImgUrl },
+    { title: "Complex Structures: A Guide for Business Owners Seeking Finance", outlet: "Forbes Poland", date: "September 2024", image: advisorImgUrl },
+    { title: "The Advantage of Working With an Independent Broker", outlet: "Rzeczpospolita", date: "July 2024", image: propertyImgUrl },
+    { title: "Understanding Refinancing Opportunities in Today's Market", outlet: "Gazeta Wyborcza", date: "May 2024", image: heroImgUrl },
   ];
 
   return (
@@ -26,9 +28,8 @@ export default function MediaPage() {
       {/* ─── HERO ─── */}
       <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-40 bg-primary overflow-hidden">
         {/* Abstract dark gradient bg */}
-        <div className="absolute inset-0 bg-gradient-to-bl from-primary via-navy-dark to-primary" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gold/10 via-transparent to-transparent opacity-60" />
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background via-background/20 to-transparent" />
+        <div className="absolute inset-0 bg-primary" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent opacity-60" />
         
         <div className="relative section-padding section-container">
           <div className="max-w-3xl">
@@ -53,11 +54,11 @@ export default function MediaPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {mediaItems.map((item, i) => (
             <ScrollReveal key={i} delay={i * 80}>
-              <div className="group block h-full cursor-default">
-                <div className="premium-card p-4 sm:p-5 h-full flex flex-col bg-card relative">
+              <a href="#" className="group block h-full cursor-pointer">
+                <div className="bg-card rounded-md p-4 sm:p-5 h-full flex flex-col border border-border/40 hover:shadow-[0_8px_32px_rgba(0,0,0,0.04)] hover:-translate-y-1 hover:border-border/80 transition-all duration-400 ease-out relative">
                   
                   {/* Image wrapper */}
-                  <div className="aspect-[16/10] rounded-sm overflow-hidden mb-6 img-zoom shadow-sm relative cursor-default">
+                  <div className="aspect-[16/10] rounded-sm overflow-hidden mb-6 img-zoom relative border border-border/20">
                     <img 
                       src={item.image} 
                       alt="" 
@@ -69,19 +70,19 @@ export default function MediaPage() {
                   <div className="flex-1 flex flex-col px-2 pb-2">
                     <div className="flex justify-between items-start mb-3 gap-4">
                       <span className="eyebrow text-[10px]">
-                        <span className="w-4 h-px bg-gold" />
+                        <span className="w-4 h-[1px] bg-gold/50" />
                         {item.outlet}
                       </span>
                       <span className="text-xs text-muted-foreground whitespace-nowrap">{item.date}</span>
                     </div>
                     
-                    <h3 className="font-display text-lg lg:text-xl text-foreground mt-1 mb-4 leading-snug">
+                    <h3 className="font-display text-lg lg:text-xl text-foreground mt-1 mb-4 leading-snug group-hover:text-gold transition-colors duration-200">
                       {item.title}
                     </h3>
                   </div>
                   
                 </div>
-              </div>
+              </a>
             </ScrollReveal>
           ))}
         </div>
@@ -90,8 +91,8 @@ export default function MediaPage() {
       {/* ─── CTA BANNER ─── */}
       <section className="relative py-24 lg:py-32 bg-primary overflow-hidden">
         {/* Abstract dark background overlay */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-primary via-navy-light to-primary" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent opacity-80" />
+        <div className="absolute inset-0 bg-primary" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent opacity-80" />
 
         <div className="relative section-padding section-container text-center max-w-3xl mx-auto">
           <ScrollReveal>

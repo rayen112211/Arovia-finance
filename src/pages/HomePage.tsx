@@ -1,20 +1,20 @@
 import { Link } from "react-router-dom";
+import { ArrowRight, Briefcase, Building2, Compass, Home, RefreshCw, UserCheck, Quote, Mail, Phone, MapPin } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
+
 import { Button } from "@/components/ui/button";
 import { Section, SectionHeader } from "@/components/Section";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import {
-  Home, RefreshCw, Briefcase, Building2, Compass,
-  Phone, Mail, MapPin, ArrowRight, Quote, UserCheck
-} from "lucide-react";
-import heroImg from "@/assets/hero-consultation.jpg";
-import advisorImg from "@/assets/advisor-portrait.jpg";
-import signingImg from "@/assets/signing-documents.jpg";
-import propertyImg from "@/assets/property.jpg";
 import { AnimatedNumber } from "@/components/AnimatedNumber";
+
+const heroImgUrl = "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=2600";
+const advisorImgUrl = "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=1200";
+const handshakeImgUrl = "https://images.unsplash.com/photo-1556761175-5973e510842e?auto=format&fit=crop&q=80&w=1200";
+const propertyImgUrl = "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1200";
 
 export default function HomePage() {
   const { t } = useLanguage();
+
 
   const stats = [
     { value: t.trust.years, suffix: t.trust.yearsSuffix, label: t.trust.yearsLabel, isNumber: true },
@@ -63,73 +63,71 @@ export default function HomePage() {
   ];
 
   const mediaItems = [
-    { title: t.mediaSection.placeholderTitle, outlet: t.mediaSection.placeholderOutlet, date: t.mediaSection.placeholderDate, image: signingImg },
-    { title: t.mediaSection.placeholderTitle2, outlet: t.mediaSection.placeholderOutlet2, date: t.mediaSection.placeholderDate2, image: propertyImg },
-    { title: t.mediaSection.placeholderTitle3, outlet: t.mediaSection.placeholderOutlet3, date: t.mediaSection.placeholderDate3, image: heroImg },
+    { title: t.mediaSection.placeholderTitle, outlet: t.mediaSection.placeholderOutlet, date: t.mediaSection.placeholderDate, image: handshakeImgUrl },
+    { title: t.mediaSection.placeholderTitle2, outlet: t.mediaSection.placeholderOutlet2, date: t.mediaSection.placeholderDate2, image: propertyImgUrl },
+    { title: t.mediaSection.placeholderTitle3, outlet: t.mediaSection.placeholderOutlet3, date: t.mediaSection.placeholderDate3, image: heroImgUrl },
   ];
 
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="relative min-h-[92vh] flex items-center bg-primary overflow-hidden">
-        {/* Background image with gradient overlay */}
-        <div className="absolute inset-0">
-          <img
-            src={heroImg}
-            alt=""
-            className="w-full h-full object-cover opacity-60 mix-blend-overlay"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-primary/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
-        </div>
+      <section className="relative bg-white pt-24 lg:pt-32 pb-16 lg:pb-24 border-b border-border/40 overflow-hidden">
+        <div className="section-container flex justify-between items-center flex-col lg:flex-row gap-12 lg:gap-8 w-full min-h-[75vh]">
+          
+          {/* LEFT TEXT */}
+          <div className="section-padding flex flex-col justify-center w-full lg:w-5/12 z-10">
+            <div className="w-full max-w-[580px] mx-auto lg:mr-auto lg:ml-0">
+              <ScrollReveal>
+                <span className="eyebrow mb-6 inline-flex">
+                  <span className="w-8 h-px bg-gold" />
+                  {t.hero.subtitle}
+                </span>
+              </ScrollReveal>
 
-        {/* Decorative gold line */}
-        <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gold/30 to-transparent" />
+              <ScrollReveal delay={120}>
+                <h1 className="font-display text-[44px] sm:text-6xl lg:text-[72px] text-foreground leading-[1.05] tracking-tight mb-6">
+                  {t.hero.title}
+                </h1>
+              </ScrollReveal>
 
-        <div className="relative section-padding section-container py-32 lg:py-44">
-          <div className="max-w-3xl">
-            <ScrollReveal>
-              <span className="eyebrow mb-8 inline-flex">
-                <span className="w-8 h-px bg-gold" />
-                {t.hero.subtitle}
-              </span>
-            </ScrollReveal>
+              <ScrollReveal delay={220}>
+                <p className="font-medium text-foreground/80 text-lg lg:text-xl mb-6">
+                  15+ years of banking experience across ANZ, NAB & GE Money
+                </p>
+              </ScrollReveal>
 
-            <ScrollReveal delay={120}>
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.75rem] text-primary-foreground leading-[1.06] mb-6 lg:mb-8">
-                {t.hero.title}
-              </h1>
-            </ScrollReveal>
+              <ScrollReveal delay={300}>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-lg">
+                  {t.hero.description}
+                </p>
+              </ScrollReveal>
 
-            <ScrollReveal delay={240}>
-              <p className="text-lg sm:text-xl text-primary-foreground/65 max-w-xl leading-relaxed mb-10">
-                {t.hero.description}
-              </p>
-            </ScrollReveal>
-
-            <ScrollReveal delay={360}>
-              <div className="flex flex-wrap gap-5 items-center">
-                <Button variant="gold" size="xl" asChild>
+              <ScrollReveal delay={400}>
+                <Button variant="gold" size="xl" asChild className="h-14 px-8 text-base tracking-wide">
                   <Link to="/consultation">{t.hero.cta}</Link>
                 </Button>
-                <div className="hidden sm:flex items-center gap-3 pl-5 border-l border-primary-foreground/20 h-10">
-                  <span className="text-sm text-primary-foreground/80 font-medium tracking-wide">{t.hero.trustBadges}</span>
-                </div>
-              </div>
-              {/* Mobile trust badge */}
-              <div className="sm:hidden mt-6 flex items-center gap-3">
-                  <span className="text-xs text-primary-foreground/80 font-medium tracking-wide">{t.hero.trustBadges}</span>
-              </div>
-            </ScrollReveal>
+              </ScrollReveal>
+            </div>
           </div>
-        </div>
 
-        {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
+          {/* RIGHT IMAGE (Asymmetrical bleed out) */}
+          <div className="w-full lg:w-7/12 h-full min-h-[400px] lg:min-h-[600px] lg:absolute lg:top-0 lg:right-0 lg:bottom-0">
+            <div className="relative w-full h-full lg:w-[calc(100%-2rem)] lg:ml-auto overflow-hidden lg:rounded-bl-[40px] shadow-sm">
+              <img
+                src={heroImgUrl}
+                alt="Professional corporate meeting at Arovia Finance"
+                className="w-full h-full object-cover object-[center_35%]"
+              />
+              <div className="absolute inset-0 bg-primary/5 mix-blend-multiply" />
+            </div>
+          </div>
+
+        </div>
       </section>
 
+
       {/* ─── STATS ─── */}
-      <Section className="py-14 lg:py-16 border-b border-border">
+      <Section className="py-16 lg:py-20 border-b border-border/40">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
           {stats.map((stat, i) => (
             <ScrollReveal key={i} delay={i * 80}>
@@ -155,17 +153,16 @@ export default function HomePage() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <ScrollReveal direction="left">
             <div className="relative">
-              <div className="relative overflow-hidden rounded-sm shadow-2xl img-zoom">
+              <div className="relative overflow-hidden rounded-sm shadow-md img-zoom">
                 <img
-                  src={advisorImg}
+                  src={advisorImgUrl}
                   alt="Financial advisor at Arovia Finance"
                   className="w-full aspect-[4/5] object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />
+                <div className="absolute inset-0 bg-primary/5" />
               </div>
-              {/* Decorative element */}
-              <div className="absolute -bottom-6 -right-6 w-2/3 h-2/3 border border-gold/20 rounded-sm -z-10" />
-              <div className="absolute -bottom-3 -right-3 w-1/3 h-1/3 bg-gold/10 rounded-sm -z-10" />
+              {/* Decorative element - Thinner, cleaner lines */}
+              <div className="absolute -bottom-6 -right-6 w-1/3 h-1/3 border border-border rounded-sm -z-10 bg-muted/20" />
             </div>
           </ScrollReveal>
 
@@ -199,16 +196,16 @@ export default function HomePage() {
         <ScrollReveal>
           <SectionHeader label={t.services.label} title={t.services.title} align="center" />
         </ScrollReveal>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+        <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service, i) => (
             <ScrollReveal key={i} delay={i * 80}>
               <Link to={service.href} className="group block h-full">
-                <div className="premium-card p-8 h-full flex flex-col cursor-pointer hover:-translate-y-1 transition-transform duration-300">
-                  <div className="mb-5 w-12 h-12 rounded-full bg-primary/6 flex items-center justify-center group-hover:bg-gold/10 transition-colors duration-300">
+                <div className="bg-card rounded-md p-10 h-full flex flex-col cursor-pointer border border-border/40 hover:border-border/80 hover:shadow-[0_8px_32px_rgba(0,0,0,0.04)] hover:-translate-y-1 transition-all duration-400 ease-out">
+                  <div className="mb-8 w-14 h-14 rounded-full bg-muted/60 flex items-center justify-center group-hover:bg-gold/10 transition-colors duration-400">
                     <service.icon
-                      className="text-gold group-hover:scale-110 transition-transform duration-300"
-                      size={22}
-                      strokeWidth={1.5}
+                      className="text-foreground/70 group-hover:text-gold transition-colors duration-400"
+                      size={24}
+                      strokeWidth={1.25}
                     />
                   </div>
                   <h3 className="font-display text-xl text-foreground mb-3 group-hover:text-primary transition-colors duration-200">
@@ -251,14 +248,14 @@ export default function HomePage() {
         </div>
         <ScrollReveal delay={500}>
           <div className="text-center mt-14">
-            <Button variant="default" size="lg" asChild>
-              <Link to="/cooperation">
-                {t.nav.cooperation} <ArrowRight size={16} />
-              </Link>
-            </Button>
-          </div>
-        </ScrollReveal>
-      </Section>
+             <Button variant="default" size="lg" asChild>
+               <Link to="/cooperation">
+                 {t.nav.cooperation} <ArrowRight size={16} />
+               </Link>
+             </Button>
+           </div>
+         </ScrollReveal>
+       </Section>
 
       {/* ─── TESTIMONIALS ─── */}
       <Section variant="muted" className="py-24 lg:py-32">
@@ -268,13 +265,13 @@ export default function HomePage() {
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {testimonials.map((item, i) => (
             <ScrollReveal key={i} delay={i * 100}>
-              <div className="premium-card p-8 h-full flex flex-col group hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-card rounded-md p-10 h-full flex flex-col border border-border/40 hover:shadow-[0_8px_32px_rgba(0,0,0,0.02)] transition-shadow duration-400">
                 {/* Quote icon */}
-                <div className="mb-4">
-                  <Quote size={28} className="text-gold/40" strokeWidth={1.5} />
+                <div className="mb-6">
+                  <Quote size={24} className="text-muted-foreground/30" strokeWidth={1} />
                 </div>
-                <p className="text-sm text-muted-foreground leading-relaxed flex-1">
-                  {item.text}
+                <p className="text-[15px] text-foreground/80 leading-relaxed flex-1 italic">
+                  "{item.text}"
                 </p>
                 {/* Stars */}
                 <div className="flex gap-0.5 my-4">
@@ -317,8 +314,8 @@ export default function HomePage() {
         <div className="grid md:grid-cols-3 gap-8">
           {mediaItems.map((item, i) => (
             <ScrollReveal key={i} delay={i * 100}>
-              <div className="group block cursor-default">
-                <div className="aspect-video rounded-sm overflow-hidden mb-5 img-zoom shadow-sm cursor-default">
+              <a href="#" className="group block cursor-pointer">
+                <div className="aspect-[16/10] rounded-sm overflow-hidden mb-5 img-zoom border border-border/40 hover:border-border/80 transition-colors">
                   <img
                     src={item.image}
                     alt={item.title}
@@ -326,14 +323,14 @@ export default function HomePage() {
                   />
                 </div>
                 <span className="eyebrow text-[10px]">
-                  <span className="w-4 h-px bg-gold" />
+                  <span className="w-4 h-[1px] bg-gold/50" />
                   {item.outlet}
                 </span>
-                <h3 className="font-display text-lg text-foreground mt-2 mb-1.5 leading-snug">
+                <h3 className="font-display text-xl text-foreground mt-2 mb-1.5 leading-snug group-hover:text-gold transition-colors duration-200">
                   {item.title}
                 </h3>
-                <span className="text-xs text-muted-foreground">{item.date}</span>
-              </div>
+                <span className="text-sm text-muted-foreground">{item.date}</span>
+              </a>
             </ScrollReveal>
           ))}
         </div>
@@ -351,12 +348,12 @@ export default function HomePage() {
       {/* ─── CTA BANNER ─── */}
       <section className="relative py-28 lg:py-36 bg-primary overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImg} alt="" className="w-full h-full object-cover opacity-10" />
-          <div className="absolute inset-0 bg-primary/70" />
+          <img src={propertyImgUrl} alt="" className="w-full h-full object-cover opacity-10" />
+          <div className="absolute inset-0 bg-primary/95" />
         </div>
-        {/* Decorative elements */}
-        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-gold/15 to-transparent" />
-        <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-gold/10 to-transparent" />
+        {/* Decorative elements - Cleaned up to be more subtle */}
+        <div className="absolute top-0 left-1/3 w-px h-full bg-gradient-to-b from-transparent via-border/5 to-transparent" />
+        <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-border/5 to-transparent" />
 
         <div className="relative section-padding section-container text-center max-w-3xl mx-auto">
           <ScrollReveal>

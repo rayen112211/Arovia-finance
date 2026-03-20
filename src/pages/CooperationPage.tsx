@@ -22,13 +22,12 @@ export default function CooperationPage() {
     <>
       {/* ─── HERO ─── */}
       <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 bg-primary overflow-hidden">
-        {/* Abstract dark gradient bg */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-navy-dark to-primary" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-gold/10 via-transparent to-transparent opacity-60" />
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background via-background/20 to-transparent" />
+        {/* Abstract dark gradient bg - simplified */}
+        <div className="absolute inset-0 bg-primary" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent opacity-60" />
         
         {/* Decorative line */}
-        <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gold/30 to-transparent" />
+        <div className="absolute left-1/3 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-border/10 to-transparent" />
 
         <div className="relative section-padding section-container">
           <div className="max-w-3xl">
@@ -57,13 +56,13 @@ export default function CooperationPage() {
                 
                 {/* Vertical line connector */}
                 {i < steps.length - 1 && (
-                  <div className="absolute left-[38px] lg:left-[43px] top-[72px] bottom-0 w-[2px] bg-gradient-to-b from-border to-border/30 group-hover:from-gold/40 group-hover:to-gold/10 transition-colors duration-500" />
+                  <div className="absolute left-[38px] lg:left-[43px] top-[72px] bottom-0 w-[1px] bg-gradient-to-b from-border/50 to-border/10 group-hover:from-gold/40 group-hover:to-gold/10 transition-colors duration-500" />
                 )}
                 
                 {/* Icon Circle */}
-                <div className="flex-shrink-0 w-[76px] h-[76px] lg:w-[88px] lg:h-[88px] rounded-full bg-background border border-border shadow-sm flex items-center justify-center relative z-10 group-hover:border-gold/30 group-hover:bg-gold/5 transition-colors duration-300">
-                  <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-primary/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <step.icon className="text-gold" size={24} strokeWidth={1.5} />
+                <div className="flex-shrink-0 w-[76px] h-[76px] lg:w-[88px] lg:h-[88px] rounded-full bg-background border border-border/40 flex items-center justify-center relative z-10 group-hover:border-gold/30 transition-colors duration-400">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-muted/60 flex items-center justify-center group-hover:scale-110 transition-transform duration-400">
+                    <step.icon className="text-foreground/70 group-hover:text-gold transition-colors duration-400" size={24} strokeWidth={1.25} />
                   </div>
                 </div>
                 
@@ -79,7 +78,7 @@ export default function CooperationPage() {
                   <h3 className="font-display text-2xl lg:text-3xl text-foreground mb-4">
                     {step.title}
                   </h3>
-                  <div className="premium-card p-6 lg:p-8 bg-card">
+                  <div className="bg-card rounded-md p-6 lg:p-8 border border-border/40 hover:shadow-[0_8px_32px_rgba(0,0,0,0.02)] transition-shadow duration-400">
                     <p className="text-base lg:text-lg text-muted-foreground leading-relaxed">
                       {step.desc}
                     </p>
@@ -94,9 +93,9 @@ export default function CooperationPage() {
 
       {/* ─── CTA BANNER ─── */}
       <section className="relative py-24 lg:py-32 bg-primary overflow-hidden">
-        {/* Abstract dark background */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-primary via-navy-light to-primary" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent opacity-80" />
+        {/* Abstract dark background - simplified */}
+        <div className="absolute inset-0 bg-primary" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent opacity-80" />
 
         <div className="relative section-padding section-container text-center max-w-3xl mx-auto">
           <ScrollReveal>

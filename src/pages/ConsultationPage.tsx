@@ -3,7 +3,9 @@ import { Section } from "@/components/Section";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Lightbulb, Target, TrendingUp } from "lucide-react";
-import handshakeImg from "@/assets/handshake.jpg";
+
+// Authentic stock image for Consultation Hero
+const handshakeImgUrl = "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2669&auto=format&fit=crop"; // Professional consultation
 
 export default function ConsultationPage() {
   const { t } = useLanguage();
@@ -22,13 +24,12 @@ export default function ConsultationPage() {
       {/* ─── HERO ─── */}
       <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 bg-primary overflow-hidden">
         <div className="absolute inset-0">
-          <img src={handshakeImg} alt="" className="w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/60" />
-          <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
+          <img src={handshakeImgUrl} alt="Consultation" className="w-full h-full object-cover opacity-15" />
+          <div className="absolute inset-0 bg-primary/90" />
         </div>
         
-        {/* Decorative line */}
-        <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gold/30 to-transparent" />
+        {/* Decorative elements - subtle */}
+        <div className="absolute left-1/3 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-border/10 to-transparent" />
 
         <div className="relative section-padding section-container">
           <div className="max-w-3xl">
@@ -51,12 +52,12 @@ export default function ConsultationPage() {
       {/* ─── MAIN CONTENT ─── */}
       <Section className="py-24 lg:py-32">
         {/* Benefits Row */}
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12 mb-28 border-b border-border pb-24">
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-12 mb-28 border-b border-border/40 pb-24">
           {benefits.map((b, i) => (
             <ScrollReveal key={i} delay={i * 100}>
               <div className="text-center group">
-                <div className="w-14 h-14 rounded-full bg-primary/5 flex items-center justify-center mx-auto mb-6 group-hover:bg-gold/10 transition-colors duration-300">
-                  <b.icon className="text-gold" size={24} strokeWidth={1.5} />
+                <div className="w-14 h-14 rounded-full bg-muted/60 flex items-center justify-center mx-auto mb-6 group-hover:bg-gold/10 transition-colors duration-400">
+                  <b.icon className="text-foreground/70 group-hover:text-gold transition-colors duration-400" size={24} strokeWidth={1.25} />
                 </div>
                 <h3 className="font-display text-xl lg:text-2xl text-foreground mb-3">{b.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{b.text}</p>
@@ -106,9 +107,9 @@ export default function ConsultationPage() {
           {/* Right: Form */}
           <div className="lg:-mt-10">
             <ScrollReveal direction="right" delay={200}>
-              <div className="premium-card p-8 sm:p-10 lg:p-12 shadow-xl border-border/60 relative overflow-hidden">
+              <div className="bg-card rounded-md p-8 sm:p-10 lg:p-12 border border-border/40 hover:shadow-[0_8px_32px_rgba(0,0,0,0.02)] transition-shadow duration-400 relative overflow-hidden">
                 {/* Form header accent */}
-                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-gold via-gold/50 to-gold" />
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold/80 to-gold/30" />
                 
                 <h3 className="font-display text-2xl lg:text-3xl text-foreground mb-8">
                   {c.formTitle}

@@ -35,15 +35,15 @@ export function SectionHeader({ label, title, description, align = "left", light
   const alignClass = align === "center" ? "text-center items-center" : "text-left items-start";
 
   return (
-    <div className={`flex flex-col gap-3 mb-12 ${alignClass}`}>
+    <div className={`flex flex-col gap-4 mb-14 ${alignClass}`}>
       {label && (
         <span className="eyebrow">
-          <span className="w-8 h-px bg-gold inline-block" />
+          <span className="w-8 h-[1px] bg-gold/50 inline-block" />
           {label}
         </span>
       )}
       <h2
-        className={`font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.1] ${
+        className={`font-display text-3xl sm:text-4xl lg:text-[44px] leading-[1.15] tracking-tight ${
           light ? "text-primary-foreground" : "text-foreground"
         }`}
       >
@@ -51,7 +51,7 @@ export function SectionHeader({ label, title, description, align = "left", light
       </h2>
       {description && (
         <p
-          className={`text-base sm:text-lg max-w-2xl leading-relaxed mt-1 ${
+          className={`text-base sm:text-lg max-w-2xl leading-relaxed ${
             light ? "text-primary-foreground/70" : "text-muted-foreground"
           }`}
         >

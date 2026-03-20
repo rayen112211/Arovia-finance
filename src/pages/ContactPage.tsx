@@ -3,7 +3,9 @@ import { Section } from "@/components/Section";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin } from "lucide-react";
-import warsawImg from "@/assets/warsaw-skyline.jpg";
+
+// Authentic stock image for Contact Hero/location
+const warsawImgUrl = "https://images.unsplash.com/photo-1549749504-20412e84d436?q=80&w=2574&auto=format&fit=crop"; // Warsaw skyline or similar premium corporate location
 
 export default function ContactPage() {
   const { t } = useLanguage();
@@ -13,13 +15,12 @@ export default function ContactPage() {
     <>
       {/* ─── HERO ─── */}
       <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-36 bg-primary overflow-hidden">
-        {/* Abstract dark gradient bg */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-navy-light to-primary" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent opacity-60" />
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background via-background/20 to-transparent" />
+        {/* Abstract dark gradient bg - simplified for elegance */}
+        <div className="absolute inset-0 bg-primary" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent opacity-60" />
         
         {/* Decorative line */}
-        <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gold/30 to-transparent" />
+        <div className="absolute left-1/3 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-border/10 to-transparent" />
 
         <div className="relative section-padding section-container">
           <div className="max-w-3xl">
@@ -46,9 +47,9 @@ export default function ContactPage() {
           {/* Form */}
           <div className="lg:col-span-3">
             <ScrollReveal direction="up" delay={100}>
-              <div className="premium-card p-8 sm:p-10 lg:p-12 shadow-xl border-border/60 relative overflow-hidden bg-card h-full">
+              <div className="bg-card rounded-md p-8 sm:p-10 lg:p-12 border border-border/40 hover:shadow-[0_8px_32px_rgba(0,0,0,0.02)] transition-shadow duration-400 relative overflow-hidden h-full">
                 {/* Form header accent */}
-                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-gold via-gold/50 to-gold" />
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold/80 to-gold/30" />
                 
                 <h2 className="font-display text-2xl lg:text-3xl text-foreground mb-8">
                   {c.formTitle}
@@ -98,7 +99,7 @@ export default function ContactPage() {
           {/* Details & Map wrapper */}
           <div className="lg:col-span-2 flex flex-col gap-10">
             <ScrollReveal direction="left" delay={200}>
-              <div className="premium-card p-8 sm:p-10 bg-card">
+              <div className="bg-card rounded-md p-8 sm:p-10 border border-border/40">
                 <h2 className="font-display text-2xl text-foreground mb-8">
                   {c.detailsTitle}
                 </h2>
@@ -110,8 +111,8 @@ export default function ContactPage() {
                     { icon: MapPin, label: t.contactPreview.location, value: t.contactPreview.locationValue, href: undefined },
                   ].map((item, i) => (
                     <div key={i} className="flex gap-5 items-start group">
-                      <div className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0 group-hover:bg-gold/10 transition-colors duration-300">
-                        <item.icon className="text-gold" size={20} strokeWidth={1.5} />
+                      <div className="w-12 h-12 rounded-full bg-muted/60 flex items-center justify-center flex-shrink-0 group-hover:bg-gold/10 transition-colors duration-400">
+                        <item.icon className="text-foreground/70 group-hover:text-gold transition-colors duration-400" size={20} strokeWidth={1.25} />
                       </div>
                       <div className="pt-1">
                         <div className="text-xs text-muted-foreground uppercase tracking-[0.1em] font-medium mb-1">
@@ -134,13 +135,13 @@ export default function ContactPage() {
             </ScrollReveal>
 
             <ScrollReveal direction="left" delay={300}>
-              <div className="relative rounded-sm overflow-hidden shadow-xl aspect-[4/3] img-zoom group">
+              <div className="relative rounded-sm overflow-hidden aspect-[4/3] img-zoom group border border-border/40">
                 <img 
-                  src={warsawImg} 
+                  src={warsawImgUrl} 
                   alt="Warsaw skyline" 
                   className="w-full h-full object-cover" 
                 />
-                <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors duration-500" />
+                <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/0 transition-colors duration-500" />
                 {/* Decorative overlay */}
                 <div className="absolute bottom-4 left-4 right-4 bg-background/95 nav-blur p-4 rounded-sm border border-border/50 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                   <div className="flex items-center gap-2 text-sm font-medium text-primary">

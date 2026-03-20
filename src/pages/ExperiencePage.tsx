@@ -4,8 +4,11 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import advisorImg from "@/assets/advisor-portrait.jpg";
-import warsawImg from "@/assets/warsaw-skyline.jpg";
+
+// Authentic stock image for Experience Hero
+const warsawImgUrl = "https://images.unsplash.com/photo-1549749504-20412e84d436?q=80&w=2574&auto=format&fit=crop"; 
+// Authentic portrait for advisor
+const advisorImgUrl = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1288&auto=format&fit=crop";
 
 export default function ExperiencePage() {
   const { t } = useLanguage();
@@ -23,9 +26,8 @@ export default function ExperiencePage() {
       {/* ─── HERO ─── */}
       <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 bg-primary overflow-hidden">
         <div className="absolute inset-0">
-          <img src={warsawImg} alt="" className="w-full h-full object-cover opacity-60 mix-blend-overlay" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/85 to-primary/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
+          <img src={warsawImgUrl} alt="" className="w-full h-full object-cover opacity-10" />
+          <div className="absolute inset-0 bg-primary/95" />
         </div>
         
         {/* Decorative line */}
@@ -57,13 +59,13 @@ export default function ExperiencePage() {
           <div className="lg:col-span-2">
             <ScrollReveal direction="left">
               <div className="lg:sticky lg:top-32">
-                <div className="relative rounded-sm shadow-xl img-zoom mb-8">
+                <div className="relative rounded-sm aspect-[4/5] img-zoom mb-8 overflow-hidden border border-border/40">
                   <img 
-                    src={advisorImg} 
+                    src={advisorImgUrl} 
                     alt="Financial advisor" 
-                    className="w-full aspect-[4/5] object-cover rounded-sm" 
+                    className="w-full h-full object-cover" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent rounded-sm" />
+                  <div className="absolute inset-0 bg-primary/5 transition-colors duration-500 hover:bg-transparent" />
                 </div>
                 
                 {/* Highlight box */}
@@ -108,8 +110,7 @@ export default function ExperiencePage() {
       {/* ─── CTA BANNER ─── */}
       <section className="relative py-24 lg:py-32 bg-primary overflow-hidden">
         <div className="absolute inset-0">
-          <img src={warsawImg} alt="" className="w-full h-full object-cover opacity-10" />
-          <div className="absolute inset-0 bg-primary/80" />
+          <div className="absolute inset-0 bg-primary" />
         </div>
         <div className="relative section-padding section-container text-center max-w-3xl mx-auto">
           <ScrollReveal>
