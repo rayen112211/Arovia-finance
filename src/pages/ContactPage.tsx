@@ -112,8 +112,8 @@ export default function ContactPage() {
                     { icon: MapPin, label: t.contactPreview.location, value: t.contactPreview.locationValue, href: undefined },
                   ].map((item, i) => (
                     <div key={i} className="flex gap-5 items-start group">
-                      <div className="w-12 h-12 rounded-full bg-muted/60 flex items-center justify-center flex-shrink-0 group-hover:bg-gold/10 transition-colors duration-400">
-                        <item.icon className="text-foreground/70 group-hover:text-gold transition-colors duration-400" size={20} strokeWidth={1.25} />
+                      <div className="w-12 h-12 rounded-full bg-muted/60 flex items-center justify-center flex-shrink-0 group-hover:bg-gold/10 transition-colors duration-500">
+                        <item.icon className="text-foreground/70 group-hover:text-gold transition-colors duration-500" size={20} strokeWidth={1.25} />
                       </div>
                       <div className="pt-1">
                         <div className="text-xs text-muted-foreground uppercase tracking-[0.1em] font-medium mb-1">

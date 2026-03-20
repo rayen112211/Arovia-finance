@@ -64,8 +64,8 @@ export default function ConsultationPage() {
           {benefits.map((b, i) => (
             <ScrollReveal key={i} delay={i * 100}>
               <div className="text-center group">
-                <div className="w-14 h-14 rounded-full bg-muted/60 flex items-center justify-center mx-auto mb-6 group-hover:bg-gold/10 transition-colors duration-400">
-                  <b.icon className="text-foreground/70 group-hover:text-gold transition-colors duration-400" size={24} strokeWidth={1.25} />
+                <div className="w-14 h-14 rounded-full bg-muted/60 flex items-center justify-center mx-auto mb-6 group-hover:bg-gold/10 transition-colors duration-500">
+                  <b.icon className="text-foreground/70 group-hover:text-gold transition-colors duration-500" size={24} strokeWidth={1.25} />
                 </div>
                 <h3 className="font-display text-xl lg:text-2xl text-foreground mb-3">{b.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{b.text}</p>

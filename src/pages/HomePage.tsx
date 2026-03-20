@@ -243,9 +243,9 @@ export default function HomePage() {
             <ScrollReveal key={i} delay={i * 80}>
               <Link to={service.href} className="group block h-full">
                 <div className="premium-card p-10 h-full flex flex-col transition-all duration-300">
-                  <div className="mb-8 w-14 h-14 rounded-full bg-muted/60 flex items-center justify-center group-hover:bg-gold/10 transition-colors duration-400">
+                  <div className="mb-8 w-14 h-14 rounded-full bg-muted/60 flex items-center justify-center group-hover:bg-gold/10 transition-colors duration-500">
                     <service.icon
-                      className="text-foreground/70 group-hover:text-gold transition-colors duration-400"
+                      className="text-foreground/70 group-hover:text-gold transition-colors duration-500"
                       size={24}
                       strokeWidth={1.25}
                     />

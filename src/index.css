@@ -146,7 +146,7 @@
   .premium-card {
     @apply bg-card rounded-sm shadow-[0_4px_24px_rgba(0,0,0,0.02)] border border-border/40
     hover:shadow-[0_12px_48px_rgba(0,0,0,0.06)] hover:-translate-y-1 hover:border-border/80
-    transition-all duration-400 ease-out;
+    transition-all duration-500 ease-out;
   }
 
   /* Gold divider */

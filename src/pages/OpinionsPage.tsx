@@ -88,9 +88,9 @@ export default function OpinionsPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {testimonials.map((item, i) => (
             <ScrollReveal key={i} delay={i * 80}>
-              <div className="bg-card rounded-md p-8 h-full flex flex-col group border border-border/40 hover:shadow-[0_8px_32px_rgba(0,0,0,0.02)] transition-shadow duration-400">
+              <div className="bg-card rounded-md p-8 h-full flex flex-col group border border-border/40 hover:shadow-[0_8px_32px_rgba(0,0,0,0.02)] transition-shadow duration-500">
                 <div className="mb-5 flex justify-between items-start">
-                  <Quote size={32} className="text-foreground/10 group-hover:text-gold/40 transition-colors duration-400" strokeWidth={1} />
+                  <Quote size={32} className="text-foreground/10 group-hover:text-gold/40 transition-colors duration-500" strokeWidth={1} />
                   <div className="flex gap-0.5 mt-2">
                     {[...Array(item.rating)].map((_, j) => (
                       <span key={j} className="text-gold text-sm">★</span>
@@ -103,8 +103,8 @@ export default function OpinionsPage() {
                 </p>
                 
                 <div className="pt-5 border-t border-border/40 flex items-center gap-4">
-                  <div className="w-11 h-11 rounded-full bg-muted/60 flex items-center justify-center flex-shrink-0 group-hover:bg-gold/10 transition-colors duration-400">
-                    <span className="text-sm font-semibold text-foreground/70 group-hover:text-gold transition-colors duration-400">
+                  <div className="w-11 h-11 rounded-full bg-muted/60 flex items-center justify-center flex-shrink-0 group-hover:bg-gold/10 transition-colors duration-500">
+                    <span className="text-sm font-semibold text-foreground/70 group-hover:text-gold transition-colors duration-500">
                       {item.initials}
                     </span>
                   </div>

@@ -60,9 +60,9 @@ export default function CooperationPage() {
                 )}
                 
                 {/* Icon Circle */}
-                <div className="flex-shrink-0 w-[76px] h-[76px] lg:w-[88px] lg:h-[88px] rounded-full bg-background border border-border/40 flex items-center justify-center relative z-10 group-hover:border-gold/30 transition-colors duration-400">
-                  <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-muted/60 flex items-center justify-center group-hover:scale-110 transition-transform duration-400">
-                    <step.icon className="text-foreground/70 group-hover:text-gold transition-colors duration-400" size={24} strokeWidth={1.25} />
+                <div className="flex-shrink-0 w-[76px] h-[76px] lg:w-[88px] lg:h-[88px] rounded-full bg-background border border-border/40 flex items-center justify-center relative z-10 group-hover:border-gold/30 transition-colors duration-500">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-muted/60 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                    <step.icon className="text-foreground/70 group-hover:text-gold transition-colors duration-500" size={24} strokeWidth={1.25} />
                   </div>
                 </div>
                 
@@ -78,7 +78,7 @@ export default function CooperationPage() {
                   <h3 className="font-display text-2xl lg:text-3xl text-foreground mb-4">
                     {step.title}
                   </h3>
-                  <div className="bg-card rounded-md p-6 lg:p-8 border border-border/40 hover:shadow-[0_8px_32px_rgba(0,0,0,0.02)] transition-shadow duration-400">
+                  <div className="bg-card rounded-md p-6 lg:p-8 border border-border/40 hover:shadow-[0_8px_32px_rgba(0,0,0,0.02)] transition-shadow duration-500">
                     <p className="text-base lg:text-lg text-muted-foreground leading-relaxed">
                       {step.desc}
                     </p>
