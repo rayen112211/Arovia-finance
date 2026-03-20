@@ -6,9 +6,10 @@ import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 // Authentic stock image for Experience Hero
-const warsawImgUrl = "https://images.unsplash.com/photo-1549749504-20412e84d436?q=80&w=2574&auto=format&fit=crop"; 
+const warsawImgUrl = "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2574&auto=format&fit=crop"; 
 // Authentic portrait for advisor
-const advisorImgUrl = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1288&auto=format&fit=crop";
+const advisorImgUrl = "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1288&auto=format&fit=crop";
+const fallbackOfficeImgUrl = "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1400&auto=format&fit=crop";
 
 export default function ExperiencePage() {
   const { t, language } = useLanguage();
@@ -26,7 +27,14 @@ export default function ExperiencePage() {
       {/* ─── HERO ─── */}
       <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 bg-primary overflow-hidden">
         <div className="absolute inset-0">
-          <img src={warsawImgUrl} alt="" className="w-full h-full object-cover opacity-10" />
+          <img
+            src={warsawImgUrl}
+            alt="Professional office interior"
+            className="w-full h-full object-cover opacity-10"
+            onError={(e) => {
+              e.currentTarget.src = fallbackOfficeImgUrl;
+            }}
+          />
           <div className="absolute inset-0 bg-primary/95" />
         </div>
         
@@ -64,6 +72,9 @@ export default function ExperiencePage() {
                     src={advisorImgUrl} 
                     alt="Financial advisor" 
                     className="w-full h-full object-cover" 
+                    onError={(e) => {
+                      e.currentTarget.src = fallbackOfficeImgUrl;
+                    }}
                   />
                   <div className="absolute inset-0 bg-primary/5 transition-colors duration-500 hover:bg-transparent" />
                 </div>

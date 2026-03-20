@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle2, Lightbulb, Target, TrendingUp } from "lucide-react";
 
 // Authentic stock image for Consultation Hero
-const handshakeImgUrl = "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2669&auto=format&fit=crop"; // Professional consultation
+const handshakeImgUrl = "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2669&auto=format&fit=crop";
+const fallbackConsultationImgUrl = "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop";
 
 export default function ConsultationPage() {
   const { t, language } = useLanguage();
@@ -24,7 +25,14 @@ export default function ConsultationPage() {
       {/* ─── HERO ─── */}
       <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 bg-primary overflow-hidden">
         <div className="absolute inset-0">
-          <img src={handshakeImgUrl} alt="Consultation" className="w-full h-full object-cover opacity-15" />
+          <img
+            src={handshakeImgUrl}
+            alt="Professional mortgage consultation"
+            className="w-full h-full object-cover opacity-15"
+            onError={(e) => {
+              e.currentTarget.src = fallbackConsultationImgUrl;
+            }}
+          />
           <div className="absolute inset-0 bg-primary/90" />
         </div>
         

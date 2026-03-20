@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 // Authentic stock image for Contact Hero/location
-const warsawImgUrl = "https://images.unsplash.com/photo-1549749504-20412e84d436?q=80&w=2574&auto=format&fit=crop"; // Warsaw skyline or similar premium corporate location
+const warsawImgUrl = "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2574&auto=format&fit=crop";
+const fallbackContactImgUrl = "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1600&auto=format&fit=crop";
 
 export default function ContactPage() {
   const { t, language } = useLanguage();
@@ -138,8 +139,11 @@ export default function ContactPage() {
               <div className="relative rounded-sm overflow-hidden aspect-[4/3] img-zoom group border border-border/40">
                 <img 
                   src={warsawImgUrl} 
-                  alt="Warsaw skyline" 
+                  alt="Professional meeting room in Warsaw" 
                   className="w-full h-full object-cover" 
+                  onError={(e) => {
+                    e.currentTarget.src = fallbackContactImgUrl;
+                  }}
                 />
                 <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/0 transition-colors duration-500" />
                 {/* Decorative overlay */}

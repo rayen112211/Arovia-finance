@@ -7,10 +7,11 @@ import { Section, SectionHeader } from "@/components/Section";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { AnimatedNumber } from "@/components/AnimatedNumber";
 
-const heroImgUrl = "https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?auto=format&fit=crop&q=80&w=2400";
-const advisorImgUrl = "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=1200";
+const heroImgUrl = "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=2400";
+const advisorImgUrl = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1200";
 const propertyImgUrl = "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1200";
 const fallbackMediaImgUrl = "https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?auto=format&fit=crop&q=80&w=1400";
+const fallbackPortraitImgUrl = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1400";
 
 export default function HomePage() {
   const { t, language } = useLanguage();
@@ -124,9 +125,12 @@ export default function HomePage() {
           <img
             src={heroImgUrl}
             alt="Independent mortgage advisor in a bright office"
-            className="w-full h-full object-cover object-[72%_28%]"
+            className="w-full h-full object-cover object-[76%_22%]"
+            onError={(e) => {
+              e.currentTarget.src = fallbackPortraitImgUrl;
+            }}
           />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(242,246,251,0.96)_0%,rgba(242,246,251,0.91)_36%,rgba(242,246,251,0.52)_56%,rgba(242,246,251,0.14)_72%,rgba(242,246,251,0.04)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(242,246,251,0.97)_0%,rgba(242,246,251,0.93)_38%,rgba(242,246,251,0.56)_58%,rgba(242,246,251,0.18)_74%,rgba(242,246,251,0.06)_100%)]" />
         </div>
 
         <div className="section-padding section-container relative min-h-[70vh] lg:min-h-[78vh] grid lg:grid-cols-2 items-center">
@@ -193,6 +197,9 @@ export default function HomePage() {
                   src={advisorImgUrl}
                   alt="Financial advisor at Arovia Finance"
                   className="w-full aspect-[4/5] object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = fallbackPortraitImgUrl;
+                  }}
                 />
                 <div className="absolute inset-0 bg-primary/5" />
               </div>
