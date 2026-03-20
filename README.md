@@ -1,3 +1,11 @@
-# Welcome to your Lovable project
+# Arovia Finance 
+Premium Independent Mortgage Advisory Platform (Poland)
 
-TODO: Document your project here
+## Architecture
+- React
+- Vite
+- Tailwind CSS (Premium Luxury Protocol)
+- Framer Motion / Intersection Observers
+
+## Deployment
+Configured for Vercel SPA routing (`vercel.json` rewrites enabled).
