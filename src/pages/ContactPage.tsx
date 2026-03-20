@@ -8,7 +8,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 const warsawImgUrl = "https://images.unsplash.com/photo-1549749504-20412e84d436?q=80&w=2574&auto=format&fit=crop"; // Warsaw skyline or similar premium corporate location
 
 export default function ContactPage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const c = t.contactPage;
 
   return (
@@ -41,7 +41,7 @@ export default function ContactPage() {
       </section>
 
       {/* ─── CONTACT SECTION ─── */}
-      <Section className="py-12 lg:py-16 relative -mt-24">
+      <Section className="py-12 lg:py-16 relative -mt-12 lg:-mt-24">
         <div className="grid lg:grid-cols-5 gap-10 lg:gap-16">
           
           {/* Form */}
@@ -59,7 +59,7 @@ export default function ContactPage() {
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div>
                       <label className="form-label">{c.formName}</label>
-                      <input type="text" className="form-input" placeholder="e.g. Anna Wiśniewska" required />
+                      <input type="text" className="form-input" placeholder={language === "pl" ? "np. Anna Wiśniewska" : "e.g. Anna Wisniewska"} required />
                     </div>
                     <div>
                       <label className="form-label">{c.formEmail}</label>
@@ -74,7 +74,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <label className="form-label">{c.formSubject}</label>
-                      <input type="text" className="form-input" placeholder="How can we help?" />
+                      <input type="text" className="form-input" placeholder={language === "pl" ? "Krótko: czego dotyczy sprawa?" : "How can we help?"} />
                     </div>
                   </div>
                   
@@ -83,7 +83,7 @@ export default function ContactPage() {
                     <textarea 
                       rows={6} 
                       className="form-textarea" 
-                      placeholder="Please provide any relevant details..." 
+                      placeholder={language === "pl" ? "Podaj najważniejsze informacje dotyczące sprawy..." : "Please provide any relevant details..."} 
                       required
                     />
                   </div>
@@ -145,7 +145,7 @@ export default function ContactPage() {
                 {/* Decorative overlay */}
                 <div className="absolute bottom-4 left-4 right-4 bg-background/95 nav-blur p-4 rounded-sm border border-border/50 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                   <div className="flex items-center gap-2 text-sm font-medium text-primary">
-                    <MapPin size={16} className="text-gold" /> Available for meetings in Warsaw or online.
+                    <MapPin size={16} className="text-gold" /> {language === "pl" ? "Spotkania w Warszawie lub online." : "Available for meetings in Warsaw or online."}
                   </div>
                 </div>
               </div>

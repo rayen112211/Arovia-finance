@@ -8,7 +8,7 @@ import { CheckCircle2, Lightbulb, Target, TrendingUp } from "lucide-react";
 const handshakeImgUrl = "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2669&auto=format&fit=crop"; // Professional consultation
 
 export default function ConsultationPage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const c = t.consultationPage;
 
   const benefits = [
@@ -74,7 +74,7 @@ export default function ConsultationPage() {
             <ScrollReveal direction="left">
               <span className="eyebrow mb-6 inline-flex text-primary">
                 <span className="w-8 h-px bg-primary/30" />
-                The Process
+                {language === "pl" ? "Proces" : "The Process"}
               </span>
               <h2 className="font-display text-3xl lg:text-4xl text-foreground mb-10 leading-[1.1]">
                 {c.whatHappens}
@@ -88,7 +88,9 @@ export default function ConsultationPage() {
                     </div>
                     <div>
                       <p className="text-foreground font-medium text-lg mb-1">{step}</p>
-                      <p className="text-muted-foreground text-sm">Clear and transparent from day one.</p>
+                      <p className="text-muted-foreground text-sm">
+                        {language === "pl" ? "Jasno i przejrzyście od pierwszego dnia." : "Clear and transparent from day one."}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -96,9 +98,13 @@ export default function ConsultationPage() {
 
               {/* Trust badges/info */}
               <div className="mt-16 p-6 bg-muted/30 rounded-sm border border-border">
-                <h4 className="font-semibold text-sm uppercase tracking-wider text-muted-foreground mb-3">Commitment Free</h4>
+                <h4 className="font-semibold text-sm uppercase tracking-wider text-muted-foreground mb-3">
+                  {language === "pl" ? "Bez zobowiązań" : "No Obligation"}
+                </h4>
                 <p className="text-sm text-foreground/80 leading-relaxed">
-                  Your first consultation is entirely complimentary. We only move forward if you are completely comfortable with the proposed strategy and understand all options available to you.
+                  {language === "pl"
+                    ? "Pierwsza konsultacja jest bezpłatna. Kolejne kroki podejmujemy wyłącznie wtedy, gdy wszystko jest dla Ciebie zrozumiałe i komfortowe."
+                    : "Your first consultation is fully complimentary. We only move forward if you are comfortable with the proposed strategy and all options are clear."}
                 </p>
               </div>
             </ScrollReveal>
@@ -142,7 +148,9 @@ export default function ConsultationPage() {
                   </Button>
                   
                   <p className="text-center text-xs text-muted-foreground mt-6">
-                    By submitting this form, you agree to our privacy policy. Your information is kept strictly confidential.
+                    {language === "pl"
+                      ? "Wysyłając formularz, akceptujesz politykę prywatności. Dane są traktowane poufnie."
+                      : "By submitting this form, you agree to our privacy policy. Your information is handled confidentially."}
                   </p>
                 </form>
               </div>

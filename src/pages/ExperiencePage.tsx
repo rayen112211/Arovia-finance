@@ -11,7 +11,7 @@ const warsawImgUrl = "https://images.unsplash.com/photo-1549749504-20412e84d436?
 const advisorImgUrl = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1288&auto=format&fit=crop";
 
 export default function ExperiencePage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const exp = t.experience;
 
   const sections = [
@@ -70,9 +70,14 @@ export default function ExperiencePage() {
                 
                 {/* Highlight box */}
                 <div className="bg-muted/50 p-6 rounded-sm border border-border">
-                  <h4 className="font-semibold text-foreground mb-4">Core Expertise</h4>
+                  <h4 className="font-semibold text-foreground mb-4">
+                    {language === "pl" ? "Główne obszary wsparcia" : "Core Expertise"}
+                  </h4>
                   <ul className="space-y-3">
-                    {["Premium Mortgage Solutions", "Refinancing & Structuring", "Self-Employed Clients", "Complex Business Lending", "Expat & Foreign Income"].map((item, i) => (
+                    {(language === "pl"
+                      ? ["Kredyty hipoteczne", "Refinansowanie", "Klienci z działalnością gospodarczą", "Złożone sytuacje finansowe", "Dochody zagraniczne"]
+                      : ["Home Purchase Mortgages", "Refinancing Strategy", "Self-Employed Clients", "Complex Credit Structures", "Expat & Foreign Income"]
+                    ).map((item, i) => (
                       <li key={i} className="flex gap-3 text-sm text-muted-foreground items-start">
                         <CheckCircle2 className="text-gold flex-shrink-0 w-4 h-4 mt-0.5" />
                         <span>{item}</span>

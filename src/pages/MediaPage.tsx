@@ -15,12 +15,12 @@ export default function MediaPage() {
   const { t } = useLanguage();
 
   const mediaItems = [
-    { title: "How Banks Really Assess Your Mortgage Application", outlet: "Financial Times Poland", date: "March 2025", image: handshakeImgUrl },
-    { title: "Self-Employed? Here's How to Strengthen Your Mortgage Case", outlet: "Business Insider PL", date: "January 2025", image: propertyImgUrl },
-    { title: "Bringing International Expertise to the Polish Mortgage Market", outlet: "Puls Biznesu", date: "November 2024", image: heroImgUrl },
-    { title: "Complex Structures: A Guide for Business Owners Seeking Finance", outlet: "Forbes Poland", date: "September 2024", image: advisorImgUrl },
-    { title: "The Advantage of Working With an Independent Broker", outlet: "Rzeczpospolita", date: "July 2024", image: propertyImgUrl },
-    { title: "Understanding Refinancing Opportunities in Today's Market", outlet: "Gazeta Wyborcza", date: "May 2024", image: heroImgUrl },
+    { title: "How Banks Assess Mortgage Applications in Practice", outlet: "Arovia Insights", date: "March 2026", image: handshakeImgUrl },
+    { title: "Self-Employed Borrowers: Documents That Matter Most", outlet: "Arovia Insights", date: "February 2026", image: propertyImgUrl },
+    { title: "Fixed vs Variable Rate: How to Compare Total Cost", outlet: "Arovia Insights", date: "January 2026", image: heroImgUrl },
+    { title: "How to Prepare for a Mortgage Consultation", outlet: "Arovia Insights", date: "December 2025", image: advisorImgUrl },
+    { title: "Refinancing: When It Makes Financial Sense", outlet: "Arovia Insights", date: "November 2025", image: propertyImgUrl },
+    { title: "Common Approval Delays and How to Avoid Them", outlet: "Arovia Insights", date: "October 2025", image: heroImgUrl },
   ];
 
   return (
@@ -50,12 +50,11 @@ export default function MediaPage() {
       </section>
 
       {/* ─── MEDIA GRID ─── */}
-      <Section className="py-12 lg:py-20 relative -mt-24">
+      <Section className="py-12 lg:py-20 relative -mt-12 lg:-mt-24">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {mediaItems.map((item, i) => (
             <ScrollReveal key={i} delay={i * 80}>
-              <a href="#" className="group block h-full cursor-pointer">
-                <div className="bg-card rounded-md p-4 sm:p-5 h-full flex flex-col border border-border/40 hover:shadow-[0_8px_32px_rgba(0,0,0,0.04)] hover:-translate-y-1 hover:border-border/80 transition-all duration-400 ease-out relative">
+              <article className="bg-card rounded-md p-4 sm:p-5 h-full flex flex-col border border-border/40 relative">
                   
                   {/* Image wrapper */}
                   <div className="aspect-[16/10] rounded-sm overflow-hidden mb-6 img-zoom relative border border-border/20">
@@ -76,13 +75,12 @@ export default function MediaPage() {
                       <span className="text-xs text-muted-foreground whitespace-nowrap">{item.date}</span>
                     </div>
                     
-                    <h3 className="font-display text-lg lg:text-xl text-foreground mt-1 mb-4 leading-snug group-hover:text-gold transition-colors duration-200">
+                    <h3 className="font-display text-lg lg:text-xl text-foreground mt-1 mb-4 leading-snug">
                       {item.title}
                     </h3>
                   </div>
                   
-                </div>
-              </a>
+                </article>
             </ScrollReveal>
           ))}
         </div>

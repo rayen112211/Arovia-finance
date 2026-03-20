@@ -10,45 +10,45 @@ export default function OpinionsPage() {
 
   const testimonials = [
     {
-      name: "Michał Kowalski",
+      name: "Private Client",
       role: "Business Owner, Warsaw",
       initials: "MK",
-      text: "Arovia Finance understood our complex business structure from the start. They secured us a mortgage that three other brokers said was impossible. The level of expertise and patience was exceptional throughout the entire process.",
+      text: "Arovia Finance understood our business structure from the first meeting and guided us through each stage without delays.",
       rating: 5,
     },
     {
-      name: "Anna Wiśniewska",
+      name: "Private Client",
       role: "First Home Buyer",
       initials: "AW",
-      text: "As a first-time buyer, the mortgage process felt overwhelming. Arovia made everything simple and transparent. Every step was explained clearly, and I always knew exactly where things stood. Truly outstanding service.",
+      text: "As first-time buyers, we needed clear guidance. Everything was explained in plain language and the process felt fully under control.",
       rating: 5,
     },
     {
-      name: "Tomasz & Katarzyna Nowak",
+      name: "Private Client",
       role: "Property Investors",
       initials: "TN",
-      text: "Professional, thorough, and genuinely invested in finding the best outcome. The attention to detail was beyond anything we've experienced with other advisors. We've now used Arovia for three separate property purchases.",
+      text: "Professional support, strong communication, and very good attention to detail. We felt confident from document review to final decision.",
       rating: 5,
     },
     {
-      name: "Paweł Zieliński",
+      name: "Private Client",
       role: "Self-Employed Consultant",
       initials: "PZ",
-      text: "Being self-employed made getting a mortgage incredibly difficult. Arovia Finance knew exactly how to present my financial situation to lenders. They found us an excellent deal when others had turned us away.",
+      text: "Our self-employed income was properly structured for lender assessment, which made a difficult case straightforward.",
       rating: 5,
     },
     {
-      name: "Marta Dąbrowska",
+      name: "Private Client",
       role: "Refinancing Client",
       initials: "MD",
-      text: "We saved a significant amount on our monthly repayments after Arovia reviewed our existing loan structure. The process was smooth and they handled all the paperwork. Highly recommended.",
+      text: "Refinancing options were presented clearly and the full process was smooth, including communication with the bank and documents.",
       rating: 5,
     },
     {
-      name: "Robert & Ewa Jankowski",
+      name: "Private Client",
       role: "Home Buyers, Kraków",
       initials: "RJ",
-      text: "Arovia Finance went above and beyond to help us secure our dream home. Their understanding of how banks make decisions gave us a genuine advantage. We felt supported every step of the way.",
+      text: "A practical, calm approach and strong lender-side knowledge made the entire mortgage journey much easier.",
       rating: 5,
     },
   ];
@@ -84,7 +84,7 @@ export default function OpinionsPage() {
       </section>
 
       {/* ─── TESTIMONIALS GRID ─── */}
-      <Section className="py-20 lg:py-28 relative -mt-32">
+      <Section className="py-20 lg:py-28 relative -mt-14 lg:-mt-32">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {testimonials.map((item, i) => (
             <ScrollReveal key={i} delay={i * 80}>

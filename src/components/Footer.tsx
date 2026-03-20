@@ -3,7 +3,7 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 export function Footer() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   const navLinks = [
@@ -54,7 +54,7 @@ export function Footer() {
           {/* Navigation */}
           <div>
             <h4 className="font-semibold text-xs uppercase tracking-[0.12em] text-primary-foreground/40 mb-5">
-              Navigation
+              {language === "pl" ? "Nawigacja" : "Navigation"}
             </h4>
             <nav className="flex flex-col gap-2.5" aria-label="Footer navigation">
               {navLinks.map((link) => (
@@ -111,12 +111,12 @@ export function Footer() {
             © {currentYear} Arovia Finance. {t.footer.rights}
           </p>
           <div className="flex gap-6">
-            <button className="text-xs text-primary-foreground/35 hover:text-primary-foreground/60 cursor-pointer transition-colors duration-200">
+            <span className="text-xs text-primary-foreground/35">
               {t.footer.privacy}
-            </button>
-            <button className="text-xs text-primary-foreground/35 hover:text-primary-foreground/60 cursor-pointer transition-colors duration-200">
+            </span>
+            <span className="text-xs text-primary-foreground/35">
               {t.footer.terms}
-            </button>
+            </span>
           </div>
         </div>
       </div>

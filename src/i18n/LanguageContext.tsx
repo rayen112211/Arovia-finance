@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useCallback, type ReactNode } from "react";
+import { createContext, useContext, useState, useCallback, useEffect, type ReactNode } from "react";
 import { translations, type Language, type Translations } from "./translations";
 
 interface LanguageContextType {
@@ -17,7 +17,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     setLanguage((prev) => (prev === "en" ? "pl" : "en"));
   }, []);
 
-  const t = translations[language] as any;
+  const t: Translations = translations[language];
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
 
   return (
     <LanguageContext.Provider value={{ language, t, setLanguage, toggleLanguage }}>

@@ -108,11 +108,11 @@
 
 @layer components {
   .section-padding {
-    @apply px-6 sm:px-12 lg:px-24;
+    @apply px-6 sm:px-10 lg:px-16;
   }
 
   .section-container {
-    @apply max-w-[1440px] mx-auto;
+    @apply max-w-[1280px] mx-auto;
   }
 
   .gold-accent-line {

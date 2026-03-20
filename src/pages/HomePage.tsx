@@ -63,16 +63,16 @@ export default function HomePage() {
   ];
 
   const mediaItems = [
-    { title: t.mediaSection.placeholderTitle, outlet: t.mediaSection.placeholderOutlet, date: t.mediaSection.placeholderDate, image: handshakeImgUrl },
-    { title: t.mediaSection.placeholderTitle2, outlet: t.mediaSection.placeholderOutlet2, date: t.mediaSection.placeholderDate2, image: propertyImgUrl },
-    { title: t.mediaSection.placeholderTitle3, outlet: t.mediaSection.placeholderOutlet3, date: t.mediaSection.placeholderDate3, image: heroImgUrl },
+    { title: t.mediaSection.placeholderTitle, outlet: t.mediaSection.placeholderOutlet, date: t.mediaSection.placeholderDate, image: handshakeImgUrl, href: "/media" },
+    { title: t.mediaSection.placeholderTitle2, outlet: t.mediaSection.placeholderOutlet2, date: t.mediaSection.placeholderDate2, image: propertyImgUrl, href: "/media" },
+    { title: t.mediaSection.placeholderTitle3, outlet: t.mediaSection.placeholderOutlet3, date: t.mediaSection.placeholderDate3, image: heroImgUrl, href: "/media" },
   ];
 
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="relative bg-white pt-24 lg:pt-32 pb-16 lg:pb-24 border-b border-border/40 overflow-hidden">
-        <div className="section-container flex justify-between items-center flex-col lg:flex-row gap-12 lg:gap-8 w-full min-h-[75vh]">
+      <section className="relative bg-white pt-24 lg:pt-32 pb-16 lg:pb-20 border-b border-border/40 overflow-hidden">
+        <div className="section-container flex justify-between items-center flex-col lg:flex-row gap-12 lg:gap-8 w-full min-h-[70vh]">
           
           {/* LEFT TEXT */}
           <div className="section-padding flex flex-col justify-center w-full lg:w-5/12 z-10">
@@ -85,15 +85,13 @@ export default function HomePage() {
               </ScrollReveal>
 
               <ScrollReveal delay={120}>
-                <h1 className="font-display text-[44px] sm:text-6xl lg:text-[72px] text-foreground leading-[1.05] tracking-tight mb-6">
+                <h1 className="font-display text-[40px] sm:text-6xl lg:text-[64px] text-foreground leading-[1.07] tracking-tight mb-6">
                   {t.hero.title}
                 </h1>
               </ScrollReveal>
 
               <ScrollReveal delay={220}>
-                <p className="font-medium text-foreground/80 text-lg lg:text-xl mb-6">
-                  15+ years of banking experience across ANZ, NAB & GE Money
-                </p>
+                <p className="font-medium text-foreground/80 text-lg lg:text-xl mb-6">{t.hero.trustBadges}</p>
               </ScrollReveal>
 
               <ScrollReveal delay={300}>
@@ -118,7 +116,7 @@ export default function HomePage() {
                 alt="Professional corporate meeting at Arovia Finance"
                 className="w-full h-full object-cover object-[center_35%]"
               />
-              <div className="absolute inset-0 bg-primary/5 mix-blend-multiply" />
+              <div className="absolute inset-0 bg-primary/10" />
             </div>
           </div>
 
@@ -200,7 +198,7 @@ export default function HomePage() {
           {services.map((service, i) => (
             <ScrollReveal key={i} delay={i * 80}>
               <Link to={service.href} className="group block h-full">
-                <div className="bg-card rounded-md p-10 h-full flex flex-col cursor-pointer border border-border/40 hover:border-border/80 hover:shadow-[0_8px_32px_rgba(0,0,0,0.04)] hover:-translate-y-1 transition-all duration-400 ease-out">
+                <div className="bg-card rounded-md p-10 h-full flex flex-col border border-border/40 hover:border-border/80 hover:shadow-[0_8px_32px_rgba(0,0,0,0.04)] hover:-translate-y-1 transition-all duration-400 ease-out">
                   <div className="mb-8 w-14 h-14 rounded-full bg-muted/60 flex items-center justify-center group-hover:bg-gold/10 transition-colors duration-400">
                     <service.icon
                       className="text-foreground/70 group-hover:text-gold transition-colors duration-400"
@@ -314,7 +312,7 @@ export default function HomePage() {
         <div className="grid md:grid-cols-3 gap-8">
           {mediaItems.map((item, i) => (
             <ScrollReveal key={i} delay={i * 100}>
-              <a href="#" className="group block cursor-pointer">
+              <Link to={item.href} className="group block">
                 <div className="aspect-[16/10] rounded-sm overflow-hidden mb-5 img-zoom border border-border/40 hover:border-border/80 transition-colors">
                   <img
                     src={item.image}
@@ -330,7 +328,7 @@ export default function HomePage() {
                   {item.title}
                 </h3>
                 <span className="text-sm text-muted-foreground">{item.date}</span>
-              </a>
+              </Link>
             </ScrollReveal>
           ))}
         </div>
@@ -359,7 +357,7 @@ export default function HomePage() {
           <ScrollReveal>
             <span className="eyebrow justify-center mb-6 inline-flex">
               <span className="w-8 h-px bg-gold" />
-              {t.ctaSection.title}
+              {t.nav.consultation}
             </span>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-primary-foreground leading-[1.1] mb-5">
               {t.ctaSection.title}
