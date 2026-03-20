@@ -23,8 +23,8 @@ export default function ExperiencePage() {
       {/* ─── HERO ─── */}
       <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 bg-primary overflow-hidden">
         <div className="absolute inset-0">
-          <img src={warsawImg} alt="" className="w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/60" />
+          <img src={warsawImg} alt="" className="w-full h-full object-cover opacity-60 mix-blend-overlay" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/85 to-primary/40" />
           <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
         </div>
         

@@ -77,10 +77,10 @@ export default function HomePage() {
           <img
             src={heroImg}
             alt=""
-            className="w-full h-full object-cover opacity-25"
+            className="w-full h-full object-cover opacity-60 mix-blend-overlay"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/50" />
-          <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-primary/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
         </div>
 
         {/* Decorative gold line */}
