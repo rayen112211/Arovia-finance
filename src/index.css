@@ -126,16 +126,16 @@
   /* Premium input styles */
   .form-input {
     @apply w-full h-12 px-4 border border-input rounded-md bg-background text-sm
-    text-foreground placeholder:text-muted-foreground/60
-    focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold/60
-    transition-all duration-200;
+    text-foreground placeholder:text-muted-foreground/60 shadow-sm
+    focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold/60 focus:shadow-md
+    transition-all duration-300 ease-out;
   }
 
   .form-textarea {
     @apply w-full px-4 py-3 border border-input rounded-md bg-background text-sm
-    text-foreground placeholder:text-muted-foreground/60
-    resize-none focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold/60
-    transition-all duration-200;
+    text-foreground placeholder:text-muted-foreground/60 shadow-sm
+    resize-none focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold/60 focus:shadow-md
+    transition-all duration-300 ease-out;
   }
 
   .form-label {

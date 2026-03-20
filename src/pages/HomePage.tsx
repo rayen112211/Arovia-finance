@@ -155,7 +155,7 @@ export default function HomePage() {
               </p>
             </ScrollReveal>
             <ScrollReveal delay={380}>
-              <Button variant="gold" size="xl" asChild className="h-13 px-8 text-[15px]">
+              <Button variant="gold" size="xl" asChild className="text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
                 <Link to="/consultation">{t.hero.cta}</Link>
               </Button>
             </ScrollReveal>
@@ -222,7 +222,7 @@ export default function HomePage() {
                     {t.nav.experience} <ArrowRight size={16} />
                   </Link>
                 </Button>
-                <Button variant="outline" size="lg" asChild>
+                <Button variant="gold" size="lg" asChild>
                   <Link to="/consultation">
                     {t.nav.cta}
                   </Link>
@@ -242,7 +242,7 @@ export default function HomePage() {
           {services.map((service, i) => (
             <ScrollReveal key={i} delay={i * 80}>
               <Link to={service.href} className="group block h-full">
-                <div className="bg-card rounded-md p-10 h-full flex flex-col border border-border/40 hover:border-border/80 hover:shadow-[0_8px_32px_rgba(0,0,0,0.04)] hover:-translate-y-1 transition-all duration-400 ease-out">
+                <div className="premium-card p-10 h-full flex flex-col transition-all duration-300">
                   <div className="mb-8 w-14 h-14 rounded-full bg-muted/60 flex items-center justify-center group-hover:bg-gold/10 transition-colors duration-400">
                     <service.icon
                       className="text-foreground/70 group-hover:text-gold transition-colors duration-400"
@@ -307,7 +307,7 @@ export default function HomePage() {
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {testimonials.map((item, i) => (
             <ScrollReveal key={i} delay={i * 100}>
-              <div className="bg-card rounded-md p-10 h-full flex flex-col border border-border/40 hover:shadow-[0_8px_32px_rgba(0,0,0,0.02)] transition-shadow duration-400">
+              <div className="premium-card p-10 h-full flex flex-col">
                 {/* Quote icon */}
                 <div className="mb-6">
                   <Quote size={24} className="text-muted-foreground/30" strokeWidth={1} />

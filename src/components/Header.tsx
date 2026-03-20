@@ -89,7 +89,7 @@ export function Header() {
           >
             {language === "en" ? "PL" : "EN"}
           </button>
-          <Button variant="gold" size="sm" asChild>
+          <Button variant="gold" size="lg" className="text-base px-6 animate-pulse-gold hover:animate-none" asChild>
             <Link to="/consultation">{t.nav.cta}</Link>
           </Button>
         </div>
@@ -136,7 +136,7 @@ export function Header() {
               >
                 {language === "en" ? "PL" : "EN"}
               </button>
-              <Button variant="gold" size="sm" asChild className="flex-1">
+              <Button variant="gold" size="lg" asChild className="flex-1 text-base animate-pulse-gold hover:animate-none">
                 <Link to="/consultation" onClick={() => setMobileOpen(false)}>
                   {t.nav.cta}
                 </Link>

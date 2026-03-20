@@ -48,7 +48,7 @@ export default function ContactPage() {
           {/* Form */}
           <div className="lg:col-span-3">
             <ScrollReveal direction="up" delay={100}>
-              <div className="bg-card rounded-md p-8 sm:p-10 lg:p-12 border border-border/40 hover:shadow-[0_8px_32px_rgba(0,0,0,0.02)] transition-shadow duration-400 relative overflow-hidden h-full">
+              <div className="premium-card p-8 sm:p-10 lg:p-12 relative overflow-hidden h-full">
                 {/* Form header accent */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold/80 to-gold/30" />
                 
@@ -100,7 +100,7 @@ export default function ContactPage() {
           {/* Details & Map wrapper */}
           <div className="lg:col-span-2 flex flex-col gap-10">
             <ScrollReveal direction="left" delay={200}>
-              <div className="bg-card rounded-md p-8 sm:p-10 border border-border/40">
+              <div className="premium-card p-8 sm:p-10">
                 <h2 className="font-display text-2xl text-foreground mb-8">
                   {c.detailsTitle}
                 </h2>

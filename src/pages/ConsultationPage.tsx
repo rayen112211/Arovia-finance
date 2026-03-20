@@ -121,7 +121,7 @@ export default function ConsultationPage() {
           {/* Right: Form */}
           <div className="lg:-mt-10">
             <ScrollReveal direction="right" delay={200}>
-              <div className="bg-card rounded-md p-8 sm:p-10 lg:p-12 border border-border/40 hover:shadow-[0_8px_32px_rgba(0,0,0,0.02)] transition-shadow duration-400 relative overflow-hidden">
+              <div className="premium-card p-8 sm:p-10 lg:p-12 relative overflow-hidden">
                 {/* Form header accent */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold/80 to-gold/30" />
                 
