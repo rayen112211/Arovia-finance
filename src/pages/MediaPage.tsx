@@ -3,25 +3,66 @@ import { Section } from "@/components/Section";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 
-// Authentic stock images for Media
-const handshakeImgUrl = "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2532&auto=format&fit=crop"; 
-const propertyImgUrl = "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2670&auto=format&fit=crop"; 
-const heroImgUrl = "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2670&auto=format&fit=crop"; 
-const advisorImgUrl = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1288&auto=format&fit=crop";
+const fallbackMediaImgUrl = "https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?auto=format&fit=crop&q=80&w=1400";
 
 export default function MediaPage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
-  const mediaItems = [
-    { title: "How Banks Assess Mortgage Applications in Practice", outlet: "Arovia Insights", date: "March 2026", image: handshakeImgUrl },
-    { title: "Self-Employed Borrowers: Documents That Matter Most", outlet: "Arovia Insights", date: "February 2026", image: propertyImgUrl },
-    { title: "Fixed vs Variable Rate: How to Compare Total Cost", outlet: "Arovia Insights", date: "January 2026", image: heroImgUrl },
-    { title: "How to Prepare for a Mortgage Consultation", outlet: "Arovia Insights", date: "December 2025", image: advisorImgUrl },
-    { title: "Refinancing: When It Makes Financial Sense", outlet: "Arovia Insights", date: "November 2025", image: propertyImgUrl },
-    { title: "Common Approval Delays and How to Avoid Them", outlet: "Arovia Insights", date: "October 2025", image: heroImgUrl },
-  ];
+  const mediaItems = language === "pl"
+    ? [
+        {
+          source: "NBP",
+          title: "Jak obniżki stóp mogą wpłynąć na popyt na kredyty hipoteczne",
+          description: "Wnioski z Raportu o stabilności systemu finansowego NBP oraz ich praktyczne znaczenie dla rynku mieszkaniowego.",
+          date: "Czerwiec 2025",
+          image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&q=80&w=1400",
+          href: "https://nbp.pl/wp-content/uploads/2025/06/Raport-o-stabilnosci-systemu-finansowego.-Czerwiec-2025-r._EN.pdf",
+        },
+        {
+          source: "NBP",
+          title: "Co polityka pieniężna oznacza dla kredytobiorców",
+          description: "Najważniejsze elementy raportu o polityce pieniężnej i ich wpływ na koszt finansowania.",
+          date: "Maj 2025",
+          image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=1400",
+          href: "https://nbp.pl/wp-content/uploads/2025/05/Report-on-Monetary-Policy-2024.pdf",
+        },
+        {
+          source: "Ministerstwo Finansów",
+          title: "Jak przedsiębiorca powinien przygotować rozliczenie podatkowe",
+          description: "Przewodnik e-PIT (PIT-28), który pomaga uporządkować dokumenty przed procesem kredytowym.",
+          date: "Aktualizacja 2024/2025",
+          image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1400",
+          href: "https://podatki-arch.mf.gov.pl/en/your-e-pit/pit-28-for-2024/",
+        },
+      ]
+    : [
+        {
+          source: "NBP",
+          title: "How Rate Cuts May Affect Mortgage Demand in Poland",
+          description: "A practical summary of the NBP Financial Stability Report and potential mortgage market effects.",
+          date: "June 2025",
+          image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&q=80&w=1400",
+          href: "https://nbp.pl/wp-content/uploads/2025/06/Raport-o-stabilnosci-systemu-finansowego.-Czerwiec-2025-r._EN.pdf",
+        },
+        {
+          source: "NBP",
+          title: "What Monetary Policy Means for Borrowers",
+          description: "Key borrower implications from the NBP Report on Monetary Policy 2024.",
+          date: "May 2025",
+          image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=1400",
+          href: "https://nbp.pl/wp-content/uploads/2025/05/Report-on-Monetary-Policy-2024.pdf",
+        },
+        {
+          source: "Ministry of Finance",
+          title: "What Self-Employed Borrowers Should Prepare Financially",
+          description: "Official e-PIT (PIT-28) guidance useful for organizing tax records before mortgage applications.",
+          date: "Updated for 2024/2025",
+          image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1400",
+          href: "https://podatki-arch.mf.gov.pl/en/your-e-pit/pit-28-for-2024/",
+        },
+      ];
 
   return (
     <>
@@ -54,14 +95,25 @@ export default function MediaPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {mediaItems.map((item, i) => (
             <ScrollReveal key={i} delay={i * 80}>
-              <article className="bg-card rounded-md p-4 sm:p-5 h-full flex flex-col border border-border/40 relative">
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+                className="group block h-full cursor-pointer"
+                aria-label={`${item.title} (${item.source})`}
+              >
+                <article className="bg-card rounded-md p-4 sm:p-5 h-full flex flex-col border border-border/40 hover:shadow-[0_8px_32px_rgba(0,0,0,0.04)] hover:-translate-y-1 hover:border-border/80 transition-all duration-300 relative">
                   
                   {/* Image wrapper */}
                   <div className="aspect-[16/10] rounded-sm overflow-hidden mb-6 img-zoom relative border border-border/20">
                     <img 
                       src={item.image} 
-                      alt="" 
-                      className="w-full h-full object-cover" 
+                      alt={item.title}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.currentTarget.src = fallbackMediaImgUrl;
+                      }}
                     />
                   </div>
                   
@@ -70,17 +122,22 @@ export default function MediaPage() {
                     <div className="flex justify-between items-start mb-3 gap-4">
                       <span className="eyebrow text-[10px]">
                         <span className="w-4 h-[1px] bg-gold/50" />
-                        {item.outlet}
+                        {item.source}
                       </span>
                       <span className="text-xs text-muted-foreground whitespace-nowrap">{item.date}</span>
                     </div>
                     
-                    <h3 className="font-display text-lg lg:text-xl text-foreground mt-1 mb-4 leading-snug">
+                    <h3 className="font-display text-lg lg:text-xl text-foreground mt-1 mb-3 leading-snug group-hover:text-gold transition-colors duration-200">
                       {item.title}
                     </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">{item.description}</p>
+                    <span className="text-xs font-medium text-foreground/70 inline-flex items-center gap-1.5 mt-auto">
+                      {language === "pl" ? "Otwórz źródło" : "Open source"} <ExternalLink size={12} />
+                    </span>
                   </div>
                   
                 </article>
+              </a>
             </ScrollReveal>
           ))}
         </div>

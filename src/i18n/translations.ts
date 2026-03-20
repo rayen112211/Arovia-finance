@@ -161,7 +161,7 @@ export const translations = {
     },
     mediaPage: {
       label: "Market Intelligence",
-      title: "Insights & Analysis",
+      title: "Insights & Articles",
       intro: "Clear commentary on interest rates, lender criteria, and mortgage strategy for buyers and refinancers.",
     },
     cooperationPage: {
@@ -344,7 +344,7 @@ export const translations = {
     },
     mediaPage: {
       label: "Baza wiedzy",
-      title: "Analizy rynku kredytowego",
+      title: "Analizy i artykuły",
       intro: "Komentarze dotyczące stóp procentowych, polityk bankowych i praktycznych strategii finansowania.",
     },
     cooperationPage: {

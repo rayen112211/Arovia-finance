@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Briefcase, Building2, Compass, Home, RefreshCw, UserCheck, Quote, Mail, Phone, MapPin } from "lucide-react";
+import { ArrowRight, Briefcase, Building2, Compass, Home, RefreshCw, UserCheck, Quote, Mail, Phone, MapPin, ExternalLink } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 import { Button } from "@/components/ui/button";
@@ -7,13 +7,13 @@ import { Section, SectionHeader } from "@/components/Section";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { AnimatedNumber } from "@/components/AnimatedNumber";
 
-const heroImgUrl = "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=2600";
+const heroImgUrl = "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=2400";
 const advisorImgUrl = "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=1200";
-const handshakeImgUrl = "https://images.unsplash.com/photo-1556761175-5973e510842e?auto=format&fit=crop&q=80&w=1200";
 const propertyImgUrl = "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1200";
+const fallbackMediaImgUrl = "https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?auto=format&fit=crop&q=80&w=1400";
 
 export default function HomePage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
 
   const stats = [
@@ -62,64 +62,100 @@ export default function HomePage() {
     },
   ];
 
-  const mediaItems = [
-    { title: t.mediaSection.placeholderTitle, outlet: t.mediaSection.placeholderOutlet, date: t.mediaSection.placeholderDate, image: handshakeImgUrl, href: "/media" },
-    { title: t.mediaSection.placeholderTitle2, outlet: t.mediaSection.placeholderOutlet2, date: t.mediaSection.placeholderDate2, image: propertyImgUrl, href: "/media" },
-    { title: t.mediaSection.placeholderTitle3, outlet: t.mediaSection.placeholderOutlet3, date: t.mediaSection.placeholderDate3, image: heroImgUrl, href: "/media" },
-  ];
+  const mediaItems = language === "pl"
+    ? [
+        {
+          source: "NBP",
+          title: "Jak obniżki stóp mogą wpłynąć na popyt na kredyty hipoteczne",
+          description: "Syntetyczne wnioski z raportu stabilności finansowej NBP i ich znaczenie dla rynku mieszkaniowego.",
+          date: "Czerwiec 2025",
+          image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&q=80&w=1400",
+          href: "https://nbp.pl/wp-content/uploads/2025/06/Raport-o-stabilnosci-systemu-finansowego.-Czerwiec-2025-r._EN.pdf",
+        },
+        {
+          source: "NBP",
+          title: "Co polityka pieniężna oznacza dla kredytobiorców",
+          description: "Praktyczne spojrzenie na stopy procentowe, inflację i koszt finansowania w 2024 roku.",
+          date: "Maj 2025",
+          image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=1400",
+          href: "https://nbp.pl/wp-content/uploads/2025/05/Report-on-Monetary-Policy-2024.pdf",
+        },
+        {
+          source: "Ministerstwo Finansów",
+          title: "Jak przedsiębiorca powinien przygotować rozliczenie podatkowe",
+          description: "Kluczowe informacje o PIT-28 i dokumentach, które warto uporządkować przed rozmową o kredycie.",
+          date: "Aktualizacja 2024/2025",
+          image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1400",
+          href: "https://podatki-arch.mf.gov.pl/en/your-e-pit/pit-28-for-2024/",
+        },
+      ]
+    : [
+        {
+          source: "NBP",
+          title: "How Rate Cuts May Affect Mortgage Demand in Poland",
+          description: "A practical reading of NBP's stability report and what it may mean for mortgage activity.",
+          date: "June 2025",
+          image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&q=80&w=1400",
+          href: "https://nbp.pl/wp-content/uploads/2025/06/Raport-o-stabilnosci-systemu-finansowego.-Czerwiec-2025-r._EN.pdf",
+        },
+        {
+          source: "NBP",
+          title: "What Monetary Policy Means for Borrowers",
+          description: "Key borrower takeaways from the NBP Report on Monetary Policy 2024.",
+          date: "May 2025",
+          image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=1400",
+          href: "https://nbp.pl/wp-content/uploads/2025/05/Report-on-Monetary-Policy-2024.pdf",
+        },
+        {
+          source: "Ministry of Finance",
+          title: "What Self-Employed Borrowers Should Prepare Financially",
+          description: "Official e-PIT guidance that helps business owners organize tax records before applying.",
+          date: "Updated for 2024/2025",
+          image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1400",
+          href: "https://podatki-arch.mf.gov.pl/en/your-e-pit/pit-28-for-2024/",
+        },
+      ];
 
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="relative bg-white pt-24 lg:pt-32 pb-16 lg:pb-20 border-b border-border/40 overflow-hidden">
-        <div className="section-container flex justify-between items-center flex-col lg:flex-row gap-12 lg:gap-8 w-full min-h-[70vh]">
-          
-          {/* LEFT TEXT */}
-          <div className="section-padding flex flex-col justify-center w-full lg:w-5/12 z-10">
-            <div className="w-full max-w-[580px] mx-auto lg:mr-auto lg:ml-0">
-              <ScrollReveal>
-                <span className="eyebrow mb-6 inline-flex">
-                  <span className="w-8 h-px bg-gold" />
-                  {t.hero.subtitle}
-                </span>
-              </ScrollReveal>
+      <section className="relative pt-24 lg:pt-28 pb-16 lg:pb-20 border-b border-border/40 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={heroImgUrl}
+            alt="Mortgage advisor in a professional office"
+            className="w-full h-full object-cover object-[72%_35%]"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,30,68,0.62)_0%,rgba(11,30,68,0.55)_34%,rgba(11,30,68,0.2)_62%,rgba(11,30,68,0.08)_100%)]" />
+        </div>
 
-              <ScrollReveal delay={120}>
-                <h1 className="font-display text-[40px] sm:text-6xl lg:text-[64px] text-foreground leading-[1.07] tracking-tight mb-6">
-                  {t.hero.title}
-                </h1>
-              </ScrollReveal>
-
-              <ScrollReveal delay={220}>
-                <p className="font-medium text-foreground/80 text-lg lg:text-xl mb-6">{t.hero.trustBadges}</p>
-              </ScrollReveal>
-
-              <ScrollReveal delay={300}>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-lg">
-                  {t.hero.description}
-                </p>
-              </ScrollReveal>
-
-              <ScrollReveal delay={400}>
-                <Button variant="gold" size="xl" asChild className="h-14 px-8 text-base tracking-wide">
-                  <Link to="/consultation">{t.hero.cta}</Link>
-                </Button>
-              </ScrollReveal>
-            </div>
+        <div className="section-padding section-container relative min-h-[72vh] lg:min-h-[78vh] flex items-center">
+          <div className="max-w-[680px] bg-background/85 nav-blur border border-white/40 rounded-sm p-7 sm:p-10 lg:p-12 shadow-[0_18px_48px_rgba(0,0,0,0.12)]">
+            <ScrollReveal>
+              <span className="eyebrow mb-5 inline-flex">
+                <span className="w-8 h-px bg-gold" />
+                {t.hero.subtitle}
+              </span>
+            </ScrollReveal>
+            <ScrollReveal delay={120}>
+              <h1 className="font-display text-[38px] sm:text-[50px] lg:text-[60px] text-foreground leading-[1.08] tracking-tight mb-5">
+                {t.hero.title}
+              </h1>
+            </ScrollReveal>
+            <ScrollReveal delay={220}>
+              <p className="font-medium text-foreground/80 text-base lg:text-lg mb-4">{t.hero.trustBadges}</p>
+            </ScrollReveal>
+            <ScrollReveal delay={300}>
+              <p className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-8 max-w-[56ch]">
+                {t.hero.description}
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={380}>
+              <Button variant="gold" size="xl" asChild className="h-13 px-8 text-[15px]">
+                <Link to="/consultation">{t.hero.cta}</Link>
+              </Button>
+            </ScrollReveal>
           </div>
-
-          {/* RIGHT IMAGE (Asymmetrical bleed out) */}
-          <div className="w-full lg:w-7/12 h-full min-h-[400px] lg:min-h-[600px] lg:absolute lg:top-0 lg:right-0 lg:bottom-0">
-            <div className="relative w-full h-full lg:w-[calc(100%-2rem)] lg:ml-auto overflow-hidden lg:rounded-bl-[40px] shadow-sm">
-              <img
-                src={heroImgUrl}
-                alt="Professional corporate meeting at Arovia Finance"
-                className="w-full h-full object-cover object-[center_35%]"
-              />
-              <div className="absolute inset-0 bg-primary/10" />
-            </div>
-          </div>
-
         </div>
       </section>
 
@@ -312,23 +348,36 @@ export default function HomePage() {
         <div className="grid md:grid-cols-3 gap-8">
           {mediaItems.map((item, i) => (
             <ScrollReveal key={i} delay={i * 100}>
-              <Link to={item.href} className="group block">
-                <div className="aspect-[16/10] rounded-sm overflow-hidden mb-5 img-zoom border border-border/40 hover:border-border/80 transition-colors">
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+                className="group block h-full cursor-pointer"
+                aria-label={`${item.title} (${item.source})`}
+              >
+                <div className="aspect-[16/10] rounded-sm overflow-hidden mb-4 img-zoom border border-border/40 group-hover:border-border/80 transition-colors">
                   <img
                     src={item.image}
                     alt={item.title}
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    onError={(e) => {
+                      e.currentTarget.src = fallbackMediaImgUrl;
+                    }}
                   />
                 </div>
-                <span className="eyebrow text-[10px]">
+                <span className="eyebrow text-[10px] mb-2">
                   <span className="w-4 h-[1px] bg-gold/50" />
-                  {item.outlet}
+                  {item.source}
                 </span>
-                <h3 className="font-display text-xl text-foreground mt-2 mb-1.5 leading-snug group-hover:text-gold transition-colors duration-200">
+                <h3 className="font-display text-xl text-foreground mb-2 leading-snug group-hover:text-gold transition-colors duration-200">
                   {item.title}
                 </h3>
-                <span className="text-sm text-muted-foreground">{item.date}</span>
-              </Link>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-2">{item.description}</p>
+                <span className="text-sm text-muted-foreground inline-flex items-center gap-1.5">
+                  {item.date} <ExternalLink size={13} className="opacity-70" />
+                </span>
+              </a>
             </ScrollReveal>
           ))}
         </div>
