@@ -4,12 +4,12 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 active:scale-[0.98] select-none",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium ring-offset-background transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 active:scale-[0.98] select-none",
   {
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground shadow-md hover:bg-primary/95 hover:shadow-lg hover:-translate-y-0.5",
+          "bg-primary text-primary-foreground shadow-[0_6px_16px_-4px_rgba(30,45,90,0.3)] hover:bg-primary/95 hover:shadow-[0_8px_20px_-6px_rgba(30,45,90,0.4)] hover:-translate-y-0.5",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-sm hover:shadow",
         outline:
@@ -21,17 +21,17 @@ const buttonVariants = cva(
         link:
           "text-primary underline-offset-4 hover:underline",
         gold:
-          "bg-gradient-to-r from-gold via-gold-light to-gold text-navy-dark font-bold hover:brightness-110 shadow-[0_0_20px_hsl(42_75%_52%_/_0.3)] hover:shadow-[0_0_30px_hsl(42_75%_52%_/_0.55)] hover:-translate-y-1 bg-[length:200%_auto] hover:bg-right transition-all duration-500",
+          "bg-gradient-to-r from-gold via-gold-light to-gold text-navy-dark font-bold tracking-wide shadow-[0_8px_20px_-6px_hsl(42_75%_52%_/_0.55)] hover:shadow-[0_12px_28px_-8px_hsl(42_75%_52%_/_0.65)] hover:-translate-y-0.5 bg-[length:200%_auto] hover:bg-right transition-all duration-500",
         navyOutline:
           "border-2 border-primary-foreground/30 text-primary-foreground bg-transparent hover:bg-primary-foreground/10 hover:border-primary-foreground/50 hover:-translate-y-0.5",
         goldOutline:
           "border-2 border-gold/60 text-gold bg-transparent hover:bg-gold/10 hover:border-gold hover:-translate-y-0.5 shadow-sm",
       },
       size: {
-        default: "h-11 px-6 py-2 content-center",
-        sm: "h-9 rounded-md px-4 text-xs",
-        lg: "h-12 rounded-md px-8 text-base",
-        xl: "h-14 rounded-md px-10 text-base font-semibold tracking-wide",
+        default: "h-11 px-5 sm:px-7 py-2 content-center",
+        sm: "h-9 px-4 sm:px-5 text-xs",
+        lg: "h-12 px-6 sm:px-8 text-base",
+        xl: "h-14 px-6 sm:px-10 text-base font-semibold tracking-wide",
         icon: "h-11 w-11",
       },
     },

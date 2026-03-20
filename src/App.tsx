@@ -15,6 +15,8 @@ import CooperationPage from "@/pages/CooperationPage";
 import ContactPage from "@/pages/ContactPage";
 import NotFound from "@/pages/NotFound";
 
+import { ScrollToTop } from "@/components/ScrollToTop";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -24,6 +26,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <Header />
           <main className="pt-16 lg:pt-20">
             <Routes>
