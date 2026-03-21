@@ -38,7 +38,7 @@ export function SectionHeader({ label, title, description, align = "left", light
     <div className={`flex flex-col gap-4 mb-14 ${alignClass}`}>
       {label && (
         <span className="eyebrow">
-          <span className="w-8 h-[1px] bg-gold/50 inline-block" />
+          <span className="w-8 h-[1px] bg-border inline-block" />
           {label}
         </span>
       )}

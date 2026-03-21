@@ -68,8 +68,8 @@ export default function OpinionsPage() {
         <div className="relative section-padding section-container">
           <div className="max-w-3xl">
             <ScrollReveal>
-              <span className="eyebrow mb-6 inline-flex">
-                <span className="w-8 h-px bg-gold" />
+              <span className="eyebrow justify-center mb-6 inline-flex">
+                <span className="w-8 h-px bg-border" />
                 {t.opinionsPage.label}
               </span>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.75rem] text-primary-foreground leading-[1.06] mb-8">
@@ -89,11 +89,11 @@ export default function OpinionsPage() {
           {testimonials.map((item, i) => (
             <ScrollReveal key={i} delay={i * 80}>
               <div className="bg-card rounded-md p-8 h-full flex flex-col group border border-border/40 hover:shadow-[0_8px_32px_rgba(0,0,0,0.02)] transition-shadow duration-500">
-                <div className="mb-5 flex justify-between items-start">
-                  <Quote size={32} className="text-foreground/10 group-hover:text-gold/40 transition-colors duration-500" strokeWidth={1} />
-                  <div className="flex gap-0.5 mt-2">
+                <div className="mb-6 flex justify-between items-start">
+                  <Quote size={32} className="text-foreground/10 group-hover:text-primary/40 transition-colors duration-500" strokeWidth={1} />
+                  <div className="flex gap-0.5">
                     {[...Array(item.rating)].map((_, j) => (
-                      <span key={j} className="text-gold text-sm">★</span>
+                      <span key={j} className="text-primary text-sm">★</span>
                     ))}
                   </div>
                 </div>
@@ -102,15 +102,17 @@ export default function OpinionsPage() {
                   "{item.text}"
                 </p>
                 
-                <div className="pt-5 border-t border-border/40 flex items-center gap-4">
-                  <div className="w-11 h-11 rounded-full bg-muted/60 flex items-center justify-center flex-shrink-0 group-hover:bg-gold/10 transition-colors duration-500">
-                    <span className="text-sm font-semibold text-foreground/70 group-hover:text-gold transition-colors duration-500">
-                      {item.initials}
-                    </span>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-sm text-foreground">{item.name}</div>
-                    <div className="text-[13px] text-muted-foreground">{item.role}</div>
+                <div className="pt-5 mt-auto border-t border-border/60 flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-11 h-11 rounded-full bg-muted/60 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/5 transition-colors duration-500">
+                      <span className="text-sm font-semibold text-foreground/70 group-hover:text-primary transition-colors duration-500">
+                        {item.initials}
+                      </span>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-sm text-foreground">{item.name}</div>
+                      <div className="text-[13px] text-muted-foreground">{item.role}</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -131,7 +133,7 @@ export default function OpinionsPage() {
         <div className="relative section-padding section-container text-center max-w-3xl mx-auto">
           <ScrollReveal>
             <span className="eyebrow justify-center mb-6 inline-flex">
-              <span className="w-8 h-px bg-gold" />
+              <span className="w-8 h-px bg-border" />
               {t.ctaSection.title}
             </span>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-primary-foreground leading-[1.1] mb-5">
@@ -140,7 +142,7 @@ export default function OpinionsPage() {
             <p className="text-primary-foreground/60 max-w-xl mx-auto mb-10 leading-relaxed text-lg">
               {t.ctaSection.description}
             </p>
-            <Button variant="gold" size="xl" asChild className="group tracking-wide">
+            <Button variant="premium" size="xl" asChild className="group tracking-wide">
               <Link to="/consultation">
                 {t.ctaSection.cta}
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />

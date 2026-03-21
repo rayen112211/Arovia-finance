@@ -32,8 +32,8 @@ export default function CooperationPage() {
         <div className="relative section-padding section-container">
           <div className="max-w-3xl">
             <ScrollReveal>
-              <span className="eyebrow mb-6 inline-flex">
-                <span className="w-8 h-px bg-gold" />
+              <span className="eyebrow inline-flex mb-6">
+                <span className="w-8 h-px bg-border" />
                 {t.cooperationPage.label}
               </span>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.75rem] text-primary-foreground leading-[1.06] mb-8">
@@ -56,24 +56,24 @@ export default function CooperationPage() {
                 
                 {/* Vertical line connector */}
                 {i < steps.length - 1 && (
-                  <div className="absolute left-[38px] lg:left-[43px] top-[72px] bottom-0 w-[1px] bg-gradient-to-b from-border/50 to-border/10 group-hover:from-gold/40 group-hover:to-gold/10 transition-colors duration-500" />
+                  <div className="absolute left-[38px] lg:left-[43px] top-[72px] bottom-0 w-[1px] bg-gradient-to-b from-border/50 to-border/10 group-hover:from-primary/40 group-hover:to-primary/10 transition-colors duration-500" />
                 )}
                 
-                {/* Icon Circle */}
-                <div className="flex-shrink-0 w-[76px] h-[76px] lg:w-[88px] lg:h-[88px] rounded-full bg-background border border-border/40 flex items-center justify-center relative z-10 group-hover:border-gold/30 transition-colors duration-500">
-                  <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-muted/60 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                    <step.icon className="text-foreground/70 group-hover:text-gold transition-colors duration-500" size={24} strokeWidth={1.25} />
+                {/* Numbered icon */}
+                <div className="flex-shrink-0 w-[76px] h-[76px] lg:w-[88px] lg:h-[88px] rounded-full bg-background border border-border/40 flex items-center justify-center relative z-10 group-hover:border-primary/30 transition-colors duration-500">
+                  <div className="w-[85%] h-[85%] rounded-full bg-muted/30 flex items-center justify-center">
+                    <step.icon className="text-foreground/70 group-hover:text-primary transition-colors duration-500" size={24} strokeWidth={1.25} />
                   </div>
                 </div>
                 
                 {/* Content */}
                 <div className="pt-3 lg:pt-5 flex-1">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="font-display text-2xl text-gold/30 group-hover:text-gold transition-colors duration-300">
-                      {step.num}
+                  <div className="flex items-center gap-4 mb-2 lg:mb-3">
+                    <span className="font-display text-2xl text-primary/30 group-hover:text-primary transition-colors duration-300">
+                      0{i + 1}
                     </span>
-                    <span className="w-6 h-px bg-border group-hover:bg-gold/50 transition-colors duration-300" />
-                    <span className="eyebrow !text-[11px]">Phase</span>
+                    <span className="w-6 h-px bg-border group-hover:bg-primary/50 transition-colors duration-300" />
+                    <h3 className="font-display text-xl lg:text-2xl text-foreground">Phase</h3>
                   </div>
                   <h3 className="font-display text-2xl lg:text-3xl text-foreground mb-4">
                     {step.title}
@@ -100,7 +100,7 @@ export default function CooperationPage() {
         <div className="relative section-padding section-container text-center max-w-3xl mx-auto">
           <ScrollReveal>
             <span className="eyebrow justify-center mb-6 inline-flex">
-              <span className="w-8 h-px bg-gold" />
+              <span className="w-8 h-px bg-border" />
               {t.ctaSection.title}
             </span>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-primary-foreground leading-[1.1] mb-5">
@@ -109,7 +109,7 @@ export default function CooperationPage() {
             <p className="text-primary-foreground/60 max-w-xl mx-auto mb-10 leading-relaxed text-lg">
               {t.ctaSection.description}
             </p>
-            <Button variant="gold" size="xl" asChild className="group tracking-wide">
+            <Button variant="premium" size="xl" asChild className="group tracking-wide">
               <Link to="/consultation">
                 {t.ctaSection.cta}
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />

@@ -20,12 +20,12 @@ const buttonVariants = cva(
           "hover:bg-accent/10 hover:text-accent",
         link:
           "text-primary underline-offset-4 hover:underline",
-        gold:
-          "bg-gradient-to-r from-gold via-gold-light to-gold text-navy-dark font-bold tracking-wide shadow-[0_8px_20px_-6px_hsl(42_75%_52%_/_0.55)] hover:shadow-[0_12px_28px_-8px_hsl(42_75%_52%_/_0.65)] hover:-translate-y-0.5 bg-[length:200%_auto] hover:bg-right transition-all duration-500",
+        premium:
+          "bg-foreground text-background font-bold tracking-wide shadow-md hover:shadow-lg hover:bg-foreground/90 hover:-translate-y-0.5 transition-all duration-300",
         navyOutline:
           "border-2 border-primary-foreground/30 text-primary-foreground bg-transparent hover:bg-primary-foreground/10 hover:border-primary-foreground/50 hover:-translate-y-0.5",
-        goldOutline:
-          "border-2 border-gold/60 text-gold bg-transparent hover:bg-gold/10 hover:border-gold hover:-translate-y-0.5 shadow-sm",
+        outlinePremium:
+          "border border-border text-foreground bg-transparent hover:bg-muted font-medium hover:-translate-y-0.5 shadow-sm transition-all duration-300",
       },
       size: {
         default: "h-11 px-5 sm:px-7 py-2 content-center",

@@ -7,7 +7,7 @@ import { Section, SectionHeader } from "@/components/Section";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { AnimatedNumber } from "@/components/AnimatedNumber";
 
-const heroImgUrl = "https://images.unsplash.com/photo-1758518729371-5ee28c4ddf60?auto=format&fit=crop&q=80&w=2400";
+const heroImgUrl = "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2400"; // Real corporate office context, no face
 const advisorImgUrl = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1200";
 const propertyImgUrl = "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1200";
 const fallbackMediaImgUrl = "https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?auto=format&fit=crop&q=80&w=1400";
@@ -25,12 +25,10 @@ export default function HomePage() {
   ];
 
   const services = [
-    { icon: Home, title: t.services.homeMortgages, desc: t.services.homeMortgagesDesc, href: "/consultation" },
-    { icon: RefreshCw, title: t.services.refinancing, desc: t.services.refinancingDesc, href: "/consultation" },
-    { icon: UserCheck, title: t.services.firstTimeBuyer, desc: t.services.firstTimeBuyerDesc, href: "/consultation" },
-    { icon: Briefcase, title: t.services.selfEmployed, desc: t.services.selfEmployedDesc, href: "/consultation" },
-    { icon: Building2, title: t.services.complexCases, desc: t.services.complexCasesDesc, href: "/consultation" },
-    { icon: Compass, title: t.services.independent, desc: t.services.independentDesc, href: "/consultation" },
+    { icon: Home, title: t.services.mortgage, desc: t.services.mortgageDesc, href: "/consultation" },
+    { icon: RefreshCw, title: t.services.cash, desc: t.services.cashDesc, href: "/consultation" },
+    { icon: Briefcase, title: t.services.business, desc: t.services.businessDesc, href: "/consultation" },
+    { icon: UserCheck, title: t.services.consolidation, desc: t.services.consolidationDesc, href: "/consultation" },
   ];
 
   const processSteps = [
@@ -66,54 +64,54 @@ export default function HomePage() {
   const mediaItems = language === "pl"
     ? [
         {
-          source: "NBP",
-          title: "Jak obniżki stóp mogą wpłynąć na popyt na kredyty hipoteczne",
-          description: "Syntetyczne wnioski z raportu stabilności finansowej NBP i ich znaczenie dla rynku mieszkaniowego.",
-          date: "Czerwiec 2025",
+          source: t.mediaSection.placeholderOutlet,
+          title: t.mediaSection.placeholderTitle,
+          description: "Syntetyczne spojrzenie na rynek i koszt finansowania z perspektywy najnowszych zmian w gospodarce.",
+          date: t.mediaSection.placeholderDate,
           image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&q=80&w=1400",
-          href: "https://nbp.pl/wp-content/uploads/2025/06/Raport-o-stabilnosci-systemu-finansowego.-Czerwiec-2025-r._EN.pdf",
+          href: "https://www.rp.pl/finanse",
         },
         {
-          source: "NBP",
-          title: "Co polityka pieniężna oznacza dla kredytobiorców",
-          description: "Praktyczne spojrzenie na stopy procentowe, inflację i koszt finansowania w 2024 roku.",
-          date: "Maj 2025",
+          source: t.mediaSection.placeholderOutlet2,
+          title: t.mediaSection.placeholderTitle2,
+          description: "Praktyczne wymogi bankowe dot. zdolności kredytowej i dokumentowania dochodów z działalności ryczałtowej.",
+          date: t.mediaSection.placeholderDate2,
           image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=1400",
-          href: "https://nbp.pl/wp-content/uploads/2025/05/Report-on-Monetary-Policy-2024.pdf",
+          href: "https://www.bankier.pl/wiadomosc/Kredyty-hipoteczne",
         },
         {
-          source: "Ministerstwo Finansów",
-          title: "Jak przedsiębiorca powinien przygotować rozliczenie podatkowe",
-          description: "Kluczowe informacje o PIT-28 i dokumentach, które warto uporządkować przed rozmową o kredycie.",
-          date: "Aktualizacja 2024/2025",
+          source: t.mediaSection.placeholderOutlet3,
+          title: t.mediaSection.placeholderTitle3,
+          description: "Porównanie dostępnych opcji na rynku w ujęciu długoterminowym. Który wariant jest dziś bardziej bezpieczny?",
+          date: t.mediaSection.placeholderDate3,
           image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1400",
-          href: "https://podatki-arch.mf.gov.pl/en/your-e-pit/pit-28-for-2024/",
+          href: "https://businessinsider.com.pl/twoje-pieniadze/kredyty",
         },
       ]
     : [
         {
-          source: "NBP",
-          title: "How Rate Cuts May Affect Mortgage Demand in Poland",
-          description: "A practical reading of NBP's stability report and what it may mean for mortgage activity.",
-          date: "June 2025",
+          source: "Rzeczpospolita",
+          title: "How Rate Cuts May Affect Mortgage Demand",
+          description: "A practical view on the housing market and borrowing costs based on the latest economic shifts.",
+          date: "March 2026",
           image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&q=80&w=1400",
-          href: "https://nbp.pl/wp-content/uploads/2025/06/Raport-o-stabilnosci-systemu-finansowego.-Czerwiec-2025-r._EN.pdf",
+          href: "https://www.rp.pl/finanse",
         },
         {
-          source: "NBP",
-          title: "What Monetary Policy Means for Borrowers",
-          description: "Key borrower takeaways from the NBP Report on Monetary Policy 2024.",
-          date: "May 2025",
+          source: "Bankier.pl",
+          title: "Mortgage Requirements for the Self-Employed",
+          description: "Key lender expectations regarding borrowing capacity and income documentation for businesses.",
+          date: "February 2026",
           image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=1400",
-          href: "https://nbp.pl/wp-content/uploads/2025/05/Report-on-Monetary-Policy-2024.pdf",
+          href: "https://www.bankier.pl/wiadomosc/Kredyty-hipoteczne",
         },
         {
-          source: "Ministry of Finance",
-          title: "What Self-Employed Borrowers Should Prepare Financially",
-          description: "Official e-PIT guidance that helps business owners organize tax records before applying.",
-          date: "Updated for 2024/2025",
+          source: "Business Insider",
+          title: "Fixed vs Variable Rates in the Current Economy",
+          description: "Comparing the long-term safety and cost of market options available to borrowers today.",
+          date: "January 2026",
           image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1400",
-          href: "https://podatki-arch.mf.gov.pl/en/your-e-pit/pit-28-for-2024/",
+          href: "https://businessinsider.com.pl/twoje-pieniadze/kredyty",
         },
       ];
 
@@ -137,7 +135,7 @@ export default function HomePage() {
           <div className="max-w-[640px] py-10 lg:py-16">
             <ScrollReveal>
               <span className="eyebrow mb-5 inline-flex">
-                <span className="w-8 h-px bg-gold" />
+                <span className="w-8 h-px bg-border" />
                 {t.hero.subtitle}
               </span>
             </ScrollReveal>
@@ -155,7 +153,7 @@ export default function HomePage() {
               </p>
             </ScrollReveal>
             <ScrollReveal delay={380}>
-              <Button variant="gold" size="xl" asChild className="text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+              <Button variant="premium" size="xl" asChild className="text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
                 <Link to="/consultation">{t.hero.cta}</Link>
               </Button>
             </ScrollReveal>
@@ -222,7 +220,7 @@ export default function HomePage() {
                     {t.nav.experience} <ArrowRight size={16} />
                   </Link>
                 </Button>
-                <Button variant="gold" size="lg" asChild>
+                <Button variant="premium" size="lg" asChild>
                   <Link to="/consultation">
                     {t.nav.cta}
                   </Link>
@@ -238,14 +236,14 @@ export default function HomePage() {
         <ScrollReveal>
           <SectionHeader label={t.services.label} title={t.services.title} align="center" />
         </ScrollReveal>
-        <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {services.map((service, i) => (
             <ScrollReveal key={i} delay={i * 80}>
               <Link to={service.href} className="group block h-full">
                 <div className="premium-card p-10 h-full flex flex-col transition-all duration-300">
-                  <div className="mb-8 w-14 h-14 rounded-full bg-muted/60 flex items-center justify-center group-hover:bg-gold/10 transition-colors duration-500">
+                  <div className="mb-8 w-14 h-14 rounded-full bg-muted/60 flex items-center justify-center group-hover:bg-primary/5 transition-colors duration-500">
                     <service.icon
-                      className="text-foreground/70 group-hover:text-gold transition-colors duration-500"
+                      className="text-foreground/70 group-hover:text-primary transition-colors duration-500"
                       size={24}
                       strokeWidth={1.25}
                     />
@@ -256,7 +254,7 @@ export default function HomePage() {
                   <p className="text-sm text-muted-foreground leading-relaxed flex-1">
                     {service.desc}
                   </p>
-                  <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-gold transition-colors duration-200">
+                  <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-foreground transition-colors duration-200">
                     {t.nav.cta} <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
@@ -275,7 +273,7 @@ export default function HomePage() {
           {processSteps.map((step, i) => (
             <ScrollReveal key={i} delay={i * 80}>
               <div className="relative group">
-                <span className="font-display text-6xl text-gold/15 group-hover:text-gold/25 transition-colors duration-300 leading-none block mb-2">
+                <span className="font-display text-6xl text-muted-foreground/30 group-hover:text-muted-foreground/50 transition-colors duration-300 leading-none block mb-2">
                   {step.num}
                 </span>
                 <h3 className="font-display text-lg lg:text-xl text-foreground mt-1 mb-2">
@@ -318,7 +316,7 @@ export default function HomePage() {
                 {/* Stars */}
                 <div className="flex gap-0.5 my-4">
                   {[...Array(5)].map((_, j) => (
-                    <span key={j} className="text-gold text-base">★</span>
+                    <span key={j} className="text-primary text-base">★</span>
                   ))}
                 </div>
                 <div className="pt-4 border-t border-border flex items-center gap-3">
@@ -375,10 +373,10 @@ export default function HomePage() {
                   />
                 </div>
                 <span className="eyebrow text-[10px] mb-2">
-                  <span className="w-4 h-[1px] bg-gold/50" />
+                  <span className="w-4 h-[1px] bg-border" />
                   {item.source}
                 </span>
-                <h3 className="font-display text-xl text-foreground mb-2 leading-snug group-hover:text-gold transition-colors duration-200">
+                <h3 className="font-display text-xl text-foreground mb-2 leading-snug group-hover:text-primary transition-colors duration-200">
                   {item.title}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-2">{item.description}</p>
@@ -413,7 +411,7 @@ export default function HomePage() {
         <div className="relative section-padding section-container text-center max-w-3xl mx-auto">
           <ScrollReveal>
             <span className="eyebrow justify-center mb-6 inline-flex">
-              <span className="w-8 h-px bg-gold" />
+              <span className="w-8 h-px bg-border" />
               {t.nav.consultation}
             </span>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-primary-foreground leading-[1.1] mb-5">
@@ -422,7 +420,7 @@ export default function HomePage() {
             <p className="text-primary-foreground/60 max-w-xl mx-auto mb-10 leading-relaxed">
               {t.ctaSection.description}
             </p>
-            <Button variant="gold" size="xl" asChild>
+            <Button variant="premium" size="xl" asChild>
               <Link to="/consultation">{t.ctaSection.cta}</Link>
             </Button>
           </ScrollReveal>
@@ -446,8 +444,8 @@ export default function HomePage() {
           ].map((item, i) => (
             <ScrollReveal key={i} delay={i * 100}>
               <div className="text-center group">
-                <div className="w-12 h-12 rounded-full bg-primary/6 flex items-center justify-center mx-auto mb-3 group-hover:bg-gold/10 transition-colors duration-300">
-                  <item.icon className="text-gold" size={18} strokeWidth={1.5} />
+                <div className="w-12 h-12 rounded-full bg-primary/6 flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/10 transition-colors duration-300">
+                  <item.icon className="text-primary" size={18} strokeWidth={1.5} />
                 </div>
                 <div className="text-xs text-muted-foreground uppercase tracking-[0.1em] mb-1.5">
                   {item.label}
@@ -455,7 +453,7 @@ export default function HomePage() {
                 {item.href ? (
                   <a
                     href={item.href}
-                    className="text-sm font-medium text-foreground hover:text-gold transition-colors duration-200"
+                    className="text-sm font-medium text-foreground hover:text-primary transition-colors duration-200"
                   >
                     {item.value}
                   </a>

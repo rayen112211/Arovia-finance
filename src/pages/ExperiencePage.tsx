@@ -35,18 +35,19 @@ export default function ExperiencePage() {
               e.currentTarget.src = fallbackOfficeImgUrl;
             }}
           />
-          <div className="absolute inset-0 bg-primary/95" />
+          <div className="absolute inset-0 bg-primary" />
         </div>
         
         {/* Decorative line */}
-        <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gold/30 to-transparent" />
+        <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-border/50 to-transparent" />
+        <div className="absolute right-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-border/50 to-transparent" />
 
         <div className="relative section-padding section-container">
           <div className="max-w-3xl">
             <ScrollReveal>
               <span className="eyebrow mb-6 inline-flex">
-                <span className="w-8 h-px bg-gold" />
-                {exp.label}
+                <span className="w-8 h-px bg-border" />
+                {t.experience.label}
               </span>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.75rem] text-primary-foreground leading-[1.06] mb-8">
                 {exp.title}
@@ -88,10 +89,10 @@ export default function ExperiencePage() {
                     {(language === "pl"
                       ? ["Kredyty hipoteczne", "Refinansowanie", "Klienci z działalnością gospodarczą", "Złożone sytuacje finansowe", "Dochody zagraniczne"]
                       : ["Home Purchase Mortgages", "Refinancing Strategy", "Self-Employed Clients", "Complex Credit Structures", "Expat & Foreign Income"]
-                    ).map((item, i) => (
-                      <li key={i} className="flex gap-3 text-sm text-muted-foreground items-start">
-                        <CheckCircle2 className="text-gold flex-shrink-0 w-4 h-4 mt-0.5" />
-                        <span>{item}</span>
+                    ).map((item, j) => (
+                      <li key={j} className="flex items-start gap-3">
+                        <CheckCircle2 className="text-primary flex-shrink-0 w-4 h-4 mt-0.5" />
+                        <span className="text-muted-foreground leading-relaxed">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -106,15 +107,16 @@ export default function ExperiencePage() {
               {sections.map((section, i) => (
                 <ScrollReveal key={i} delay={i * 80}>
                   <div className="relative pl-6 lg:pl-10">
-                    {/* Decorative side line */}
-                    <div className="absolute left-0 top-2 bottom-2 w-px bg-gradient-to-b from-gold/50 to-transparent" />
-                    
-                    <h2 className="font-display text-2xl lg:text-3xl text-foreground mb-4">
+                    <div className="relative pl-6">
+                    <div className="absolute left-0 top-2 bottom-2 w-px bg-gradient-to-b from-border/50 to-transparent" />
+                    <ul className="space-y-4">                   <h2 className="font-display text-2xl lg:text-3xl text-foreground mb-4">
                       {section.title}
                     </h2>
                     <p className="text-muted-foreground leading-relaxed text-base lg:text-lg text-pretty">
                       {section.text}
                     </p>
+                    </ul>
+                  </div>
                   </div>
                 </ScrollReveal>
               ))}
@@ -131,7 +133,7 @@ export default function ExperiencePage() {
         <div className="relative section-padding section-container text-center max-w-3xl mx-auto">
           <ScrollReveal>
             <span className="eyebrow justify-center mb-6 inline-flex">
-              <span className="w-8 h-px bg-gold" />
+              <span className="w-8 h-px bg-border" />
               {t.ctaSection.title}
             </span>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-primary-foreground leading-[1.1] mb-5">
@@ -140,7 +142,7 @@ export default function ExperiencePage() {
             <p className="text-primary-foreground/60 max-w-xl mx-auto mb-10 leading-relaxed">
               {t.ctaSection.description}
             </p>
-            <Button variant="gold" size="xl" asChild className="group">
+            <Button variant="premium" size="xl" asChild className="group">
               <Link to="/consultation">
                 {t.ctaSection.cta}
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />

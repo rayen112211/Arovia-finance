@@ -38,8 +38,8 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/97 nav-blur border-b border-border shadow-sm"
-          : "bg-background/90 nav-blur border-b border-transparent"
+          ? "bg-background/95 nav-blur border-b border-border/50 shadow-[0_4px_16px_rgba(0,0,0,0.02)] py-0"
+          : "bg-background/60 nav-blur border-b border-transparent py-2"
       }`}
     >
       <div className="section-padding section-container flex items-center justify-between h-16 lg:h-20">
@@ -50,7 +50,7 @@ export function Header() {
           aria-label="Arovia Finance — Home"
         >
           <div className="font-display text-2xl lg:text-[28px] leading-none text-primary tracking-wide flex items-baseline transition-colors duration-300">
-            Arovia<span className="text-gold ml-0.5">.</span>
+            Arovia<span className="text-foreground ml-0.5">.</span>
           </div>
           <div className="text-[9px] lg:text-[10px] font-sans font-medium text-muted-foreground uppercase tracking-[0.25em] pl-0.5 mt-1 transition-colors duration-300">
             Finance
@@ -65,14 +65,14 @@ export function Header() {
               to={link.to}
               className={`relative text-sm font-medium px-3 py-2 rounded-md transition-colors duration-200 group ${
                 isActive(link.to)
-                  ? "text-gold"
+                  ? "text-foreground"
                   : "text-foreground/70 hover:text-foreground"
               }`}
             >
               {link.label}
               {/* Active indicator */}
               <span
-                className={`absolute bottom-0 left-3 right-3 h-px bg-gold transition-transform duration-200 origin-left ${
+                className={`absolute bottom-0 left-3 right-3 h-px bg-foreground transition-transform duration-200 origin-left ${
                   isActive(link.to) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                 }`}
               />
@@ -89,14 +89,14 @@ export function Header() {
           >
             {language === "en" ? "PL" : "EN"}
           </button>
-          <Button variant="gold" size="lg" className="text-base px-6 animate-pulse-gold hover:animate-none" asChild>
+          <Button variant="premium" size="lg" className="text-base px-6" asChild>
             <Link to="/consultation">{t.nav.cta}</Link>
           </Button>
         </div>
 
         {/* Mobile Toggle */}
         <button
-          className="xl:hidden p-2 text-foreground hover:text-gold transition-colors rounded-md hover:bg-muted/40"
+          className="xl:hidden p-2 text-foreground hover:text-primary transition-colors rounded-md hover:bg-muted/40"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
@@ -122,7 +122,7 @@ export function Header() {
                 onClick={() => setMobileOpen(false)}
                 className={`text-sm font-medium py-2.5 px-3 rounded-md transition-colors duration-200 ${
                   isActive(link.to)
-                    ? "text-gold bg-gold/5"
+                    ? "text-foreground bg-muted"
                     : "text-foreground/70 hover:text-foreground hover:bg-muted/40"
                 }`}
               >
@@ -136,7 +136,7 @@ export function Header() {
               >
                 {language === "en" ? "PL" : "EN"}
               </button>
-              <Button variant="gold" size="lg" asChild className="flex-1 text-base animate-pulse-gold hover:animate-none">
+              <Button variant="premium" size="lg" asChild className="flex-1 text-base">
                 <Link to="/consultation" onClick={() => setMobileOpen(false)}>
                   {t.nav.cta}
                 </Link>

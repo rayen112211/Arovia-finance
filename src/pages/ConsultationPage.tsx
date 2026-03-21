@@ -42,9 +42,9 @@ export default function ConsultationPage() {
         <div className="relative section-padding section-container">
           <div className="max-w-3xl">
             <ScrollReveal>
-              <span className="eyebrow mb-6 inline-flex">
-                <span className="w-8 h-px bg-gold" />
-                {c.label}
+              <span className="eyebrow inline-flex items-center justify-center mb-6">
+                <span className="w-8 h-px bg-border" />
+                {t.consultationPage.label}
               </span>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.75rem] text-primary-foreground leading-[1.06] mb-8">
                 {c.title}
@@ -64,8 +64,8 @@ export default function ConsultationPage() {
           {benefits.map((b, i) => (
             <ScrollReveal key={i} delay={i * 100}>
               <div className="text-center group">
-                <div className="w-14 h-14 rounded-full bg-muted/60 flex items-center justify-center mx-auto mb-6 group-hover:bg-gold/10 transition-colors duration-500">
-                  <b.icon className="text-foreground/70 group-hover:text-gold transition-colors duration-500" size={24} strokeWidth={1.25} />
+                <div className="w-14 h-14 rounded-full bg-muted/60 flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/5 transition-colors duration-500">
+                  <b.icon className="text-foreground/70 group-hover:text-primary transition-colors duration-500" size={24} strokeWidth={1.25} />
                 </div>
                 <h3 className="font-display text-xl lg:text-2xl text-foreground mb-3">{b.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{b.text}</p>
@@ -91,8 +91,8 @@ export default function ConsultationPage() {
               <div className="space-y-8">
                 {steps.map((step, i) => (
                   <div key={i} className="flex gap-4 items-start group">
-                    <div className="w-8 h-8 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-gold/20 transition-colors duration-300">
-                      <span className="text-sm font-display text-primary group-hover:text-gold-dark">{i + 1}</span>
+                    <div className="w-8 h-8 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-primary/10 transition-colors duration-300">
+                      <span className="text-sm font-display text-primary group-hover:text-foreground">{i + 1}</span>
                     </div>
                     <div>
                       <p className="text-foreground font-medium text-lg mb-1">{step}</p>
@@ -121,15 +121,15 @@ export default function ConsultationPage() {
           {/* Right: Form */}
           <div className="lg:-mt-10">
             <ScrollReveal direction="right" delay={200}>
-              <div className="premium-card p-8 sm:p-10 lg:p-12 relative overflow-hidden">
+              <div className="relative p-8 lg:p-12 overflow-hidden bg-card rounded-md border border-border/40 shadow-[0_8px_32px_rgba(0,0,0,0.04)]">
                 {/* Form header accent */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold/80 to-gold/30" />
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-border/80 to-border/30" />
                 
-                <h3 className="font-display text-2xl lg:text-3xl text-foreground mb-8">
+                <h2 className="font-display text-2xl lg:text-3xl text-foreground mb-8">
                   {c.formTitle}
-                </h3>
+                </h2>
                 
-                <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
                   <div>
                     <label className="form-label">{c.formName}</label>
                     <input type="text" className="form-input" placeholder="e.g. Michał Kowalski" required />
@@ -151,8 +151,8 @@ export default function ConsultationPage() {
                       required
                     />
                   </div>
-                  <Button variant="gold" size="xl" className="w-full mt-4 text-[15px] shadow-md hover:shadow-lg">
-                    {c.formSubmit}
+                  <Button variant="premium" size="xl" className="w-full mt-4 text-[15px] shadow-md hover:shadow-lg">
+                    {t.consultationPage.formSubmit}
                   </Button>
                   
                   <p className="text-center text-xs text-muted-foreground mt-6">

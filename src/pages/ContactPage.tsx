@@ -26,9 +26,9 @@ export default function ContactPage() {
         <div className="relative section-padding section-container">
           <div className="max-w-3xl">
             <ScrollReveal>
-              <span className="eyebrow mb-6 inline-flex">
-                <span className="w-8 h-px bg-gold" />
-                {c.label}
+              <span className="eyebrow inline-flex items-center justify-center mb-6">
+                <span className="w-8 h-px bg-border" />
+                {t.contactPage.label}
               </span>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.75rem] text-primary-foreground leading-[1.06] mb-8">
                 {c.title}
@@ -48,9 +48,9 @@ export default function ContactPage() {
           {/* Form */}
           <div className="lg:col-span-3">
             <ScrollReveal direction="up" delay={100}>
-              <div className="premium-card p-8 sm:p-10 lg:p-12 relative overflow-hidden h-full">
+              <div className="relative p-8 lg:p-12 overflow-hidden bg-card rounded-md border border-border/40 shadow-[0_8px_32px_rgba(0,0,0,0.04)] h-full">
                 {/* Form header accent */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold/80 to-gold/30" />
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-border/80 to-border/30" />
                 
                 <h2 className="font-display text-2xl lg:text-3xl text-foreground mb-8">
                   {c.formTitle}
@@ -89,9 +89,11 @@ export default function ContactPage() {
                     />
                   </div>
                   
-                  <Button variant="gold" size="xl" className="w-full mt-4 text-[15px] shadow-md hover:shadow-lg">
-                    {c.formSubmit}
-                  </Button>
+                  <div>
+                    <Button variant="premium" size="xl" className="w-full mt-4 text-[15px] shadow-md hover:shadow-lg">
+                      {t.contactPage.formSubmit}
+                    </Button>
+                  </div>
                 </form>
               </div>
             </ScrollReveal>
@@ -111,16 +113,16 @@ export default function ContactPage() {
                     { icon: Phone, label: t.contactPreview.phone, value: "+48 123 456 789", href: "tel:+48123456789" },
                     { icon: MapPin, label: t.contactPreview.location, value: t.contactPreview.locationValue, href: undefined },
                   ].map((item, i) => (
-                    <div key={i} className="flex gap-5 items-start group">
-                      <div className="w-12 h-12 rounded-full bg-muted/60 flex items-center justify-center flex-shrink-0 group-hover:bg-gold/10 transition-colors duration-500">
-                        <item.icon className="text-foreground/70 group-hover:text-gold transition-colors duration-500" size={20} strokeWidth={1.25} />
+                    <div key={i} className="flex gap-4 group">
+                      <div className="w-12 h-12 rounded-full bg-muted/60 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/5 transition-colors duration-500">
+                        <item.icon className="text-foreground/70 group-hover:text-primary transition-colors duration-500" size={20} strokeWidth={1.25} />
                       </div>
                       <div className="pt-1">
                         <div className="text-xs text-muted-foreground uppercase tracking-[0.1em] font-medium mb-1">
                           {item.label}
                         </div>
                         {item.href ? (
-                          <a href={item.href} className="text-[15px] font-medium text-foreground hover:text-gold transition-colors duration-200 block">
+                          <a href={item.href} className="text-[15px] font-medium text-foreground hover:text-primary transition-colors duration-200 block">
                             {item.value}
                           </a>
                         ) : (
@@ -148,9 +150,9 @@ export default function ContactPage() {
                 <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/0 transition-colors duration-500" />
                 {/* Decorative overlay */}
                 <div className="absolute bottom-4 left-4 right-4 bg-background/95 nav-blur p-4 rounded-sm border border-border/50 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                  <div className="flex items-center gap-2 text-sm font-medium text-primary">
-                    <MapPin size={16} className="text-gold" /> {language === "pl" ? "Spotkania w Warszawie lub online." : "Available for meetings in Warsaw or online."}
-                  </div>
+                  <p className="text-sm font-medium text-foreground/80 flex items-center gap-2">
+                    <MapPin size={16} className="text-primary" /> {language === "pl" ? "Spotkania w Warszawie lub online." : "Available for meetings in Warsaw or online."}
+                  </p>
                 </div>
               </div>
             </ScrollReveal>
