@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Briefcase, Building2, Compass, Home, RefreshCw, UserCheck, Quote, Mail, Phone, MapPin, ExternalLink } from "lucide-react";
+import { ArrowRight, Briefcase, Building2, Compass, Home, RefreshCw, UserCheck, Quote, Mail, Phone, MapPin, ExternalLink, Globe, PieChart } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 import { Button } from "@/components/ui/button";
@@ -7,7 +7,7 @@ import { Section, SectionHeader } from "@/components/Section";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { AnimatedNumber } from "@/components/AnimatedNumber";
 
-const heroImgUrl = "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2400"; // Real corporate office context, no face
+const heroImgUrl = "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=2400"; // Confident, high-end personal portrait
 const advisorImgUrl = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1200";
 const propertyImgUrl = "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1200";
 const fallbackMediaImgUrl = "https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?auto=format&fit=crop&q=80&w=1400";
@@ -25,10 +25,10 @@ export default function HomePage() {
   ];
 
   const services = [
-    { icon: Home, title: t.services.mortgage, desc: t.services.mortgageDesc, href: "/consultation" },
-    { icon: RefreshCw, title: t.services.cash, desc: t.services.cashDesc, href: "/consultation" },
-    { icon: Briefcase, title: t.services.business, desc: t.services.businessDesc, href: "/consultation" },
-    { icon: UserCheck, title: t.services.consolidation, desc: t.services.consolidationDesc, href: "/consultation" },
+    { icon: Globe, title: t.services.mortgage, desc: t.services.mortgageDesc, href: "/consultation" },
+    { icon: Briefcase, title: t.services.cash, desc: t.services.cashDesc, href: "/consultation" },
+    { icon: PieChart, title: t.services.business, desc: t.services.businessDesc, href: "/consultation" },
+    { icon: RefreshCw, title: t.services.consolidation, desc: t.services.consolidationDesc, href: "/consultation" },
   ];
 
   const processSteps = [
@@ -41,24 +41,14 @@ export default function HomePage() {
   ];
 
   const testimonials = [
-    {
-      name: t.testimonials.placeholderName,
-      role: t.testimonials.placeholderRole,
-      text: t.testimonials.placeholderText,
-      initials: "PC",
-    },
-    {
-      name: t.testimonials.placeholderName2,
-      role: t.testimonials.placeholderRole2,
-      text: t.testimonials.placeholderText2,
-      initials: "RC",
-    },
-    {
-      name: t.testimonials.placeholderName3,
-      role: t.testimonials.placeholderRole3,
-      text: t.testimonials.placeholderText3,
-      initials: "EC",
-    },
+    { name: t.testimonials.placeholderName, role: t.testimonials.placeholderRole, text: t.testimonials.placeholderText, initials: "PC" },
+    { name: t.testimonials.placeholderName2, role: t.testimonials.placeholderRole2, text: t.testimonials.placeholderText2, initials: "PC" },
+    { name: t.testimonials.placeholderName3, role: t.testimonials.placeholderRole3, text: t.testimonials.placeholderText3, initials: "CC" },
+    { name: t.testimonials.placeholderName4, role: t.testimonials.placeholderRole4, text: t.testimonials.placeholderText4, initials: "EC" },
+    { name: t.testimonials.placeholderName5, role: t.testimonials.placeholderRole5, text: t.testimonials.placeholderText5, initials: "CP" },
+    { name: t.testimonials.placeholderName6, role: t.testimonials.placeholderRole6, text: t.testimonials.placeholderText6, initials: "IN" },
+    { name: t.testimonials.placeholderName7, role: t.testimonials.placeholderRole7, text: t.testimonials.placeholderText7, initials: "PC" },
+    { name: t.testimonials.placeholderName8, role: t.testimonials.placeholderRole8, text: t.testimonials.placeholderText8, initials: "PC" },
   ];
 
   const mediaItems = language === "pl"
@@ -227,6 +217,17 @@ export default function HomePage() {
                 </Button>
               </div>
             </div>
+          </ScrollReveal>
+        </div>
+      </Section>
+
+      {/* ─── TRANSPARENCY ─── */}
+      <Section variant="muted" className="py-20 lg:py-24 border-y border-border/40 bg-primary/5">
+        <div className="max-w-4xl mx-auto text-center">
+          <ScrollReveal>
+             <h2 className="font-display text-2xl lg:text-3xl text-foreground mb-4">{t.transparency.title}</h2>
+             <h3 className="text-xl text-primary font-medium mb-6">{t.transparency.subtitle}</h3>
+             <p className="text-lg text-muted-foreground leading-relaxed">{t.transparency.description}</p>
           </ScrollReveal>
         </div>
       </Section>
