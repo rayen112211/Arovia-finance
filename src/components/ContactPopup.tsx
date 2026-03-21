@@ -11,7 +11,7 @@ export function ContactPopup() {
 
   useEffect(() => {
     // Check if dismissed in this session
-    const dismissed = sessionStorage.getItem("arovia_contact_dismissed");
+    const dismissed = sessionStorage.getItem("arovia_contact_dismissed_v3");
     if (dismissed) {
       setHasDismissed(true);
       return;
@@ -40,7 +40,7 @@ export function ContactPopup() {
   const handleClose = () => {
     setIsOpen(false);
     setHasDismissed(true);
-    sessionStorage.setItem("arovia_contact_dismissed", "true");
+    sessionStorage.setItem("arovia_contact_dismissed_v3", "true");
   };
 
   const handleSubmit = (e: React.FormEvent) => {
