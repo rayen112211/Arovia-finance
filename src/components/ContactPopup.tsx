@@ -6,41 +6,26 @@ import { Mail, Phone, MapPin, X } from "lucide-react";
 export function ContactPopup() {
   const { t, language } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
-  const [hasDismissed, setHasDismissed] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
-    // Check if dismissed in this session
-    const dismissed = sessionStorage.getItem("arovia_contact_dismissed_v3");
-    if (dismissed) {
-      setHasDismissed(true);
-      return;
+    if (isSubmitted) return;
+
+    let timeout: ReturnType<typeof setTimeout>;
+
+    if (!isOpen) {
+      timeout = setTimeout(() => {
+        setIsOpen(true);
+      }, 15000);
     }
 
-    // Trigger popup when scrolling past 50%
-    const handleScroll = () => {
-      if (hasDismissed || isOpen) return;
-      const scrollY = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight;
-      const winHeight = window.innerHeight;
-      const scrollPercent = scrollY / (docHeight - winHeight);
-      
-      if (scrollPercent > 0.5) {
-        setIsOpen(true);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      if (timeout) clearTimeout(timeout);
     };
-  }, [hasDismissed, isOpen]);
+  }, [isOpen, isSubmitted]);
 
   const handleClose = () => {
     setIsOpen(false);
-    setHasDismissed(true);
-    sessionStorage.setItem("arovia_contact_dismissed_v3", "true");
   };
 
   const handleSubmit = (e: React.FormEvent) => {
