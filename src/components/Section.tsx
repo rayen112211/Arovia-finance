@@ -4,14 +4,16 @@ interface SectionProps {
   children: ReactNode;
   className?: string;
   id?: string;
-  variant?: "default" | "muted" | "navy";
+  variant?: "default" | "muted" | "navy" | "cream" | "light-blue";
 }
 
 export function Section({ children, className = "", id, variant = "default" }: SectionProps) {
   const bgMap = {
     default: "bg-background",
     muted: "bg-muted/30",
-    navy: "bg-primary text-primary-foreground",
+    navy: "bg-navy text-primary-foreground",
+    cream: "bg-cream",
+    "light-blue": "bg-light-blue",
   };
 
   return (
@@ -38,21 +40,24 @@ export function SectionHeader({ label, title, description, align = "left", light
     <div className={`flex flex-col gap-4 mb-14 ${alignClass}`}>
       {label && (
         <span className="eyebrow">
-          <span className="w-8 h-[1px] bg-border inline-block" />
+          <span className="w-8 h-[1px] bg-gold inline-block" />
           {label}
         </span>
       )}
-      <h2
-        className={`font-display text-3xl sm:text-4xl lg:text-[44px] leading-[1.15] tracking-tight ${
-          light ? "text-primary-foreground" : "text-foreground"
-        }`}
-      >
-        {title}
-      </h2>
+      <div className="relative inline-block">
+        <h2
+          className={`font-display text-3xl sm:text-4xl lg:text-[44px] leading-[1.15] tracking-tight ${
+            light ? "text-primary-foreground" : "text-foreground"
+          }`}
+        >
+          {title}
+        </h2>
+        <div className="h-1 w-24 bg-gold mt-4 rounded-full"></div>
+      </div>
       {description && (
         <p
           className={`text-base sm:text-lg max-w-2xl leading-relaxed ${
-            light ? "text-primary-foreground/70" : "text-muted-foreground"
+            light ? "text-gold" : "text-gold/90"
           }`}
         >
           {description}

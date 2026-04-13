@@ -166,7 +166,7 @@ export default function HomePage() {
                     <span>{stat.value}</span>
                   )}
                 </div>
-                <div className="text-xs text-muted-foreground uppercase tracking-[0.1em] font-medium">
+                <div className="text-xs text-gold uppercase tracking-[0.1em] font-medium mt-2">
                   {stat.label}
                 </div>
               </div>
@@ -233,7 +233,7 @@ export default function HomePage() {
       </Section>
 
       {/* ─── SERVICES ─── */}
-      <Section variant="muted" className="py-24 lg:py-32">
+      <Section variant="cream" className="py-24 lg:py-32">
         <ScrollReveal>
           <SectionHeader label={t.services.label} title={t.services.title} align="center" />
         </ScrollReveal>
@@ -241,7 +241,7 @@ export default function HomePage() {
           {services.map((service, i) => (
             <ScrollReveal key={i} delay={i * 80}>
               <Link to={service.href} className="group block h-full">
-                <div className="premium-card p-10 h-full flex flex-col transition-all duration-300">
+                <div className="premium-card p-10 h-full flex flex-col transition-all duration-300 border-l-4 border-l-gold bg-white">
                   <div className="mb-8 w-14 h-14 rounded-full bg-muted/60 flex items-center justify-center group-hover:bg-primary/5 transition-colors duration-500">
                     <service.icon
                       className="text-foreground/70 group-hover:text-primary transition-colors duration-500"
@@ -252,7 +252,7 @@ export default function HomePage() {
                   <h3 className="font-display text-xl text-foreground mb-3 group-hover:text-primary transition-colors duration-200">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                  <p className="text-sm text-gold leading-relaxed flex-1">
                     {service.desc}
                   </p>
                   <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-foreground transition-colors duration-200">
@@ -273,14 +273,17 @@ export default function HomePage() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {processSteps.map((step, i) => (
             <ScrollReveal key={i} delay={i * 80}>
-              <div className="relative group">
-                <span className="font-display text-6xl text-muted-foreground/30 group-hover:text-muted-foreground/50 transition-colors duration-300 leading-none block mb-2">
-                  {step.num}
-                </span>
-                <h3 className="font-display text-lg lg:text-xl text-foreground mt-1 mb-2">
+              <div className="relative group flex flex-col items-start w-full">
+                <div className="flex items-center gap-4 mb-4 w-full">
+                  <span className="font-display text-xl sm:text-2xl text-gold flex items-center justify-center w-14 h-14 rounded-full bg-gold/15 shrink-0 transition-all duration-300 group-hover:bg-gold/25 group-hover:scale-105">
+                    {step.num}
+                  </span>
+                  <div className="h-px bg-gold flex-grow hidden sm:block opacity-40"></div>
+                </div>
+                <h3 className="font-display text-lg lg:text-xl text-foreground mt-1 mb-2 pr-4">
                   {step.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm text-gold leading-relaxed">
                   {step.desc}
                 </p>
               </div>
@@ -299,17 +302,17 @@ export default function HomePage() {
        </Section>
 
       {/* ─── TESTIMONIALS ─── */}
-      <Section variant="muted" className="py-24 lg:py-32">
+      <Section variant="cream" className="py-24 lg:py-32">
         <ScrollReveal>
           <SectionHeader label={t.testimonials.label} title={t.testimonials.title} align="center" />
         </ScrollReveal>
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {testimonials.slice(0, 3).map((item, i) => (
             <ScrollReveal key={i} delay={i * 100}>
-              <div className="premium-card p-10 h-full flex flex-col">
-                {/* Quote icon */}
-                <div className="mb-6">
-                  <Quote size={24} className="text-muted-foreground/30" strokeWidth={1} />
+              <div className="premium-card p-10 h-full flex flex-col border-t-4 border-t-gold relative overflow-hidden bg-white">
+                <Quote size={100} className="absolute -top-6 -right-6 text-gold/10 rotate-12 pointer-events-none" />
+                <div className="mb-6 relative z-10">
+                  <Quote size={24} className="text-gold/40" strokeWidth={1.5} />
                 </div>
                 <p className="text-[15px] text-foreground/80 leading-relaxed flex-1 italic">
                   "{item.text}"
@@ -327,9 +330,9 @@ export default function HomePage() {
                       {item.initials}
                     </span>
                   </div>
-                  <div>
+                  <div className="relative z-10">
                     <div className="font-semibold text-sm text-foreground">{item.name}</div>
-                    <div className="text-xs text-muted-foreground">{item.role}</div>
+                    <div className="text-xs text-gold mt-0.5">{item.role}</div>
                   </div>
                 </div>
               </div>
@@ -362,7 +365,7 @@ export default function HomePage() {
                 className="group block h-full cursor-pointer"
                 aria-label={`${item.title} (${item.source})`}
               >
-                <div className="aspect-[16/10] rounded-sm overflow-hidden mb-4 img-zoom border border-border/40 group-hover:border-border/80 transition-colors">
+                <div className="aspect-[16/10] rounded-sm overflow-hidden mb-4 img-zoom border border-gold/40 group-hover:border-gold transition-colors">
                   <img
                     src={item.image}
                     alt={item.title}
@@ -373,15 +376,15 @@ export default function HomePage() {
                     }}
                   />
                 </div>
-                <span className="eyebrow text-[10px] mb-2">
-                  <span className="w-4 h-[1px] bg-border" />
+                <span className="eyebrow text-[10px] mb-2 text-gold">
+                  <span className="w-4 h-[1px] bg-gold" />
                   {item.source}
                 </span>
-                <h3 className="font-display text-xl text-foreground mb-2 leading-snug group-hover:text-primary transition-colors duration-200">
+                <h3 className="font-display text-xl text-foreground mb-2 leading-snug group-hover:text-gold transition-colors duration-200">
                   {item.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-2">{item.description}</p>
-                <span className="text-sm text-muted-foreground inline-flex items-center gap-1.5">
+                <p className="text-sm text-gold leading-relaxed mb-2">{item.description}</p>
+                <span className="text-sm text-gold inline-flex items-center gap-1.5">
                   {item.date} <ExternalLink size={13} className="opacity-70" />
                 </span>
               </a>
@@ -429,7 +432,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── CONTACT PREVIEW ─── */}
-      <Section className="py-20 lg:py-24">
+      <Section variant="light-blue" className="py-20 lg:py-24">
         <ScrollReveal>
           <SectionHeader
             label={t.contactPreview.label}

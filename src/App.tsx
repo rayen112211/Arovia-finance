@@ -16,7 +16,6 @@ import ContactPage from "@/pages/ContactPage";
 import NotFound from "@/pages/NotFound";
 
 import { ScrollToTop } from "@/components/ScrollToTop";
-import { ContactPopup } from "@/components/ContactPopup";
 import { FloatingButton } from "@/components/FloatingButton";
 
 const queryClient = new QueryClient();
@@ -30,7 +29,6 @@ const App = () => (
         <BrowserRouter>
           <ScrollToTop />
           <Header />
-          <ContactPopup />
           <FloatingButton />
           <main className="pt-16 lg:pt-20">
             <Routes>

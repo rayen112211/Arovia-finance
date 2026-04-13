@@ -9,11 +9,11 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground shadow-[0_6px_16px_-4px_rgba(30,45,90,0.3)] hover:bg-primary/95 hover:shadow-[0_8px_20px_-6px_rgba(30,45,90,0.4)] hover:-translate-y-0.5",
+          "bg-navy text-white shadow-[0_6px_16px_-4px_rgba(30,45,90,0.3)] hover:bg-navy/95 hover:shadow-[0_8px_20px_-6px_rgba(30,45,90,0.4)] hover:-translate-y-0.5",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-sm hover:shadow",
         outline:
-          "border-2 border-primary/20 bg-transparent text-primary hover:bg-primary hover:text-primary-foreground shadow-sm hover:shadow-md hover:-translate-y-0.5",
+          "border-2 border-navy bg-transparent text-navy hover:bg-navy hover:text-white shadow-sm hover:shadow-md hover:-translate-y-0.5",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-sm hover:shadow",
         ghost:
@@ -21,7 +21,7 @@ const buttonVariants = cva(
         link:
           "text-primary underline-offset-4 hover:underline",
         premium:
-          "bg-foreground text-background font-bold tracking-wide shadow-md hover:shadow-lg hover:bg-foreground/90 hover:-translate-y-0.5 transition-all duration-300",
+          "bg-gold text-navy font-bold tracking-wide shadow-md hover:shadow-lg hover:bg-gold/90 hover:-translate-y-0.5 transition-all duration-300",
         navyOutline:
           "border-2 border-primary-foreground/30 text-primary-foreground bg-transparent hover:bg-primary-foreground/10 hover:border-primary-foreground/50 hover:-translate-y-0.5",
         outlinePremium:

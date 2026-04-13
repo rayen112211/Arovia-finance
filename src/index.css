@@ -15,7 +15,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 15% 15%;
 
-    --primary: 220 40% 14%;
+    --primary: 225 50% 24%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 220 10% 96%;
@@ -24,22 +24,24 @@
     --muted: 220 15% 98%;
     --muted-foreground: 220 10% 45%;
 
-    --accent: 220 10% 90%;
-    --accent-foreground: 220 40% 14%;
+    --accent: 49 28% 53%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 220 15% 92%;
     --input: 220 20% 90%;
-    --ring: 220 40% 14%;
+    --ring: 225 50% 24%;
 
     --radius: 0.25rem;
 
-    --navy: 220 40% 14%;
-    --navy-light: 220 25% 28%;
-    --navy-dark: 220 50% 10%;
-    --gold: 40 45% 60%;
+    --navy: 225 50% 24%;
+    --navy-light: 225 35% 38%;
+    --navy-dark: 225 60% 14%;
+    --gold: 49 28% 53%;
+    --cream: 36 29% 97%;
+    --light-blue: 218 53% 94%;
     --warm-white: 0 0% 99%;
     --warm-gray: 220 10% 96%;
     --text-primary: 220 15% 15%;
@@ -132,7 +134,7 @@
   }
 
   .form-label {
-    @apply text-sm font-medium text-foreground block mb-2 tracking-wide;
+    @apply text-sm font-medium text-gold block mb-2 tracking-wide;
   }
 
   /* Premium card style */
@@ -142,9 +144,8 @@
     transition-all duration-500 ease-out;
   }
 
-  /* Eyebrow label */
   .eyebrow {
-    @apply inline-flex items-center gap-2 text-navy-light text-xs font-semibold uppercase tracking-[0.15em];
+    @apply inline-flex items-center gap-2 text-gold text-xs font-semibold uppercase tracking-[0.15em];
   }
 
   /* Hero split layout helpers */

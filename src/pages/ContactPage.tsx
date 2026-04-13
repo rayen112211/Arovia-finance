@@ -42,15 +42,14 @@ export default function ContactPage() {
       </section>
 
       {/* ─── CONTACT SECTION ─── */}
-      <Section className="py-12 lg:py-16 relative -mt-12 lg:-mt-24">
+      <Section variant="light-blue" className="py-12 lg:py-16 relative -mt-12 lg:-mt-24">
         <div className="grid lg:grid-cols-5 gap-10 lg:gap-16">
           
           {/* Form */}
           <div className="lg:col-span-3">
             <ScrollReveal direction="up" delay={100}>
-              <div className="relative p-8 lg:p-12 overflow-hidden bg-card rounded-md border border-border/40 shadow-[0_8px_32px_rgba(0,0,0,0.04)] h-full">
-                {/* Form header accent */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-border/80 to-border/30" />
+              <div className="relative p-8 lg:p-12 overflow-hidden bg-card rounded-md border-t-4 border-t-gold border-r border-b border-l border-border/40 shadow-[0_8px_32px_rgba(0,0,0,0.04)] h-full bg-white">
+                {/* Form header accent removed per new design */}
                 
                 <h2 className="font-display text-2xl lg:text-3xl text-foreground mb-8">
                   {c.formTitle}
@@ -90,7 +89,7 @@ export default function ContactPage() {
                   </div>
                   
                   <div>
-                    <Button variant="premium" size="xl" className="w-full mt-4 text-[15px] shadow-md hover:shadow-lg">
+                    <Button variant="default" size="xl" className="w-full mt-4 text-[15px] shadow-md hover:shadow-lg">
                       {t.contactPage.formSubmit}
                     </Button>
                   </div>
@@ -118,7 +117,7 @@ export default function ContactPage() {
                         <item.icon className="text-foreground/70 group-hover:text-primary transition-colors duration-500" size={20} strokeWidth={1.25} />
                       </div>
                       <div className="pt-1">
-                        <div className="text-xs text-muted-foreground uppercase tracking-[0.1em] font-medium mb-1">
+                        <div className="text-xs text-gold uppercase tracking-[0.1em] font-medium mb-1">
                           {item.label}
                         </div>
                         {item.href ? (
