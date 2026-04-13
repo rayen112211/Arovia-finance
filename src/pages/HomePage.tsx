@@ -304,7 +304,7 @@ export default function HomePage() {
           <SectionHeader label={t.testimonials.label} title={t.testimonials.title} align="center" />
         </ScrollReveal>
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-          {testimonials.map((item, i) => (
+          {testimonials.slice(0, 3).map((item, i) => (
             <ScrollReveal key={i} delay={i * 100}>
               <div className="premium-card p-10 h-full flex flex-col">
                 {/* Quote icon */}
