@@ -434,13 +434,50 @@ export default function HomePage() {
       {/* ─── CONTACT PREVIEW ─── */}
       <Section variant="light-blue" className="py-20 lg:py-24">
         <ScrollReveal>
-          <SectionHeader
-            label={t.contactPreview.label}
-            title={t.contactPreview.title}
-            align="center"
-          />
+          <div className="max-w-2xl mx-auto bg-white rounded-md p-8 md:p-12 shadow-sm mt-8 border-t-[6px] border-gold">
+            <h2 className="font-display text-2xl lg:text-3xl text-foreground mb-8">
+              {language === "pl" ? "Zamów konsultację" : "Request a Consultation"}
+            </h2>
+            
+            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <div>
+                <label className="form-label">{language === "pl" ? "Imię i nazwisko" : "Full Name"}</label>
+                <input type="text" className="form-input bg-transparent" placeholder={language === "pl" ? "np. Michał Kowalski" : "e.g. Michał Kowalski"} required />
+              </div>
+
+              <div>
+                <label className="form-label">{language === "pl" ? "Adres Email" : "Email Address"}</label>
+                <input type="email" className="form-input bg-transparent" placeholder="michal@example.com" required />
+              </div>
+
+              <div>
+                <label className="form-label">{language === "pl" ? "Numer telefonu" : "Phone Number"}</label>
+                <input type="tel" className="form-input bg-transparent" placeholder="+48 ___ ___ ___" />
+              </div>
+
+              <div>
+                <label className="form-label">{language === "pl" ? "Krótko opisz sytuację" : "Briefly detail your situation"}</label>
+                <textarea 
+                  rows={4} 
+                  className="form-textarea bg-transparent" 
+                  placeholder={language === "pl" ? "Krótko opisz co chciałbyś osiągnąć..." : "Briefly describe what you're looking to achieve..."} 
+                  required
+                />
+              </div>
+
+              <div className="pt-2">
+                <Button variant="premium" size="lg" className="w-full text-base py-6 shadow-md hover:shadow-lg rounded-full bg-gold text-navy font-semibold">
+                  {language === "pl" ? "Wyślij zapytanie" : "Send Request"}
+                </Button>
+                <p className="text-xs text-muted-foreground mt-4 text-center">
+                  {language === "pl" ? "Wysyłając ten formularz kontaktowy, wyrażasz zgodę na przetwarzanie Twoich danych zgodnie z naszą polityką prywatności." : "By submitting this form, you agree to our privacy policy. Your information is securely handled."}
+                </p>
+              </div>
+            </form>
+          </div>
         </ScrollReveal>
-        <div className="grid sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
+
+        <div className="grid sm:grid-cols-3 gap-8 max-w-2xl mx-auto mt-16 pt-16 border-t border-border/40">
           {[
             { icon: Mail, label: t.contactPreview.email, value: "info@aroviafinance.com", href: "mailto:info@aroviafinance.com" },
             { icon: Phone, label: t.contactPreview.phone, value: "+48 123 456 789", href: "tel:+48123456789" },
@@ -451,7 +488,7 @@ export default function HomePage() {
                 <div className="w-12 h-12 rounded-full bg-primary/6 flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/10 transition-colors duration-300">
                   <item.icon className="text-primary" size={18} strokeWidth={1.5} />
                 </div>
-                <div className="text-xs text-muted-foreground uppercase tracking-[0.1em] mb-1.5">
+                <div className="text-xs text-gold uppercase tracking-[0.1em] mb-1.5 font-medium">
                   {item.label}
                 </div>
                 {item.href ? (
