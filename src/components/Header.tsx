@@ -46,14 +46,18 @@ export function Header() {
         {/* Logo */}
         <Link
           to="/"
-          className="group flex flex-col items-start gap-0"
+          className="group flex flex-col items-center gap-0 w-32"
           aria-label="Arovia Finance — Home"
         >
-          <div className="font-display text-2xl lg:text-[28px] leading-none text-primary tracking-wide flex items-baseline transition-colors duration-300">
-            Arovia<span className="text-foreground ml-0.5">.</span>
+          <div className="font-display text-[28px] lg:text-[32px] leading-none text-navy tracking-wide uppercase transition-colors duration-300">
+            Arovia
           </div>
-          <div className="text-[9px] lg:text-[10px] font-sans font-medium text-muted-foreground uppercase tracking-[0.25em] pl-0.5 mt-1 transition-colors duration-300">
-            Finance
+          <div className="flex items-center gap-1.5 mt-1 w-full opacity-90 group-hover:opacity-100 transition-opacity">
+            <div className="h-px bg-gold flex-grow"></div>
+            <div className="text-[9px] lg:text-[10px] font-sans font-semibold text-gold uppercase tracking-[0.2em]">
+              Finance
+            </div>
+            <div className="h-px bg-gold flex-grow"></div>
           </div>
         </Link>
 
@@ -89,7 +93,7 @@ export function Header() {
           >
             {language === "en" ? "PL" : "EN"}
           </button>
-          <Button variant="premium" size="lg" className="text-base px-6" asChild>
+          <Button size="lg" className="text-sm px-6 bg-gold text-navy hover:bg-gold/90 transition-colors shadow-none rounded-md" asChild>
             <Link to="/consultation">{t.nav.cta}</Link>
           </Button>
         </div>
@@ -136,7 +140,7 @@ export function Header() {
               >
                 {language === "en" ? "PL" : "EN"}
               </button>
-              <Button variant="premium" size="lg" asChild className="flex-1 text-base">
+              <Button size="lg" asChild className="flex-1 text-sm bg-gold text-navy hover:bg-gold/90 rounded-md">
                 <Link to="/consultation" onClick={() => setMobileOpen(false)}>
                   {t.nav.cta}
                 </Link>

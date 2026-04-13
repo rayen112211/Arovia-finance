@@ -11,12 +11,15 @@ export function ContactPopup() {
   useEffect(() => {
     if (isSubmitted) return;
 
+    const hasBeenClosed = localStorage.getItem("arovia_popup_closed");
+    if (hasBeenClosed === "true") return;
+
     let timeout: ReturnType<typeof setTimeout>;
 
     if (!isOpen) {
       timeout = setTimeout(() => {
         setIsOpen(true);
-      }, 15000);
+      }, 5000);
     }
 
     return () => {
@@ -26,6 +29,7 @@ export function ContactPopup() {
 
   const handleClose = () => {
     setIsOpen(false);
+    localStorage.setItem("arovia_popup_closed", "true");
   };
 
   const handleSubmit = (e: React.FormEvent) => {
