@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -18,13 +18,13 @@
     --primary: 225 50% 24%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 10% 96%;
+    --secondary: 220 10% 92%;
     --secondary-foreground: 220 15% 15%;
 
-    --muted: 220 15% 98%;
+    --muted: 220 15% 94%;
     --muted-foreground: 220 10% 45%;
 
-    --accent: 49 28% 53%;
+    --accent: 45 80% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -39,14 +39,14 @@
     --navy: 225 50% 24%;
     --navy-light: 225 35% 38%;
     --navy-dark: 225 60% 14%;
-    --gold: 49 28% 53%;
+    --gold: 45 80% 55%;
     --cream: 36 29% 97%;
     --light-blue: 218 53% 94%;
     --warm-white: 0 0% 99%;
-    --warm-gray: 220 10% 96%;
+    --warm-gray: 220 10% 92%;
     --text-primary: 220 15% 15%;
-    --text-secondary: 220 10% 45%;
-    --text-light: 220 10% 65%;
+    --text-secondary: 220 10% 35%;
+    --text-light: 220 10% 55%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;

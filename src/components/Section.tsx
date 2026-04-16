@@ -10,7 +10,7 @@ interface SectionProps {
 export function Section({ children, className = "", id, variant = "default" }: SectionProps) {
   const bgMap = {
     default: "bg-background",
-    muted: "bg-muted/30",
+    muted: "bg-muted",
     navy: "bg-navy text-primary-foreground",
     cream: "bg-cream",
     "light-blue": "bg-light-blue",

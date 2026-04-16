@@ -22,17 +22,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link to="/" className="group flex flex-col items-center gap-0 w-32 mb-6">
-              <div className="font-display text-[32px] leading-none text-white tracking-wide uppercase transition-colors duration-300">
-                Arovia
-              </div>
-              <div className="flex items-center gap-1.5 mt-1 w-full opacity-90 group-hover:opacity-100 transition-opacity">
-                <div className="h-px bg-gold flex-grow"></div>
-                <div className="text-[10px] font-sans font-semibold text-gold uppercase tracking-[0.2em]">
-                  Finance
-                </div>
-                <div className="h-px bg-gold flex-grow"></div>
-              </div>
+            <Link to="/" className="group flex items-center mb-6 w-40 lg:w-48">
+              <img src="/Arovia biale.png" alt="Arovia Finance" className="w-full h-auto object-contain transition-opacity duration-300 group-hover:opacity-90" />
             </Link>
             <p className="text-primary-foreground/60 text-sm leading-relaxed max-w-xs mt-3">
               {t.footer.tagline}
