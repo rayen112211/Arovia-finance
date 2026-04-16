@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Roboto", "system-ui", "sans-serif"],
-        display: ["Roboto", "Georgia", "serif"],
+        display: ["Roboto", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

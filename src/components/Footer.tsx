@@ -23,7 +23,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="group flex items-center mb-6 w-40 lg:w-48">
-              <img src="/Arovia biale.png" alt="Arovia Finance" className="w-full h-auto object-contain transition-opacity duration-300 group-hover:opacity-90" />
+              <img src="/arovia-logo-white.png" alt="Arovia Finance" className="w-full h-auto object-contain transition-opacity duration-300 group-hover:opacity-90" />
             </Link>
             <p className="text-primary-foreground/60 text-sm leading-relaxed max-w-xs mt-3">
               {t.footer.tagline}

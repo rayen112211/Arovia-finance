@@ -49,7 +49,7 @@ export function Header() {
           className="group flex flex-col items-center justify-center w-36 lg:w-44"
           aria-label="Arovia Finance — Home"
         >
-          <img src="/Arovia granat.png" alt="Arovia Finance" className="w-full h-auto object-contain transition-opacity duration-300 group-hover:opacity-90" />
+          <img src="/arovia-logo-navy.png" alt="Arovia Finance" className="w-full h-auto object-contain transition-opacity duration-300 group-hover:opacity-90" />
         </Link>
 
         {/* Desktop Nav */}
