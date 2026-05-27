@@ -122,24 +122,24 @@ export default function OpinionsPage() {
       </Section>
 
       {/* ─── CTA BANNER ─── */}
-      <section className="relative py-24 lg:py-32 bg-primary overflow-hidden">
+      <section className="relative py-24 lg:py-32 bg-cream border-y border-border/40 overflow-hidden">
         {/* Abstract dark background - simplified */}
-        <div className="absolute inset-0 bg-primary" />
+        <div className="absolute inset-0 bg-cream" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent opacity-80" />
         
         {/* Soft line effect */}
-        <div className="absolute top-0 left-1/3 w-px h-full bg-gradient-to-b from-transparent via-border/10 to-transparent" />
+        <div className="absolute top-0 left-1/3 w-px h-full bg-gradient-to-b from-transparent via-border/50 to-transparent" />
 
         <div className="relative section-padding section-container text-center max-w-3xl mx-auto">
           <ScrollReveal>
-            <span className="eyebrow justify-center mb-6 inline-flex">
-              <span className="w-8 h-px bg-border" />
+            <span className="eyebrow justify-center mb-6 inline-flex text-gold">
+              <span className="w-8 h-px bg-gold" />
               {t.ctaSection.title}
             </span>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-primary-foreground leading-[1.1] mb-5">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-foreground leading-[1.1] mb-5">
               {t.ctaSection.title}
             </h2>
-            <p className="text-primary-foreground/60 max-w-xl mx-auto mb-10 leading-relaxed text-lg">
+            <p className="text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed text-lg">
               {t.ctaSection.description}
             </p>
             <Button variant="premium" size="xl" asChild className="group tracking-wide">

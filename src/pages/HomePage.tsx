@@ -118,7 +118,7 @@ export default function HomePage() {
               e.currentTarget.src = fallbackPortraitImgUrl;
             }}
           />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(242,246,251,0.97)_0%,rgba(242,246,251,0.93)_38%,rgba(242,246,251,0.56)_58%,rgba(242,246,251,0.18)_74%,rgba(242,246,251,0.06)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,1)_0%,rgba(255,255,255,0.95)_38%,rgba(255,255,255,0.7)_58%,rgba(255,255,255,0.3)_74%,rgba(255,255,255,0.06)_100%)]" />
         </div>
 
         <div className="section-padding section-container relative min-h-[70vh] lg:min-h-[78vh] grid lg:grid-cols-2 items-center">
@@ -403,25 +403,25 @@ export default function HomePage() {
       </Section>
 
       {/* ─── CTA BANNER ─── */}
-      <section className="relative py-28 lg:py-36 bg-primary overflow-hidden">
+      <section className="relative py-28 lg:py-36 bg-cream border-y border-border/40 overflow-hidden">
         <div className="absolute inset-0">
-          <img src={propertyImgUrl} alt="" className="w-full h-full object-cover opacity-10" />
-          <div className="absolute inset-0 bg-primary/95" />
+          <img src={propertyImgUrl} alt="" className="w-full h-full object-cover opacity-[0.03]" />
+          <div className="absolute inset-0 bg-cream/95" />
         </div>
-        {/* Decorative elements - Cleaned up to be more subtle */}
-        <div className="absolute top-0 left-1/3 w-px h-full bg-gradient-to-b from-transparent via-border/5 to-transparent" />
-        <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-border/5 to-transparent" />
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-1/3 w-px h-full bg-gradient-to-b from-transparent via-border/50 to-transparent" />
+        <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-border/50 to-transparent" />
 
         <div className="relative section-padding section-container text-center max-w-3xl mx-auto">
           <ScrollReveal>
             <span className="eyebrow justify-center mb-6 inline-flex">
-              <span className="w-8 h-px bg-border" />
+              <span className="w-8 h-px bg-gold" />
               {t.nav.consultation}
             </span>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-primary-foreground leading-[1.1] mb-5">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-foreground leading-[1.1] mb-5">
               {t.ctaSection.title}
             </h2>
-            <p className="text-primary-foreground/60 max-w-xl mx-auto mb-10 leading-relaxed">
+            <p className="text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed">
               {t.ctaSection.description}
             </p>
             <Button variant="premium" size="xl" asChild>

@@ -126,20 +126,20 @@ export default function ExperiencePage() {
       </Section>
 
       {/* ─── CTA BANNER ─── */}
-      <section className="relative py-24 lg:py-32 bg-primary overflow-hidden">
+      <section className="relative py-24 lg:py-32 bg-cream border-y border-border/40 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-primary" />
+          <div className="absolute inset-0 bg-cream" />
         </div>
         <div className="relative section-padding section-container text-center max-w-3xl mx-auto">
           <ScrollReveal>
-            <span className="eyebrow justify-center mb-6 inline-flex">
-              <span className="w-8 h-px bg-border" />
+            <span className="eyebrow justify-center mb-6 inline-flex text-gold">
+              <span className="w-8 h-px bg-gold" />
               {t.ctaSection.title}
             </span>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-primary-foreground leading-[1.1] mb-5">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-foreground leading-[1.1] mb-5">
               {t.ctaSection.title}
             </h2>
-            <p className="text-primary-foreground/60 max-w-xl mx-auto mb-10 leading-relaxed">
+            <p className="text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed">
               {t.ctaSection.description}
             </p>
             <Button variant="premium" size="xl" asChild className="group">
