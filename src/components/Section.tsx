@@ -57,7 +57,7 @@ export function SectionHeader({ label, title, description, align = "left", light
       {description && (
         <p
           className={`text-base sm:text-lg max-w-2xl leading-relaxed ${
-            light ? "text-gold" : "text-gold/90"
+            light ? "text-primary-foreground/80" : "text-muted-foreground"
           }`}
         >
           {description}

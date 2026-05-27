@@ -117,7 +117,7 @@ export default function ContactPage() {
                         <item.icon className="text-foreground/70 group-hover:text-primary transition-colors duration-500" size={20} strokeWidth={1.25} />
                       </div>
                       <div className="pt-1">
-                        <div className="text-xs text-gold uppercase tracking-[0.1em] font-medium mb-1">
+                        <div className="text-xs text-foreground/70 uppercase tracking-[0.1em] font-medium mb-1">
                           {item.label}
                         </div>
                         {item.href ? (

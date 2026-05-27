@@ -132,7 +132,7 @@ export default function OpinionsPage() {
 
         <div className="relative section-padding section-container text-center max-w-3xl mx-auto">
           <ScrollReveal>
-            <span className="eyebrow justify-center mb-6 inline-flex text-gold">
+            <span className="eyebrow justify-center mb-6 inline-flex">
               <span className="w-8 h-px bg-gold" />
               {t.ctaSection.title}
             </span>

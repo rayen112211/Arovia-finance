@@ -166,7 +166,7 @@ export default function HomePage() {
                     <span>{stat.value}</span>
                   )}
                 </div>
-                <div className="text-xs text-gold uppercase tracking-[0.1em] font-medium mt-2">
+                <div className="text-xs text-muted-foreground uppercase tracking-[0.1em] font-medium mt-2">
                   {stat.label}
                 </div>
               </div>
@@ -252,7 +252,7 @@ export default function HomePage() {
                   <h3 className="font-display text-xl text-foreground mb-3 group-hover:text-primary transition-colors duration-200">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-gold leading-relaxed flex-1">
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">
                     {service.desc}
                   </p>
                   <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-foreground transition-colors duration-200">
@@ -283,7 +283,7 @@ export default function HomePage() {
                 <h3 className="font-display text-lg lg:text-xl text-foreground mt-1 mb-2 pr-4">
                   {step.title}
                 </h3>
-                <p className="text-sm text-gold leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {step.desc}
                 </p>
               </div>
@@ -332,7 +332,7 @@ export default function HomePage() {
                   </div>
                   <div className="relative z-10">
                     <div className="font-semibold text-sm text-foreground">{item.name}</div>
-                    <div className="text-xs text-gold mt-0.5">{item.role}</div>
+                    <div className="text-xs text-muted-foreground mt-0.5">{item.role}</div>
                   </div>
                 </div>
               </div>
@@ -376,15 +376,15 @@ export default function HomePage() {
                     }}
                   />
                 </div>
-                <span className="eyebrow text-[10px] mb-2 text-gold">
+                <span className="eyebrow text-[10px] mb-2">
                   <span className="w-4 h-[1px] bg-gold" />
                   {item.source}
                 </span>
-                <h3 className="font-display text-xl text-foreground mb-2 leading-snug group-hover:text-gold transition-colors duration-200">
+                <h3 className="font-display text-xl text-foreground mb-2 leading-snug group-hover:text-primary transition-colors duration-200">
                   {item.title}
                 </h3>
-                <p className="text-sm text-gold leading-relaxed mb-2">{item.description}</p>
-                <span className="text-sm text-gold inline-flex items-center gap-1.5">
+                <p className="text-sm text-muted-foreground leading-relaxed mb-2">{item.description}</p>
+                <span className="text-sm text-foreground/70 inline-flex items-center gap-1.5">
                   {item.date} <ExternalLink size={13} className="opacity-70" />
                 </span>
               </a>
@@ -488,7 +488,7 @@ export default function HomePage() {
                 <div className="w-12 h-12 rounded-full bg-primary/6 flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/10 transition-colors duration-300">
                   <item.icon className="text-primary" size={18} strokeWidth={1.5} />
                 </div>
-                <div className="text-xs text-gold uppercase tracking-[0.1em] mb-1.5 font-medium">
+                <div className="text-xs text-foreground/70 uppercase tracking-[0.1em] mb-1.5 font-medium">
                   {item.label}
                 </div>
                 {item.href ? (
