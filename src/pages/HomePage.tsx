@@ -205,14 +205,14 @@ export default function HomePage() {
                 <p>{t.about.p3}</p>
               </div>
               <div className="mt-10 flex flex-wrap gap-4">
-                <Button variant="default" size="lg" asChild>
+                <Button variant="outline" size="lg" asChild>
                   <Link to="/experience">
                     {t.nav.experience} <ArrowRight size={16} />
                   </Link>
                 </Button>
                 <Button variant="premium" size="lg" asChild>
                   <Link to="/consultation">
-                    {t.nav.cta}
+                    {t.nav.cta} <ArrowRight size={16} />
                   </Link>
                 </Button>
               </div>
@@ -222,7 +222,7 @@ export default function HomePage() {
       </Section>
 
       {/* ─── TRANSPARENCY ─── */}
-      <Section variant="muted" className="py-20 lg:py-24 border-y border-border/40 bg-primary/5">
+      <Section variant="cream" className="py-20 lg:py-24 border-y border-border/40">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal>
              <h2 className="font-display text-2xl lg:text-3xl text-foreground mb-4">{t.transparency.title}</h2>
@@ -466,7 +466,7 @@ export default function HomePage() {
               </div>
 
               <div className="pt-2">
-                <Button variant="premium" size="lg" className="w-full text-base py-6 shadow-md hover:shadow-lg rounded-full bg-gold text-navy font-semibold">
+                <Button variant="premium" size="lg" className="w-full text-base py-6 shadow-md hover:shadow-lg rounded-full font-semibold">
                   {language === "pl" ? "Wyślij zapytanie" : "Send Request"}
                 </Button>
                 <p className="text-xs text-muted-foreground mt-4 text-center">

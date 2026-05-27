@@ -21,7 +21,7 @@ const buttonVariants = cva(
         link:
           "text-primary underline-offset-4 hover:underline",
         premium:
-          "bg-gold text-navy font-bold tracking-wide shadow-md hover:shadow-lg hover:bg-gold/90 hover:-translate-y-0.5 transition-all duration-300",
+          "bg-navy text-white font-medium tracking-wide shadow-md hover:shadow-lg hover:bg-navy/95 hover:-translate-y-0.5 transition-all duration-300",
         navyOutline:
           "border-2 border-primary-foreground/30 text-primary-foreground bg-transparent hover:bg-primary-foreground/10 hover:border-primary-foreground/50 hover:-translate-y-0.5",
         outlinePremium:
