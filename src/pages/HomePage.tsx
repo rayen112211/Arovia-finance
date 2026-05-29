@@ -175,6 +175,39 @@ export default function HomePage() {
         </div>
       </Section>
 
+      {/* ─── BANKS ─── */}
+      <Section variant="cream" className="py-16 lg:py-20 border-b border-border/40 overflow-hidden">
+        <ScrollReveal>
+          <div className="text-center mb-10">
+            <h3 className="font-display text-2xl lg:text-3xl text-foreground">
+              {language === "pl" ? "Banki, z którymi współpracujemy" : "Banks We Work With"}
+            </h3>
+          </div>
+        </ScrollReveal>
+        <div className="relative flex overflow-x-hidden group">
+          <div className="flex animate-marquee whitespace-nowrap group-hover:pause">
+            {[
+              "PKO BP", "Pekao", "ING", "mBank", "Santander", 
+              "BNP Paribas", "Millennium", "Alior Bank", "BOŚ", "Credit Agricole"
+            ].map((bank, i) => (
+              <span key={i} className="mx-8 text-xl font-display text-foreground/50 hover:text-primary transition-colors">
+                {bank}
+              </span>
+            ))}
+          </div>
+          <div className="flex animate-marquee whitespace-nowrap absolute top-0 group-hover:pause" aria-hidden="true">
+            {[
+              "PKO BP", "Pekao", "ING", "mBank", "Santander", 
+              "BNP Paribas", "Millennium", "Alior Bank", "BOŚ", "Credit Agricole"
+            ].map((bank, i) => (
+              <span key={i} className="mx-8 text-xl font-display text-foreground/50 hover:text-primary transition-colors">
+                {bank}
+              </span>
+            ))}
+          </div>
+        </div>
+      </Section>
+
       {/* ─── ABOUT ─── */}
       <Section className="py-24 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
@@ -480,7 +513,7 @@ export default function HomePage() {
         <div className="grid sm:grid-cols-3 gap-8 max-w-2xl mx-auto mt-16 pt-16 border-t border-border/40">
           {[
             { icon: Mail, label: t.contactPreview.email, value: "info@aroviafinance.com", href: "mailto:info@aroviafinance.com" },
-            { icon: Phone, label: t.contactPreview.phone, value: "+48 123 456 789", href: "tel:+48123456789" },
+            { icon: Phone, label: t.contactPreview.phone, value: "+48 574 100 669", href: "tel:+48574100669" },
             { icon: MapPin, label: t.contactPreview.location, value: t.contactPreview.locationValue, href: undefined },
           ].map((item, i) => (
             <ScrollReveal key={i} delay={i * 100}>

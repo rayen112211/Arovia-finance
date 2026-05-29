@@ -8,7 +8,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 // Authentic stock image for Experience Hero
 const warsawImgUrl = "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2574&auto=format&fit=crop"; 
 // Authentic portrait for advisor
-const advisorImgUrl = "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1288&auto=format&fit=crop";
+const advisorImgUrl = "/robbie.jfif";
 const fallbackOfficeImgUrl = "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1400&auto=format&fit=crop";
 
 export default function ExperiencePage() {
@@ -71,7 +71,7 @@ export default function ExperiencePage() {
                 <div className="relative rounded-sm aspect-[4/5] img-zoom mb-8 overflow-hidden border border-border/40">
                   <img 
                     src={advisorImgUrl} 
-                    alt="Financial advisor" 
+                    alt="Financial advisors" 
                     className="w-full h-full object-cover" 
                     onError={(e) => {
                       e.currentTarget.src = fallbackOfficeImgUrl;

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Linkedin } from "lucide-react";
 
 export function Footer() {
   const { t, language } = useLanguage();
@@ -37,11 +37,25 @@ export function Footer() {
                 <Mail size={16} strokeWidth={1.5} />
               </a>
               <a
-                href="tel:+48123456789"
+                href="tel:+48574100669"
                 className="w-10 h-10 rounded-full bg-primary-foreground/5 border border-primary-foreground/10 flex items-center justify-center text-primary-foreground/60 hover:text-primary-foreground hover:border-primary-foreground/40 hover:bg-primary-foreground/10 transition-all duration-300 hover:-translate-y-1"
                 aria-label="Call Arovia Finance"
               >
                 <Phone size={16} strokeWidth={1.5} />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-primary-foreground/5 border border-primary-foreground/10 flex items-center justify-center text-primary-foreground/60 hover:text-primary-foreground hover:border-primary-foreground/40 hover:bg-primary-foreground/10 transition-all duration-300 hover:-translate-y-1"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={16} strokeWidth={1.5} />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-primary-foreground/5 border border-primary-foreground/10 flex items-center justify-center text-primary-foreground/60 hover:text-primary-foreground hover:border-primary-foreground/40 hover:bg-primary-foreground/10 transition-all duration-300 hover:-translate-y-1"
+                aria-label="Instagram"
+              >
+                <Instagram size={16} strokeWidth={1.5} />
               </a>
             </div>
           </div>
@@ -80,12 +94,12 @@ export function Footer() {
                 </span>
               </a>
               <a
-                href="tel:+48123456789"
+                href="tel:+48574100669"
                 className="flex items-center gap-3 group"
               >
                 <Phone size={14} strokeWidth={1.5} className="text-primary-foreground/70 flex-shrink-0" />
                 <span className="text-sm text-primary-foreground/65 group-hover:text-primary-foreground/90 transition-colors duration-200">
-                  +48 123 456 789
+                  +48 574 100 669
                 </span>
               </a>
               <div className="flex items-center gap-3">

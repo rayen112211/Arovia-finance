@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Instagram, Linkedin } from "lucide-react";
 
 export function Header() {
   const { t, language, toggleLanguage } = useLanguage();
@@ -28,6 +28,7 @@ export function Header() {
     { to: "/opinions", label: t.nav.opinions },
     { to: "/media", label: t.nav.media },
     { to: "/cooperation", label: t.nav.cooperation },
+    { to: "/foreigners", label: t.nav.foreigners || "For Foreigners" },
     { to: "/contact", label: t.nav.contact },
   ];
 
@@ -77,6 +78,14 @@ export function Header() {
 
         {/* Desktop Actions */}
         <div className="hidden xl:flex items-center gap-3">
+          <div className="flex items-center gap-2 mr-2">
+            <a href="#" className="text-foreground/70 hover:text-foreground transition-colors p-1" aria-label="LinkedIn">
+              <Linkedin size={18} />
+            </a>
+            <a href="#" className="text-foreground/70 hover:text-foreground transition-colors p-1" aria-label="Instagram">
+              <Instagram size={18} />
+            </a>
+          </div>
           <button
             onClick={toggleLanguage}
             className="text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded hover:bg-muted/60"
@@ -125,6 +134,14 @@ export function Header() {
               </Link>
             ))}
             <div className="flex items-center gap-3 pt-3 mt-2 border-t border-border">
+              <div className="flex items-center gap-3 mr-auto pl-2">
+                <a href="#" className="text-foreground/70 hover:text-foreground transition-colors" aria-label="LinkedIn">
+                  <Linkedin size={20} />
+                </a>
+                <a href="#" className="text-foreground/70 hover:text-foreground transition-colors" aria-label="Instagram">
+                  <Instagram size={20} />
+                </a>
+              </div>
               <button
                 onClick={toggleLanguage}
                 className="text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors px-3 py-2 rounded hover:bg-muted/40"

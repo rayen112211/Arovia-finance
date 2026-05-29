@@ -13,6 +13,7 @@ import OpinionsPage from "@/pages/OpinionsPage";
 import MediaPage from "@/pages/MediaPage";
 import CooperationPage from "@/pages/CooperationPage";
 import ContactPage from "@/pages/ContactPage";
+import ForForeignersPage from "@/pages/ForForeignersPage";
 import NotFound from "@/pages/NotFound";
 
 import { ScrollToTop } from "@/components/ScrollToTop";
@@ -39,6 +40,7 @@ const App = () => (
               <Route path="/media" element={<MediaPage />} />
               <Route path="/cooperation" element={<CooperationPage />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/foreigners" element={<ForForeignersPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

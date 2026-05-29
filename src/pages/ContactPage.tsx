@@ -109,7 +109,7 @@ export default function ContactPage() {
                 <div className="space-y-8">
                   {[
                     { icon: Mail, label: t.contactPreview.email, value: "info@aroviafinance.com", href: "mailto:info@aroviafinance.com" },
-                    { icon: Phone, label: t.contactPreview.phone, value: "+48 123 456 789", href: "tel:+48123456789" },
+                    { icon: Phone, label: t.contactPreview.phone, value: "+48 574 100 669", href: "tel:+48574100669" },
                     { icon: MapPin, label: t.contactPreview.location, value: t.contactPreview.locationValue, href: undefined },
                   ].map((item, i) => (
                     <div key={i} className="flex gap-4 group">
