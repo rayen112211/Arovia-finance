@@ -185,18 +185,10 @@ export default function HomePage() {
           </div>
         </ScrollReveal>
         <div className="relative flex overflow-x-hidden group">
-          <div className="flex animate-marquee whitespace-nowrap group-hover:pause">
+          <div className="flex animate-marquee whitespace-nowrap group-hover:pause w-max">
             {[
               "PKO BP", "Pekao", "ING", "mBank", "Santander", 
-              "BNP Paribas", "Millennium", "Alior Bank", "BOŚ", "Credit Agricole"
-            ].map((bank, i) => (
-              <span key={i} className="mx-8 text-xl font-display text-foreground/50 hover:text-primary transition-colors">
-                {bank}
-              </span>
-            ))}
-          </div>
-          <div className="flex animate-marquee whitespace-nowrap absolute top-0 group-hover:pause" aria-hidden="true">
-            {[
+              "BNP Paribas", "Millennium", "Alior Bank", "BOŚ", "Credit Agricole",
               "PKO BP", "Pekao", "ING", "mBank", "Santander", 
               "BNP Paribas", "Millennium", "Alior Bank", "BOŚ", "Credit Agricole"
             ].map((bank, i) => (

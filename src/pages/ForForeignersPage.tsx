@@ -12,28 +12,7 @@ export default function ForForeignersPage() {
   const { t } = useLanguage();
   const page = t.foreignersPage;
 
-  const sections = [
-    {
-      title: page.whoWeHelpTitle,
-      text: page.whoWeHelpText,
-      icon: Globe,
-    },
-    {
-      title: page.processTitle,
-      text: page.processText,
-      icon: CheckCircle2,
-    },
-    {
-      title: page.banksTitle,
-      text: page.banksText,
-      icon: Building2,
-    },
-    {
-      title: page.documentsTitle,
-      text: page.documentsText,
-      icon: FileText,
-    },
-  ];
+  // We no longer need the static sections array, we'll use helpItems and whomItems directly from translations
 
   const faqs = [
     { q: page.faq1Q, a: page.faq1A },
@@ -80,21 +59,43 @@ export default function ForForeignersPage() {
       {/* ─── MAIN CONTENT ─── */}
       <Section className="py-24 lg:py-32">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 mb-24">
-          {sections.map((section, i) => (
-            <ScrollReveal key={i} delay={i * 100}>
-              <div className="premium-card p-10 h-full flex flex-col transition-all duration-300 border-l-4 border-l-gold bg-white">
-                <div className="mb-8 w-14 h-14 rounded-full bg-muted/60 flex items-center justify-center">
-                  <section.icon className="text-primary" size={24} strokeWidth={1.25} />
-                </div>
-                <h3 className="font-display text-2xl text-foreground mb-4">
-                  {section.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed flex-1">
-                  {section.text}
-                </p>
+          <ScrollReveal delay={0}>
+            <div className="premium-card p-10 h-full flex flex-col transition-all duration-300 border-l-4 border-l-gold bg-white">
+              <div className="mb-8 w-14 h-14 rounded-full bg-muted/60 flex items-center justify-center">
+                <HelpCircle className="text-primary" size={24} strokeWidth={1.25} />
               </div>
-            </ScrollReveal>
-          ))}
+              <h3 className="font-display text-2xl text-foreground mb-6">
+                {page.helpTitle}
+              </h3>
+              <ul className="space-y-4">
+                {page.helpItems.map((item: string, i: number) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <CheckCircle2 className="text-primary flex-shrink-0 w-5 h-5 mt-0.5" />
+                    <span className="text-muted-foreground leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={100}>
+            <div className="premium-card p-10 h-full flex flex-col transition-all duration-300 border-l-4 border-l-gold bg-white">
+              <div className="mb-8 w-14 h-14 rounded-full bg-muted/60 flex items-center justify-center">
+                <Globe className="text-primary" size={24} strokeWidth={1.25} />
+              </div>
+              <h3 className="font-display text-2xl text-foreground mb-6">
+                {page.whomTitle}
+              </h3>
+              <ul className="space-y-4">
+                {page.whomItems.map((item: string, i: number) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <CheckCircle2 className="text-primary flex-shrink-0 w-5 h-5 mt-0.5" />
+                    <span className="text-muted-foreground leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </ScrollReveal>
         </div>
 
         {/* ─── FAQ ─── */}
