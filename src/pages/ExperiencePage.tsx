@@ -63,28 +63,34 @@ export default function ExperiencePage() {
 
       {/* ─── MAIN CONTENT ─── */}
       <Section className="py-24 lg:py-32">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+        {/* ─── ROBBIE'S SECTION ─── */}
+        <div className="grid lg:grid-cols-5 gap-16 lg:gap-24 mb-24">
           
-          {/* ─── ROBBIE'S SECTION ─── */}
-          <div className="flex flex-col">
-            <ScrollReveal>
-              <div className="relative rounded-sm aspect-[4/5] img-zoom mb-8 overflow-hidden border border-border/40">
-                <img 
-                  src={advisorImgUrl} 
-                  alt="Robbie - Financial Advisor" 
-                  className="w-full h-full object-cover" 
-                  onError={(e) => {
-                    e.currentTarget.src = fallbackOfficeImgUrl;
-                  }}
-                />
-                <div className="absolute inset-0 bg-primary/5 transition-colors duration-500 hover:bg-transparent" />
+          {/* Left Column: Sticky Image */}
+          <div className="lg:col-span-2">
+            <ScrollReveal direction="left">
+              <div className="lg:sticky lg:top-32">
+                <div className="relative rounded-sm aspect-[4/5] img-zoom mb-8 overflow-hidden border border-border/40">
+                  <img 
+                    src={advisorImgUrl} 
+                    alt="Financial advisor" 
+                    className="w-full h-full object-cover" 
+                    onError={(e) => {
+                      e.currentTarget.src = fallbackOfficeImgUrl;
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-primary/5 transition-colors duration-500 hover:bg-transparent" />
+                </div>
               </div>
             </ScrollReveal>
-            
-            <div className="space-y-12 flex-1">
+          </div>
+          
+          {/* Right Column: Story Text */}
+          <div className="lg:col-span-3 pb-12">
+            <div className="space-y-16">
               {sections.map((section, i) => (
                 <ScrollReveal key={i} delay={i * 80}>
-                  <div className="relative pl-6">
+                  <div className="relative pl-6 lg:pl-10">
                     <div className="absolute left-0 top-2 bottom-2 w-px bg-gradient-to-b from-border/50 to-transparent" />
                     <div className="space-y-4">
                       <h2 className="font-display text-2xl lg:text-3xl text-foreground mb-4">
@@ -99,32 +105,41 @@ export default function ExperiencePage() {
               ))}
             </div>
           </div>
+        </div>
 
-          {/* ─── ANNA'S SECTION ─── */}
-          <div className="flex flex-col">
-            <ScrollReveal delay={100}>
-              <div className="relative rounded-sm aspect-[4/5] img-zoom mb-8 overflow-hidden border border-border/40">
-                <img 
-                  src={annaImgUrl} 
-                  alt="Anna - Financial Advisor" 
-                  className="w-full h-full object-cover object-top" 
-                  onError={(e) => {
-                    e.currentTarget.src = fallbackOfficeImgUrl;
-                  }}
-                />
-                <div className="absolute inset-0 bg-primary/5 transition-colors duration-500 hover:bg-transparent" />
+        {/* ─── ANNA'S SECTION ─── */}
+        <div className="grid lg:grid-cols-5 gap-16 lg:gap-24 mt-24 pt-24 border-t border-border/40">
+          
+          {/* Right Column: Image (reversed order for visual interest on desktop) */}
+          <div className="lg:col-span-2 lg:order-2">
+            <ScrollReveal direction="right">
+              <div className="lg:sticky lg:top-32">
+                <div className="relative rounded-sm aspect-[4/5] img-zoom mb-8 overflow-hidden border border-border/40">
+                  <img 
+                    src={annaImgUrl} 
+                    alt="Anna - Financial Advisor" 
+                    className="w-full h-full object-cover object-top" 
+                    onError={(e) => {
+                      e.currentTarget.src = fallbackOfficeImgUrl;
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-primary/5 transition-colors duration-500 hover:bg-transparent" />
+                </div>
               </div>
             </ScrollReveal>
-            
-            <div className="space-y-12 flex-1">
-              <ScrollReveal delay={180}>
-                <div className="relative pl-6">
-                  <div className="absolute left-0 top-2 bottom-2 w-px bg-gradient-to-b from-border/50 to-transparent" />
+          </div>
+          
+          {/* Left Column: Story Text */}
+          <div className="lg:col-span-3 pb-12 lg:order-1">
+            <div className="space-y-16">
+              <ScrollReveal delay={80}>
+                <div className="relative pr-6 lg:pr-10 text-right">
+                  <div className="absolute right-0 top-2 bottom-2 w-px bg-gradient-to-b from-border/50 to-transparent" />
                   <div className="space-y-4">
                     <h2 className="font-display text-2xl lg:text-3xl text-foreground mb-4">
                       {('annaExperience' in t) ? (t.annaExperience as any).title : "Leadership & Client Engagement"}
                     </h2>
-                    <p className="text-muted-foreground leading-relaxed text-base lg:text-lg text-pretty whitespace-pre-line">
+                    <p className="text-muted-foreground leading-relaxed text-base lg:text-lg text-pretty whitespace-pre-line inline-block text-left">
                       {('annaExperience' in t) ? (t.annaExperience as any).text : ""}
                     </p>
                   </div>
