@@ -108,21 +108,23 @@ export default function HomePage() {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="relative pt-24 lg:pt-28 pb-14 lg:pb-0 border-b border-border/40 overflow-hidden">
-        <div className="absolute inset-0">
+      <section className="relative pt-20 lg:pt-0 pb-10 lg:pb-0 border-b border-border/40 overflow-hidden bg-background flex flex-col lg:block">
+        
+        {/* Mobile Image (Clear and unblurred at the top) */}
+        <div className="w-full h-[45vh] relative lg:hidden mt-4">
           <img
             src={heroImgUrl}
-            alt="Independent mortgage advisor in a bright office"
-            className="w-full h-full object-cover object-top sm:object-center"
+            alt="Independent mortgage advisor"
+            className="w-full h-full object-cover object-top rounded-md shadow-sm"
             onError={(e) => {
               e.currentTarget.src = fallbackPortraitImgUrl;
             }}
           />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,1)_0%,rgba(255,255,255,0.95)_38%,rgba(255,255,255,0.7)_58%,rgba(255,255,255,0.3)_74%,rgba(255,255,255,0.06)_100%)]" />
         </div>
 
-        <div className="section-padding section-container relative min-h-[70vh] lg:min-h-[78vh] grid lg:grid-cols-2 items-center">
-          <div className="max-w-[640px] py-10 lg:py-16">
+        <div className="section-padding section-container relative grid lg:grid-cols-2 items-center min-h-0 lg:min-h-[78vh]">
+          {/* Text Content */}
+          <div className="max-w-[640px] py-10 lg:py-16 relative z-10 lg:pr-10">
             <ScrollReveal>
               <span className="eyebrow mb-5 inline-flex">
                 <span className="w-8 h-px bg-border" />
@@ -130,7 +132,7 @@ export default function HomePage() {
               </span>
             </ScrollReveal>
             <ScrollReveal delay={120}>
-              <h1 className="font-display text-[38px] sm:text-[54px] lg:text-[66px] text-foreground leading-[1.04] tracking-tight mb-5">
+              <h1 className="font-display text-[38px] sm:text-[46px] lg:text-[62px] text-foreground leading-[1.05] tracking-tight mb-5">
                 {t.hero.title}
               </h1>
             </ScrollReveal>
@@ -148,7 +150,20 @@ export default function HomePage() {
               </Button>
             </ScrollReveal>
           </div>
-          <div className="hidden lg:block" aria-hidden="true" />
+        </div>
+
+        {/* Desktop Image (Clear and unblurred on the right) */}
+        <div className="hidden lg:block absolute inset-y-0 right-0 w-[52%] z-0">
+          <img
+            src={heroImgUrl}
+            alt="Independent mortgage advisor"
+            className="w-full h-full object-cover object-center"
+            onError={(e) => {
+              e.currentTarget.src = fallbackPortraitImgUrl;
+            }}
+          />
+          {/* Soft fade on the left edge to blend with the white background */}
+          <div className="absolute inset-y-0 left-0 w-48 bg-gradient-to-r from-background via-background/80 to-transparent" />
         </div>
       </section>
 
