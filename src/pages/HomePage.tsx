@@ -7,11 +7,11 @@ import { Section, SectionHeader } from "@/components/Section";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { AnimatedNumber } from "@/components/AnimatedNumber";
 
-const heroImgUrl = "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2400"; // High-end corporate architecture context
-const advisorImgUrl = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1200";
+const heroImgUrl = "/anna_and_robbie.jpg"; // High-end corporate architecture context
+const advisorImgUrl = "/anna_and_robbie1.jpg";
 const propertyImgUrl = "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1200";
 const fallbackMediaImgUrl = "https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?auto=format&fit=crop&q=80&w=1400";
-const fallbackPortraitImgUrl = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1400";
+const fallbackPortraitImgUrl = "/anna_and_robbie1.jpg";
 
 export default function HomePage() {
   const { t, language } = useLanguage();
@@ -228,6 +228,8 @@ export default function HomePage() {
                 <p>{t.about.p1}</p>
                 <p>{t.about.p2}</p>
                 <p>{t.about.p3}</p>
+                {('p4' in t.about) && <p>{(t.about as any).p4}</p>}
+                {('p5' in t.about) && <p>{(t.about as any).p5}</p>}
               </div>
               <div className="mt-10 flex flex-wrap gap-4">
                 <Button variant="outline" size="lg" asChild>

@@ -8,7 +8,8 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 // Authentic stock image for Experience Hero
 const warsawImgUrl = "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2574&auto=format&fit=crop"; 
 // Authentic portrait for advisor
-const advisorImgUrl = "/robbie-solo.jpg";
+const advisorImgUrl = "/robbie.jpg";
+const annaImgUrl = "/anna.jpg";
 const fallbackOfficeImgUrl = "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1400&auto=format&fit=crop";
 
 export default function ExperiencePage() {
@@ -62,66 +63,76 @@ export default function ExperiencePage() {
 
       {/* ─── MAIN CONTENT ─── */}
       <Section className="py-24 lg:py-32">
-        <div className="grid lg:grid-cols-5 gap-16 lg:gap-24">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
           
-          {/* Left Column: Sticky Image */}
-          <div className="lg:col-span-2">
-            <ScrollReveal direction="left">
-              <div className="lg:sticky lg:top-32">
-                <div className="relative rounded-sm aspect-[4/5] img-zoom mb-8 overflow-hidden border border-border/40">
-                  <img 
-                    src={advisorImgUrl} 
-                    alt="Financial advisor" 
-                    className="w-full h-full object-cover" 
-                    onError={(e) => {
-                      e.currentTarget.src = fallbackOfficeImgUrl;
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-primary/5 transition-colors duration-500 hover:bg-transparent" />
-                </div>
-                
-                {/* Highlight box */}
-                <div className="bg-muted/50 p-6 rounded-sm border border-border">
-                  <h4 className="font-semibold text-foreground mb-4">
-                    {language === "pl" ? "Główne obszary wsparcia" : "Core Expertise"}
-                  </h4>
-                  <ul className="space-y-3">
-                    {(language === "pl"
-                      ? ["Kredyty hipoteczne", "Refinansowanie", "Klienci z działalnością gospodarczą", "Złożone sytuacje finansowe", "Dochody zagraniczne"]
-                      : ["Home Purchase Mortgages", "Refinancing Strategy", "Self-Employed Clients", "Complex Credit Structures", "Expat & Foreign Income"]
-                    ).map((item, j) => (
-                      <li key={j} className="flex items-start gap-3">
-                        <CheckCircle2 className="text-primary flex-shrink-0 w-4 h-4 mt-0.5" />
-                        <span className="text-muted-foreground leading-relaxed">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+          {/* ─── ROBBIE'S SECTION ─── */}
+          <div className="flex flex-col">
+            <ScrollReveal>
+              <div className="relative rounded-sm aspect-[4/5] img-zoom mb-8 overflow-hidden border border-border/40">
+                <img 
+                  src={advisorImgUrl} 
+                  alt="Robbie - Financial Advisor" 
+                  className="w-full h-full object-cover" 
+                  onError={(e) => {
+                    e.currentTarget.src = fallbackOfficeImgUrl;
+                  }}
+                />
+                <div className="absolute inset-0 bg-primary/5 transition-colors duration-500 hover:bg-transparent" />
               </div>
             </ScrollReveal>
-          </div>
-          
-          {/* Right Column: Story Text */}
-          <div className="lg:col-span-3 pb-12">
-            <div className="space-y-16">
+            
+            <div className="space-y-12 flex-1">
               {sections.map((section, i) => (
                 <ScrollReveal key={i} delay={i * 80}>
-                  <div className="relative pl-6 lg:pl-10">
-                    <div className="relative pl-6">
+                  <div className="relative pl-6">
                     <div className="absolute left-0 top-2 bottom-2 w-px bg-gradient-to-b from-border/50 to-transparent" />
-                    <ul className="space-y-4">                   <h2 className="font-display text-2xl lg:text-3xl text-foreground mb-4">
-                      {section.title}
-                    </h2>
-                    <p className="text-muted-foreground leading-relaxed text-base lg:text-lg text-pretty">
-                      {section.text}
-                    </p>
-                    </ul>
-                  </div>
+                    <div className="space-y-4">
+                      <h2 className="font-display text-2xl lg:text-3xl text-foreground mb-4">
+                        {section.title}
+                      </h2>
+                      <p className="text-muted-foreground leading-relaxed text-base lg:text-lg text-pretty whitespace-pre-line">
+                        {section.text}
+                      </p>
+                    </div>
                   </div>
                 </ScrollReveal>
               ))}
             </div>
           </div>
+
+          {/* ─── ANNA'S SECTION ─── */}
+          <div className="flex flex-col">
+            <ScrollReveal delay={100}>
+              <div className="relative rounded-sm aspect-[4/5] img-zoom mb-8 overflow-hidden border border-border/40">
+                <img 
+                  src={annaImgUrl} 
+                  alt="Anna - Financial Advisor" 
+                  className="w-full h-full object-cover object-top" 
+                  onError={(e) => {
+                    e.currentTarget.src = fallbackOfficeImgUrl;
+                  }}
+                />
+                <div className="absolute inset-0 bg-primary/5 transition-colors duration-500 hover:bg-transparent" />
+              </div>
+            </ScrollReveal>
+            
+            <div className="space-y-12 flex-1">
+              <ScrollReveal delay={180}>
+                <div className="relative pl-6">
+                  <div className="absolute left-0 top-2 bottom-2 w-px bg-gradient-to-b from-border/50 to-transparent" />
+                  <div className="space-y-4">
+                    <h2 className="font-display text-2xl lg:text-3xl text-foreground mb-4">
+                      {('annaExperience' in t) ? (t.annaExperience as any).title : "Leadership & Client Engagement"}
+                    </h2>
+                    <p className="text-muted-foreground leading-relaxed text-base lg:text-lg text-pretty whitespace-pre-line">
+                      {('annaExperience' in t) ? (t.annaExperience as any).text : ""}
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+          
         </div>
       </Section>
 

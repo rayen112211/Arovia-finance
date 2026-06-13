@@ -37,9 +37,11 @@ export const translations = {
     about: {
       label: "Our Story",
       title: "Why Independent Brokers Matter",
-      p1: "After 15+ years inside major banks like ANZ, NAB, and GE Money, we saw firsthand how the system works—and who it really serves.",
-      p2: "We left the corporate banking world to sit on your side of the table. We know exactly how risk analysts assess applications, which allows us to structure complex income and expat files in a way that guarantees approval.",
-      p3: "Our goal is simple: to provide elite, unbiased representation in the Polish mortgage market, securing you the absolute best terms available.",
+      p1: "Arovia Finance was founded with a simple vision: to provide clients with honest guidance, exceptional service, and a finance experience built on trust and long-term relationships.",
+      p2: "With backgrounds spanning finance, insurance, business management, sales, and client relationship management, we have spent years helping people make important financial decisions and achieve their personal and business goals. Throughout our careers, we recognised that many clients were looking for more than just a transaction — they wanted a trusted adviser who would take the time to understand their circumstances and genuinely act in their best interests.",
+      p3: "By combining our experience and shared values, we created Arovia Finance to deliver a more personalised approach to lending and finance. We believe that every client deserves clear communication, professional guidance, and ongoing support throughout their journey.",
+      p4: "Whether you're purchasing your first home, investing in property, refinancing an existing loan, or growing your business, our goal is to make the process straightforward, transparent, and stress-free. We are passionate about helping our clients succeed and take pride in building relationships that last well beyond settlement day.",
+      p5: "At Arovia Finance, you're not just another application — you're a valued client, and your success is our success."
     },
     services: {
       label: "Specialties",
@@ -149,6 +151,10 @@ export const translations = {
       specialisationText: "A bank employee can only offer you one product. As an independent broker, I sit on your side of the table, comparing all Polish banks to secure terms that serve your interests, not the lender's.",
       polandTitle: "The Polish Market",
       polandText: "Bridging international banking standards with local market knowledge in Poland.",
+    },
+    annaExperience: {
+      title: "Leadership & Client Engagement",
+      text: "Anna brings over a decade of experience in leadership, client relationship management, and business operations. For the past nine years, she has held a senior management role within the insurance industry, overseeing administration, marketing, event coordination, and client engagement.\n\nAnna has built a strong reputation for exceptional customer service, developing long-term business relationships, and helping clients navigate important decisions with confidence. At Arovia Finance, she combines her business experience with a genuine passion for helping people achieve their property and financial goals — ensuring every client feels supported from start to finish.",
     },
     consultationPage: {
       label: "Consultation",
@@ -267,9 +273,11 @@ export const translations = {
     about: {
       label: "O nas",
       title: "Dlaczego ekspert ma znaczenie",
-      p1: "Po spędzeniu ponad 15 lat wewnątrz banków takich jak ANZ, NAB i GE Money, doskonale rozumiemy, jak działa system oceny ryzyka.",
-      p2: "Zdecydowaliśmy opuścić korporacyjny świat, aby usiąść po Twojej stronie stołu. Dokładnie wiemy, jak analitycy oceniają wnioski, co pozwala nam zabezpieczyć finansowanie nawet w trudnych przypadkach dochodowych.",
-      p3: "Nasz cel jest prosty: zapewnić elitarną, bezstronną reprezentację na rynku, zabezpieczając dla Ciebie absolutnie najlepsze dostępne warunki.",
+      p1: "Arovia Finance powstała z prostej wizji: aby zapewnić klientom uczciwe wskazówki, wyjątkową obsługę i doświadczenie finansowe zbudowane na zaufaniu i długoterminowych relacjach.",
+      p2: "Dzięki doświadczeniu obejmującemu finanse, ubezpieczenia, zarządzanie biznesem, sprzedaż i zarządzanie relacjami z klientami, spędziliśmy lata pomagając ludziom podejmować ważne decyzje finansowe oraz osiągać ich osobiste i biznesowe cele. W trakcie naszych karier zauważyliśmy, że wielu klientów szukało czegoś więcej niż tylko transakcji - chcieli zaufanego doradcy, który poświęciłby czas na zrozumienie ich sytuacji i szczerze działałby w ich najlepszym interesie.",
+      p3: "Łącząc nasze doświadczenie i wspólne wartości, stworzyliśmy Arovia Finance, aby zapewnić bardziej spersonalizowane podejście do pożyczek i finansów. Wierzymy, że każdy klient zasługuje na jasną komunikację, profesjonalne doradztwo i stałe wsparcie podczas całej swojej podróży.",
+      p4: "Niezależnie od tego, czy kupujesz swój pierwszy dom, inwestujesz w nieruchomości, refinansujesz istniejący kredyt, czy rozwijasz swój biznes, naszym celem jest uczynienie tego procesu prostym, przejrzystym i bezstresowym. Jesteśmy pasjonatami pomagania naszym klientom w odniesieniu sukcesu i jesteśmy dumni z budowania relacji, które trwają znacznie dłużej niż dzień rozliczenia.",
+      p5: "W Arovia Finance nie jesteś tylko kolejnym wnioskiem - jesteś cenionym klientem, a Twój sukces jest naszym sukcesem."
     },
     services: {
       label: "Specjalizacje",
@@ -379,6 +387,10 @@ export const translations = {
       specialisationText: "Pracownik banku sprzeda Ci tylko jeden konkretny produkt. Jako ekspert niezależny gram w Twojej drużynie, zmuszając banki do konkurowania o Twoje finansowanie.",
       polandTitle: "Rynek polski",
       polandText: "Pomagam sprawnie omijać biurokrację bankową na polskim rynku, zachowując przy tym najwyższe standardy obsługi z zachodu.",
+    },
+    annaExperience: {
+      title: "Zarządzanie i Relacje z Klientem",
+      text: "Anna wnosi ponad dekadę doświadczenia w zarządzaniu, budowaniu relacji z klientami i operacjach biznesowych. Przez ostatnie dziewięć lat zajmowała stanowisko kierownicze w branży ubezpieczeniowej, nadzorując administrację, marketing, koordynację wydarzeń i zaangażowanie klientów.\n\nAnna zbudowała silną reputację dzięki wyjątkowej obsłudze klienta, rozwijaniu długoterminowych relacji biznesowych i pomaganiu klientom w podejmowaniu ważnych decyzji z pewnością siebie. W Arovia Finance łączy swoje doświadczenie biznesowe z prawdziwą pasją do pomagania ludziom w osiąganiu ich celów majątkowych i finansowych - zapewniając każdemu klientowi wsparcie od początku do końca.",
     },
     consultationPage: {
       label: "Konsultacja",
