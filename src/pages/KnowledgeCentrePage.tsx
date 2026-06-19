@@ -2,42 +2,45 @@ import { Link } from "react-router-dom";
 import { Home, Briefcase, Globe, Building, BookOpen, ArrowRight } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const heroImgUrl = "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=1400";
 
-const categories = [
-  { icon: Home, label: "Mortgages", slug: "mortgages" },
-  { icon: Briefcase, label: "Business Finance", slug: "business-finance" },
-  { icon: Globe, label: "International Clients", slug: "international-clients" },
-  { icon: Building, label: "Property Investors", slug: "property-investors" },
-  { icon: BookOpen, label: "Financial Education", slug: "financial-education" },
-];
-
-const articles = [
-  {
-    slug: "5-steps-mortgage-foreigner",
-    category: "MORTGAGES",
-    title: "5 Steps to Getting a Mortgage in Poland as a Foreigner",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
-    date: "May 15, 2024",
-  },
-  {
-    slug: "business-finance-growth",
-    category: "BUSINESS FINANCE",
-    title: "How to Finance Your Business Growth in Poland",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800",
-    date: "May 10, 2024",
-  },
-  {
-    slug: "buying-property-expat",
-    category: "INTERNATIONAL CLIENTS",
-    title: "Buying Property in Poland as an Expat – What You Need to Know",
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=800",
-    date: "May 5, 2024",
-  },
-];
-
 export default function KnowledgeCentrePage() {
+  const { t } = useLanguage();
+
+  const categories = [
+    { icon: Home, label: t.knowledge.mortgages, slug: "mortgages" },
+    { icon: Briefcase, label: t.knowledge.businessFinance, slug: "business-finance" },
+    { icon: Globe, label: t.knowledge.internationalClients, slug: "international-clients" },
+    { icon: Building, label: t.knowledge.propertyInvestors, slug: "property-investors" },
+    { icon: BookOpen, label: t.knowledge.financialEducation, slug: "financial-education" },
+  ];
+
+  const articles = [
+    {
+      slug: "5-steps-mortgage-foreigner",
+      category: t.knowledge.mortgages.toUpperCase(),
+      title: "5 Steps to Getting a Mortgage in Poland as a Foreigner", // In a real app, article titles/content would also be translated or come from CMS
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
+      date: "May 15, 2024",
+    },
+    {
+      slug: "business-finance-growth",
+      category: t.knowledge.businessFinance.toUpperCase(),
+      title: "How to Finance Your Business Growth in Poland",
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800",
+      date: "May 10, 2024",
+    },
+    {
+      slug: "buying-property-expat",
+      category: t.knowledge.internationalClients.toUpperCase(),
+      title: "Buying Property in Poland as an Expat – What You Need to Know",
+      image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=800",
+      date: "May 5, 2024",
+    },
+  ];
+
   return (
     <>
       {/* ─── HERO ─── */}
@@ -48,14 +51,14 @@ export default function KnowledgeCentrePage() {
             <div className="py-12 lg:py-16 pr-0 lg:pr-16">
               <ScrollReveal>
                 <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-primary-foreground mb-4">
-                  Knowledge Centre
+                  {t.knowledge.heroTitle}
                 </h1>
                 <div className="w-10 h-px bg-gold mb-6" />
                 <p className="text-primary-foreground/80 text-base leading-relaxed mb-3">
-                  Insights, guides and expert advice to help you make informed financial decisions.
+                  {t.knowledge.heroDesc}
                 </p>
                 <p className="text-primary-foreground/60 text-sm leading-relaxed max-w-7xl">
-                  Stay up to date with the latest articles on mortgages, business finance, property investment and more.
+                  {t.knowledge.heroSub}
                 </p>
               </ScrollReveal>
             </div>
@@ -76,7 +79,7 @@ export default function KnowledgeCentrePage() {
       <section className="py-16 lg:py-20 bg-background">
         <div className="section-padding section-container">
           <ScrollReveal>
-            <h2 className="font-display text-2xl lg:text-3xl text-foreground mb-10">Browse by Topic</h2>
+            <h2 className="font-display text-2xl lg:text-3xl text-foreground mb-10">{t.knowledge.browseTopic}</h2>
           </ScrollReveal>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             {categories.map((cat, i) => (
@@ -102,7 +105,7 @@ export default function KnowledgeCentrePage() {
       <section className="py-12 lg:py-16 bg-secondary">
         <div className="section-padding section-container">
           <ScrollReveal>
-            <h2 className="font-display text-2xl lg:text-3xl text-foreground mb-10">Latest Articles</h2>
+            <h2 className="font-display text-2xl lg:text-3xl text-foreground mb-10">{t.knowledge.latestArticles}</h2>
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {articles.map((article, i) => (
@@ -127,7 +130,7 @@ export default function KnowledgeCentrePage() {
                       {article.title}
                     </h3>
                     <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-foreground/50 group-hover:text-gold transition-colors duration-200">
-                      Read more <ArrowRight size={12} />
+                      {t.knowledge.readMore} <ArrowRight size={12} />
                     </span>
                   </div>
                 </Link>
@@ -142,12 +145,12 @@ export default function KnowledgeCentrePage() {
         <div className="section-padding section-container flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <h2 className="font-display text-2xl lg:text-3xl text-primary-foreground mb-1">
-              Need personalised advice?
+              {t.knowledge.ctaTitle}
             </h2>
-            <p className="text-primary-foreground/60 text-sm">Book a consultation with our team.</p>
+            <p className="text-primary-foreground/60 text-sm">{t.knowledge.ctaDesc}</p>
           </div>
           <Button variant="premium" size="lg" asChild className="flex-shrink-0 rounded-md">
-            <Link to="/contact">Book a Consultation</Link>
+            <Link to="/contact">{t.nav.cta}</Link>
           </Button>
         </div>
       </section>

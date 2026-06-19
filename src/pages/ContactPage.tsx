@@ -3,27 +3,9 @@ import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Linkedin, ChevronDown } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const officeImgUrl = "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=1400";
-
-const faqItems = [
-  {
-    q: "Do you work with foreign clients?",
-    a: "Yes. We specialise in helping international clients, expats and foreign nationals navigate the Polish financial system. We provide full support in English.",
-  },
-  {
-    q: "Can you help with business loans?",
-    a: "Absolutely. We assist business owners, entrepreneurs and companies of all sizes with financing solutions including business loans, investment finance and cash-flow products.",
-  },
-  {
-    q: "Do you charge a fee?",
-    a: "Our advisory service is typically free of charge to clients. Our remuneration is covered by the lender upon successful completion, meaning our advice is fully independent.",
-  },
-  {
-    q: "How long does the process take?",
-    a: "Timelines vary depending on the complexity of your case and the lender. A straightforward mortgage can take 4–8 weeks from consultation to approval. We'll keep you informed every step of the way.",
-  },
-];
 
 function AccordionItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
@@ -52,6 +34,27 @@ function AccordionItem({ q, a }: { q: string; a: string }) {
 }
 
 export default function ContactPage() {
+  const { t } = useLanguage();
+
+  const faqItems = [
+    {
+      q: t.contact.faq1Q,
+      a: t.contact.faq1A,
+    },
+    {
+      q: t.contact.faq2Q,
+      a: t.contact.faq2A,
+    },
+    {
+      q: t.contact.faq3Q,
+      a: t.contact.faq3A,
+    },
+    {
+      q: t.contact.faq4Q,
+      a: t.contact.faq4A,
+    },
+  ];
+
   return (
     <>
       {/* ─── HERO ─── */}
@@ -62,14 +65,14 @@ export default function ContactPage() {
             <div className="py-12 lg:py-20 pr-0 lg:pr-16">
               <ScrollReveal>
                 <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-primary-foreground mb-4">
-                  Contact Us
+                  {t.contact.heroTitle}
                 </h1>
                 <div className="w-10 h-px bg-gold mb-6" />
                 <p className="text-primary-foreground/75 text-base leading-relaxed mb-2">
-                  We're here to help.
+                  {t.contact.heroSub}
                 </p>
                 <p className="text-primary-foreground/60 text-base leading-relaxed">
-                  Let's discuss your plans and find the right financial solution for you.
+                  {t.contact.heroDesc}
                 </p>
               </ScrollReveal>
             </div>
@@ -94,14 +97,14 @@ export default function ContactPage() {
             {/* ── Column 1: Get in Touch ── */}
             <ScrollReveal direction="up" delay={100}>
               <div>
-                <h2 className="font-display text-2xl text-foreground mb-8">Get in Touch</h2>
+                <h2 className="font-display text-2xl text-foreground mb-8">{t.contact.getInTouch}</h2>
                 <div className="space-y-6">
                   <a href="tel:+48733985458" className="flex items-start gap-4 group">
                     <div className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-primary/10 transition-colors">
                       <Phone size={16} strokeWidth={1.5} className="text-gold" />
                     </div>
                     <div>
-                      <p className="text-xs uppercase tracking-[0.1em] text-foreground/50 mb-0.5">Phone</p>
+                      <p className="text-xs uppercase tracking-[0.1em] text-foreground/50 mb-0.5">{t.contact.phoneLabel}</p>
                       <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
                         +48 733 985 458
                       </span>
@@ -113,7 +116,7 @@ export default function ContactPage() {
                       <Mail size={16} strokeWidth={1.5} className="text-gold" />
                     </div>
                     <div>
-                      <p className="text-xs uppercase tracking-[0.1em] text-foreground/50 mb-0.5">Email</p>
+                      <p className="text-xs uppercase tracking-[0.1em] text-foreground/50 mb-0.5">{t.contact.emailLabel}</p>
                       <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
                         contact@aroviafinance.pl
                       </span>
@@ -125,7 +128,7 @@ export default function ContactPage() {
                       <MapPin size={16} strokeWidth={1.5} className="text-gold" />
                     </div>
                     <div>
-                      <p className="text-xs uppercase tracking-[0.1em] text-foreground/50 mb-0.5">Address</p>
+                      <p className="text-xs uppercase tracking-[0.1em] text-foreground/50 mb-0.5">{t.contact.addressLabel}</p>
                       <span className="text-sm font-medium text-foreground">Warsaw, Poland</span>
                     </div>
                   </div>
@@ -135,7 +138,7 @@ export default function ContactPage() {
                       <Linkedin size={16} strokeWidth={1.5} className="text-gold" />
                     </div>
                     <div>
-                      <p className="text-xs uppercase tracking-[0.1em] text-foreground/50 mb-0.5">LinkedIn</p>
+                      <p className="text-xs uppercase tracking-[0.1em] text-foreground/50 mb-0.5">{t.contact.linkedinLabel}</p>
                       <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
                         Arovia Finance
                       </span>
@@ -148,13 +151,13 @@ export default function ContactPage() {
             {/* ── Column 2: Send Us a Message ── */}
             <ScrollReveal direction="up" delay={200}>
               <div>
-                <h2 className="font-display text-2xl text-foreground mb-8">Send Us a Message</h2>
+                <h2 className="font-display text-2xl text-foreground mb-8">{t.contact.sendMessage}</h2>
                 <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
                   <div>
                     <input
                       type="text"
                       className="form-input"
-                      placeholder="Your Name"
+                      placeholder={t.contactPreview.name}
                       required
                       id="contact-name"
                     />
@@ -163,7 +166,7 @@ export default function ContactPage() {
                     <input
                       type="email"
                       className="form-input"
-                      placeholder="Email Address"
+                      placeholder={t.contactPreview.email}
                       required
                       id="contact-email"
                     />
@@ -172,7 +175,7 @@ export default function ContactPage() {
                     <input
                       type="tel"
                       className="form-input"
-                      placeholder="Phone Number"
+                      placeholder={t.contactPreview.phone}
                       id="contact-phone"
                     />
                   </div>
@@ -180,7 +183,7 @@ export default function ContactPage() {
                     <textarea
                       rows={5}
                       className="form-textarea"
-                      placeholder="How can we help you?"
+                      placeholder={t.contactPreview.helpText}
                       required
                       id="contact-message"
                     />
@@ -192,7 +195,7 @@ export default function ContactPage() {
                     className="w-full rounded-md mt-2"
                     id="contact-submit"
                   >
-                    Send Message
+                    {t.contact.submitBtn}
                   </Button>
                 </form>
               </div>
@@ -201,7 +204,7 @@ export default function ContactPage() {
             {/* ── Column 3: FAQ ── */}
             <ScrollReveal direction="up" delay={300}>
               <div>
-                <h2 className="font-display text-2xl text-foreground mb-8">FAQ</h2>
+                <h2 className="font-display text-2xl text-foreground mb-8">{t.contact.faqTitle}</h2>
                 <div>
                   {faqItems.map((item, i) => (
                     <AccordionItem key={i} q={item.q} a={item.a} />

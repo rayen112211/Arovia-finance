@@ -3,38 +3,41 @@ import { ArrowRight, Shield, Users, Star, Globe } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { AnimatedNumber } from "@/components/AnimatedNumber";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const officeImgUrl = "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=1600";
 
 export default function AboutPage() {
+  const { t } = useLanguage();
+
   const values = [
     {
       icon: Shield,
-      title: "Integrity",
-      desc: "We give honest advice and always put our clients' interests first.",
+      title: t.about.val1Title,
+      desc: t.about.val1Desc,
     },
     {
       icon: Users,
-      title: "Relationships",
-      desc: "We build long-term relationships based on trust, respect and personal service.",
+      title: t.about.val2Title,
+      desc: t.about.val2Desc,
     },
     {
       icon: Star,
-      title: "Excellence",
-      desc: "We are committed to high standards, continuous learning and the best possible outcomes.",
+      title: t.about.val3Title,
+      desc: t.about.val3Desc,
     },
     {
       icon: Globe,
-      title: "International Perspective",
-      desc: "We understand the unique needs of international clients and provide support in English and Polish.",
+      title: t.about.val4Title,
+      desc: t.about.val4Desc,
     },
   ];
 
   const stats = [
-    { value: 15, suffix: "+", label: "Years of experience in finance and banking" },
-    { value: 1000, suffix: "+", label: "Clients supported across Poland and internationally" },
-    { value: 20, suffix: "+", label: "Lending partners and financial institutions" },
-    { prefix: "Extensive", label: "International banking background" },
+    { value: 15, suffix: "+", label: t.about.stat1Label },
+    { value: 1000, suffix: "+", label: t.about.stat2Label },
+    { value: 20, suffix: "+", label: t.about.stat3Label },
+    { prefix: t.about.stat4Prefix, label: t.about.stat4Label },
   ];
 
   return (
@@ -48,17 +51,17 @@ export default function AboutPage() {
             <div className="py-16 lg:py-24 pr-0 lg:pr-16">
               <ScrollReveal>
                 <span className="inline-block text-xs font-semibold uppercase tracking-[0.18em] text-gold mb-5">
-                  About Us
+                  {t.about.eyebrow}
                 </span>
                 <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-primary-foreground mb-8">
-                  People you can trust with your financial future.
+                  {t.about.heroTitle}
                 </h1>
                 <div className="w-10 h-px bg-gold mb-8" />
                 <p className="text-primary-foreground/75 text-base leading-relaxed mb-4">
-                  Arovia Finance was founded by Anna Rosinska and Jay Arora to provide independent, client-focused financial advice with integrity, transparency and a personal approach.
+                  {t.about.heroP1}
                 </p>
                 <p className="text-primary-foreground/75 text-base leading-relaxed">
-                  We combine international banking experience with deep knowledge of the Polish market to help clients make confident financial decisions.
+                  {t.about.heroP2}
                 </p>
               </ScrollReveal>
             </div>
@@ -80,7 +83,7 @@ export default function AboutPage() {
       <section className="py-16 lg:py-24 bg-background">
         <div className="section-padding section-container">
           <ScrollReveal>
-            <h2 className="font-display text-3xl lg:text-4xl text-center text-foreground mb-3">Meet the Founders</h2>
+            <h2 className="font-display text-3xl lg:text-4xl text-center text-foreground mb-3">{t.about.foundersTitle}</h2>
             <div className="w-10 h-px bg-gold mx-auto mb-14" />
           </ScrollReveal>
 
@@ -99,17 +102,8 @@ export default function AboutPage() {
                   <h3 className="font-display text-2xl text-foreground mb-1">Anna Rosinska</h3>
                   <p className="text-sm font-semibold text-gold tracking-wide mb-4">Co-Founder &amp; Financial Advisor</p>
                   <p className="text-sm text-foreground/70 leading-relaxed mb-3">
-                    With over 15 years of experience in finance and banking, Anna specialises in helping individuals and families secure the right mortgage and financial solutions.
+                    {t.about.annaDesc}
                   </p>
-                  <p className="text-sm text-foreground/70 leading-relaxed mb-5">
-                    Her clients value her professionalism, attention to detail and commitment to finding the best outcomes for their unique circumstances.
-                  </p>
-                  <Link
-                    to="/about"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-gold hover:gap-3 transition-all duration-200"
-                  >
-                    Learn more about Anna <ArrowRight size={14} />
-                  </Link>
                 </div>
               </div>
             </ScrollReveal>
@@ -120,7 +114,7 @@ export default function AboutPage() {
                 <div className="flex-shrink-0 w-full sm:w-64 lg:w-[280px] xl:w-[320px] h-[360px] sm:h-[340px] lg:h-[380px] xl:h-[420px] rounded-sm overflow-hidden shadow-sm">
                   <img
                     src="/robbie-solo.jpg"
-                    alt="Jay Arora — Co-Founder"
+                    alt="Jay Arora"
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
@@ -128,17 +122,8 @@ export default function AboutPage() {
                   <h3 className="font-display text-2xl text-foreground mb-1">Jay Arora</h3>
                   <p className="text-sm font-semibold text-gold tracking-wide mb-4">Co-Founder &amp; Financial Advisor</p>
                   <p className="text-sm text-foreground/70 leading-relaxed mb-3">
-                    Jay brings over 20 years of international banking experience, having worked with leading financial institutions across Europe and the Middle East.
+                    {t.about.jayDesc}
                   </p>
-                  <p className="text-sm text-foreground/70 leading-relaxed mb-5">
-                    He specialises in supporting business owners, investors and international clients with complex financing needs.
-                  </p>
-                  <Link
-                    to="/about"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-gold hover:gap-3 transition-all duration-200"
-                  >
-                    Learn more about Jay <ArrowRight size={14} />
-                  </Link>
                 </div>
               </div>
             </ScrollReveal>
@@ -150,7 +135,7 @@ export default function AboutPage() {
       <section className="py-16 lg:py-24 bg-secondary">
         <div className="section-padding section-container">
           <ScrollReveal>
-            <h2 className="font-display text-3xl lg:text-4xl text-center text-foreground mb-3">Our Values</h2>
+            <h2 className="font-display text-3xl lg:text-4xl text-center text-foreground mb-3">{t.about.valuesTitle}</h2>
             <div className="w-10 h-px bg-gold mx-auto mb-14" />
           </ScrollReveal>
 
@@ -174,7 +159,7 @@ export default function AboutPage() {
       <section className="bg-primary py-16 lg:py-20">
         <div className="section-padding section-container">
           <ScrollReveal>
-            <h2 className="font-display text-2xl lg:text-3xl text-center text-primary-foreground mb-3">Experience You Can Rely On</h2>
+            <h2 className="font-display text-2xl lg:text-3xl text-center text-primary-foreground mb-3">{t.about.statsTitle}</h2>
             <div className="w-10 h-px bg-gold mx-auto mb-12" />
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
@@ -218,12 +203,12 @@ export default function AboutPage() {
               </div>
             </ScrollReveal>
             <ScrollReveal direction="up" delay={200}>
-              <h2 className="font-display text-3xl lg:text-4xl text-foreground mb-6">Let's Work Together</h2>
+              <h2 className="font-display text-3xl lg:text-4xl text-foreground mb-6">{t.about.workTogetherTitle}</h2>
               <p className="text-foreground/70 leading-relaxed mb-8">
-                Your financial goals are unique. We're here to listen, guide you through the options and help you make the right decisions with confidence.
+                {t.about.workTogetherDesc}
               </p>
               <Button variant="premium" size="lg" asChild className="rounded-md">
-                <Link to="/contact">Book a Consultation</Link>
+                <Link to="/contact">{t.nav.cta}</Link>
               </Button>
             </ScrollReveal>
           </div>

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Instagram, Linkedin, Facebook } from "lucide-react";
 
 export function Header() {
-  const { language, toggleLanguage } = useLanguage();
+  const { language, toggleLanguage, t } = useLanguage();
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -22,12 +22,12 @@ export function Header() {
   }, [location.pathname]);
 
   const links = [
-    { to: "/", label: "Home" },
-    { to: "/about", label: "About Us" },
-    { to: "/how-we-work", label: "How We Work" },
-    { to: "/international-clients", label: "International Clients" },
-    { to: "/knowledge-centre", label: "Knowledge Centre" },
-    { to: "/contact", label: "Contact" },
+    { to: "/", label: t.nav.home },
+    { to: "/about", label: t.nav.experience },
+    { to: "/how-we-work", label: t.nav.cooperation },
+    { to: "/international-clients", label: t.nav.foreigners },
+    { to: "/knowledge-centre", label: t.nav.media },
+    { to: "/contact", label: t.nav.contact },
   ];
 
   const isActive = (to: string) =>
@@ -75,27 +75,18 @@ export function Header() {
         </nav>
 
         {/* Desktop Actions */}
-        <div className="hidden xl:flex items-center gap-3">
-          <div className="flex items-center gap-2 mr-2">
-            <a href="#" className="text-foreground/70 hover:text-foreground transition-colors p-1" aria-label="LinkedIn">
-              <Linkedin size={18} />
-            </a>
-            <a href="#" className="text-foreground/70 hover:text-foreground transition-colors p-1" aria-label="Facebook">
-              <Facebook size={18} />
-            </a>
-            <a href="#" className="text-foreground/70 hover:text-foreground transition-colors p-1" aria-label="Instagram">
-              <Instagram size={18} />
-            </a>
-          </div>
+        <div className="hidden xl:flex items-center gap-5">
           <button
             onClick={toggleLanguage}
-            className="text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded hover:bg-muted/60"
+            className="group relative flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary-foreground/5 border border-border/50 hover:bg-primary-foreground/10 transition-all"
             aria-label={`Switch to ${language === "en" ? "Polish" : "English"}`}
           >
-            {language === "en" ? "PL" : "EN"}
+            <span className={`text-[11px] font-bold ${language === "pl" ? "text-foreground" : "text-muted-foreground"}`}>PL</span>
+            <div className="w-px h-3 bg-border/80"></div>
+            <span className={`text-[11px] font-bold ${language === "en" ? "text-foreground" : "text-muted-foreground"}`}>EN</span>
           </button>
           <Button variant="premium" size="lg" className="text-sm px-6 shadow-none rounded-md" asChild>
-            <Link to="/contact">Book a Consultation</Link>
+            <Link to="/contact">{t.nav.cta}</Link>
           </Button>
         </div>
 
@@ -134,27 +125,19 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <div className="flex items-center gap-3 pt-3 mt-2 border-t border-border">
-              <div className="flex items-center gap-3 mr-auto pl-2">
-                <a href="#" className="text-foreground/70 hover:text-foreground transition-colors" aria-label="LinkedIn">
-                  <Linkedin size={20} />
-                </a>
-                <a href="#" className="text-foreground/70 hover:text-foreground transition-colors" aria-label="Facebook">
-                  <Facebook size={20} />
-                </a>
-                <a href="#" className="text-foreground/70 hover:text-foreground transition-colors" aria-label="Instagram">
-                  <Instagram size={20} />
-                </a>
-              </div>
+            <div className="flex flex-col gap-4 pt-5 mt-2 border-t border-border px-2">
               <button
                 onClick={toggleLanguage}
-                className="text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors px-3 py-2 rounded hover:bg-muted/40"
+                className="group relative flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-primary-foreground/5 border border-border/50 hover:bg-primary-foreground/10 transition-all mx-auto w-32"
+                aria-label={`Switch to ${language === "en" ? "Polish" : "English"}`}
               >
-                {language === "en" ? "PL" : "EN"}
+                <span className={`text-[13px] font-bold ${language === "pl" ? "text-foreground" : "text-muted-foreground"}`}>PL</span>
+                <div className="w-px h-4 bg-border/80"></div>
+                <span className={`text-[13px] font-bold ${language === "en" ? "text-foreground" : "text-muted-foreground"}`}>EN</span>
               </button>
-              <Button variant="premium" size="lg" asChild className="flex-1 text-sm rounded-md">
+              <Button variant="premium" size="lg" asChild className="w-full text-sm rounded-md">
                 <Link to="/contact" onClick={() => setMobileOpen(false)}>
-                  Book a Consultation
+                  {t.nav.cta}
                 </Link>
               </Button>
             </div>

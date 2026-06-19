@@ -2,50 +2,53 @@ import { Link } from "react-router-dom";
 import { Search, FileText, Lightbulb, Handshake, CheckCircle, Heart } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const heroImgUrl = "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1600";
 const promiseImgUrl = "https://images.unsplash.com/photo-1600210491892-03d54079d9f2?auto=format&fit=crop&q=80&w=1200";
 
-const steps = [
-  {
-    num: "1",
-    icon: Search,
-    title: "Consultation",
-    desc: "We get to know you, your goals and your current financial situation.",
-  },
-  {
-    num: "2",
-    icon: FileText,
-    title: "Financial Review",
-    desc: "We analyse your circumstances and explore the options available to you.",
-  },
-  {
-    num: "3",
-    icon: Lightbulb,
-    title: "Strategy",
-    desc: "We create a tailored strategy to achieve the best possible outcome.",
-  },
-  {
-    num: "4",
-    icon: Handshake,
-    title: "Lender Engagement",
-    desc: "We approach suitable lenders and negotiate the most competitive terms on your behalf.",
-  },
-  {
-    num: "5",
-    icon: CheckCircle,
-    title: "Approval & Completion",
-    desc: "We guide you through the application, approval and completion process.",
-  },
-  {
-    num: "6",
-    icon: Heart,
-    title: "Ongoing Support",
-    desc: "We're here for you beyond the deal, whenever you need us.",
-  },
-];
-
 export default function HowWeWorkPage() {
+  const { t } = useLanguage();
+
+  const steps = [
+    {
+      num: "1",
+      icon: Search,
+      title: t.home.process1Title,
+      desc: t.how.step1Desc,
+    },
+    {
+      num: "2",
+      icon: FileText,
+      title: t.home.process2Title,
+      desc: t.how.step2Desc,
+    },
+    {
+      num: "3",
+      icon: Lightbulb,
+      title: t.home.process3Title,
+      desc: t.how.step3Desc,
+    },
+    {
+      num: "4",
+      icon: Handshake,
+      title: t.home.process4Title,
+      desc: t.how.step4Desc,
+    },
+    {
+      num: "5",
+      icon: CheckCircle,
+      title: t.home.process5Title,
+      desc: t.how.step5Desc,
+    },
+    {
+      num: "6",
+      icon: Heart,
+      title: t.home.process6Title,
+      desc: t.how.step6Desc,
+    },
+  ];
+
   return (
     <>
       {/* ─── HERO ─── */}
@@ -56,14 +59,11 @@ export default function HowWeWorkPage() {
             <div className="py-16 lg:py-24 pr-0 lg:pr-16">
               <ScrollReveal>
                 <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-primary-foreground mb-6">
-                  How We Work
+                  {t.how.heroTitle}
                 </h1>
                 <div className="w-10 h-px bg-gold mb-6" />
                 <p className="text-primary-foreground/75 text-base leading-relaxed max-w-md">
-                  A clear, transparent process designed around you.
-                </p>
-                <p className="text-primary-foreground/65 text-base leading-relaxed mt-3 max-w-md">
-                  We guide you every step of the way, making complex decisions simple.
+                  {t.how.heroDesc}
                 </p>
               </ScrollReveal>
             </div>
@@ -112,22 +112,22 @@ export default function HowWeWorkPage() {
             <div className="lg:sticky lg:top-28 self-start">
               <ScrollReveal direction="left" delay={200}>
                 <div className="bg-primary rounded-sm p-8 mb-6">
-                  <h3 className="font-display text-2xl text-primary-foreground mb-6">Our Promise</h3>
+                  <h3 className="font-display text-2xl text-primary-foreground mb-6">{t.how.promiseTitle}</h3>
                   <ul className="space-y-3 mb-6">
                     <li className="flex items-start gap-3">
                       <span className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0 mt-2" />
-                      <span className="text-primary-foreground/80 text-sm leading-relaxed">Clear communication.</span>
+                      <span className="text-primary-foreground/80 text-sm leading-relaxed">{t.how.promiseLi1}</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0 mt-2" />
-                      <span className="text-primary-foreground/80 text-sm leading-relaxed">Honest advice.</span>
+                      <span className="text-primary-foreground/80 text-sm leading-relaxed">{t.how.promiseLi2}</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0 mt-2" />
-                      <span className="text-primary-foreground/80 text-sm leading-relaxed">Solutions tailored to you.</span>
+                      <span className="text-primary-foreground/80 text-sm leading-relaxed">{t.how.promiseLi3}</span>
                     </li>
                   </ul>
-                  <p className="text-primary-foreground/60 text-sm italic">Your success is our priority.</p>
+                  <p className="text-primary-foreground/60 text-sm italic">{t.how.promiseItalic}</p>
                 </div>
 
                 <div className="rounded-sm overflow-hidden aspect-[4/3]">
@@ -149,12 +149,12 @@ export default function HowWeWorkPage() {
         <div className="section-padding section-container flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <h2 className="font-display text-2xl lg:text-3xl text-primary-foreground mb-1">
-              Ready to take the next step?
+              {t.how.ctaTitle}
             </h2>
-            <p className="text-primary-foreground/60 text-sm">Let's discuss your goals and how we can help.</p>
+            <p className="text-primary-foreground/60 text-sm">{t.how.ctaDesc}</p>
           </div>
           <Button variant="premium" size="lg" asChild className="flex-shrink-0 rounded-md">
-            <Link to="/contact">Book a Consultation</Link>
+            <Link to="/contact">{t.nav.cta}</Link>
           </Button>
         </div>
       </section>

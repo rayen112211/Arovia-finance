@@ -2,14 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { ArrowRight, Linkedin, Facebook, Instagram } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
-
-const categories = [
-  { label: "Mortgages", slug: "mortgages" },
-  { label: "Business Finance", slug: "business-finance" },
-  { label: "International Clients", slug: "international-clients" },
-  { label: "Property Investors", slug: "property-investors" },
-  { label: "Financial Education", slug: "financial-education" },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const relatedArticles = [
   {
@@ -111,15 +104,24 @@ const articleData: Record<string, {
 
 export default function ArticlePage() {
   const { slug } = useParams<{ slug: string }>();
+  const { t } = useLanguage();
   const article = slug ? articleData[slug] : null;
+
+  const categories = [
+    { label: t.knowledge.mortgages, slug: "mortgages" },
+    { label: t.knowledge.businessFinance, slug: "business-finance" },
+    { label: t.knowledge.internationalClients, slug: "international-clients" },
+    { label: t.knowledge.propertyInvestors, slug: "property-investors" },
+    { label: t.knowledge.financialEducation, slug: "financial-education" },
+  ];
 
   if (!article) {
     return (
       <div className="section-padding section-container py-32 text-center">
-        <h1 className="font-display text-3xl text-foreground mb-4">Article Not Found</h1>
-        <p className="text-foreground/60 mb-8">This article doesn't exist yet.</p>
+        <h1 className="font-display text-3xl text-foreground mb-4">{t.article.notFoundTitle}</h1>
+        <p className="text-foreground/60 mb-8">{t.article.notFoundDesc}</p>
         <Button variant="premium" asChild className="rounded-md">
-          <Link to="/knowledge-centre">Back to Knowledge Centre</Link>
+          <Link to="/knowledge-centre">{t.article.backBtn}</Link>
         </Button>
       </div>
     );
@@ -131,7 +133,7 @@ export default function ArticlePage() {
       <div className="bg-secondary border-b border-border/40">
         <div className="section-padding section-container py-3">
           <nav className="flex items-center gap-2 text-xs text-foreground/50">
-            <Link to="/knowledge-centre" className="hover:text-foreground transition-colors">Knowledge Centre</Link>
+            <Link to="/knowledge-centre" className="hover:text-foreground transition-colors">{t.nav.media}</Link>
             <span>›</span>
             <span className="capitalize">{article.category.charAt(0) + article.category.slice(1).toLowerCase()}</span>
             <span>›</span>
@@ -145,7 +147,7 @@ export default function ArticlePage() {
         <div className="grid lg:grid-cols-[200px_1fr_280px] gap-10 lg:gap-12">
           {/* Category sidebar */}
           <aside className="hidden lg:block">
-            <h3 className="text-xs font-bold uppercase tracking-[0.12em] text-foreground/40 mb-4">Categories</h3>
+            <h3 className="text-xs font-bold uppercase tracking-[0.12em] text-foreground/40 mb-4">{t.article.categories}</h3>
             <ul className="space-y-1">
               {categories.map((cat) => (
                 <li key={cat.slug}>
@@ -191,7 +193,7 @@ export default function ArticlePage() {
             {/* Share */}
             <div className="mb-8">
               <h3 className="text-xs font-bold uppercase tracking-[0.12em] text-foreground/40 mb-4">
-                Share this article
+                {t.article.share}
               </h3>
               <div className="flex gap-3">
                 <a
@@ -221,7 +223,7 @@ export default function ArticlePage() {
             {/* Related articles */}
             <div>
               <h3 className="text-xs font-bold uppercase tracking-[0.12em] text-foreground/40 mb-4">
-                Related Articles
+                {t.article.related}
               </h3>
               <div className="space-y-5">
                 {relatedArticles.filter((a) => a.slug !== slug).slice(0, 3).map((rel) => (
@@ -243,7 +245,7 @@ export default function ArticlePage() {
                         {rel.title}
                       </p>
                       <span className="inline-flex items-center gap-1 text-xs text-gold">
-                        Read more <ArrowRight size={10} />
+                        {t.knowledge.readMore} <ArrowRight size={10} />
                       </span>
                     </div>
                   </Link>
@@ -259,12 +261,12 @@ export default function ArticlePage() {
         <div className="section-padding section-container flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <h2 className="font-display text-2xl lg:text-3xl text-primary-foreground mb-1">
-              Need personalised advice?
+              {t.knowledge.ctaTitle}
             </h2>
-            <p className="text-primary-foreground/60 text-sm">Book a consultation with our team.</p>
+            <p className="text-primary-foreground/60 text-sm">{t.knowledge.ctaDesc}</p>
           </div>
           <Button variant="premium" size="lg" asChild className="flex-shrink-0 rounded-md">
-            <Link to="/contact">Book a Consultation</Link>
+            <Link to="/contact">{t.nav.cta}</Link>
           </Button>
         </div>
       </section>

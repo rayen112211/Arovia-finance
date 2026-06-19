@@ -2,42 +2,45 @@ import { Link } from "react-router-dom";
 import { MessageSquare, Globe, TrendingUp, MapPin, Check } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const skylineImgUrl = "https://images.unsplash.com/photo-1519197924294-4ba991a11128?auto=format&fit=crop&q=80&w=1800";
 
-const features = [
-  {
-    icon: MessageSquare,
-    title: "English-Language Support",
-    desc: "We provide clear communication and consultation in English at every step.",
-  },
-  {
-    icon: Globe,
-    title: "International Banking Experience",
-    desc: "Jay's background in international markets and institutions gives our clients a real advantage.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Foreign Income Specialists",
-    desc: "We understand complex international income structures and non-resident requirements.",
-  },
-  {
-    icon: MapPin,
-    title: "Relocation & Expat Experts",
-    desc: "We support expats and their families in making a smooth transition to Poland.",
-  },
-];
-
-const helpItems = [
-  "Mortgages in Poland for foreign nationals",
-  "Investment property financing",
-  "Business financing for international companies",
-  "Income from abroad or multiple countries",
-  "Company structure and financing solutions",
-  "Relocation and settling in Poland",
-];
-
 export default function InternationalClientsPage() {
+  const { t } = useLanguage();
+
+  const features = [
+    {
+      icon: MessageSquare,
+      title: t.international.feat1Title,
+      desc: t.international.feat1Desc,
+    },
+    {
+      icon: Globe,
+      title: t.international.feat2Title,
+      desc: t.international.feat2Desc,
+    },
+    {
+      icon: TrendingUp,
+      title: t.international.feat3Title,
+      desc: t.international.feat3Desc,
+    },
+    {
+      icon: MapPin,
+      title: t.international.feat4Title,
+      desc: t.international.feat4Desc,
+    },
+  ];
+
+  const helpItems = [
+    t.international.help1,
+    t.international.help2,
+    t.international.help3,
+    t.international.help4,
+    t.international.help5,
+    t.international.help6,
+  ];
+
   return (
     <>
       {/* ─── HERO ─── */}
@@ -56,14 +59,14 @@ export default function InternationalClientsPage() {
         <div className="relative section-padding section-container py-16 lg:py-24 max-w-3xl">
           <ScrollReveal>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-primary-foreground mb-4">
-              International Clients
+              {t.international.heroTitle}
             </h1>
             <div className="w-10 h-px bg-gold mb-6" />
             <p className="text-xl text-primary-foreground/85 font-light mb-4">
-              Expert financial guidance for clients from around the world.
+              {t.international.heroSub}
             </p>
             <p className="text-primary-foreground/65 text-base leading-relaxed max-w-xl">
-              Whether you're relocating to Poland, purchasing property, running a business or earning income abroad, we provide clear support throughout the financing process.
+              {t.international.heroDesc}
             </p>
           </ScrollReveal>
         </div>
@@ -74,7 +77,7 @@ export default function InternationalClientsPage() {
         <div className="section-padding section-container">
           <ScrollReveal>
             <h2 className="font-display text-3xl lg:text-4xl text-center text-foreground mb-3">
-              Why International Clients Choose Us
+              {t.international.whyTitle}
             </h2>
             <div className="w-10 h-px bg-gold mx-auto mb-14" />
           </ScrollReveal>
@@ -100,7 +103,7 @@ export default function InternationalClientsPage() {
         <div className="section-padding section-container">
           <div className="max-w-3xl mx-auto">
             <ScrollReveal>
-              <h2 className="font-display text-3xl lg:text-4xl text-center text-foreground mb-3">We Help With</h2>
+              <h2 className="font-display text-3xl lg:text-4xl text-center text-foreground mb-3">{t.international.helpTitle}</h2>
               <div className="w-10 h-px bg-gold mx-auto mb-12" />
             </ScrollReveal>
             <ScrollReveal direction="up" delay={100}>
@@ -122,12 +125,12 @@ export default function InternationalClientsPage() {
         <div className="section-padding section-container flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <h2 className="font-display text-2xl lg:text-3xl text-primary-foreground mb-1">
-              Moving to Poland or investing here?
+              {t.international.ctaTitle}
             </h2>
-            <p className="text-primary-foreground/60 text-sm">Let's make the process simple and stress-free.</p>
+            <p className="text-primary-foreground/60 text-sm">{t.international.ctaDesc}</p>
           </div>
           <Button variant="premium" size="lg" asChild className="flex-shrink-0 rounded-md">
-            <Link to="/contact">Book a Consultation</Link>
+            <Link to="/contact">{t.nav.cta}</Link>
           </Button>
         </div>
       </section>

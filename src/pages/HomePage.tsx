@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 // ─── Image URLs ───────────────────────────────────────────────────────────────
 const heroTeamImg = "/anna_and_robbie.jpg";
@@ -26,157 +27,154 @@ const officeImg =
 const skylineImg =
   "https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?auto=format&fit=crop&q=80&w=1600";
 
-// ─── Knowledge Centre articles (mirrored from KnowledgeCentrePage) ────────────
-const kcArticles = [
-  {
-    slug: "5-steps-mortgage-foreigner",
-    category: "MORTGAGES",
-    title: "5 Steps to Getting a Mortgage in Poland as a Foreigner",
-    image:
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
-  },
-  {
-    slug: "business-finance-growth",
-    category: "BUSINESS FINANCE",
-    title: "How to Finance Your Business Growth in Poland",
-    image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800",
-  },
-  {
-    slug: "buying-property-expat",
-    category: "INTERNATIONAL CLIENTS",
-    title: "Buying Property in Poland as an Expat – What You Need to Know",
-    image:
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=800",
-  },
-];
-
-// ─── Why Clients Choose ───────────────────────────────────────────────────────
-const whyItems = [
-  {
-    icon: Globe,
-    title: "International Banking Experience",
-    desc: "Decades of experience across European financial markets and international banking institutions.",
-  },
-  {
-    icon: Briefcase,
-    title: "Personal & Business Finance Expertise",
-    desc: "Comprehensive solutions for both personal mortgage finance and complex business funding needs.",
-  },
-  {
-    icon: MessageCircle,
-    title: "English & Polish Client Support",
-    desc: "Fully bilingual service, ensuring clear communication in English and Polish at every step.",
-  },
-  {
-    icon: Heart,
-    title: "Relationship-Driven Approach",
-    desc: "We build long-term client relationships based on trust, transparency and personal care.",
-  },
-];
-
-// ─── Services (How We Can Help) ───────────────────────────────────────────────
-const services = [
-  {
-    icon: Home,
-    title: "Mortgage Finance",
-    desc: "Helping you secure the right mortgage solution for your home.",
-    href: "/consultation",
-  },
-  {
-    icon: Briefcase,
-    title: "Business Finance",
-    desc: "Tailored financing solutions for business growth, expansion and cash flow.",
-    href: "/consultation",
-  },
-  {
-    icon: Building2,
-    title: "Investment Property Finance",
-    desc: "Finance solutions for property investors and landlords.",
-    href: "/consultation",
-  },
-  {
-    icon: Globe,
-    title: "International Clients",
-    desc: "Supporting expats and foreign income earners in Poland.",
-    href: "/international-clients",
-  },
-  {
-    icon: FileText,
-    title: "Complex Financial Cases",
-    desc: "Specialist support for unique and challenging situations.",
-    href: "/consultation",
-  },
-];
-
-// ─── Process Steps ────────────────────────────────────────────────────────────
-const processSteps = [
-  {
-    num: "1",
-    icon: Users,
-    title: "Consultation",
-    desc: "We get to know you and your goals.",
-  },
-  {
-    num: "2",
-    icon: FileText,
-    title: "Financial Review",
-    desc: "We analyse your circumstances and explore the options available to you.",
-  },
-  {
-    num: "3",
-    icon: CheckCircle,
-    title: "Strategy",
-    desc: "We create a tailored financing strategy.",
-  },
-  {
-    num: "4",
-    icon: Building2,
-    title: "Lender Engagement",
-    desc: "We negotiate the best terms on your behalf.",
-  },
-  {
-    num: "5",
-    icon: CheckCircle,
-    title: "Approval & Completion",
-    desc: "We guide you through to a successful outcome.",
-  },
-  {
-    num: "6",
-    icon: Heart,
-    title: "Ongoing Support",
-    desc: "We're here for you, beyond the deal.",
-  },
-];
-
-// ─── Testimonials ─────────────────────────────────────────────────────────────
-const testimonials = [
-  {
-    icon: Home,
-    quote:
-      "Arovia helped us secure a mortgage in Poland when we were still abroad. The whole process was smooth and stress-free.",
-    label: "Property Purchase",
-    location: "Warsaw",
-  },
-  {
-    icon: Briefcase,
-    quote:
-      "Thanks to Jay's guidance, we obtained financing for our business expansion. His advice was excellent.",
-    label: "Business Finance",
-    location: "Logistics Company",
-  },
-  {
-    icon: Building2,
-    quote:
-      "Professional, responsive and always looking for the best advice on property investment. Highly recommend.",
-    label: "Investment Property",
-    location: "Kraków",
-  },
-];
-
-// ─────────────────────────────────────────────────────────────────────────────
-
 export default function HomePage() {
+  const { t } = useLanguage();
+
+  // ─── Knowledge Centre articles (mirrored from KnowledgeCentrePage) ────────────
+  const kcArticles = [
+    {
+      slug: "5-steps-mortgage-foreigner",
+      category: "MORTGAGES",
+      title: "5 Steps to Getting a Mortgage in Poland as a Foreigner",
+      image:
+        "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
+    },
+    {
+      slug: "business-finance-growth",
+      category: "BUSINESS FINANCE",
+      title: "How to Finance Your Business Growth in Poland",
+      image:
+        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800",
+    },
+    {
+      slug: "buying-property-expat",
+      category: "INTERNATIONAL CLIENTS",
+      title: "Buying Property in Poland as an Expat – What You Need to Know",
+      image:
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=800",
+    },
+  ];
+
+  // ─── Why Clients Choose ───────────────────────────────────────────────────────
+  const whyItems = [
+    {
+      icon: Globe,
+      title: t.home.why1Title,
+      desc: t.home.why1Desc,
+    },
+    {
+      icon: Briefcase,
+      title: t.home.why2Title,
+      desc: t.home.why2Desc,
+    },
+    {
+      icon: MessageCircle,
+      title: t.home.why3Title,
+      desc: t.home.why3Desc,
+    },
+    {
+      icon: Heart,
+      title: t.home.why4Title,
+      desc: t.home.why4Desc,
+    },
+  ];
+
+  // ─── Services (How We Can Help) ───────────────────────────────────────────────
+  const services = [
+    {
+      icon: Home,
+      title: t.home.help1Title,
+      desc: t.home.help1Desc,
+      href: "/consultation",
+    },
+    {
+      icon: Briefcase,
+      title: t.home.help2Title,
+      desc: t.home.help2Desc,
+      href: "/consultation",
+    },
+    {
+      icon: Building2,
+      title: t.home.help3Title,
+      desc: t.home.help3Desc,
+      href: "/consultation",
+    },
+    {
+      icon: Globe,
+      title: t.home.help4Title,
+      desc: t.home.help4Desc,
+      href: "/international-clients",
+    },
+    {
+      icon: FileText,
+      title: t.home.help5Title,
+      desc: t.home.help5Desc,
+      href: "/consultation",
+    },
+  ];
+
+  // ─── Process Steps ────────────────────────────────────────────────────────────
+  const processSteps = [
+    {
+      num: "1",
+      icon: Users,
+      title: t.home.process1Title,
+      desc: t.home.process1Desc,
+    },
+    {
+      num: "2",
+      icon: FileText,
+      title: t.home.process2Title,
+      desc: t.home.process2Desc,
+    },
+    {
+      num: "3",
+      icon: CheckCircle,
+      title: t.home.process3Title,
+      desc: t.home.process3Desc,
+    },
+    {
+      num: "4",
+      icon: Building2,
+      title: t.home.process4Title,
+      desc: t.home.process4Desc,
+    },
+    {
+      num: "5",
+      icon: CheckCircle,
+      title: t.home.process5Title,
+      desc: t.home.process5Desc,
+    },
+    {
+      num: "6",
+      icon: Heart,
+      title: t.home.process6Title,
+      desc: t.home.process6Desc,
+    },
+  ];
+
+  // ─── Testimonials ─────────────────────────────────────────────────────────────
+  const testimonials = [
+    {
+      icon: Home,
+      quote: t.home.success1Quote,
+      label: t.home.success1Label,
+      location: t.home.success1Loc,
+    },
+    {
+      icon: Briefcase,
+      quote: t.home.success2Quote,
+      label: t.home.success2Label,
+      location: t.home.success2Loc,
+    },
+    {
+      icon: Building2,
+      quote: t.home.success3Quote,
+      label: t.home.success3Label,
+      location: t.home.success3Loc,
+    },
+  ];
+
   return (
     <>
       {/* ═══════════════════════════════════════════════════════════════════ */}
@@ -210,16 +208,13 @@ export default function HomePage() {
           <div className="max-w-[600px]">
             <ScrollReveal>
               <h1 className="font-display text-[2.4rem] sm:text-[3rem] lg:text-[3.4rem] text-primary-foreground leading-[1.07] tracking-tight mb-6">
-                A Trusted Financial Partner for Individuals, Entrepreneurs and
-                International Clients
+                {t.home.heroTitle}
               </h1>
             </ScrollReveal>
 
             <ScrollReveal delay={120}>
               <p className="text-primary-foreground/75 text-base lg:text-lg leading-relaxed mb-8 max-w-[52ch]">
-                Whether you're buying a home, growing a business, investing in
-                property or relocating to Poland, we help you make confident
-                financial decisions with expert guidance and personal support.
+                {t.home.heroDesc}
               </p>
             </ScrollReveal>
 
@@ -229,19 +224,18 @@ export default function HomePage() {
                   asChild
                   className="bg-gold text-primary hover:bg-gold/90 font-semibold px-7 py-3 h-auto text-sm rounded-none shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <Link to="/consultation">Book a Consultation</Link>
+                  <Link to="/consultation">{t.home.heroBtn1}</Link>
                 </Button>
                 <Button
                   asChild
                   variant="outline"
                   className="border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 px-7 py-3 h-auto text-sm rounded-none"
                 >
-                  <Link to="/how-we-work">How We Work</Link>
+                  <Link to="/how-we-work">{t.home.heroBtn2}</Link>
                 </Button>
               </div>
             </ScrollReveal>
           </div>
-
         </div>
 
         {/* Name-card overlay — visible on desktop, bottom-right of image */}
@@ -250,14 +244,13 @@ export default function HomePage() {
             <div className="bg-primary/90 backdrop-blur-sm border border-primary-foreground/20 p-6 max-w-[300px] shadow-2xl">
               <div className="w-8 h-px bg-gold mb-3" />
               <p className="font-display text-primary-foreground text-lg leading-snug mb-1">
-                Anna Rosinska &amp; Jay Arora
+                {t.home.nameCardName}
               </p>
               <p className="text-gold text-xs font-semibold uppercase tracking-widest mb-2">
-                Founders of Arovia Finance
+                {t.home.nameCardTitle}
               </p>
               <p className="text-primary-foreground/65 text-xs leading-relaxed">
-                Combining international banking experience with a personal,
-                client-focused approach.
+                {t.home.nameCardDesc}
               </p>
             </div>
           </ScrollReveal>
@@ -271,7 +264,7 @@ export default function HomePage() {
         <div className="section-padding section-container">
           <ScrollReveal>
             <h2 className="font-display text-2xl lg:text-3xl text-foreground text-center mb-14">
-              Why Clients Choose Arovia Finance
+              {t.home.whyTitle}
             </h2>
           </ScrollReveal>
 
@@ -332,30 +325,21 @@ export default function HomePage() {
               <div>
                 <span className="eyebrow mb-4 inline-flex">
                   <span className="w-6 h-px bg-gold" />
-                  A Relationship Built on Trust
+                  {t.home.trustEyebrow}
                 </span>
                 <h2 className="font-display text-[1.9rem] sm:text-[2.4rem] lg:text-[2.6rem] text-foreground leading-[1.1] mb-6">
-                  The best financial decisions are rarely the quickest ones.
+                  {t.home.trustTitle}
                 </h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed text-[15px]">
-                  <p>
-                    They require experience, careful analysis and a trusted
-                    partner who understands both the opportunities and the
-                    challenges ahead.
-                  </p>
-                  <p>
-                    At Arovia Finance, we help individuals, entrepreneurs and
-                    international clients navigate important financial decisions
-                    with confidence, providing independent guidance tailored to
-                    their unique circumstances and ambitions.
-                  </p>
+                  <p>{t.home.trustP1}</p>
+                  <p>{t.home.trustP2}</p>
                 </div>
                 <div className="mt-8">
                   <Button
                     asChild
                     className="bg-gold text-primary hover:bg-gold/90 font-semibold px-6 py-2.5 h-auto text-sm rounded-none"
                   >
-                    <Link to="/about">Learn More About Us</Link>
+                    <Link to="/about">{t.home.trustBtn}</Link>
                   </Button>
                 </div>
               </div>
@@ -371,7 +355,7 @@ export default function HomePage() {
         <div className="section-padding section-container">
           <ScrollReveal>
             <h2 className="font-display text-2xl lg:text-3xl text-foreground text-center mb-14">
-              How We Can Help
+              {t.home.helpTitle}
             </h2>
           </ScrollReveal>
 
@@ -408,7 +392,7 @@ export default function HomePage() {
         <div className="section-padding section-container">
           <ScrollReveal>
             <h2 className="font-display text-2xl lg:text-3xl text-foreground text-center mb-14">
-              A Clear and Transparent Process
+              {t.home.processTitle}
             </h2>
           </ScrollReveal>
 
@@ -459,7 +443,7 @@ export default function HomePage() {
                 asChild
                 className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 h-auto text-sm rounded-none font-semibold"
               >
-                <Link to="/how-we-work">View Full Process</Link>
+                <Link to="/how-we-work">{t.home.processBtn}</Link>
               </Button>
             </div>
           </ScrollReveal>
@@ -484,21 +468,19 @@ export default function HomePage() {
           <ScrollReveal>
             <span className="eyebrow text-gold/80 mb-5 inline-flex">
               <span className="w-6 h-px bg-gold" />
-              Supporting International Clients in Poland
+              {t.home.localEyebrow}
             </span>
             <h2 className="font-display text-[2.2rem] sm:text-[2.8rem] lg:text-[3.2rem] text-primary-foreground leading-[1.08] mb-6">
-              Local expertise. International perspective.
+              {t.home.localTitle}
             </h2>
             <p className="text-primary-foreground/70 text-base leading-relaxed mb-8 max-w-[50ch]">
-              Whether you're relocating to Poland, purchasing property or
-              earning income abroad, we provide guidance and support throughout
-              the financing process, in English.
+              {t.home.localDesc}
             </p>
             <Button
               asChild
               className="bg-gold text-primary hover:bg-gold/90 font-semibold px-7 py-3 h-auto text-sm rounded-none"
             >
-              <Link to="/international-clients">Learn More</Link>
+              <Link to="/international-clients">{t.home.localBtn}</Link>
             </Button>
           </ScrollReveal>
         </div>
@@ -511,12 +493,12 @@ export default function HomePage() {
         <div className="section-padding section-container">
           <ScrollReveal>
             <h2 className="font-display text-2xl lg:text-3xl text-foreground text-center mb-14">
-              Client Success Stories
+              {t.home.successTitle}
             </h2>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-            {testimonials.map((t, i) => (
+            {testimonials.map((test, i) => (
               <ScrollReveal key={i} delay={i * 100}>
                 <div className="bg-white border border-border/50 p-8 h-full flex flex-col shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
                   {/* Quote icon */}
@@ -528,19 +510,19 @@ export default function HomePage() {
                     />
                   </div>
                   <p className="text-[15px] text-foreground/80 leading-relaxed italic flex-1 mb-6">
-                    "{t.quote}"
+                    "{test.quote}"
                   </p>
                   {/* Footer: icon + label + location */}
                   <div className="pt-5 border-t border-border/40 flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
-                      <t.icon size={18} className="text-gold" strokeWidth={1.5} />
+                      <test.icon size={18} className="text-gold" strokeWidth={1.5} />
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-foreground">
-                        {t.label}
+                        {test.label}
                       </p>
                       <p className="text-xs text-muted-foreground mt-0.5">
-                        {t.location}
+                        {test.location}
                       </p>
                     </div>
                   </div>
@@ -558,7 +540,7 @@ export default function HomePage() {
         <div className="section-padding section-container">
           <ScrollReveal>
             <h2 className="font-display text-2xl lg:text-3xl text-foreground text-center mb-14">
-              Insights &amp; Resources
+              {t.home.insightsTitle}
             </h2>
           </ScrollReveal>
 
@@ -586,7 +568,7 @@ export default function HomePage() {
                       {article.title}
                     </h3>
                     <span className="text-xs text-primary font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                      Read more <ArrowRight size={12} />
+                      {t.home.readMore} <ArrowRight size={12} />
                     </span>
                   </div>
                 </Link>
@@ -599,7 +581,7 @@ export default function HomePage() {
                 <div>
                   <div className="w-8 h-px bg-gold mb-5" />
                   <p className="text-primary-foreground text-base leading-relaxed font-display">
-                    Visit our Knowledge Centre for more articles and guides
+                    {t.home.insightsPromoBox}
                   </p>
                 </div>
                 <div className="mt-8">
@@ -607,7 +589,7 @@ export default function HomePage() {
                     asChild
                     className="bg-gold text-primary hover:bg-gold/90 font-semibold px-5 py-2.5 h-auto text-xs rounded-none w-full sm:w-auto"
                   >
-                    <Link to="/knowledge-centre">Visit Knowledge Centre</Link>
+                    <Link to="/knowledge-centre">{t.home.insightsPromoBtn}</Link>
                   </Button>
                 </div>
               </div>
@@ -627,14 +609,13 @@ export default function HomePage() {
               <div>
                 <span className="eyebrow text-gold/80 mb-5 inline-flex">
                   <span className="w-6 h-px bg-gold" />
-                  Let's Discuss Your Plans
+                  {t.home.contactEyebrow}
                 </span>
                 <h2 className="font-display text-[2rem] sm:text-[2.5rem] lg:text-[2.8rem] text-primary-foreground leading-[1.1] mb-5">
-                  Every financial journey begins with a conversation.
+                  {t.home.contactTitle}
                 </h2>
                 <p className="text-primary-foreground/65 text-base leading-relaxed mb-10">
-                  Whether you're purchasing a property, expanding a business or
-                  exploring financing options in Poland, we're here to help.
+                  {t.home.contactDesc}
                 </p>
 
                 {/* Contact details */}
@@ -696,30 +677,30 @@ export default function HomePage() {
                 <div className="grid grid-cols-2 gap-4">
                   <input
                     type="text"
-                    placeholder="Your Name"
+                    placeholder={t.contactPreview.name}
                     className="h-11 px-4 bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 text-sm focus:outline-none focus:border-gold/60 transition-colors"
                   />
                   <input
                     type="tel"
-                    placeholder="Phone Number"
+                    placeholder={t.contactPreview.phone}
                     className="h-11 px-4 bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 text-sm focus:outline-none focus:border-gold/60 transition-colors"
                   />
                 </div>
                 <input
                   type="email"
-                  placeholder="Email Address"
+                  placeholder={t.contactPreview.email}
                   className="w-full h-11 px-4 bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 text-sm focus:outline-none focus:border-gold/60 transition-colors"
                 />
                 <textarea
                   rows={4}
-                  placeholder="How can we help you?"
+                  placeholder={t.contactPreview.helpText}
                   className="w-full px-4 py-3 bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 text-sm resize-none focus:outline-none focus:border-gold/60 transition-colors"
                 />
                 <Button
                   type="submit"
                   className="bg-gold text-primary hover:bg-gold/90 font-semibold px-8 py-3 h-auto text-sm rounded-none w-full"
                 >
-                  Book a Consultation
+                  {t.contactPreview.submitBtn}
                 </Button>
               </form>
             </ScrollReveal>
