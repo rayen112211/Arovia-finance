@@ -206,7 +206,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-primary/60 lg:hidden z-[1]" />
 
         {/* Content */}
-        <div className="relative z-10 section-padding section-container w-full py-24 lg:py-32 grid lg:grid-cols-2 gap-0">
+        <div className="relative z-10 section-padding section-container w-full py-16 lg:py-24 grid lg:grid-cols-2 gap-0">
           <div className="max-w-[600px]">
             <ScrollReveal>
               <h1 className="font-display text-[2.4rem] sm:text-[3rem] lg:text-[3.4rem] text-primary-foreground leading-[1.07] tracking-tight mb-6">
@@ -267,7 +267,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════ */}
       {/* 2. WHY CLIENTS CHOOSE AROVIA FINANCE                                */}
       {/* ═══════════════════════════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-24 bg-background border-b border-border/40">
+      <section className="py-16 lg:py-20 bg-background border-b border-border/40">
         <div className="section-padding section-container">
           <ScrollReveal>
             <h2 className="font-display text-2xl lg:text-3xl text-foreground text-center mb-14">
@@ -302,7 +302,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════ */}
       {/* 3. THE BEST FINANCIAL DECISIONS (About/trust section)               */}
       {/* ═══════════════════════════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-28 bg-background">
+      <section className="py-16 lg:py-20 bg-background">
         <div className="section-padding section-container">
           <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
             {/* Left: Office image */}
@@ -367,7 +367,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════ */}
       {/* 4. HOW WE CAN HELP — 5-card services                               */}
       {/* ═══════════════════════════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-28 bg-[hsl(var(--cream))] border-y border-border/40">
+      <section className="py-16 lg:py-20 bg-[hsl(var(--cream))] border-y border-border/40">
         <div className="section-padding section-container">
           <ScrollReveal>
             <h2 className="font-display text-2xl lg:text-3xl text-foreground text-center mb-14">
@@ -404,7 +404,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════ */}
       {/* 5. A CLEAR AND TRANSPARENT PROCESS — horizontal 6-step             */}
       {/* ═══════════════════════════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-28 bg-background">
+      <section className="py-16 lg:py-20 bg-background">
         <div className="section-padding section-container">
           <ScrollReveal>
             <h2 className="font-display text-2xl lg:text-3xl text-foreground text-center mb-14">
@@ -469,7 +469,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════ */}
       {/* 6. LOCAL EXPERTISE. INTERNATIONAL PERSPECTIVE. — navy skyline banner */}
       {/* ═══════════════════════════════════════════════════════════════════ */}
-      <section className="relative py-24 lg:py-32 overflow-hidden bg-primary">
+      <section className="relative py-16 lg:py-24 overflow-hidden bg-primary">
         {/* Warsaw skyline background */}
         <div className="absolute inset-0 z-0">
           <img
@@ -507,7 +507,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════ */}
       {/* 7. CLIENT SUCCESS STORIES — 3 cards                                */}
       {/* ═══════════════════════════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-28 bg-background border-b border-border/40">
+      <section className="py-16 lg:py-20 bg-background border-b border-border/40">
         <div className="section-padding section-container">
           <ScrollReveal>
             <h2 className="font-display text-2xl lg:text-3xl text-foreground text-center mb-14">
@@ -554,7 +554,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════ */}
       {/* 8. INSIGHTS & RESOURCES — 3 article cards + dark KC box            */}
       {/* ═══════════════════════════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-28 bg-[hsl(var(--cream))]">
+      <section className="py-16 lg:py-20 bg-[hsl(var(--cream))]">
         <div className="section-padding section-container">
           <ScrollReveal>
             <h2 className="font-display text-2xl lg:text-3xl text-foreground text-center mb-14">
@@ -619,7 +619,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════ */}
       {/* 9. CONTACT CTA BAR — eyebrow + heading + inline form + contact info */}
       {/* ═══════════════════════════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-28 bg-primary">
+      <section className="py-16 lg:py-20 bg-primary">
         <div className="section-padding section-container">
           <div className="grid lg:grid-cols-2 gap-14 lg:gap-20">
             {/* Left: Heading + contact details */}

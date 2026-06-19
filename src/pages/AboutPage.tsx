@@ -4,7 +4,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { AnimatedNumber } from "@/components/AnimatedNumber";
 import { Button } from "@/components/ui/button";
 
-const officeImgUrl = "https://images.unsplash.com/photo-1600210491892-03d54079d9f2?auto=format&fit=crop&q=80&w=1400";
+const officeImgUrl = "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=1600";
 
 export default function AboutPage() {
   const values = [
@@ -45,7 +45,7 @@ export default function AboutPage() {
         <div className="section-padding section-container">
           <div className="grid lg:grid-cols-2 gap-0 min-h-[520px] items-center">
             {/* Left copy */}
-            <div className="py-20 lg:py-28 pr-0 lg:pr-16">
+            <div className="py-16 lg:py-24 pr-0 lg:pr-16">
               <ScrollReveal>
                 <span className="inline-block text-xs font-semibold uppercase tracking-[0.18em] text-gold mb-5">
                   About Us
@@ -77,7 +77,7 @@ export default function AboutPage() {
       </section>
 
       {/* ─── MEET THE FOUNDERS ─── */}
-      <section className="py-20 lg:py-28 bg-background">
+      <section className="py-16 lg:py-24 bg-background">
         <div className="section-padding section-container">
           <ScrollReveal>
             <h2 className="font-display text-3xl lg:text-4xl text-center text-foreground mb-3">Meet the Founders</h2>
@@ -147,14 +147,14 @@ export default function AboutPage() {
       </section>
 
       {/* ─── OUR VALUES ─── */}
-      <section className="py-20 lg:py-28 bg-secondary">
+      <section className="py-16 lg:py-24 bg-secondary">
         <div className="section-padding section-container">
           <ScrollReveal>
             <h2 className="font-display text-3xl lg:text-4xl text-center text-foreground mb-3">Our Values</h2>
             <div className="w-10 h-px bg-gold mx-auto mb-14" />
           </ScrollReveal>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 max-w-5xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 max-w-7xl mx-auto">
             {values.map((v, i) => (
               <ScrollReveal key={v.title} direction="up" delay={i * 100}>
                 <div className="flex flex-col items-center text-center">
@@ -204,9 +204,9 @@ export default function AboutPage() {
       </section>
 
       {/* ─── LET'S WORK TOGETHER ─── */}
-      <section className="py-20 lg:py-28 bg-background">
+      <section className="py-16 lg:py-24 bg-background">
         <div className="section-padding section-container">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
             <ScrollReveal direction="up" delay={100}>
               <div className="rounded-sm overflow-hidden aspect-[4/3]">
                 <img

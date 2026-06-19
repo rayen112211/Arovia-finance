@@ -3,7 +3,7 @@ import { Home, Briefcase, Globe, Building, BookOpen, ArrowRight } from "lucide-r
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 
-const heroImgUrl = "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1400";
+const heroImgUrl = "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=1400";
 
 const categories = [
   { icon: Home, label: "Mortgages", slug: "mortgages" },
@@ -45,7 +45,7 @@ export default function KnowledgeCentrePage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent" />
         <div className="section-padding section-container">
           <div className="grid lg:grid-cols-2 gap-0 min-h-[380px] items-center">
-            <div className="py-20 lg:py-24 pr-0 lg:pr-16">
+            <div className="py-12 lg:py-16 pr-0 lg:pr-16">
               <ScrollReveal>
                 <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-primary-foreground mb-4">
                   Knowledge Centre
@@ -54,7 +54,7 @@ export default function KnowledgeCentrePage() {
                 <p className="text-primary-foreground/80 text-base leading-relaxed mb-3">
                   Insights, guides and expert advice to help you make informed financial decisions.
                 </p>
-                <p className="text-primary-foreground/60 text-sm leading-relaxed max-w-md">
+                <p className="text-primary-foreground/60 text-sm leading-relaxed max-w-7xl">
                   Stay up to date with the latest articles on mortgages, business finance, property investment and more.
                 </p>
               </ScrollReveal>

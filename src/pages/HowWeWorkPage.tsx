@@ -3,8 +3,8 @@ import { Search, FileText, Lightbulb, Handshake, CheckCircle, Heart } from "luci
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 
-const heroImgUrl = "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1400";
-const promiseImgUrl = "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=900";
+const heroImgUrl = "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1600";
+const promiseImgUrl = "https://images.unsplash.com/photo-1600210491892-03d54079d9f2?auto=format&fit=crop&q=80&w=1200";
 
 const steps = [
   {
@@ -53,7 +53,7 @@ export default function HowWeWorkPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent" />
         <div className="section-padding section-container">
           <div className="grid lg:grid-cols-2 gap-0 min-h-[400px] items-center">
-            <div className="py-20 lg:py-28 pr-0 lg:pr-16">
+            <div className="py-16 lg:py-24 pr-0 lg:pr-16">
               <ScrollReveal>
                 <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-primary-foreground mb-6">
                   How We Work
@@ -81,7 +81,7 @@ export default function HowWeWorkPage() {
       </section>
 
       {/* ─── PROCESS + SIDEBAR ─── */}
-      <section className="py-20 lg:py-28 bg-background">
+      <section className="py-16 lg:py-24 bg-background">
         <div className="section-padding section-container">
           <div className="grid lg:grid-cols-[1fr_300px] gap-12 lg:gap-16">
             {/* Steps list */}
@@ -101,7 +101,7 @@ export default function HowWeWorkPage() {
                         <step.icon size={18} strokeWidth={1.5} className="text-gold flex-shrink-0" />
                         <h3 className="font-display text-xl text-foreground">{step.title}</h3>
                       </div>
-                      <p className="text-sm text-foreground/65 leading-relaxed max-w-lg">{step.desc}</p>
+                      <p className="text-sm text-foreground/65 leading-relaxed max-w-2xl">{step.desc}</p>
                     </div>
                   </div>
                 </ScrollReveal>

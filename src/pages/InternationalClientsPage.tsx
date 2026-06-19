@@ -53,7 +53,7 @@ export default function InternationalClientsPage() {
           <div className="absolute inset-0 bg-primary/75" />
         </div>
 
-        <div className="relative section-padding section-container py-24 lg:py-32 max-w-3xl">
+        <div className="relative section-padding section-container py-16 lg:py-24 max-w-3xl">
           <ScrollReveal>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-primary-foreground mb-4">
               International Clients
@@ -70,7 +70,7 @@ export default function InternationalClientsPage() {
       </section>
 
       {/* ─── WHY INTERNATIONAL CLIENTS CHOOSE US ─── */}
-      <section className="py-20 lg:py-28 bg-background">
+      <section className="py-16 lg:py-20 bg-background">
         <div className="section-padding section-container">
           <ScrollReveal>
             <h2 className="font-display text-3xl lg:text-4xl text-center text-foreground mb-3">
@@ -79,7 +79,7 @@ export default function InternationalClientsPage() {
             <div className="w-10 h-px bg-gold mx-auto mb-14" />
           </ScrollReveal>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 max-w-5xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 max-w-7xl mx-auto">
             {features.map((f, i) => (
               <ScrollReveal key={f.title} direction="up" delay={i * 100}>
                 <div className="flex flex-col items-center text-center">

@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, Linkedin, ChevronDown } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 
-const officeImgUrl = "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=900";
+const officeImgUrl = "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=1400";
 
 const faqItems = [
   {
@@ -57,9 +57,9 @@ export default function ContactPage() {
       {/* ─── HERO ─── */}
       <section className="relative bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent" />
-        <div className="section-padding section-container">
+        <div className="section-padding max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-0 min-h-[380px] items-center">
-            <div className="py-20 lg:py-24 pr-0 lg:pr-16">
+            <div className="py-12 lg:py-20 pr-0 lg:pr-16">
               <ScrollReveal>
                 <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-primary-foreground mb-4">
                   Contact Us
