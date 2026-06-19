@@ -192,7 +192,7 @@ export default function AboutPage() {
                     {stat.prefix ? (
                       stat.prefix
                     ) : (
-                      <><AnimatedNumber value={stat.value!} />{stat.suffix}</>
+                      <><AnimatedNumber end={stat.value!} />{stat.suffix}</>
                     )}
                   </div>
                   <p className="text-xs text-primary-foreground/60 leading-relaxed max-w-[140px]">{stat.label}</p>
