@@ -242,24 +242,25 @@ export default function HomePage() {
             </ScrollReveal>
           </div>
 
-          {/* Name-card overlay — visible on desktop, bottom-right of image */}
-          <div className="hidden lg:flex items-end justify-end pb-10 pr-0">
-            <ScrollReveal delay={400}>
-              <div className="bg-primary/90 backdrop-blur-sm border border-primary-foreground/20 p-5 max-w-[280px] shadow-2xl">
-                <div className="w-8 h-px bg-gold mb-3" />
-                <p className="font-display text-primary-foreground text-lg leading-snug mb-1">
-                  Anna Rosinska &amp; Jay Arora
-                </p>
-                <p className="text-gold text-xs font-semibold uppercase tracking-widest mb-2">
-                  Founders of Arovia Finance
-                </p>
-                <p className="text-primary-foreground/65 text-xs leading-relaxed">
-                  Combining international banking experience with a personal,
-                  client-focused approach.
-                </p>
-              </div>
-            </ScrollReveal>
-          </div>
+        </div>
+
+        {/* Name-card overlay — visible on desktop, bottom-right of image */}
+        <div className="hidden lg:block absolute bottom-8 right-8 xl:bottom-12 xl:right-[max(2rem,calc((100vw-1280px)/2+2rem))] z-20">
+          <ScrollReveal delay={400}>
+            <div className="bg-primary/90 backdrop-blur-sm border border-primary-foreground/20 p-6 max-w-[300px] shadow-2xl">
+              <div className="w-8 h-px bg-gold mb-3" />
+              <p className="font-display text-primary-foreground text-lg leading-snug mb-1">
+                Anna Rosinska &amp; Jay Arora
+              </p>
+              <p className="text-gold text-xs font-semibold uppercase tracking-widest mb-2">
+                Founders of Arovia Finance
+              </p>
+              <p className="text-primary-foreground/65 text-xs leading-relaxed">
+                Combining international banking experience with a personal,
+                client-focused approach.
+              </p>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
