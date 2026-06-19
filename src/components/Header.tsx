@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Instagram, Linkedin } from "lucide-react";
+import { Menu, X, Instagram, Linkedin, Facebook } from "lucide-react";
 
 export function Header() {
-  const { t, language, toggleLanguage } = useLanguage();
+  const { language, toggleLanguage } = useLanguage();
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -22,14 +22,12 @@ export function Header() {
   }, [location.pathname]);
 
   const links = [
-    { to: "/", label: t.nav.home },
-    { to: "/experience", label: t.nav.experience },
-    { to: "/consultation", label: t.nav.consultation },
-    { to: "/opinions", label: t.nav.opinions },
-    { to: "/media", label: t.nav.media },
-    { to: "/cooperation", label: t.nav.cooperation },
-    { to: "/foreigners", label: t.nav.foreigners || "For Foreigners" },
-    { to: "/contact", label: t.nav.contact },
+    { to: "/", label: "Home" },
+    { to: "/about", label: "About Us" },
+    { to: "/how-we-work", label: "How We Work" },
+    { to: "/international-clients", label: "International Clients" },
+    { to: "/knowledge-centre", label: "Knowledge Centre" },
+    { to: "/contact", label: "Contact" },
   ];
 
   const isActive = (to: string) =>
@@ -82,6 +80,9 @@ export function Header() {
             <a href="#" className="text-foreground/70 hover:text-foreground transition-colors p-1" aria-label="LinkedIn">
               <Linkedin size={18} />
             </a>
+            <a href="#" className="text-foreground/70 hover:text-foreground transition-colors p-1" aria-label="Facebook">
+              <Facebook size={18} />
+            </a>
             <a href="#" className="text-foreground/70 hover:text-foreground transition-colors p-1" aria-label="Instagram">
               <Instagram size={18} />
             </a>
@@ -94,7 +95,7 @@ export function Header() {
             {language === "en" ? "PL" : "EN"}
           </button>
           <Button variant="premium" size="lg" className="text-sm px-6 shadow-none rounded-md" asChild>
-            <Link to="/consultation">{t.nav.cta}</Link>
+            <Link to="/contact">Book a Consultation</Link>
           </Button>
         </div>
 
@@ -138,6 +139,9 @@ export function Header() {
                 <a href="#" className="text-foreground/70 hover:text-foreground transition-colors" aria-label="LinkedIn">
                   <Linkedin size={20} />
                 </a>
+                <a href="#" className="text-foreground/70 hover:text-foreground transition-colors" aria-label="Facebook">
+                  <Facebook size={20} />
+                </a>
                 <a href="#" className="text-foreground/70 hover:text-foreground transition-colors" aria-label="Instagram">
                   <Instagram size={20} />
                 </a>
@@ -149,8 +153,8 @@ export function Header() {
                 {language === "en" ? "PL" : "EN"}
               </button>
               <Button variant="premium" size="lg" asChild className="flex-1 text-sm rounded-md">
-                <Link to="/consultation" onClick={() => setMobileOpen(false)}>
-                  {t.nav.cta}
+                <Link to="/contact" onClick={() => setMobileOpen(false)}>
+                  Book a Consultation
                 </Link>
               </Button>
             </div>

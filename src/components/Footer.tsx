@@ -1,130 +1,82 @@
 import { Link } from "react-router-dom";
-import { useLanguage } from "@/i18n/LanguageContext";
-import { Mail, Phone, MapPin, Instagram, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook } from "lucide-react";
 
 export function Footer() {
-  const { t, language } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   const navLinks = [
-    { to: "/experience", label: t.nav.experience },
-    { to: "/consultation", label: t.nav.consultation },
-    { to: "/opinions", label: t.nav.opinions },
-    { to: "/cooperation", label: t.nav.cooperation },
-    { to: "/media", label: t.nav.media },
-    { to: "/contact", label: t.nav.contact },
+    { to: "/", label: "Home" },
+    { to: "/about", label: "About Us" },
+    { to: "/how-we-work", label: "How We Work" },
+    { to: "/international-clients", label: "International Clients" },
+    { to: "/knowledge-centre", label: "Knowledge Centre" },
+    { to: "/contact", label: "Contact" },
   ];
 
   return (
     <footer className="bg-primary text-primary-foreground" aria-label="Site footer">
       {/* Main footer */}
-      <div className="section-padding section-container py-16 lg:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+      <div className="section-padding section-container py-12 lg:py-16">
+        <div className="flex flex-col md:flex-row md:items-start gap-10 md:gap-8 justify-between">
           {/* Brand */}
-          <div className="lg:col-span-2">
-            <Link to="/" className="group flex items-center mb-6 w-40 lg:w-48">
+          <div className="flex-shrink-0">
+            <Link to="/" className="group flex items-center mb-4 w-36 lg:w-44">
               <img src="/arovia-logo-white.png" alt="Arovia Finance" className="w-full h-auto object-contain transition-opacity duration-300 group-hover:opacity-90" />
             </Link>
-            <p className="text-primary-foreground/60 text-sm leading-relaxed max-w-xs mt-3">
-              {t.footer.tagline}
-            </p>
-            <div className="flex gap-4 mt-8">
-              <a
-                href="mailto:info@aroviafinance.com"
-                className="w-10 h-10 rounded-full bg-primary-foreground/5 border border-primary-foreground/10 flex items-center justify-center text-primary-foreground/60 hover:text-primary-foreground hover:border-primary-foreground/40 hover:bg-primary-foreground/10 transition-all duration-300 hover:-translate-y-1"
-                aria-label="Email Arovia Finance"
-              >
-                <Mail size={16} strokeWidth={1.5} />
-              </a>
-              <a
-                href="tel:+48574100669"
-                className="w-10 h-10 rounded-full bg-primary-foreground/5 border border-primary-foreground/10 flex items-center justify-center text-primary-foreground/60 hover:text-primary-foreground hover:border-primary-foreground/40 hover:bg-primary-foreground/10 transition-all duration-300 hover:-translate-y-1"
-                aria-label="Call Arovia Finance"
-              >
-                <Phone size={16} strokeWidth={1.5} />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-primary-foreground/5 border border-primary-foreground/10 flex items-center justify-center text-primary-foreground/60 hover:text-primary-foreground hover:border-primary-foreground/40 hover:bg-primary-foreground/10 transition-all duration-300 hover:-translate-y-1"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={16} strokeWidth={1.5} />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-primary-foreground/5 border border-primary-foreground/10 flex items-center justify-center text-primary-foreground/60 hover:text-primary-foreground hover:border-primary-foreground/40 hover:bg-primary-foreground/10 transition-all duration-300 hover:-translate-y-1"
-                aria-label="Instagram"
-              >
-                <Instagram size={16} strokeWidth={1.5} />
-              </a>
-            </div>
           </div>
 
           {/* Navigation */}
-          <div>
-            <h4 className="font-semibold text-xs uppercase tracking-[0.12em] text-primary-foreground/40 mb-5">
-              {language === "pl" ? "Nawigacja" : "Navigation"}
-            </h4>
-            <nav className="flex flex-col gap-2.5" aria-label="Footer navigation">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  className="text-sm text-primary-foreground/65 hover:text-primary-foreground transition-colors duration-200 w-fit"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
+          <nav className="flex flex-wrap gap-x-8 gap-y-2" aria-label="Footer navigation">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className="text-sm text-primary-foreground/65 hover:text-primary-foreground transition-colors duration-200"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
 
-          {/* Contact */}
-          <div>
-            <h4 className="font-semibold text-xs uppercase tracking-[0.12em] text-primary-foreground/40 mb-5">
-              {t.contactPreview.label}
-            </h4>
-            <div className="flex flex-col gap-4">
-              <a
-                href="mailto:info@aroviafinance.com"
-                className="flex items-center gap-3 group"
-              >
-                <Mail size={14} strokeWidth={1.5} className="text-primary-foreground/70 flex-shrink-0" />
-                <span className="text-sm text-primary-foreground/65 group-hover:text-primary-foreground/90 transition-colors duration-200">
-                  info@aroviafinance.com
-                </span>
-              </a>
-              <a
-                href="tel:+48574100669"
-                className="flex items-center gap-3 group"
-              >
-                <Phone size={14} strokeWidth={1.5} className="text-primary-foreground/70 flex-shrink-0" />
-                <span className="text-sm text-primary-foreground/65 group-hover:text-primary-foreground/90 transition-colors duration-200">
-                  +48 574 100 669
-                </span>
-              </a>
-              <div className="flex items-center gap-3">
-                <MapPin size={14} strokeWidth={1.5} className="text-primary-foreground/70 flex-shrink-0" />
-                <span className="text-sm text-primary-foreground/65">
-                  {t.contactPreview.locationValue}
-                </span>
-              </div>
-            </div>
+          {/* Social icons */}
+          <div className="flex items-center gap-4">
+            <a
+              href="#"
+              className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center text-primary-foreground/70 hover:text-primary-foreground hover:bg-primary-foreground/20 transition-all duration-300"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={16} strokeWidth={1.5} />
+            </a>
+            <a
+              href="#"
+              className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center text-primary-foreground/70 hover:text-primary-foreground hover:bg-primary-foreground/20 transition-all duration-300"
+              aria-label="Facebook"
+            >
+              <Facebook size={16} strokeWidth={1.5} />
+            </a>
+            <a
+              href="#"
+              className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center text-primary-foreground/70 hover:text-primary-foreground hover:bg-primary-foreground/20 transition-all duration-300"
+              aria-label="Instagram"
+            >
+              <Instagram size={16} strokeWidth={1.5} />
+            </a>
           </div>
         </div>
       </div>
 
       {/* Bottom bar */}
       <div className="border-t border-primary-foreground/10">
-        <div className="section-padding section-container py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-primary-foreground/35">
-            © {currentYear} Arovia Finance. {t.footer.rights}
+        <div className="section-padding section-container py-5 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-primary-foreground/40">
+            © {currentYear} Arovia Finance. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <span className="text-xs text-primary-foreground/35">
-              {t.footer.privacy}
+            <span className="text-xs text-primary-foreground/40 hover:text-primary-foreground/70 cursor-pointer transition-colors">
+              Privacy Policy
             </span>
-            <span className="text-xs text-primary-foreground/35">
-              {t.footer.terms}
+            <span className="text-xs text-primary-foreground/40 hover:text-primary-foreground/70 cursor-pointer transition-colors">
+              Terms &amp; Conditions
             </span>
           </div>
         </div>
