@@ -1,553 +1,730 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Briefcase, Building2, Compass, Home, RefreshCw, UserCheck, Quote, Mail, Phone, MapPin, ExternalLink, Globe, PieChart } from "lucide-react";
-import { useLanguage } from "@/i18n/LanguageContext";
-
+import {
+  ArrowRight,
+  Briefcase,
+  Building2,
+  Globe,
+  Users,
+  MessageCircle,
+  Heart,
+  Home,
+  FileText,
+  CheckCircle,
+  Phone,
+  Mail,
+  MapPin,
+  Linkedin,
+  Quote,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Section, SectionHeader } from "@/components/Section";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { AnimatedNumber } from "@/components/AnimatedNumber";
 
-const heroImgUrl = "/anna_and_robbie.jpg"; // High-end corporate architecture context
-const advisorImgUrl = "/anna_and_robbie1.jpg";
-const propertyImgUrl = "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1200";
-const fallbackMediaImgUrl = "https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?auto=format&fit=crop&q=80&w=1400";
-const fallbackPortraitImgUrl = "/anna_and_robbie1.jpg";
+// ─── Image URLs ───────────────────────────────────────────────────────────────
+const heroTeamImg = "/anna_and_robbie.jpg";
+const officeImg =
+  "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=900";
+const skylineImg =
+  "https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?auto=format&fit=crop&q=80&w=1600";
+
+// ─── Knowledge Centre articles (mirrored from KnowledgeCentrePage) ────────────
+const kcArticles = [
+  {
+    slug: "5-steps-mortgage-foreigner",
+    category: "MORTGAGES",
+    title: "5 Steps to Getting a Mortgage in Poland as a Foreigner",
+    image:
+      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    slug: "business-finance-growth",
+    category: "BUSINESS FINANCE",
+    title: "How to Finance Your Business Growth in Poland",
+    image:
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    slug: "buying-property-expat",
+    category: "INTERNATIONAL CLIENTS",
+    title: "Buying Property in Poland as an Expat – What You Need to Know",
+    image:
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=800",
+  },
+];
+
+// ─── Why Clients Choose ───────────────────────────────────────────────────────
+const whyItems = [
+  {
+    icon: Globe,
+    title: "International Banking Experience",
+    desc: "Decades of experience across European financial markets and international banking institutions.",
+  },
+  {
+    icon: Briefcase,
+    title: "Personal & Business Finance Expertise",
+    desc: "Comprehensive solutions for both personal mortgage finance and complex business funding needs.",
+  },
+  {
+    icon: MessageCircle,
+    title: "English & Polish Client Support",
+    desc: "Fully bilingual service, ensuring clear communication in English and Polish at every step.",
+  },
+  {
+    icon: Heart,
+    title: "Relationship-Driven Approach",
+    desc: "We build long-term client relationships based on trust, transparency and personal care.",
+  },
+];
+
+// ─── Services (How We Can Help) ───────────────────────────────────────────────
+const services = [
+  {
+    icon: Home,
+    title: "Mortgage Finance",
+    desc: "Helping you secure the right mortgage solution for your home.",
+    href: "/consultation",
+  },
+  {
+    icon: Briefcase,
+    title: "Business Finance",
+    desc: "Tailored financing solutions for business growth, expansion and cash flow.",
+    href: "/consultation",
+  },
+  {
+    icon: Building2,
+    title: "Investment Property Finance",
+    desc: "Finance solutions for property investors and landlords.",
+    href: "/consultation",
+  },
+  {
+    icon: Globe,
+    title: "International Clients",
+    desc: "Supporting expats and foreign income earners in Poland.",
+    href: "/international-clients",
+  },
+  {
+    icon: FileText,
+    title: "Complex Financial Cases",
+    desc: "Specialist support for unique and challenging situations.",
+    href: "/consultation",
+  },
+];
+
+// ─── Process Steps ────────────────────────────────────────────────────────────
+const processSteps = [
+  {
+    num: "1",
+    icon: Users,
+    title: "Consultation",
+    desc: "We get to know you and your goals.",
+  },
+  {
+    num: "2",
+    icon: FileText,
+    title: "Financial Review",
+    desc: "We analyse your circumstances and explore the options available to you.",
+  },
+  {
+    num: "3",
+    icon: CheckCircle,
+    title: "Strategy",
+    desc: "We create a tailored financing strategy.",
+  },
+  {
+    num: "4",
+    icon: Building2,
+    title: "Lender Engagement",
+    desc: "We negotiate the best terms on your behalf.",
+  },
+  {
+    num: "5",
+    icon: CheckCircle,
+    title: "Approval & Completion",
+    desc: "We guide you through to a successful outcome.",
+  },
+  {
+    num: "6",
+    icon: Heart,
+    title: "Ongoing Support",
+    desc: "We're here for you, beyond the deal.",
+  },
+];
+
+// ─── Testimonials ─────────────────────────────────────────────────────────────
+const testimonials = [
+  {
+    icon: Home,
+    quote:
+      "Arovia helped us secure a mortgage in Poland when we were still abroad. The whole process was smooth and stress-free.",
+    label: "Property Purchase",
+    location: "Warsaw",
+  },
+  {
+    icon: Briefcase,
+    quote:
+      "Thanks to Jay's guidance, we obtained financing for our business expansion. His advice was excellent.",
+    label: "Business Finance",
+    location: "Logistics Company",
+  },
+  {
+    icon: Building2,
+    quote:
+      "Professional, responsive and always looking for the best advice on property investment. Highly recommend.",
+    label: "Investment Property",
+    location: "Kraków",
+  },
+];
+
+// ─────────────────────────────────────────────────────────────────────────────
 
 export default function HomePage() {
-  const { t, language } = useLanguage();
-
-
-  const stats = [
-    { value: t.trust.years, suffix: t.trust.yearsSuffix, label: t.trust.yearsLabel, isNumber: true },
-    { value: t.trust.clients, suffix: t.trust.clientsSuffix, label: t.trust.clientsLabel, isNumber: true },
-    { value: t.trust.banks, suffix: "", label: t.trust.banksLabel, isNumber: false },
-    { value: t.trust.satisfaction, suffix: t.trust.satisfactionSuffix, label: t.trust.satisfactionLabel, isNumber: true },
-  ];
-
-  const services = [
-    { icon: Globe, title: t.services.mortgage, desc: t.services.mortgageDesc, href: "/consultation" },
-    { icon: Briefcase, title: t.services.cash, desc: t.services.cashDesc, href: "/consultation" },
-    { icon: PieChart, title: t.services.business, desc: t.services.businessDesc, href: "/consultation" },
-    { icon: RefreshCw, title: t.services.consolidation, desc: t.services.consolidationDesc, href: "/consultation" },
-  ];
-
-  const processSteps = [
-    { num: "01", title: t.process.step1, desc: t.process.step1Desc },
-    { num: "02", title: t.process.step2, desc: t.process.step2Desc },
-    { num: "03", title: t.process.step3, desc: t.process.step3Desc },
-    { num: "04", title: t.process.step4, desc: t.process.step4Desc },
-    { num: "05", title: t.process.step5, desc: t.process.step5Desc },
-    { num: "06", title: t.process.step6, desc: t.process.step6Desc },
-  ];
-
-  const testimonials = [
-    { name: t.testimonials.placeholderName, role: t.testimonials.placeholderRole, text: t.testimonials.placeholderText, initials: "PC" },
-    { name: t.testimonials.placeholderName2, role: t.testimonials.placeholderRole2, text: t.testimonials.placeholderText2, initials: "PC" },
-    { name: t.testimonials.placeholderName3, role: t.testimonials.placeholderRole3, text: t.testimonials.placeholderText3, initials: "CC" },
-    { name: t.testimonials.placeholderName4, role: t.testimonials.placeholderRole4, text: t.testimonials.placeholderText4, initials: "EC" },
-    { name: t.testimonials.placeholderName5, role: t.testimonials.placeholderRole5, text: t.testimonials.placeholderText5, initials: "CP" },
-    { name: t.testimonials.placeholderName6, role: t.testimonials.placeholderRole6, text: t.testimonials.placeholderText6, initials: "IN" },
-    { name: t.testimonials.placeholderName7, role: t.testimonials.placeholderRole7, text: t.testimonials.placeholderText7, initials: "PC" },
-    { name: t.testimonials.placeholderName8, role: t.testimonials.placeholderRole8, text: t.testimonials.placeholderText8, initials: "PC" },
-  ];
-
-  const mediaItems = language === "pl"
-    ? [
-        {
-          source: t.mediaSection.placeholderOutlet,
-          title: t.mediaSection.placeholderTitle,
-          description: "Syntetyczne spojrzenie na rynek i koszt finansowania z perspektywy najnowszych zmian w gospodarce.",
-          date: t.mediaSection.placeholderDate,
-          image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&q=80&w=1400",
-          href: "https://www.rp.pl/finanse",
-        },
-        {
-          source: t.mediaSection.placeholderOutlet2,
-          title: t.mediaSection.placeholderTitle2,
-          description: "Praktyczne wymogi bankowe dot. zdolności kredytowej i dokumentowania dochodów z działalności ryczałtowej.",
-          date: t.mediaSection.placeholderDate2,
-          image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=1400",
-          href: "https://www.bankier.pl/wiadomosc/Kredyty-hipoteczne",
-        },
-        {
-          source: t.mediaSection.placeholderOutlet3,
-          title: t.mediaSection.placeholderTitle3,
-          description: "Porównanie dostępnych opcji na rynku w ujęciu długoterminowym. Który wariant jest dziś bardziej bezpieczny?",
-          date: t.mediaSection.placeholderDate3,
-          image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1400",
-          href: "https://businessinsider.com.pl/twoje-pieniadze/kredyty",
-        },
-      ]
-    : [
-        {
-          source: "Rzeczpospolita",
-          title: "How Rate Cuts May Affect Mortgage Demand",
-          description: "A practical view on the housing market and borrowing costs based on the latest economic shifts.",
-          date: "March 2026",
-          image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&q=80&w=1400",
-          href: "https://www.rp.pl/finanse",
-        },
-        {
-          source: "Bankier.pl",
-          title: "Mortgage Requirements for the Self-Employed",
-          description: "Key lender expectations regarding borrowing capacity and income documentation for businesses.",
-          date: "February 2026",
-          image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=1400",
-          href: "https://www.bankier.pl/wiadomosc/Kredyty-hipoteczne",
-        },
-        {
-          source: "Business Insider",
-          title: "Fixed vs Variable Rates in the Current Economy",
-          description: "Comparing the long-term safety and cost of market options available to borrowers today.",
-          date: "January 2026",
-          image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1400",
-          href: "https://businessinsider.com.pl/twoje-pieniadze/kredyty",
-        },
-      ];
-
   return (
     <>
-      {/* ─── HERO ─── */}
-      <section className="relative pt-20 lg:pt-0 pb-10 lg:pb-0 border-b border-border/40 overflow-hidden bg-background flex flex-col lg:block">
-        
-        {/* Mobile Image (Clear and unblurred at the top) */}
-        <div className="w-full h-[45vh] relative lg:hidden mt-4">
+      {/* ═══════════════════════════════════════════════════════════════════ */}
+      {/* 1. HERO                                                              */}
+      {/* ═══════════════════════════════════════════════════════════════════ */}
+      <section className="relative overflow-hidden bg-primary min-h-[88vh] flex items-center">
+        {/* Background gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-[hsl(222,47%,16%)]" />
+
+        {/* Hero image — right half */}
+        <div className="absolute inset-y-0 right-0 w-full lg:w-[55%] z-0">
           <img
-            src={heroImgUrl}
-            alt="Independent mortgage advisor"
-            className="w-full h-full object-cover object-top rounded-md shadow-sm"
+            src={heroTeamImg}
+            alt="Anna Rosinska and Jay Arora, Founders of Arovia Finance"
+            className="w-full h-full object-cover object-top"
             onError={(e) => {
-              e.currentTarget.src = fallbackPortraitImgUrl;
+              e.currentTarget.src = "/anna_and_robbie1.jpg";
             }}
           />
+          {/* Left-side gradient fade into navy */}
+          <div className="absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-primary via-primary/80 to-transparent" />
+          {/* Bottom fade */}
+          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-primary/60 to-transparent" />
         </div>
 
-        <div className="section-padding section-container relative grid lg:grid-cols-2 items-center min-h-0 lg:min-h-[78vh]">
-          {/* Text Content */}
-          <div className="max-w-[640px] py-10 lg:py-16 relative z-10 lg:pr-10">
+        {/* Mobile top-gradient over image */}
+        <div className="absolute inset-0 bg-primary/60 lg:hidden z-[1]" />
+
+        {/* Content */}
+        <div className="relative z-10 section-padding section-container w-full py-24 lg:py-32 grid lg:grid-cols-2 gap-0">
+          <div className="max-w-[600px]">
             <ScrollReveal>
-              <span className="eyebrow mb-5 inline-flex">
-                <span className="w-8 h-px bg-border" />
-                {t.hero.subtitle}
-              </span>
-            </ScrollReveal>
-            <ScrollReveal delay={120}>
-              <h1 className="font-display text-[38px] sm:text-[46px] lg:text-[62px] text-foreground leading-[1.05] tracking-tight mb-5">
-                {t.hero.title}
+              <h1 className="font-display text-[2.4rem] sm:text-[3rem] lg:text-[3.4rem] text-primary-foreground leading-[1.07] tracking-tight mb-6">
+                A Trusted Financial Partner for Individuals, Entrepreneurs and
+                International Clients
               </h1>
             </ScrollReveal>
-            <ScrollReveal delay={220}>
-              <p className="font-medium text-foreground/80 text-base lg:text-lg mb-4">{t.hero.trustBadges}</p>
-            </ScrollReveal>
-            <ScrollReveal delay={300}>
-              <p className="text-base lg:text-lg text-foreground/70 leading-relaxed mb-8 max-w-[54ch]">
-                {t.hero.description}
+
+            <ScrollReveal delay={120}>
+              <p className="text-primary-foreground/75 text-base lg:text-lg leading-relaxed mb-8 max-w-[52ch]">
+                Whether you're buying a home, growing a business, investing in
+                property or relocating to Poland, we help you make confident
+                financial decisions with expert guidance and personal support.
               </p>
             </ScrollReveal>
-            <ScrollReveal delay={380}>
-              <Button variant="premium" size="xl" asChild className="text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                <Link to="/consultation">{t.hero.cta}</Link>
-              </Button>
+
+            <ScrollReveal delay={220}>
+              <div className="flex flex-wrap gap-4">
+                <Button
+                  asChild
+                  className="bg-gold text-primary hover:bg-gold/90 font-semibold px-7 py-3 h-auto text-sm rounded-none shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  <Link to="/consultation">Book a Consultation</Link>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 px-7 py-3 h-auto text-sm rounded-none"
+                >
+                  <Link to="/how-we-work">How We Work</Link>
+                </Button>
+              </div>
             </ScrollReveal>
           </div>
-        </div>
 
-        {/* Desktop Image (Clear and unblurred on the right) */}
-        <div className="hidden lg:block absolute inset-y-0 right-0 w-[52%] z-0">
-          <img
-            src={heroImgUrl}
-            alt="Independent mortgage advisor"
-            className="w-full h-full object-cover object-center"
-            onError={(e) => {
-              e.currentTarget.src = fallbackPortraitImgUrl;
-            }}
-          />
-          {/* Soft fade on the left edge to blend with the white background */}
-          <div className="absolute inset-y-0 left-0 w-48 bg-gradient-to-r from-background via-background/80 to-transparent" />
+          {/* Name-card overlay — visible on desktop, bottom-right of image */}
+          <div className="hidden lg:flex items-end justify-end pb-10 pr-0">
+            <ScrollReveal delay={400}>
+              <div className="bg-primary/90 backdrop-blur-sm border border-primary-foreground/20 p-5 max-w-[280px] shadow-2xl">
+                <div className="w-8 h-px bg-gold mb-3" />
+                <p className="font-display text-primary-foreground text-lg leading-snug mb-1">
+                  Anna Rosinska &amp; Jay Arora
+                </p>
+                <p className="text-gold text-xs font-semibold uppercase tracking-widest mb-2">
+                  Founders of Arovia Finance
+                </p>
+                <p className="text-primary-foreground/65 text-xs leading-relaxed">
+                  Combining international banking experience with a personal,
+                  client-focused approach.
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
-
-      {/* ─── STATS ─── */}
-      <Section className="py-16 lg:py-20 border-b border-border/40">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
-          {stats.map((stat, i) => (
-            <ScrollReveal key={i} delay={i * 80}>
-              <div className="text-center group">
-                <div className="font-display text-4xl lg:text-5xl text-primary mb-1.5 flex justify-center items-center">
-                  {stat.isNumber ? (
-                    <AnimatedNumber end={Number(stat.value)} suffix={stat.suffix} />
-                  ) : (
-                    <span>{stat.value}</span>
-                  )}
-                </div>
-                <div className="text-xs text-muted-foreground uppercase tracking-[0.1em] font-medium mt-2">
-                  {stat.label}
-                </div>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
-      </Section>
-
-      {/* ─── BANKS ─── */}
-      <Section variant="cream" className="py-16 lg:py-20 border-b border-border/40 overflow-hidden">
-        <ScrollReveal>
-          <div className="text-center mb-10">
-            <h3 className="font-display text-2xl lg:text-3xl text-foreground">
-              {language === "pl" ? "Banki, z którymi współpracujemy" : "Banks We Work With"}
-            </h3>
-          </div>
-        </ScrollReveal>
-        <div className="relative flex overflow-x-hidden group">
-          <div className="flex animate-marquee whitespace-nowrap group-hover:pause w-max">
-            {[
-              "PKO BP", "Pekao", "ING", "mBank", "Santander", 
-              "BNP Paribas", "Millennium", "Alior Bank", "BOŚ", "Credit Agricole",
-              "PKO BP", "Pekao", "ING", "mBank", "Santander", 
-              "BNP Paribas", "Millennium", "Alior Bank", "BOŚ", "Credit Agricole"
-            ].map((bank, i) => (
-              <span key={i} className="mx-8 text-xl font-display text-foreground/50 hover:text-primary transition-colors">
-                {bank}
-              </span>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* ─── ABOUT ─── */}
-      <Section className="py-24 lg:py-32">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-          <ScrollReveal direction="left">
-            <div className="relative">
-              <div className="relative overflow-hidden rounded-sm shadow-md img-zoom">
-                <img
-                  src={advisorImgUrl}
-                  alt="Financial advisor at Arovia Finance"
-                  className="w-full aspect-[4/5] object-cover"
-                  onError={(e) => {
-                    e.currentTarget.src = fallbackPortraitImgUrl;
-                  }}
-                />
-                <div className="absolute inset-0 bg-primary/5" />
-              </div>
-              {/* Decorative element - Thinner, cleaner lines */}
-              <div className="absolute -bottom-6 -right-6 w-1/3 h-1/3 border border-border rounded-sm -z-10 bg-muted/20" />
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal direction="right">
-            <div>
-              <SectionHeader label={t.about.label} title={t.about.title} />
-              <div className="space-y-5 text-muted-foreground leading-relaxed">
-                <p>{t.about.p1}</p>
-                <p>{t.about.p2}</p>
-                <p>{t.about.p3}</p>
-                {('p4' in t.about) && <p>{(t.about as any).p4}</p>}
-                {('p5' in t.about) && <p>{(t.about as any).p5}</p>}
-              </div>
-              <div className="mt-10 flex flex-wrap gap-4">
-                <Button variant="outline" size="lg" asChild>
-                  <Link to="/experience">
-                    {t.nav.experience} <ArrowRight size={16} />
-                  </Link>
-                </Button>
-                <Button variant="premium" size="lg" asChild>
-                  <Link to="/consultation">
-                    {t.nav.cta} <ArrowRight size={16} />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </Section>
-
-      {/* ─── TRANSPARENCY ─── */}
-      <Section variant="cream" className="py-20 lg:py-24 border-y border-border/40">
-        <div className="max-w-4xl mx-auto text-center">
+      {/* ═══════════════════════════════════════════════════════════════════ */}
+      {/* 2. WHY CLIENTS CHOOSE AROVIA FINANCE                                */}
+      {/* ═══════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-24 bg-background border-b border-border/40">
+        <div className="section-padding section-container">
           <ScrollReveal>
-             <h2 className="font-display text-2xl lg:text-3xl text-foreground mb-4">{t.transparency.title}</h2>
-             <h3 className="text-xl text-primary font-medium mb-6">{t.transparency.subtitle}</h3>
-             <p className="text-lg text-muted-foreground leading-relaxed">{t.transparency.description}</p>
+            <h2 className="font-display text-2xl lg:text-3xl text-foreground text-center mb-14">
+              Why Clients Choose Arovia Finance
+            </h2>
           </ScrollReveal>
-        </div>
-      </Section>
 
-      {/* ─── SERVICES ─── */}
-      <Section variant="cream" className="py-24 lg:py-32">
-        <ScrollReveal>
-          <SectionHeader label={t.services.label} title={t.services.title} align="center" />
-        </ScrollReveal>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {services.map((service, i) => (
-            <ScrollReveal key={i} delay={i * 80}>
-              <Link to={service.href} className="group block h-full">
-                <div className="premium-card p-10 h-full flex flex-col transition-all duration-300 border-l-4 border-l-gold bg-white">
-                  <div className="mb-8 w-14 h-14 rounded-full bg-muted/60 flex items-center justify-center group-hover:bg-primary/5 transition-colors duration-500">
-                    <service.icon
-                      className="text-foreground/70 group-hover:text-primary transition-colors duration-500"
-                      size={24}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            {whyItems.map((item, i) => (
+              <ScrollReveal key={i} delay={i * 80}>
+                <div className="flex flex-col items-center text-center group">
+                  <div className="w-16 h-16 rounded-full border border-gold/30 bg-gold/5 flex items-center justify-center mb-5 group-hover:bg-gold/10 transition-colors duration-300">
+                    <item.icon
+                      size={26}
+                      className="text-gold"
                       strokeWidth={1.25}
                     />
                   </div>
-                  <h3 className="font-display text-xl text-foreground mb-3 group-hover:text-primary transition-colors duration-200">
-                    {service.title}
+                  <h3 className="font-display text-lg text-foreground mb-2 leading-snug">
+                    {item.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">
-                    {service.desc}
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {item.desc}
                   </p>
-                  <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-foreground transition-colors duration-200">
-                    {t.nav.cta} <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                  </div>
                 </div>
-              </Link>
-            </ScrollReveal>
-          ))}
-        </div>
-      </Section>
-
-      {/* ─── PROCESS ─── */}
-      <Section className="py-24 lg:py-32">
-        <ScrollReveal>
-          <SectionHeader label={t.process.label} title={t.process.title} align="center" />
-        </ScrollReveal>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-          {processSteps.map((step, i) => (
-            <ScrollReveal key={i} delay={i * 80}>
-              <div className="relative group flex flex-col items-start w-full">
-                <div className="flex items-center gap-4 mb-4 w-full">
-                  <span className="font-display text-xl sm:text-2xl text-gold flex items-center justify-center w-14 h-14 rounded-full bg-gold/15 shrink-0 transition-all duration-300 group-hover:bg-gold/25 group-hover:scale-105">
-                    {step.num}
-                  </span>
-                  <div className="h-px bg-gold flex-grow hidden sm:block opacity-40"></div>
-                </div>
-                <h3 className="font-display text-lg lg:text-xl text-foreground mt-1 mb-2 pr-4">
-                  {step.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {step.desc}
-                </p>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
-        <ScrollReveal delay={500}>
-          <div className="text-center mt-14">
-             <Button variant="default" size="lg" asChild>
-               <Link to="/cooperation">
-                 {t.nav.cooperation} <ArrowRight size={16} />
-               </Link>
-             </Button>
-           </div>
-         </ScrollReveal>
-       </Section>
-
-      {/* ─── TESTIMONIALS ─── */}
-      <Section variant="cream" className="py-24 lg:py-32">
-        <ScrollReveal>
-          <SectionHeader label={t.testimonials.label} title={t.testimonials.title} align="center" />
-        </ScrollReveal>
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-          {testimonials.slice(0, 3).map((item, i) => (
-            <ScrollReveal key={i} delay={i * 100}>
-              <div className="premium-card p-10 h-full flex flex-col border-t-4 border-t-gold relative overflow-hidden bg-white">
-                <Quote size={100} className="absolute -top-6 -right-6 text-gold/10 rotate-12 pointer-events-none" />
-                <div className="mb-6 relative z-10">
-                  <Quote size={24} className="text-gold/40" strokeWidth={1.5} />
-                </div>
-                <p className="text-[15px] text-foreground/80 leading-relaxed flex-1 italic">
-                  "{item.text}"
-                </p>
-                {/* Stars */}
-                <div className="flex gap-0.5 my-4">
-                  {[...Array(5)].map((_, j) => (
-                    <span key={j} className="text-primary text-base">★</span>
-                  ))}
-                </div>
-                <div className="pt-4 border-t border-border flex items-center gap-3">
-                  {/* Avatar with initials */}
-                  <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                    <span className="text-xs font-semibold text-primary-foreground">
-                      {item.initials}
-                    </span>
-                  </div>
-                  <div className="relative z-10">
-                    <div className="font-semibold text-sm text-foreground">{item.name}</div>
-                    <div className="text-xs text-muted-foreground mt-0.5">{item.role}</div>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
-        <ScrollReveal delay={400}>
-          <div className="text-center mt-10">
-            <Button variant="outline" size="lg" asChild>
-              <Link to="/opinions">
-                {t.testimonials.viewAll} <ArrowRight size={16} />
-              </Link>
-            </Button>
+              </ScrollReveal>
+            ))}
           </div>
-        </ScrollReveal>
-      </Section>
+        </div>
+      </section>
 
-      {/* ─── MEDIA PREVIEW ─── */}
-      <Section className="py-24 lg:py-32">
-        <ScrollReveal>
-          <SectionHeader label={t.mediaSection.label} title={t.mediaSection.title} align="center" />
-        </ScrollReveal>
-        <div className="grid md:grid-cols-3 gap-8">
-          {mediaItems.map((item, i) => (
-            <ScrollReveal key={i} delay={i * 100}>
-              <a
-                href={item.href}
-                target="_blank"
-                rel="noreferrer"
-                className="group block h-full cursor-pointer"
-                aria-label={`${item.title} (${item.source})`}
-              >
-                <div className="aspect-[16/10] rounded-sm overflow-hidden mb-4 img-zoom border border-gold/40 group-hover:border-gold transition-colors">
+      {/* ═══════════════════════════════════════════════════════════════════ */}
+      {/* 3. THE BEST FINANCIAL DECISIONS (About/trust section)               */}
+      {/* ═══════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 bg-background">
+        <div className="section-padding section-container">
+          <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+            {/* Left: Office image */}
+            <ScrollReveal direction="left">
+              <div className="relative overflow-hidden rounded-sm shadow-md img-zoom aspect-[4/3]">
+                <img
+                  src={officeImg}
+                  alt="Arovia Finance office"
+                  className="w-full h-full object-cover"
+                />
+                {/* Logo overlay on image */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
+                    src="/arovia-logo-white.png"
+                    alt="Arovia Finance"
+                    className="w-32 opacity-70 drop-shadow-lg"
                     onError={(e) => {
-                      e.currentTarget.src = fallbackMediaImgUrl;
+                      e.currentTarget.style.display = "none";
                     }}
                   />
                 </div>
-                <span className="eyebrow text-[10px] mb-2">
-                  <span className="w-4 h-[1px] bg-gold" />
-                  {item.source}
-                </span>
-                <h3 className="font-display text-xl text-foreground mb-2 leading-snug group-hover:text-primary transition-colors duration-200">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-2">{item.description}</p>
-                <span className="text-sm text-foreground/70 inline-flex items-center gap-1.5">
-                  {item.date} <ExternalLink size={13} className="opacity-70" />
-                </span>
-              </a>
+              </div>
             </ScrollReveal>
-          ))}
-        </div>
-        <ScrollReveal delay={400}>
-          <div className="text-center mt-12">
-            <Button variant="outline" size="lg" asChild>
-              <Link to="/media">
-                {t.mediaSection.viewAll} <ArrowRight size={16} />
-              </Link>
-            </Button>
+
+            {/* Right: Text */}
+            <ScrollReveal direction="right">
+              <div>
+                <span className="eyebrow mb-4 inline-flex">
+                  <span className="w-6 h-px bg-gold" />
+                  A Relationship Built on Trust
+                </span>
+                <h2 className="font-display text-[1.9rem] sm:text-[2.4rem] lg:text-[2.6rem] text-foreground leading-[1.1] mb-6">
+                  The best financial decisions are rarely the quickest ones.
+                </h2>
+                <div className="space-y-4 text-muted-foreground leading-relaxed text-[15px]">
+                  <p>
+                    They require experience, careful analysis and a trusted
+                    partner who understands both the opportunities and the
+                    challenges ahead.
+                  </p>
+                  <p>
+                    At Arovia Finance, we help individuals, entrepreneurs and
+                    international clients navigate important financial decisions
+                    with confidence, providing independent guidance tailored to
+                    their unique circumstances and ambitions.
+                  </p>
+                </div>
+                <div className="mt-8">
+                  <Button
+                    asChild
+                    className="bg-gold text-primary hover:bg-gold/90 font-semibold px-6 py-2.5 h-auto text-sm rounded-none"
+                  >
+                    <Link to="/about">Learn More About Us</Link>
+                  </Button>
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
-        </ScrollReveal>
-      </Section>
-
-      {/* ─── CTA BANNER ─── */}
-      <section className="relative py-28 lg:py-36 bg-cream border-y border-border/40 overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={propertyImgUrl} alt="" className="w-full h-full object-cover opacity-[0.03]" />
-          <div className="absolute inset-0 bg-cream/95" />
         </div>
-        {/* Decorative elements */}
-        <div className="absolute top-0 left-1/3 w-px h-full bg-gradient-to-b from-transparent via-border/50 to-transparent" />
-        <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-border/50 to-transparent" />
+      </section>
 
-        <div className="relative section-padding section-container text-center max-w-3xl mx-auto">
+      {/* ═══════════════════════════════════════════════════════════════════ */}
+      {/* 4. HOW WE CAN HELP — 5-card services                               */}
+      {/* ═══════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 bg-[hsl(var(--cream))] border-y border-border/40">
+        <div className="section-padding section-container">
           <ScrollReveal>
-            <span className="eyebrow justify-center mb-6 inline-flex">
-              <span className="w-8 h-px bg-gold" />
-              {t.nav.consultation}
-            </span>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-foreground leading-[1.1] mb-5">
-              {t.ctaSection.title}
+            <h2 className="font-display text-2xl lg:text-3xl text-foreground text-center mb-14">
+              How We Can Help
             </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed">
-              {t.ctaSection.description}
+          </ScrollReveal>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+            {services.map((s, i) => (
+              <ScrollReveal key={i} delay={i * 70}>
+                <Link to={s.href} className="group block h-full">
+                  <div className="bg-white border border-border/50 p-7 h-full flex flex-col hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                    <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mb-5 group-hover:bg-gold/20 transition-colors duration-300">
+                      <s.icon
+                        size={22}
+                        className="text-gold"
+                        strokeWidth={1.25}
+                      />
+                    </div>
+                    <h3 className="font-display text-base lg:text-[1.05rem] text-foreground mb-2 leading-snug group-hover:text-primary transition-colors">
+                      {s.title}
+                    </h3>
+                    <p className="text-[13px] text-muted-foreground leading-relaxed flex-1">
+                      {s.desc}
+                    </p>
+                  </div>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════ */}
+      {/* 5. A CLEAR AND TRANSPARENT PROCESS — horizontal 6-step             */}
+      {/* ═══════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 bg-background">
+        <div className="section-padding section-container">
+          <ScrollReveal>
+            <h2 className="font-display text-2xl lg:text-3xl text-foreground text-center mb-14">
+              A Clear and Transparent Process
+            </h2>
+          </ScrollReveal>
+
+          {/* Cream boxed container with steps */}
+          <ScrollReveal>
+            <div className="bg-[hsl(var(--cream))] border border-border/40 rounded-sm px-8 py-12">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 sm:gap-2">
+                {processSteps.map((step, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-3 sm:gap-0 sm:flex-1"
+                  >
+                    {/* Step block */}
+                    <div className="flex flex-col items-center sm:w-full">
+                      <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center mb-3 shadow-sm">
+                        <step.icon
+                          size={20}
+                          className="text-primary-foreground"
+                          strokeWidth={1.5}
+                        />
+                      </div>
+                      <span className="font-display text-xs text-gold font-bold mb-1">
+                        {step.num}
+                      </span>
+                      <h3 className="font-display text-sm text-foreground text-center leading-snug mb-1 max-w-[90px]">
+                        {step.title}
+                      </h3>
+                      <p className="text-[11px] text-muted-foreground text-center leading-snug max-w-[90px]">
+                        {step.desc}
+                      </p>
+                    </div>
+
+                    {/* Arrow connector (not after last item) */}
+                    {i < processSteps.length - 1 && (
+                      <div className="hidden sm:flex items-center justify-center text-gold/50 mx-1 mt-[-2.5rem]">
+                        <ArrowRight size={18} />
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={300}>
+            <div className="text-center mt-10">
+              <Button
+                asChild
+                className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 h-auto text-sm rounded-none font-semibold"
+              >
+                <Link to="/how-we-work">View Full Process</Link>
+              </Button>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════ */}
+      {/* 6. LOCAL EXPERTISE. INTERNATIONAL PERSPECTIVE. — navy skyline banner */}
+      {/* ═══════════════════════════════════════════════════════════════════ */}
+      <section className="relative py-24 lg:py-32 overflow-hidden bg-primary">
+        {/* Warsaw skyline background */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={skylineImg}
+            alt="Warsaw skyline"
+            className="w-full h-full object-cover opacity-25"
+          />
+          <div className="absolute inset-0 bg-primary/75" />
+        </div>
+
+        <div className="relative z-10 section-padding section-container max-w-3xl">
+          <ScrollReveal>
+            <span className="eyebrow text-gold/80 mb-5 inline-flex">
+              <span className="w-6 h-px bg-gold" />
+              Supporting International Clients in Poland
+            </span>
+            <h2 className="font-display text-[2.2rem] sm:text-[2.8rem] lg:text-[3.2rem] text-primary-foreground leading-[1.08] mb-6">
+              Local expertise. International perspective.
+            </h2>
+            <p className="text-primary-foreground/70 text-base leading-relaxed mb-8 max-w-[50ch]">
+              Whether you're relocating to Poland, purchasing property or
+              earning income abroad, we provide guidance and support throughout
+              the financing process, in English.
             </p>
-            <Button variant="premium" size="xl" asChild>
-              <Link to="/consultation">{t.ctaSection.cta}</Link>
+            <Button
+              asChild
+              className="bg-gold text-primary hover:bg-gold/90 font-semibold px-7 py-3 h-auto text-sm rounded-none"
+            >
+              <Link to="/international-clients">Learn More</Link>
             </Button>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* ─── CONTACT PREVIEW ─── */}
-      <Section variant="light-blue" className="py-20 lg:py-24">
-        <ScrollReveal>
-          <div className="max-w-2xl mx-auto bg-white rounded-md p-8 md:p-12 shadow-sm mt-8 border-t-[6px] border-gold">
-            <h2 className="font-display text-2xl lg:text-3xl text-foreground mb-8">
-              {language === "pl" ? "Zamów konsultację" : "Request a Consultation"}
+      {/* ═══════════════════════════════════════════════════════════════════ */}
+      {/* 7. CLIENT SUCCESS STORIES — 3 cards                                */}
+      {/* ═══════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 bg-background border-b border-border/40">
+        <div className="section-padding section-container">
+          <ScrollReveal>
+            <h2 className="font-display text-2xl lg:text-3xl text-foreground text-center mb-14">
+              Client Success Stories
             </h2>
-            
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-              <div>
-                <label className="form-label">{language === "pl" ? "Imię i nazwisko" : "Full Name"}</label>
-                <input type="text" className="form-input bg-transparent" placeholder={language === "pl" ? "np. Michał Kowalski" : "e.g. Michał Kowalski"} required />
-              </div>
+          </ScrollReveal>
 
-              <div>
-                <label className="form-label">{language === "pl" ? "Adres Email" : "Email Address"}</label>
-                <input type="email" className="form-input bg-transparent" placeholder="michal@example.com" required />
-              </div>
-
-              <div>
-                <label className="form-label">{language === "pl" ? "Numer telefonu" : "Phone Number"}</label>
-                <input type="tel" className="form-input bg-transparent" placeholder="+48 ___ ___ ___" />
-              </div>
-
-              <div>
-                <label className="form-label">{language === "pl" ? "Krótko opisz sytuację" : "Briefly detail your situation"}</label>
-                <textarea 
-                  rows={4} 
-                  className="form-textarea bg-transparent" 
-                  placeholder={language === "pl" ? "Krótko opisz co chciałbyś osiągnąć..." : "Briefly describe what you're looking to achieve..."} 
-                  required
-                />
-              </div>
-
-              <div className="pt-2">
-                <Button variant="premium" size="lg" className="w-full text-base py-6 shadow-md hover:shadow-lg rounded-full font-semibold">
-                  {language === "pl" ? "Wyślij zapytanie" : "Send Request"}
-                </Button>
-                <p className="text-xs text-muted-foreground mt-4 text-center">
-                  {language === "pl" ? "Wysyłając ten formularz kontaktowy, wyrażasz zgodę na przetwarzanie Twoich danych zgodnie z naszą polityką prywatności." : "By submitting this form, you agree to our privacy policy. Your information is securely handled."}
-                </p>
-              </div>
-            </form>
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+            {testimonials.map((t, i) => (
+              <ScrollReveal key={i} delay={i * 100}>
+                <div className="bg-white border border-border/50 p-8 h-full flex flex-col shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                  {/* Quote icon */}
+                  <div className="mb-4">
+                    <Quote
+                      size={28}
+                      className="text-gold/50"
+                      strokeWidth={1.5}
+                    />
+                  </div>
+                  <p className="text-[15px] text-foreground/80 leading-relaxed italic flex-1 mb-6">
+                    "{t.quote}"
+                  </p>
+                  {/* Footer: icon + label + location */}
+                  <div className="pt-5 border-t border-border/40 flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
+                      <t.icon size={18} className="text-gold" strokeWidth={1.5} />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-foreground">
+                        {t.label}
+                      </p>
+                      <p className="text-xs text-muted-foreground mt-0.5">
+                        {t.location}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
-        </ScrollReveal>
+        </div>
+      </section>
 
-        <div className="grid sm:grid-cols-3 gap-8 max-w-2xl mx-auto mt-16 pt-16 border-t border-border/40">
-          {[
-            { icon: Mail, label: t.contactPreview.email, value: "info@aroviafinance.com", href: "mailto:info@aroviafinance.com" },
-            { icon: Phone, label: t.contactPreview.phone, value: "+48 574 100 669", href: "tel:+48574100669" },
-            { icon: MapPin, label: t.contactPreview.location, value: t.contactPreview.locationValue, href: undefined },
-          ].map((item, i) => (
-            <ScrollReveal key={i} delay={i * 100}>
-              <div className="text-center group">
-                <div className="w-12 h-12 rounded-full bg-primary/6 flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/10 transition-colors duration-300">
-                  <item.icon className="text-primary" size={18} strokeWidth={1.5} />
+      {/* ═══════════════════════════════════════════════════════════════════ */}
+      {/* 8. INSIGHTS & RESOURCES — 3 article cards + dark KC box            */}
+      {/* ═══════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 bg-[hsl(var(--cream))]">
+        <div className="section-padding section-container">
+          <ScrollReveal>
+            <h2 className="font-display text-2xl lg:text-3xl text-foreground text-center mb-14">
+              Insights &amp; Resources
+            </h2>
+          </ScrollReveal>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {/* Article cards × 3 */}
+            {kcArticles.map((article, i) => (
+              <ScrollReveal key={i} delay={i * 80}>
+                <Link
+                  to={`/knowledge-centre/${article.slug}`}
+                  className="group block bg-white border border-border/40 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 h-full"
+                >
+                  <div className="aspect-[16/10] overflow-hidden img-zoom">
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <span className="text-[10px] font-semibold text-gold uppercase tracking-[0.15em] block mb-2">
+                      {article.category}
+                    </span>
+                    <h3 className="font-display text-[1rem] text-foreground leading-snug mb-3 group-hover:text-primary transition-colors">
+                      {article.title}
+                    </h3>
+                    <span className="text-xs text-primary font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                      Read more <ArrowRight size={12} />
+                    </span>
+                  </div>
+                </Link>
+              </ScrollReveal>
+            ))}
+
+            {/* Dark Knowledge Centre promo box */}
+            <ScrollReveal delay={300}>
+              <div className="bg-primary flex flex-col justify-between p-8 h-full min-h-[240px]">
+                <div>
+                  <div className="w-8 h-px bg-gold mb-5" />
+                  <p className="text-primary-foreground text-base leading-relaxed font-display">
+                    Visit our Knowledge Centre for more articles and guides
+                  </p>
                 </div>
-                <div className="text-xs text-foreground/70 uppercase tracking-[0.1em] mb-1.5 font-medium">
-                  {item.label}
-                </div>
-                {item.href ? (
-                  <a
-                    href={item.href}
-                    className="text-sm font-medium text-foreground hover:text-primary transition-colors duration-200"
+                <div className="mt-8">
+                  <Button
+                    asChild
+                    className="bg-gold text-primary hover:bg-gold/90 font-semibold px-5 py-2.5 h-auto text-xs rounded-none w-full sm:w-auto"
                   >
-                    {item.value}
-                  </a>
-                ) : (
-                  <div className="text-sm font-medium text-foreground">{item.value}</div>
-                )}
+                    <Link to="/knowledge-centre">Visit Knowledge Centre</Link>
+                  </Button>
+                </div>
               </div>
             </ScrollReveal>
-          ))}
+          </div>
         </div>
-      </Section>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════ */}
+      {/* 9. CONTACT CTA BAR — eyebrow + heading + inline form + contact info */}
+      {/* ═══════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 bg-primary">
+        <div className="section-padding section-container">
+          <div className="grid lg:grid-cols-2 gap-14 lg:gap-20">
+            {/* Left: Heading + contact details */}
+            <ScrollReveal direction="left">
+              <div>
+                <span className="eyebrow text-gold/80 mb-5 inline-flex">
+                  <span className="w-6 h-px bg-gold" />
+                  Let's Discuss Your Plans
+                </span>
+                <h2 className="font-display text-[2rem] sm:text-[2.5rem] lg:text-[2.8rem] text-primary-foreground leading-[1.1] mb-5">
+                  Every financial journey begins with a conversation.
+                </h2>
+                <p className="text-primary-foreground/65 text-base leading-relaxed mb-10">
+                  Whether you're purchasing a property, expanding a business or
+                  exploring financing options in Poland, we're here to help.
+                </p>
+
+                {/* Contact details */}
+                <div className="space-y-5">
+                  {[
+                    {
+                      icon: Phone,
+                      label: "+48 733 985 458",
+                      href: "tel:+48733985458",
+                    },
+                    {
+                      icon: Mail,
+                      label: "contact@aroviafinance.pl",
+                      href: "mailto:contact@aroviafinance.pl",
+                    },
+                    {
+                      icon: MapPin,
+                      label: "Warsaw, Poland",
+                      href: undefined,
+                    },
+                    {
+                      icon: Linkedin,
+                      label: "LinkedIn",
+                      href: "https://linkedin.com",
+                    },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center flex-shrink-0">
+                        <item.icon
+                          size={16}
+                          className="text-gold"
+                          strokeWidth={1.5}
+                        />
+                      </div>
+                      {item.href ? (
+                        <a
+                          href={item.href}
+                          className="text-primary-foreground/80 hover:text-primary-foreground text-sm transition-colors"
+                        >
+                          {item.label}
+                        </a>
+                      ) : (
+                        <span className="text-primary-foreground/80 text-sm">
+                          {item.label}
+                        </span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Right: Mini contact form */}
+            <ScrollReveal direction="right">
+              <form
+                className="space-y-4"
+                onSubmit={(e) => e.preventDefault()}
+              >
+                <div className="grid grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    className="h-11 px-4 bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 text-sm focus:outline-none focus:border-gold/60 transition-colors"
+                  />
+                  <input
+                    type="tel"
+                    placeholder="Phone Number"
+                    className="h-11 px-4 bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 text-sm focus:outline-none focus:border-gold/60 transition-colors"
+                  />
+                </div>
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  className="w-full h-11 px-4 bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 text-sm focus:outline-none focus:border-gold/60 transition-colors"
+                />
+                <textarea
+                  rows={4}
+                  placeholder="How can we help you?"
+                  className="w-full px-4 py-3 bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 text-sm resize-none focus:outline-none focus:border-gold/60 transition-colors"
+                />
+                <Button
+                  type="submit"
+                  className="bg-gold text-primary hover:bg-gold/90 font-semibold px-8 py-3 h-auto text-sm rounded-none w-full"
+                >
+                  Book a Consultation
+                </Button>
+              </form>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
