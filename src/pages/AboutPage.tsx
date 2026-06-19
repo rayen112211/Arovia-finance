@@ -84,11 +84,11 @@ export default function AboutPage() {
             <div className="w-10 h-px bg-gold mx-auto mb-14" />
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-20 max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
             {/* Anna */}
             <ScrollReveal direction="up" delay={100}>
-              <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start">
-                <div className="flex-shrink-0 w-full sm:w-64 h-72 sm:h-[320px] rounded-sm overflow-hidden shadow-sm">
+              <div className="flex flex-col sm:flex-row gap-8 lg:gap-10 items-start">
+                <div className="flex-shrink-0 w-full sm:w-64 lg:w-[280px] xl:w-[320px] h-[360px] sm:h-[340px] lg:h-[380px] xl:h-[420px] rounded-sm overflow-hidden shadow-sm">
                   <img
                     src="/anna.jpg"
                     alt="Anna Rosinska"
@@ -116,10 +116,10 @@ export default function AboutPage() {
 
             {/* Jay */}
             <ScrollReveal direction="up" delay={200}>
-              <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start">
-                <div className="flex-shrink-0 w-full sm:w-64 h-72 sm:h-[320px] rounded-sm overflow-hidden shadow-sm">
+              <div className="flex flex-col sm:flex-row gap-8 lg:gap-10 items-start">
+                <div className="flex-shrink-0 w-full sm:w-64 lg:w-[280px] xl:w-[320px] h-[360px] sm:h-[340px] lg:h-[380px] xl:h-[420px] rounded-sm overflow-hidden shadow-sm">
                   <img
-                    src="/robbie.jpg"
+                    src="/robbie-solo.jpg"
                     alt="Jay Arora — Co-Founder"
                     className="w-full h-full object-cover object-top"
                   />
