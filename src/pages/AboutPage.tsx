@@ -55,7 +55,7 @@ export default function AboutPage() {
                 </h1>
                 <div className="w-10 h-px bg-gold mb-8" />
                 <p className="text-primary-foreground/75 text-base leading-relaxed mb-4">
-                  Arovia Finance was founded by Anna Rosinska and Jay [Surname] to provide independent, client-focused financial advice with integrity, transparency and a personal approach.
+                  Arovia Finance was founded by Anna Rosinska and Jay Arora to provide independent, client-focused financial advice with integrity, transparency and a personal approach.
                 </p>
                 <p className="text-primary-foreground/75 text-base leading-relaxed">
                   We combine international banking experience with deep knowledge of the Polish market to help clients make confident financial decisions.
@@ -87,8 +87,8 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-12 lg:gap-20 max-w-5xl mx-auto">
             {/* Anna */}
             <ScrollReveal direction="up" delay={100}>
-              <div className="flex flex-col sm:flex-row gap-6">
-                <div className="flex-shrink-0 w-full sm:w-44 h-56 sm:h-56 rounded-sm overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start">
+                <div className="flex-shrink-0 w-full sm:w-64 h-72 sm:h-[320px] rounded-sm overflow-hidden shadow-sm">
                   <img
                     src="/anna.jpg"
                     alt="Anna Rosinska"
@@ -116,16 +116,16 @@ export default function AboutPage() {
 
             {/* Jay */}
             <ScrollReveal direction="up" delay={200}>
-              <div className="flex flex-col sm:flex-row gap-6">
-                <div className="flex-shrink-0 w-full sm:w-44 h-56 sm:h-56 rounded-sm overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start">
+                <div className="flex-shrink-0 w-full sm:w-64 h-72 sm:h-[320px] rounded-sm overflow-hidden shadow-sm">
                   <img
                     src="/robbie.jpg"
-                    alt="Jay — Co-Founder"
+                    alt="Jay Arora — Co-Founder"
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-display text-2xl text-foreground mb-1">Jay [Surname]</h3>
+                  <h3 className="font-display text-2xl text-foreground mb-1">Jay Arora</h3>
                   <p className="text-sm font-semibold text-gold tracking-wide mb-4">Co-Founder &amp; Financial Advisor</p>
                   <p className="text-sm text-foreground/70 leading-relaxed mb-3">
                     Jay brings over 20 years of international banking experience, having worked with leading financial institutions across Europe and the Middle East.
