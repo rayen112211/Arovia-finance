@@ -99,11 +99,27 @@ export default function AboutPage() {
                   />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-display text-2xl text-foreground mb-1">Anna Rosinska</h3>
+                  <h3 className="font-display text-2xl text-foreground mb-1">Anna Jakimiak</h3>
                   <p className="text-sm font-semibold text-gold tracking-wide mb-4">Co-Founder &amp; Financial Advisor</p>
-                  <p className="text-sm text-foreground/70 leading-relaxed mb-3">
-                    {t.about.annaDesc}
+                  <div className="space-y-4 mb-6">
+                    <p className="text-sm text-foreground/70 leading-relaxed">
+                      {t.about.annaP1}
+                    </p>
+                    <p className="text-sm text-foreground/70 leading-relaxed">
+                      {t.about.annaP2}
+                    </p>
+                  </div>
+                  <p className="text-sm font-medium text-foreground mb-4 italic">
+                    {t.about.annaHighlight}
                   </p>
+                  <div>
+                    <p className="text-xs font-semibold text-gold tracking-wider uppercase mb-1">
+                      {t.about.annaLangTitle}
+                    </p>
+                    <p className="text-sm text-foreground/80">
+                      {t.about.annaLang}
+                    </p>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
@@ -121,9 +137,28 @@ export default function AboutPage() {
                 <div className="flex-1">
                   <h3 className="font-display text-2xl text-foreground mb-1">Jay Arora</h3>
                   <p className="text-sm font-semibold text-gold tracking-wide mb-4">Co-Founder &amp; Financial Advisor</p>
-                  <p className="text-sm text-foreground/70 leading-relaxed mb-3">
-                    {t.about.jayDesc}
+                  <div className="space-y-4 mb-6">
+                    <p className="text-sm text-foreground/70 leading-relaxed">
+                      {t.about.jayP1}
+                    </p>
+                    <p className="text-sm text-foreground/70 leading-relaxed">
+                      {t.about.jayP2}
+                    </p>
+                    <p className="text-sm text-foreground/70 leading-relaxed">
+                      {t.about.jayP3}
+                    </p>
+                  </div>
+                  <p className="text-sm font-medium text-foreground mb-4 italic">
+                    {t.about.jayHighlight}
                   </p>
+                  <div>
+                    <p className="text-xs font-semibold text-gold tracking-wider uppercase mb-1">
+                      {t.about.jayLangTitle}
+                    </p>
+                    <p className="text-sm text-foreground/80">
+                      {t.about.jayLang}
+                    </p>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
