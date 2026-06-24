@@ -265,7 +265,7 @@ export default function ArticlePage() {
             </h2>
             <p className="text-foreground/60 text-sm">{t.knowledge.ctaDesc}</p>
           </div>
-          <Button className="bg-gold text-primary hover:bg-gold/90 font-semibold flex-shrink-0 rounded-md" size="lg" asChild>
+          <Button variant="premium" className="flex-shrink-0 rounded-md" size="lg" asChild>
             <Link to="/contact">{t.nav.cta}</Link>
           </Button>
         </div>

@@ -221,14 +221,15 @@ export default function HomePage() {
               <div className="flex flex-wrap gap-4">
                 <Button
                   asChild
-                  className="bg-gold text-primary hover:bg-gold/90 font-semibold px-7 py-3 h-auto text-sm rounded-none shadow-lg hover:shadow-xl transition-all duration-300"
+                  variant="premium"
+                  className="px-7 py-3 h-auto text-sm rounded-md shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   <Link to="/consultation">{t.home.heroBtn1}</Link>
                 </Button>
                 <Button
                   asChild
                   variant="outline"
-                  className="border-primary/20 text-primary hover:bg-primary/5 px-7 py-3 h-auto text-sm rounded-none"
+                  className="border-primary/20 text-primary hover:bg-primary/5 px-7 py-3 h-auto text-sm rounded-md"
                 >
                   <Link to="/how-we-work">{t.home.heroBtn2}</Link>
                 </Button>
@@ -336,7 +337,8 @@ export default function HomePage() {
                 <div className="mt-8">
                   <Button
                     asChild
-                    className="bg-gold text-primary hover:bg-gold/90 font-semibold px-6 py-2.5 h-auto text-sm rounded-none"
+                    variant="premium"
+                    className="px-6 py-2.5 h-auto text-sm rounded-md"
                   >
                     <Link to="/about">{t.home.trustBtn}</Link>
                   </Button>
@@ -440,7 +442,8 @@ export default function HomePage() {
             <div className="text-center mt-10">
               <Button
                 asChild
-                className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 h-auto text-sm rounded-none font-semibold"
+                variant="premium"
+                className="px-8 py-3 h-auto text-sm rounded-md font-semibold"
               >
                 <Link to="/how-we-work">{t.home.processBtn}</Link>
               </Button>
@@ -477,7 +480,8 @@ export default function HomePage() {
             </p>
             <Button
               asChild
-              className="bg-gold text-primary hover:bg-gold/90 font-semibold px-7 py-3 h-auto text-sm rounded-none"
+              variant="premium"
+              className="px-7 py-3 h-auto text-sm rounded-md"
             >
               <Link to="/international-clients">{t.home.localBtn}</Link>
             </Button>
@@ -586,7 +590,8 @@ export default function HomePage() {
                 <div className="mt-8">
                   <Button
                     asChild
-                    className="bg-gold text-primary hover:bg-gold/90 font-semibold px-5 py-2.5 h-auto text-xs rounded-none w-full sm:w-auto"
+                    variant="premium"
+                    className="px-5 py-2.5 h-auto text-xs rounded-md w-full sm:w-auto"
                   >
                     <Link to="/knowledge-centre">{t.home.insightsPromoBtn}</Link>
                   </Button>
