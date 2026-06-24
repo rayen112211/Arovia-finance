@@ -5,7 +5,7 @@ import { AnimatedNumber } from "@/components/AnimatedNumber";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-const officeImgUrl = "https://images.unsplash.com/photo-1600210491892-03d54079d9f2?auto=format&fit=crop&q=80&w=1200";
+const officeImgUrl = "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=1600";
 
 export default function AboutPage() {
   const { t } = useLanguage();
