@@ -5,7 +5,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-const officeImgUrl = "/contact-office.jpg";
+const officeImgUrl = "/anna_and_robbie1.jpg";
 
 function AccordionItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);

@@ -200,7 +200,7 @@ export const translations = {
     contact: {
       heroTitle: "Contact Us",
       heroDesc: "We are here to answer your questions and help you navigate your financial journey.",
-      heroSub: "Reach out to our team to schedule a consultation or discuss your specific needs.",
+      heroSub: "Reach out to us to schedule a consultation or discuss your specific needs.",
       getInTouch: "Get in Touch",
       sendMessage: "Send Us a Message",
       phoneLabel: "Phone",
@@ -426,7 +426,7 @@ export const translations = {
     contact: {
       heroTitle: "Kontakt",
       heroDesc: "Jesteśmy tutaj, aby odpowiedzieć na Twoje pytania i pomóc Ci w drodze po finansowanie.",
-      heroSub: "Skontaktuj się z naszym zespołem, aby umówić się na konsultację lub omówić swoje potrzeby.",
+      heroSub: "Skontaktuj się z nami, aby umówić się na konsultację lub omówić swoje potrzeby.",
       getInTouch: "Skontaktuj się z nami",
       sendMessage: "Wyślij Wiadomość",
       phoneLabel: "Telefon",

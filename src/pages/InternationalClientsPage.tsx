@@ -53,7 +53,7 @@ export default function InternationalClientsPage() {
             className="w-full h-full object-cover brightness-115"
             onError={(e) => { e.currentTarget.src = "/anna_and_robbie.jpg"; }}
           />
-          <div className="absolute inset-0 bg-primary/45" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/40" />
         </div>
 
         <div className="relative section-padding section-container py-16 lg:py-24 max-w-3xl">

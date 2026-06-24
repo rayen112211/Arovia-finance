@@ -41,23 +41,23 @@ export function Header() {
           : "bg-background/60 nav-blur border-b border-transparent py-2"
       }`}
     >
-      <div className="section-padding section-container flex items-center justify-between h-16 lg:h-20">
+      <div className="section-padding section-container flex items-center justify-between h-16 lg:h-20 flex-nowrap gap-2 lg:gap-4">
         {/* Logo */}
         <Link
           to="/"
-          className="group flex flex-col items-center justify-center w-36 lg:w-44"
+          className="group flex flex-col items-center justify-center w-36 lg:w-44 flex-shrink-0"
           aria-label="Arovia Finance — Home"
         >
           <img src="/arovia-logo-navy.png" alt="Arovia Finance" className="w-full h-auto object-contain transition-opacity duration-300 group-hover:opacity-90" />
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden xl:flex items-center gap-1" aria-label="Main navigation">
+        <nav className="hidden xl:flex items-center gap-0.5 xl:gap-1 flex-nowrap flex-shrink-0" aria-label="Main navigation">
           {links.map((link) => (
             <Link
               key={link.to}
               to={link.to}
-              className={`relative text-sm font-medium px-3 py-2 rounded-md transition-colors duration-200 group ${
+              className={`relative text-xs xl:text-[13px] 2xl:text-sm font-medium px-2 xl:px-2.5 2xl:px-3 py-2 rounded-md transition-colors duration-200 group flex-shrink-0 whitespace-nowrap ${
                 isActive(link.to)
                   ? "text-foreground"
                   : "text-foreground/70 hover:text-foreground"
@@ -66,7 +66,7 @@ export function Header() {
               {link.label}
               {/* Active indicator */}
               <span
-                className={`absolute bottom-0 left-3 right-3 h-px bg-foreground transition-transform duration-200 origin-left ${
+                className={`absolute bottom-0 left-2 xl:left-2.5 2xl:left-3 right-2 xl:right-2.5 2xl:right-3 h-px bg-foreground transition-transform duration-200 origin-left ${
                   isActive(link.to) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                 }`}
               />
@@ -75,17 +75,17 @@ export function Header() {
         </nav>
 
         {/* Desktop Actions */}
-        <div className="hidden xl:flex items-center gap-5">
+        <div className="hidden xl:flex items-center gap-3 xl:gap-4 flex-shrink-0 flex-nowrap">
           <button
             onClick={toggleLanguage}
-            className="group relative flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary-foreground/5 border border-border/50 hover:bg-primary-foreground/10 transition-all"
+            className="group relative flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary-foreground/5 border border-border/50 hover:bg-primary-foreground/10 transition-all flex-shrink-0"
             aria-label={`Switch to ${language === "en" ? "Polish" : "English"}`}
           >
             <span className={`text-[11px] font-bold ${language === "pl" ? "text-foreground" : "text-muted-foreground"}`}>PL</span>
             <div className="w-px h-3 bg-border/80"></div>
             <span className={`text-[11px] font-bold ${language === "en" ? "text-foreground" : "text-muted-foreground"}`}>EN</span>
           </button>
-          <Button variant="premium" size="lg" className="text-sm px-6 shadow-none rounded-md" asChild>
+          <Button variant="premium" size="lg" className="text-xs xl:text-sm px-4 xl:px-6 shadow-none rounded-md flex-shrink-0" asChild>
             <Link to="/contact">{t.nav.cta}</Link>
           </Button>
         </div>
