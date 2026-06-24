@@ -82,82 +82,86 @@ export default function AboutPage() {
       </section>
 
       {/* ─── MEET THE FOUNDERS ─── */}
-      <section className="py-16 lg:py-24 bg-background">
+      <section className="py-16 lg:py-32 bg-background">
         <div className="section-padding section-container">
           <ScrollReveal>
-            <h2 className="font-display text-3xl lg:text-4xl text-center text-foreground mb-3">{t.about.foundersTitle}</h2>
-            <div className="w-10 h-px bg-gold mx-auto mb-14" />
+            <h2 className="font-display text-4xl lg:text-5xl text-center text-foreground mb-4">{t.about.foundersTitle}</h2>
+            <div className="w-12 h-px bg-gold mx-auto mb-20 lg:mb-28" />
           </ScrollReveal>
 
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+          <div className="space-y-24 lg:space-y-32">
             {/* Anna */}
             <ScrollReveal direction="up" delay={100}>
-              <div className="flex flex-col sm:flex-row gap-8 lg:gap-10 items-start">
-                <div className="flex-shrink-0 w-full sm:w-64 lg:w-[280px] xl:w-[320px] h-[360px] sm:h-[340px] lg:h-[380px] xl:h-[420px] rounded-sm overflow-hidden shadow-sm">
-                  <img
-                    src="/anna.jpg"
-                    alt="Anna Rosinska"
-                    className="w-full h-full object-cover object-top"
-                  />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-display text-2xl text-foreground mb-1">Anna Jakimiak</h3>
-                  <p className="text-sm font-semibold text-gold tracking-wide mb-4">Co-Founder &amp; Financial Advisor</p>
-                  <div className="space-y-4 mb-6">
-                    <p className="text-sm text-foreground/70 leading-relaxed">
+              <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-20 items-center">
+                <div className="order-2 lg:order-1 flex-1">
+                  <h3 className="font-display text-3xl lg:text-4xl text-foreground mb-2">Anna Jakimiak</h3>
+                  <p className="text-base font-semibold text-gold tracking-wide mb-6">Co-Founder &amp; Financial Advisor</p>
+                  <div className="space-y-5 mb-8">
+                    <p className="text-base text-foreground/75 leading-relaxed">
                       {t.about.annaP1}
                     </p>
-                    <p className="text-sm text-foreground/70 leading-relaxed">
+                    <p className="text-base text-foreground/75 leading-relaxed">
                       {t.about.annaP2}
                     </p>
                   </div>
-                  <p className="text-sm font-medium text-foreground mb-4 italic">
-                    {t.about.annaHighlight}
-                  </p>
+                  <div className="pl-6 border-l-2 border-gold/50 mb-8">
+                    <p className="text-base font-medium text-foreground italic">
+                      "{t.about.annaHighlight}"
+                    </p>
+                  </div>
                   <div>
                     <p className="text-xs font-semibold text-gold tracking-wider uppercase mb-1">
                       {t.about.annaLangTitle}
                     </p>
-                    <p className="text-sm text-foreground/80">
+                    <p className="text-base text-foreground/85">
                       {t.about.annaLang}
                     </p>
                   </div>
+                </div>
+                <div className="order-1 lg:order-2 w-full aspect-[4/5] lg:h-[650px] rounded-sm overflow-hidden shadow-xl">
+                  <img
+                    src="/anna-hq.jpg"
+                    alt="Anna Rosinska"
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
               </div>
             </ScrollReveal>
 
             {/* Jay */}
             <ScrollReveal direction="up" delay={200}>
-              <div className="flex flex-col sm:flex-row gap-8 lg:gap-10 items-start">
-                <div className="flex-shrink-0 w-full sm:w-64 lg:w-[280px] xl:w-[320px] h-[360px] sm:h-[340px] lg:h-[380px] xl:h-[420px] rounded-sm overflow-hidden shadow-sm">
+              <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-20 items-center">
+                <div className="order-1 w-full aspect-[4/5] lg:h-[650px] rounded-sm overflow-hidden shadow-xl">
                   <img
-                    src="/robbie-solo.jpg"
+                    src="/robbie-hq.jpg"
                     alt="Jay Arora"
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
-                <div className="flex-1">
-                  <h3 className="font-display text-2xl text-foreground mb-1">Jay Arora</h3>
-                  <p className="text-sm font-semibold text-gold tracking-wide mb-4">Co-Founder &amp; Financial Advisor</p>
-                  <div className="space-y-4 mb-6">
-                    <p className="text-sm text-foreground/70 leading-relaxed">
+                <div className="order-2 flex-1">
+                  <h3 className="font-display text-3xl lg:text-4xl text-foreground mb-2">Jay Arora</h3>
+                  <p className="text-base font-semibold text-gold tracking-wide mb-6">Co-Founder &amp; Financial Advisor</p>
+                  <div className="space-y-5 mb-8">
+                    <p className="text-base text-foreground/75 leading-relaxed">
                       {t.about.jayP1}
                     </p>
-                    <p className="text-sm text-foreground/70 leading-relaxed">
+                    <p className="text-base text-foreground/75 leading-relaxed">
                       {t.about.jayP2}
                     </p>
-                    <p className="text-sm text-foreground/70 leading-relaxed">
+                    <p className="text-base text-foreground/75 leading-relaxed">
                       {t.about.jayP3}
                     </p>
                   </div>
-                  <p className="text-sm font-medium text-foreground mb-4 italic">
-                    {t.about.jayHighlight}
-                  </p>
+                  <div className="pl-6 border-l-2 border-gold/50 mb-8">
+                    <p className="text-base font-medium text-foreground italic">
+                      "{t.about.jayHighlight}"
+                    </p>
+                  </div>
                   <div>
                     <p className="text-xs font-semibold text-gold tracking-wider uppercase mb-1">
                       {t.about.jayLangTitle}
                     </p>
-                    <p className="text-sm text-foreground/80">
+                    <p className="text-base text-foreground/85">
                       {t.about.jayLang}
                     </p>
                   </div>
