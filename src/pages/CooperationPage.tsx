@@ -67,7 +67,7 @@ export default function CooperationPage() {
                 {/* Content */}
                 <div className="pt-3 lg:pt-5 flex-1">
                   <div className="flex items-center gap-4 mb-2 lg:mb-3">
-                    <span className="font-display text-2xl text-primary/30 group-hover:text-primary transition-colors duration-300">
+                    <span className="font-sans text-2xl text-primary/30 group-hover:text-primary transition-colors duration-300 font-semibold">
                       0{i + 1}
                     </span>
                     <span className="w-6 h-px bg-border group-hover:bg-primary/50 transition-colors duration-300" />

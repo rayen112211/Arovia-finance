@@ -412,7 +412,7 @@ export default function HomePage() {
                         strokeWidth={1.5}
                       />
                     </div>
-                    <span className="font-display text-xl lg:text-3xl text-gold font-bold mb-2">
+                    <span className="font-sans text-xl lg:text-3xl text-gold font-bold mb-2">
                       {step.num}
                     </span>
                     <h3 className="font-display text-base lg:text-lg text-foreground leading-snug mb-3 max-w-[150px]">

@@ -92,7 +92,7 @@ export default function ConsultationPage() {
                 {steps.map((step, i) => (
                   <div key={i} className="flex gap-4 items-start group">
                     <div className="w-8 h-8 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-primary/10 transition-colors duration-300">
-                      <span className="text-sm font-display text-primary group-hover:text-foreground">{i + 1}</span>
+                      <span className="text-sm font-sans font-semibold text-primary group-hover:text-foreground">{i + 1}</span>
                     </div>
                     <div>
                       <p className="text-foreground font-medium text-lg mb-1">{step}</p>
