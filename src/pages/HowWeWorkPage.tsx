@@ -68,7 +68,7 @@ export default function HowWeWorkPage() {
             </div>
             <div className="hidden lg:block relative h-full min-h-[400px] z-0">
               <img
-                src={promiseImgUrl}
+                src={heroImgUrl}
                 alt="Financial advisor at work"
                 className="absolute inset-0 w-full h-full object-cover"
                 onError={(e) => { e.currentTarget.src = "/anna_and_robbie1.jpg"; }}
