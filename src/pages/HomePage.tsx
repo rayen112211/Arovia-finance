@@ -22,8 +22,7 @@ import { useLanguage } from "@/i18n/LanguageContext";
 
 // ─── Image URLs ───────────────────────────────────────────────────────────────
 const heroTeamImg = "/anna_and_robbie.jpg";
-const officeImg =
-  "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=900";
+const officeImg = "/a-relationship-built-on-trust.jpg";
 const skylineImg = "/warsaw.jpg";
 
 export default function HomePage() {
