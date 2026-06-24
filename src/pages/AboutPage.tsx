@@ -69,7 +69,7 @@ export default function AboutPage() {
             <div className="hidden lg:block relative h-full min-h-[520px]">
               <img
                 src="/anna_and_robbie1-hq.jpg"
-                alt="Anna Rosinska and Jay — Founders of Arovia Finance"
+                alt="Anna Jakimiak and Jay — Founders of Arovia Finance"
                 className="absolute inset-0 w-full h-full object-cover object-top"
               />
             </div>
@@ -88,7 +88,7 @@ export default function AboutPage() {
           <div className="space-y-16 lg:space-y-20">
             {/* Jay */}
             <ScrollReveal direction="up" delay={100}>
-              <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-20 items-center">
+              <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-20 items-start">
                 <div className="order-2 lg:order-1 flex-1">
                   <h3 className="font-display text-3xl lg:text-4xl text-foreground mb-2">Jay Arora</h3>
                   <p className="text-base font-semibold text-gold tracking-wide mb-6">Co-Founder &amp; Financial Advisor</p>
@@ -129,11 +129,11 @@ export default function AboutPage() {
 
             {/* Anna */}
             <ScrollReveal direction="up" delay={200}>
-              <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-20 items-center">
+              <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-20 items-start">
                 <div className="order-1 w-full rounded-sm overflow-hidden shadow-2xl">
                   <img
                     src="/anna-hq.jpg"
-                    alt="Anna Rosinska"
+                    alt="Anna Jakimiak"
                     className="w-full h-auto object-contain"
                   />
                 </div>

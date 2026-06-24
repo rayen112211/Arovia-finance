@@ -187,7 +187,7 @@ export default function HomePage() {
         <div className="absolute inset-y-0 right-0 w-full lg:w-[55%] z-0">
           <img
             src={heroTeamImg}
-            alt="Anna Rosinska and Jay Arora, Founders of Arovia Finance"
+            alt="Anna Jakimiak and Jay Arora, Founders of Arovia Finance"
             className="w-full h-full object-cover object-top"
             onError={(e) => {
               e.currentTarget.src = "/anna_and_robbie1.jpg";
@@ -404,31 +404,28 @@ export default function HomePage() {
                 {processSteps.map((step, i) => (
                   <div
                     key={i}
-                    className="flex items-start lg:items-center gap-6 lg:gap-0 lg:flex-1 h-full"
+                    className="relative flex flex-col items-center lg:flex-1 text-center"
                   >
-                    {/* Step block */}
-                    <div className="flex flex-col items-center w-full h-full">
-                      <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-primary flex items-center justify-center mb-5 shadow-md">
-                        <step.icon
-                          size={32}
-                          className="text-primary-foreground"
-                          strokeWidth={1.5}
-                        />
-                      </div>
-                      <span className="font-display text-sm lg:text-base text-gold font-bold mb-2">
-                        {step.num}
-                      </span>
-                      <h3 className="font-display text-base lg:text-lg text-foreground text-center leading-snug mb-3 max-w-[150px]">
-                        {step.title}
-                      </h3>
-                      <p className="text-[13px] lg:text-[14px] text-muted-foreground text-center leading-relaxed max-w-[150px] flex-1">
-                        {step.desc}
-                      </p>
+                    <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-primary flex items-center justify-center mb-5 shadow-md">
+                      <step.icon
+                        size={32}
+                        className="text-primary-foreground"
+                        strokeWidth={1.5}
+                      />
                     </div>
+                    <span className="font-display text-xl lg:text-3xl text-gold font-bold mb-2">
+                      {step.num}
+                    </span>
+                    <h3 className="font-display text-base lg:text-lg text-foreground leading-snug mb-3 max-w-[150px]">
+                      {step.title}
+                    </h3>
+                    <p className="text-[13px] lg:text-[14px] text-muted-foreground leading-relaxed max-w-[150px]">
+                      {step.desc}
+                    </p>
 
-                    {/* Arrow connector */}
+                    {/* Arrow connector (placed absolutely between icons) */}
                     {i < processSteps.length - 1 && (
-                      <div className="hidden lg:flex items-center justify-center text-gold/50 mx-2 mt-[-6rem]">
+                      <div className="hidden lg:flex absolute top-10 -translate-y-1/2 right-0 translate-x-1/2 text-gold/50 z-10 pointer-events-none">
                         <ArrowRight size={24} />
                       </div>
                     )}
@@ -461,9 +458,9 @@ export default function HomePage() {
           <img
             src={skylineImg}
             alt="Warsaw skyline"
-            className="w-full h-full object-cover opacity-60 brightness-110 contrast-125"
+            className="w-full h-full object-cover opacity-80 brightness-125 contrast-100"
           />
-          <div className="absolute inset-0 bg-primary/40" />
+          <div className="absolute inset-0 bg-primary/30" />
         </div>
 
         <div className="relative z-10 section-padding section-container max-w-3xl">
@@ -583,7 +580,7 @@ export default function HomePage() {
               <div className="bg-primary flex flex-col justify-between p-8 h-full min-h-[240px]">
                 <div>
                   <div className="w-8 h-px bg-gold mb-5" />
-                  <p className="text-primary-foreground text-base leading-relaxed font-display">
+                  <p className="text-primary-foreground text-lg lg:text-xl leading-relaxed font-display">
                     {t.home.insightsPromoBox}
                   </p>
                 </div>

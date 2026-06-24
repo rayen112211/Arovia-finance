@@ -34,7 +34,7 @@ function AccordionItem({ q, a }: { q: string; a: string }) {
 }
 
 export default function ContactPage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const faqItems = [
     {
@@ -59,26 +59,26 @@ export default function ContactPage() {
     <>
       {/* ─── HERO ─── */}
       <section className="relative bg-white border-b border-border/40 overflow-hidden">
-        <div className="section-padding max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-0 min-h-[300px] items-center">
-            <div className="py-10 lg:py-16 pr-0 lg:pr-16">
+        <div className="section-padding section-container">
+          <div className="grid lg:grid-cols-2 gap-0 min-h-[320px] items-center">
+            <div className="py-12 lg:py-16 pr-0 lg:pr-16">
               <ScrollReveal>
-                <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-foreground mb-4">
+                <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-foreground mb-6">
                   {t.contact.heroTitle}
                 </h1>
                 <div className="w-10 h-px bg-gold mb-6" />
-                <p className="text-foreground/75 text-base leading-relaxed mb-2">
-                  {t.contact.heroSub}
-                </p>
-                <p className="text-foreground/60 text-base leading-relaxed">
+                <p className="text-foreground/80 text-base leading-relaxed mb-4">
                   {t.contact.heroDesc}
+                </p>
+                <p className="text-foreground/60 text-sm leading-relaxed max-w-md">
+                  {t.contact.heroSub}
                 </p>
               </ScrollReveal>
             </div>
-            <div className="hidden lg:block relative h-full min-h-[300px]">
+            <div className="hidden lg:block relative h-full min-h-[320px]">
               <img
                 src={officeImgUrl}
-                alt="Arovia Finance office"
+                alt="Arovia Finance Warsaw Office"
                 className="absolute inset-0 w-full h-full object-cover"
                 onError={(e) => { e.currentTarget.src = "/anna_and_robbie1.jpg"; }}
               />
@@ -98,26 +98,35 @@ export default function ContactPage() {
               <div>
                 <h2 className="font-display text-2xl text-foreground mb-8">{t.contact.getInTouch}</h2>
                 <div className="space-y-6">
-                  <a href="tel:+48733985458" className="flex items-start gap-4 group">
-                    <div className="w-14 h-14 rounded-full bg-gold/5 border border-gold/20 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-gold/15 group-hover:border-gold/40 transition-colors duration-300 shadow-sm">
+                  <div className="flex items-start gap-4">
+                    <div className="w-14 h-14 rounded-full bg-gold/5 border border-gold/20 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
                       <Phone size={20} strokeWidth={1.5} className="text-gold" />
                     </div>
-                    <div>
+                    <div className="flex flex-col gap-2">
                       <p className="text-xs uppercase tracking-[0.1em] text-foreground/50 mb-0.5">{t.contact.phoneLabel}</p>
-                      <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
-                        +48 733 985 458
-                      </span>
+                      <a href="tel:+48574100669" className="group flex flex-col">
+                        <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                          +48 574 100 669
+                        </span>
+                        <span className="text-xs text-muted-foreground">{language === 'pl' ? 'Jay Arora (klienci anglojęzyczni)' : 'Jay Arora (English-speaking clients)'}</span>
+                      </a>
+                      <a href="tel:+48695660944" className="group flex flex-col">
+                        <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                          +48 695 660 944
+                        </span>
+                        <span className="text-xs text-muted-foreground">{language === 'pl' ? 'Anna Jakimiak (klienci polsko- i anglojęzyczni)' : 'Anna Jakimiak (Polish- and English-speaking clients)'}</span>
+                      </a>
                     </div>
-                  </a>
+                  </div>
 
-                  <a href="mailto:contact@aroviafinance.pl" className="flex items-start gap-4 group">
+                  <a href="mailto:info@aroviafinance.com" className="flex items-start gap-4 group">
                     <div className="w-14 h-14 rounded-full bg-gold/5 border border-gold/20 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-gold/15 group-hover:border-gold/40 transition-colors duration-300 shadow-sm">
                       <Mail size={20} strokeWidth={1.5} className="text-gold" />
                     </div>
                     <div>
                       <p className="text-xs uppercase tracking-[0.1em] text-foreground/50 mb-0.5">{t.contact.emailLabel}</p>
                       <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
-                        contact@aroviafinance.pl
+                        info@aroviafinance.com
                       </span>
                     </div>
                   </a>

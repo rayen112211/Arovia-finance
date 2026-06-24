@@ -50,10 +50,10 @@ export default function InternationalClientsPage() {
           <img
             src={skylineImgUrl}
             alt="City skyline"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover brightness-115"
             onError={(e) => { e.currentTarget.src = "/anna_and_robbie.jpg"; }}
           />
-          <div className="absolute inset-0 bg-primary/75" />
+          <div className="absolute inset-0 bg-primary/45" />
         </div>
 
         <div className="relative section-padding section-container py-16 lg:py-24 max-w-3xl">
@@ -121,15 +121,15 @@ export default function InternationalClientsPage() {
       </section>
 
       {/* ─── BOTTOM CTA BAR ─── */}
-      <section className="bg-primary py-14">
-        <div className="section-padding section-container flex flex-col sm:flex-row items-center justify-between gap-6">
+      <section className="bg-cream py-16 border-y border-border/40">
+        <div className="section-padding section-container max-w-3xl text-center flex flex-col items-center gap-6">
           <div>
-            <h2 className="font-display text-2xl lg:text-3xl text-primary-foreground mb-1">
+            <h2 className="font-display text-3xl lg:text-4xl text-primary mb-3">
               {t.international.ctaTitle}
             </h2>
-            <p className="text-primary-foreground/60 text-sm">{t.international.ctaDesc}</p>
+            <p className="text-muted-foreground text-base max-w-xl mx-auto">{t.international.ctaDesc}</p>
           </div>
-          <Button variant="premium" className="flex-shrink-0 rounded-md" size="lg" asChild>
+          <Button variant="premium" className="rounded-md" size="lg" asChild>
             <Link to="/contact">{t.nav.cta}</Link>
           </Button>
         </div>

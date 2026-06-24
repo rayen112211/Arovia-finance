@@ -18,7 +18,7 @@ export const translations = {
       heroDesc: "Whether you're buying a home, growing a business, investing in property or relocating to Poland, we help you make confident financial decisions with expert guidance and personal support.",
       heroBtn1: "Book a Consultation",
       heroBtn2: "How We Work",
-      nameCardName: "Anna Rosinska & Jay Arora",
+      nameCardName: "Anna Jakimiak & Jay Arora",
       nameCardTitle: "Founders of Arovia Finance",
       nameCardDesc: "Combining international banking experience with a personal, client-focused approach.",
       
@@ -244,7 +244,7 @@ export const translations = {
       heroDesc: "Niezależnie od tego, czy kupujesz dom, rozwijasz firmę, inwestujesz w nieruchomości, czy przeprowadzasz się do Polski – pomagamy podejmować pewne decyzje finansowe.",
       heroBtn1: "Umów Konsultację",
       heroBtn2: "Jak Działamy",
-      nameCardName: "Anna Rosińska & Jay Arora",
+      nameCardName: "Anna Jakimiak & Jay Arora",
       nameCardTitle: "Założyciele Arovia Finance",
       nameCardDesc: "Łączymy międzynarodowe doświadczenie w bankowości z osobistym podejściem nastawionym na klienta.",
       

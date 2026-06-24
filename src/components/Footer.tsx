@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 export function Footer() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   const navLinks = [
@@ -48,26 +48,33 @@ export function Footer() {
           {/* Contact Details */}
           <div>
             <h4 className="text-gold font-semibold tracking-wider text-xs uppercase mb-6">{t.nav.contact}</h4>
-            <div className="flex flex-col gap-4">
-              <a href="tel:+48733985458" className="flex items-start gap-3 group">
-                <Phone size={18} className="text-gold mt-0.5" />
-                <div className="flex flex-col">
-                  <span className="text-[11px] text-primary-foreground/50 uppercase tracking-wider">{t.contactPreview.phone}</span>
-                  <span className="text-sm text-primary-foreground/80 group-hover:text-primary-foreground transition-colors">+48 733 985 458</span>
+            <div className="flex flex-col gap-5">
+              <div className="flex items-start gap-3">
+                <Phone size={20} className="text-gold mt-1 flex-shrink-0" />
+                <div className="flex flex-col gap-2.5">
+                  <span className="text-xs text-gold/80 font-bold uppercase tracking-wider">{t.contactPreview.phone}</span>
+                  <a href="tel:+48574100669" className="group flex flex-col">
+                    <span className="text-[15px] font-semibold text-primary-foreground/95 group-hover:text-gold transition-colors">+48 574 100 669</span>
+                    <span className="text-[11px] text-primary-foreground/60">{language === 'pl' ? 'Jay Arora (angielski)' : 'Jay Arora (English)'}</span>
+                  </a>
+                  <a href="tel:+48695660944" className="group flex flex-col">
+                    <span className="text-[15px] font-semibold text-primary-foreground/95 group-hover:text-gold transition-colors">+48 695 660 944</span>
+                    <span className="text-[11px] text-primary-foreground/60">{language === 'pl' ? 'Anna Jakimiak (polski i angielski)' : 'Anna Jakimiak (Polish & English)'}</span>
+                  </a>
                 </div>
-              </a>
-              <a href="mailto:contact@aroviafinance.pl" className="flex items-start gap-3 group">
-                <Mail size={18} className="text-gold mt-0.5" />
+              </div>
+              <a href="mailto:info@aroviafinance.com" className="flex items-start gap-3 group">
+                <Mail size={20} className="text-gold mt-1 flex-shrink-0" />
                 <div className="flex flex-col">
-                  <span className="text-[11px] text-primary-foreground/50 uppercase tracking-wider">{t.contactPreview.email}</span>
-                  <span className="text-sm text-primary-foreground/80 group-hover:text-primary-foreground transition-colors">contact@aroviafinance.pl</span>
+                  <span className="text-xs text-gold/80 font-bold uppercase tracking-wider">{t.contactPreview.email}</span>
+                  <span className="text-[15px] font-semibold text-primary-foreground/95 group-hover:text-gold transition-colors">info@aroviafinance.com</span>
                 </div>
               </a>
               <div className="flex items-start gap-3">
-                <MapPin size={18} className="text-gold mt-0.5" />
+                <MapPin size={20} className="text-gold mt-1 flex-shrink-0" />
                 <div className="flex flex-col">
-                  <span className="text-[11px] text-primary-foreground/50 uppercase tracking-wider">{t.contactPreview.location}</span>
-                  <span className="text-sm text-primary-foreground/80">{t.contactPreview.locationValue}</span>
+                  <span className="text-xs text-gold/80 font-bold uppercase tracking-wider">{t.contactPreview.location}</span>
+                  <span className="text-[15px] font-semibold text-primary-foreground/95">{t.contactPreview.locationValue}</span>
                 </div>
               </div>
             </div>

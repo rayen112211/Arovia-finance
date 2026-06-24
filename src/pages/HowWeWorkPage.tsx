@@ -93,7 +93,7 @@ export default function HowWeWorkPage() {
                       <div className="w-20 h-20 rounded-full border border-gold/30 bg-gold/5 flex items-center justify-center mb-2.5 group-hover:bg-gold/10 transition-colors duration-300 shadow-sm">
                         <step.icon size={30} className="text-gold" strokeWidth={1.5} />
                       </div>
-                      <span className="font-display text-[11px] text-gold font-bold uppercase tracking-widest">
+                      <span className="font-display text-sm lg:text-base text-gold font-bold uppercase tracking-wider mt-1.5">
                         {language === "pl" ? `Krok ${step.num}` : `Step ${step.num}`}
                       </span>
                     </div>
@@ -146,15 +146,15 @@ export default function HowWeWorkPage() {
       </section>
 
       {/* ─── BOTTOM CTA BAR ─── */}
-      <section className="bg-primary py-14">
-        <div className="section-padding section-container flex flex-col sm:flex-row items-center justify-between gap-6">
+      <section className="bg-cream py-16 border-y border-border/40">
+        <div className="section-padding section-container max-w-3xl text-center flex flex-col items-center gap-6">
           <div>
-            <h2 className="font-display text-2xl lg:text-3xl text-primary-foreground mb-1">
+            <h2 className="font-display text-3xl lg:text-4xl text-primary mb-3">
               {t.how.ctaTitle}
             </h2>
-            <p className="text-primary-foreground/60 text-sm">{t.how.ctaDesc}</p>
+            <p className="text-muted-foreground text-base max-w-xl mx-auto">{t.how.ctaDesc}</p>
           </div>
-          <Button variant="premium" className="flex-shrink-0 rounded-md" size="lg" asChild>
+          <Button variant="premium" className="rounded-md" size="lg" asChild>
             <Link to="/contact">{t.nav.cta}</Link>
           </Button>
         </div>
