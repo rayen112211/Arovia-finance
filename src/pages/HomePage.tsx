@@ -24,8 +24,7 @@ import { useLanguage } from "@/i18n/LanguageContext";
 const heroTeamImg = "/anna_and_robbie.jpg";
 const officeImg =
   "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=900";
-const skylineImg =
-  "https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?auto=format&fit=crop&q=80&w=1600";
+const skylineImg = "/warsaw.jpg";
 
 export default function HomePage() {
   const { t } = useLanguage();
