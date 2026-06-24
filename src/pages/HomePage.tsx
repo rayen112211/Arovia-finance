@@ -83,19 +83,19 @@ export default function HomePage() {
       icon: Home,
       title: t.home.help1Title,
       desc: t.home.help1Desc,
-      href: "/consultation",
+      href: "/contact",
     },
     {
       icon: Briefcase,
       title: t.home.help2Title,
       desc: t.home.help2Desc,
-      href: "/consultation",
+      href: "/contact",
     },
     {
       icon: Building2,
       title: t.home.help3Title,
       desc: t.home.help3Desc,
-      href: "/consultation",
+      href: "/contact",
     },
     {
       icon: Globe,
@@ -107,7 +107,7 @@ export default function HomePage() {
       icon: FileText,
       title: t.home.help5Title,
       desc: t.home.help5Desc,
-      href: "/consultation",
+      href: "/contact",
     },
   ];
 
@@ -223,7 +223,7 @@ export default function HomePage() {
                   variant="premium"
                   className="px-7 py-3 h-auto text-sm rounded-md shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <Link to="/consultation">{t.home.heroBtn1}</Link>
+                  <Link to="/contact">{t.home.heroBtn1}</Link>
                 </Button>
                 <Button
                   asChild
