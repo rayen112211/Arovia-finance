@@ -26,7 +26,7 @@ export default function ExperiencePage() {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 bg-white border-b border-border/40 overflow-hidden">
+      <section className="relative pt-24 pb-16 lg:pt-36 lg:pb-24 bg-white border-b border-border/40 overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={warsawImgUrl}
@@ -62,9 +62,9 @@ export default function ExperiencePage() {
       </section>
 
       {/* ─── MAIN CONTENT ─── */}
-      <Section className="py-24 lg:py-32">
+      <Section className="py-16 lg:py-20">
         {/* ─── ROBBIE'S SECTION ─── */}
-        <div className="grid lg:grid-cols-5 gap-16 lg:gap-24 mb-24">
+        <div className="grid lg:grid-cols-5 gap-16 lg:gap-24 mb-16">
           
           {/* Left Column: Sticky Image */}
           <div className="lg:col-span-2">
@@ -108,7 +108,7 @@ export default function ExperiencePage() {
         </div>
 
         {/* ─── ANNA'S SECTION ─── */}
-        <div className="grid lg:grid-cols-5 gap-16 lg:gap-24 mt-24 pt-24 border-t border-border/40">
+        <div className="grid lg:grid-cols-5 gap-16 lg:gap-24 mt-16 pt-16 border-t border-border/40">
           
           {/* Right Column: Image (reversed order for visual interest on desktop) */}
           <div className="lg:col-span-2 lg:order-2">
@@ -152,7 +152,7 @@ export default function ExperiencePage() {
       </Section>
 
       {/* ─── CTA BANNER ─── */}
-      <section className="relative py-24 lg:py-32 bg-cream border-y border-border/40 overflow-hidden">
+      <section className="relative py-16 lg:py-20 bg-cream border-y border-border/40 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-cream" />
         </div>

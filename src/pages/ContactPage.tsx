@@ -5,7 +5,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-const officeImgUrl = "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=1400";
+const officeImgUrl = "/contact-office.jpg";
 
 function AccordionItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
@@ -60,8 +60,8 @@ export default function ContactPage() {
       {/* ─── HERO ─── */}
       <section className="relative bg-white border-b border-border/40 overflow-hidden">
         <div className="section-padding max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-0 min-h-[380px] items-center">
-            <div className="py-12 lg:py-20 pr-0 lg:pr-16">
+          <div className="grid lg:grid-cols-2 gap-0 min-h-[300px] items-center">
+            <div className="py-10 lg:py-16 pr-0 lg:pr-16">
               <ScrollReveal>
                 <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-foreground mb-4">
                   {t.contact.heroTitle}
@@ -75,7 +75,7 @@ export default function ContactPage() {
                 </p>
               </ScrollReveal>
             </div>
-            <div className="hidden lg:block relative h-full min-h-[380px]">
+            <div className="hidden lg:block relative h-full min-h-[300px]">
               <img
                 src={officeImgUrl}
                 alt="Arovia Finance office"
@@ -89,7 +89,7 @@ export default function ContactPage() {
       </section>
 
       {/* ─── 3-COLUMN CONTENT ─── */}
-      <section className="py-16 lg:py-24 bg-background">
+      <section className="py-12 lg:py-16 bg-background">
         <div className="section-padding section-container">
           <div className="grid lg:grid-cols-3 gap-10 lg:gap-12">
 
@@ -99,8 +99,8 @@ export default function ContactPage() {
                 <h2 className="font-display text-2xl text-foreground mb-8">{t.contact.getInTouch}</h2>
                 <div className="space-y-6">
                   <a href="tel:+48733985458" className="flex items-start gap-4 group">
-                    <div className="w-14 h-14 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-primary/10 transition-colors">
-                      <Phone size={16} strokeWidth={1.5} className="text-gold" />
+                    <div className="w-14 h-14 rounded-full bg-gold/5 border border-gold/20 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-gold/15 group-hover:border-gold/40 transition-colors duration-300 shadow-sm">
+                      <Phone size={20} strokeWidth={1.5} className="text-gold" />
                     </div>
                     <div>
                       <p className="text-xs uppercase tracking-[0.1em] text-foreground/50 mb-0.5">{t.contact.phoneLabel}</p>
@@ -111,8 +111,8 @@ export default function ContactPage() {
                   </a>
 
                   <a href="mailto:contact@aroviafinance.pl" className="flex items-start gap-4 group">
-                    <div className="w-14 h-14 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-primary/10 transition-colors">
-                      <Mail size={16} strokeWidth={1.5} className="text-gold" />
+                    <div className="w-14 h-14 rounded-full bg-gold/5 border border-gold/20 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-gold/15 group-hover:border-gold/40 transition-colors duration-300 shadow-sm">
+                      <Mail size={20} strokeWidth={1.5} className="text-gold" />
                     </div>
                     <div>
                       <p className="text-xs uppercase tracking-[0.1em] text-foreground/50 mb-0.5">{t.contact.emailLabel}</p>
@@ -123,8 +123,8 @@ export default function ContactPage() {
                   </a>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <MapPin size={16} strokeWidth={1.5} className="text-gold" />
+                    <div className="w-14 h-14 rounded-full bg-gold/5 border border-gold/20 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
+                      <MapPin size={20} strokeWidth={1.5} className="text-gold" />
                     </div>
                     <div>
                       <p className="text-xs uppercase tracking-[0.1em] text-foreground/50 mb-0.5">{t.contact.addressLabel}</p>
@@ -133,8 +133,8 @@ export default function ContactPage() {
                   </div>
 
                   <a href="#" className="flex items-start gap-4 group">
-                    <div className="w-14 h-14 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-primary/10 transition-colors">
-                      <Linkedin size={16} strokeWidth={1.5} className="text-gold" />
+                    <div className="w-14 h-14 rounded-full bg-gold/5 border border-gold/20 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-gold/15 group-hover:border-gold/40 transition-colors duration-300 shadow-sm">
+                      <Linkedin size={20} strokeWidth={1.5} className="text-gold" />
                     </div>
                     <div>
                       <p className="text-xs uppercase tracking-[0.1em] text-foreground/50 mb-0.5">{t.contact.linkedinLabel}</p>

@@ -179,7 +179,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════ */}
       {/* 1. HERO                                                              */}
       {/* ═══════════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-white min-h-[88vh] flex items-center">
+      <section className="relative overflow-hidden bg-white min-h-[72vh] flex items-center">
         {/* Background gradient overlay */}
         <div className="absolute inset-0 bg-white" />
 

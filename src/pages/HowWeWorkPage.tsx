@@ -8,7 +8,7 @@ const heroImgUrl = "https://images.unsplash.com/photo-1450101499163-c8848c66ca85
 const promiseImgUrl = "https://images.unsplash.com/photo-1600210491892-03d54079d9f2?auto=format&fit=crop&q=80&w=1200";
 
 export default function HowWeWorkPage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const steps = [
     {
@@ -54,8 +54,8 @@ export default function HowWeWorkPage() {
       {/* ─── HERO ─── */}
       <section className="relative bg-white overflow-hidden border-b border-border/40">
         <div className="section-padding section-container">
-          <div className="grid lg:grid-cols-2 gap-0 min-h-[400px] items-center">
-            <div className="py-16 lg:py-24 pr-0 lg:pr-16">
+          <div className="grid lg:grid-cols-2 gap-0 min-h-[320px] items-center">
+            <div className="py-12 lg:py-16 pr-0 lg:pr-16">
               <ScrollReveal>
                 <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-foreground mb-6">
                   {t.how.heroTitle}
@@ -66,7 +66,7 @@ export default function HowWeWorkPage() {
                 </p>
               </ScrollReveal>
             </div>
-            <div className="hidden lg:block relative h-full min-h-[400px] z-0">
+            <div className="hidden lg:block relative h-full min-h-[320px] z-0">
               <img
                 src={heroImgUrl}
                 alt="Financial advisor at work"
@@ -80,26 +80,28 @@ export default function HowWeWorkPage() {
       </section>
 
       {/* ─── PROCESS + SIDEBAR ─── */}
-      <section className="py-16 lg:py-24 bg-background">
+      <section className="py-12 lg:py-16 bg-background">
         <div className="section-padding section-container">
           <div className="grid lg:grid-cols-[1fr_300px] gap-12 lg:gap-16">
             {/* Steps list */}
             <div className="space-y-0">
               {steps.map((step, i) => (
                 <ScrollReveal key={step.num} direction="up" delay={i * 80}>
-                  <div className="flex gap-6 py-8 border-b border-border/50 last:border-0 group">
-                    {/* Number + icon */}
-                    <div className="flex flex-col items-center gap-2 flex-shrink-0">
-                      <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-                        <span className="text-primary-foreground text-sm font-bold">{step.num}</span>
+                  <div className="flex gap-8 py-6 border-b border-border/50 last:border-0 group">
+                    {/* Highlighted step icon & number */}
+                    <div className="flex flex-col items-center flex-shrink-0">
+                      <div className="w-14 h-14 rounded-full border border-gold/30 bg-gold/5 flex items-center justify-center mb-2 group-hover:bg-gold/10 transition-colors duration-300 shadow-sm">
+                        <step.icon size={22} className="text-gold" strokeWidth={1.5} />
                       </div>
+                      <span className="font-display text-[10px] text-gold font-bold uppercase tracking-widest">
+                        {language === "pl" ? `Krok ${step.num}` : `Step ${step.num}`}
+                      </span>
                     </div>
                     {/* Content */}
-                    <div className="pt-1.5">
-                      <div className="flex items-center gap-3 mb-2">
-                        <step.icon size={18} strokeWidth={1.5} className="text-gold flex-shrink-0" />
-                        <h3 className="font-display text-xl text-foreground">{step.title}</h3>
-                      </div>
+                    <div className="pt-1 flex-1">
+                      <h3 className="font-display text-xl text-foreground mb-2 group-hover:text-primary transition-colors">
+                        {step.title}
+                      </h3>
                       <p className="text-sm text-foreground/65 leading-relaxed max-w-2xl">{step.desc}</p>
                     </div>
                   </div>

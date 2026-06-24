@@ -78,14 +78,14 @@ export default function AboutPage() {
       </section>
 
       {/* ─── MEET THE FOUNDERS ─── */}
-      <section className="py-16 lg:py-32 bg-background">
+      <section className="py-12 lg:py-20 bg-background">
         <div className="section-padding section-container">
           <ScrollReveal>
             <h2 className="font-display text-4xl lg:text-5xl text-center text-foreground mb-4">{t.about.foundersTitle}</h2>
-            <div className="w-12 h-px bg-gold mx-auto mb-20 lg:mb-28" />
+            <div className="w-12 h-px bg-gold mx-auto mb-12 lg:mb-16" />
           </ScrollReveal>
 
-          <div className="space-y-24 lg:space-y-32">
+          <div className="space-y-16 lg:space-y-20">
             {/* Jay */}
             <ScrollReveal direction="up" delay={100}>
               <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-20 items-center">
@@ -169,7 +169,7 @@ export default function AboutPage() {
       </section>
 
       {/* ─── OUR VALUES ─── */}
-      <section className="py-16 lg:py-24 bg-secondary">
+      <section className="py-12 lg:py-16 bg-secondary">
         <div className="section-padding section-container">
           <ScrollReveal>
             <h2 className="font-display text-3xl lg:text-4xl text-center text-foreground mb-3">{t.about.valuesTitle}</h2>
@@ -204,11 +204,11 @@ export default function AboutPage() {
               <ScrollReveal key={i} direction="up" delay={i * 100}>
                 <div className="flex flex-col items-center text-center px-4">
                   {/* Icon placeholder */}
-                  <div className="w-14 h-14 rounded-full bg-primary-foreground/10 flex items-center justify-center mb-4">
-                    {i === 0 && <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gold"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>}
-                    {i === 1 && <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gold"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>}
-                    {i === 2 && <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gold"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>}
-                    {i === 3 && <Globe size={28} strokeWidth={1.5} className="text-gold" />}
+                  <div className="w-14 h-14 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center mb-4">
+                    {i === 0 && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gold"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>}
+                    {i === 1 && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gold"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>}
+                    {i === 2 && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gold"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>}
+                    {i === 3 && <Globe size={24} strokeWidth={1.5} className="text-gold" />}
                   </div>
                   <div className="font-display text-4xl lg:text-5xl font-light text-primary-foreground mb-2">
                     {stat.prefix ? (
@@ -226,7 +226,7 @@ export default function AboutPage() {
       </section>
 
       {/* ─── LET'S WORK TOGETHER ─── */}
-      <section className="py-16 lg:py-24 bg-background">
+      <section className="py-12 lg:py-16 bg-background">
         <div className="section-padding section-container">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
             <ScrollReveal direction="up" delay={100}>
