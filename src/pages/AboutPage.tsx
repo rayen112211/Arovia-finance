@@ -68,11 +68,11 @@ export default function AboutPage() {
             {/* Right image */}
             <div className="hidden lg:block relative h-full min-h-[520px]">
               <img
-                src="/anna_and_robbie1.jpg"
+                src="/anna_and_robbie-hq.jpg"
                 alt="Anna Rosinska and Jay — Founders of Arovia Finance"
                 className="absolute inset-0 w-full h-full object-cover object-top"
                 onError={(e) => {
-                  e.currentTarget.src = "/anna_and_robbie.jpg";
+                  e.currentTarget.src = "/anna_and_robbie1-hq.jpg";
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-white to-transparent" />
@@ -90,55 +90,10 @@ export default function AboutPage() {
           </ScrollReveal>
 
           <div className="space-y-24 lg:space-y-32">
-            {/* Anna */}
+            {/* Jay */}
             <ScrollReveal direction="up" delay={100}>
               <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-20 items-center">
                 <div className="order-2 lg:order-1 flex-1">
-                  <h3 className="font-display text-3xl lg:text-4xl text-foreground mb-2">Anna Jakimiak</h3>
-                  <p className="text-base font-semibold text-gold tracking-wide mb-6">Co-Founder &amp; Financial Advisor</p>
-                  <div className="space-y-5 mb-8">
-                    <p className="text-base text-foreground/75 leading-relaxed">
-                      {t.about.annaP1}
-                    </p>
-                    <p className="text-base text-foreground/75 leading-relaxed">
-                      {t.about.annaP2}
-                    </p>
-                  </div>
-                  <div className="pl-6 border-l-2 border-gold/50 mb-8">
-                    <p className="text-base font-medium text-foreground italic">
-                      "{t.about.annaHighlight}"
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold text-gold tracking-wider uppercase mb-1">
-                      {t.about.annaLangTitle}
-                    </p>
-                    <p className="text-base text-foreground/85">
-                      {t.about.annaLang}
-                    </p>
-                  </div>
-                </div>
-                <div className="order-1 lg:order-2 w-full aspect-[4/5] lg:h-[650px] rounded-sm overflow-hidden shadow-xl">
-                  <img
-                    src="/anna-hq.jpg"
-                    alt="Anna Rosinska"
-                    className="w-full h-full object-cover object-top"
-                  />
-                </div>
-              </div>
-            </ScrollReveal>
-
-            {/* Jay */}
-            <ScrollReveal direction="up" delay={200}>
-              <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-20 items-center">
-                <div className="order-1 w-full aspect-[4/5] lg:h-[650px] rounded-sm overflow-hidden shadow-xl">
-                  <img
-                    src="/robbie-hq.jpg"
-                    alt="Jay Arora"
-                    className="w-full h-full object-cover object-top"
-                  />
-                </div>
-                <div className="order-2 flex-1">
                   <h3 className="font-display text-3xl lg:text-4xl text-foreground mb-2">Jay Arora</h3>
                   <p className="text-base font-semibold text-gold tracking-wide mb-6">Co-Founder &amp; Financial Advisor</p>
                   <div className="space-y-5 mb-8">
@@ -163,6 +118,51 @@ export default function AboutPage() {
                     </p>
                     <p className="text-base text-foreground/85">
                       {t.about.jayLang}
+                    </p>
+                  </div>
+                </div>
+                <div className="order-1 lg:order-2 w-full rounded-sm overflow-hidden shadow-2xl">
+                  <img
+                    src="/robbie-hq.jpg"
+                    alt="Jay Arora"
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Anna */}
+            <ScrollReveal direction="up" delay={200}>
+              <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-20 items-center">
+                <div className="order-1 w-full rounded-sm overflow-hidden shadow-2xl">
+                  <img
+                    src="/anna-hq.jpg"
+                    alt="Anna Rosinska"
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+                <div className="order-2 flex-1">
+                  <h3 className="font-display text-3xl lg:text-4xl text-foreground mb-2">Anna Jakimiak</h3>
+                  <p className="text-base font-semibold text-gold tracking-wide mb-6">Co-Founder &amp; Financial Advisor</p>
+                  <div className="space-y-5 mb-8">
+                    <p className="text-base text-foreground/75 leading-relaxed">
+                      {t.about.annaP1}
+                    </p>
+                    <p className="text-base text-foreground/75 leading-relaxed">
+                      {t.about.annaP2}
+                    </p>
+                  </div>
+                  <div className="pl-6 border-l-2 border-gold/50 mb-8">
+                    <p className="text-base font-medium text-foreground italic">
+                      "{t.about.annaHighlight}"
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gold tracking-wider uppercase mb-1">
+                      {t.about.annaLangTitle}
+                    </p>
+                    <p className="text-base text-foreground/85">
+                      {t.about.annaLang}
                     </p>
                   </div>
                 </div>
