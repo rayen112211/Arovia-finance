@@ -260,29 +260,29 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════ */}
       {/* 2. WHY CLIENTS CHOOSE AROVIA FINANCE                                */}
       {/* ═══════════════════════════════════════════════════════════════════ */}
-      <section className="py-16 lg:py-20 bg-background border-b border-border/40">
+      <section className="py-20 lg:py-24 bg-background border-b border-border/40">
         <div className="section-padding section-container">
           <ScrollReveal>
-            <h2 className="font-display text-2xl lg:text-3xl text-foreground text-center mb-14">
+            <h2 className="font-display text-3xl lg:text-4xl text-foreground text-center mb-16">
               {t.home.whyTitle}
             </h2>
           </ScrollReveal>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-14">
             {whyItems.map((item, i) => (
               <ScrollReveal key={i} delay={i * 80}>
                 <div className="flex flex-col items-center text-center group">
-                  <div className="w-16 h-16 rounded-full border border-gold/30 bg-gold/5 flex items-center justify-center mb-5 group-hover:bg-gold/10 transition-colors duration-300">
+                  <div className="w-20 h-20 rounded-full border border-gold/30 bg-gold/5 flex items-center justify-center mb-6 group-hover:bg-gold/10 transition-colors duration-300 shadow-sm">
                     <item.icon
-                      size={26}
+                      size={32}
                       className="text-gold"
                       strokeWidth={1.25}
                     />
                   </div>
-                  <h3 className="font-display text-lg text-foreground mb-2 leading-snug">
+                  <h3 className="font-display text-xl text-foreground mb-3 leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-[15px] text-muted-foreground leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
