@@ -68,14 +68,10 @@ export default function AboutPage() {
             {/* Right image */}
             <div className="hidden lg:block relative h-full min-h-[520px]">
               <img
-                src="/anna_and_robbie-hq.jpg"
+                src="/anna_and_robbie.jpg"
                 alt="Anna Rosinska and Jay — Founders of Arovia Finance"
                 className="absolute inset-0 w-full h-full object-cover object-top"
-                onError={(e) => {
-                  e.currentTarget.src = "/anna_and_robbie1-hq.jpg";
-                }}
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-white to-transparent" />
             </div>
           </div>
         </div>
