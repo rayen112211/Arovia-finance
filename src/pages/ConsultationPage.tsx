@@ -23,7 +23,7 @@ export default function ConsultationPage() {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 bg-primary overflow-hidden">
+      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 bg-white border-b border-border/40 overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={handshakeImgUrl}
@@ -33,7 +33,7 @@ export default function ConsultationPage() {
               e.currentTarget.src = fallbackConsultationImgUrl;
             }}
           />
-          <div className="absolute inset-0 bg-primary/90" />
+          <div className="absolute inset-0 bg-white border-b border-border/40/90" />
         </div>
         
         {/* Decorative elements - subtle */}
@@ -46,10 +46,10 @@ export default function ConsultationPage() {
                 <span className="w-8 h-px bg-border" />
                 {t.consultationPage.label}
               </span>
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.75rem] text-primary-foreground leading-[1.06] mb-8">
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.75rem] text-foreground leading-[1.06] mb-8">
                 {c.title}
               </h1>
-              <p className="text-lg sm:text-xl text-primary-foreground/70 leading-relaxed">
+              <p className="text-lg sm:text-xl text-foreground/70 leading-relaxed">
                 {c.intro}
               </p>
             </ScrollReveal>
@@ -64,8 +64,8 @@ export default function ConsultationPage() {
           {benefits.map((b, i) => (
             <ScrollReveal key={i} delay={i * 100}>
               <div className="text-center group">
-                <div className="w-14 h-14 rounded-full bg-muted/60 flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/5 transition-colors duration-500">
-                  <b.icon className="text-foreground/70 group-hover:text-primary transition-colors duration-500" size={24} strokeWidth={1.25} />
+                <div className="w-20 h-20 rounded-full bg-muted/60 flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/5 transition-colors duration-500">
+                  <b.icon className="text-foreground/70 group-hover:text-primary transition-colors duration-500" size={36} strokeWidth={1.25} />
                 </div>
                 <h3 className="font-display text-xl lg:text-2xl text-foreground mb-3">{b.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{b.text}</p>

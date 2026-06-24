@@ -21,11 +21,9 @@ export default function CooperationPage() {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 bg-primary overflow-hidden">
+      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 bg-white border-b border-border/40 overflow-hidden">
         {/* Abstract dark gradient bg - simplified */}
-        <div className="absolute inset-0 bg-primary" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent opacity-60" />
-        
+        <div className="absolute inset-0 bg-white border-b border-border/40" />
         {/* Decorative line */}
         <div className="absolute left-1/3 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-border/10 to-transparent" />
 
@@ -36,10 +34,10 @@ export default function CooperationPage() {
                 <span className="w-8 h-px bg-border" />
                 {t.cooperationPage.label}
               </span>
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.75rem] text-primary-foreground leading-[1.06] mb-8">
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.75rem] text-foreground leading-[1.06] mb-8">
                 {t.cooperationPage.title}
               </h1>
-              <p className="text-lg sm:text-xl text-primary-foreground/70 leading-relaxed">
+              <p className="text-lg sm:text-xl text-foreground/70 leading-relaxed">
                 {t.cooperationPage.intro}
               </p>
             </ScrollReveal>
@@ -62,7 +60,7 @@ export default function CooperationPage() {
                 {/* Numbered icon */}
                 <div className="flex-shrink-0 w-[76px] h-[76px] lg:w-[88px] lg:h-[88px] rounded-full bg-background border border-border/40 flex items-center justify-center relative z-10 group-hover:border-primary/30 transition-colors duration-500">
                   <div className="w-[85%] h-[85%] rounded-full bg-muted/30 flex items-center justify-center">
-                    <step.icon className="text-foreground/70 group-hover:text-primary transition-colors duration-500" size={24} strokeWidth={1.25} />
+                    <step.icon className="text-foreground/70 group-hover:text-primary transition-colors duration-500" size={36} strokeWidth={1.25} />
                   </div>
                 </div>
                 

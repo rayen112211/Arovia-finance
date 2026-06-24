@@ -56,10 +56,9 @@ export default function OpinionsPage() {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 bg-primary overflow-hidden">
+      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 bg-white border-b border-border/40 overflow-hidden">
         {/* Abstract dark gradient bg - simplified */}
-        <div className="absolute inset-0 bg-primary" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent opacity-60" />
+        <div className="absolute inset-0 bg-white border-b border-border/40" />
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
         
         {/* Decorative line */}
@@ -72,10 +71,10 @@ export default function OpinionsPage() {
                 <span className="w-8 h-px bg-border" />
                 {t.opinionsPage.label}
               </span>
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.75rem] text-primary-foreground leading-[1.06] mb-8">
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.75rem] text-foreground leading-[1.06] mb-8">
                 {t.opinionsPage.title}
               </h1>
-              <p className="text-lg sm:text-xl text-primary-foreground/70 leading-relaxed">
+              <p className="text-lg sm:text-xl text-foreground/70 leading-relaxed">
                 {t.opinionsPage.intro}
               </p>
             </ScrollReveal>

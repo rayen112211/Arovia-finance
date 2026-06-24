@@ -53,19 +53,19 @@ export default function InternationalClientsPage() {
             className="w-full h-full object-cover"
             onError={(e) => { e.currentTarget.src = "/anna_and_robbie.jpg"; }}
           />
-          <div className="absolute inset-0 bg-primary/75" />
+          <div className="absolute inset-0 bg-white border-b border-border/40/75" />
         </div>
 
         <div className="relative section-padding section-container py-16 lg:py-24 max-w-3xl">
           <ScrollReveal>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-primary-foreground mb-4">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-foreground mb-4">
               {t.international.heroTitle}
             </h1>
             <div className="w-10 h-px bg-gold mb-6" />
-            <p className="text-xl text-primary-foreground/85 font-light mb-4">
+            <p className="text-xl text-foreground/85 font-light mb-4">
               {t.international.heroSub}
             </p>
-            <p className="text-primary-foreground/65 text-base leading-relaxed max-w-xl">
+            <p className="text-foreground/65 text-base leading-relaxed max-w-xl">
               {t.international.heroDesc}
             </p>
           </ScrollReveal>
@@ -86,8 +86,8 @@ export default function InternationalClientsPage() {
             {features.map((f, i) => (
               <ScrollReveal key={f.title} direction="up" delay={i * 100}>
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 rounded-full bg-primary/5 flex items-center justify-center mb-5">
-                    <f.icon size={24} strokeWidth={1.25} className="text-gold" />
+                  <div className="w-20 h-20 rounded-full bg-primary/5 flex items-center justify-center mb-5">
+                    <f.icon size={36} strokeWidth={1.25} className="text-gold" />
                   </div>
                   <h3 className="font-display text-xl text-foreground mb-3">{f.title}</h3>
                   <p className="text-sm text-foreground/65 leading-relaxed">{f.desc}</p>

@@ -23,7 +23,7 @@ export default function ForForeignersPage() {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 bg-primary overflow-hidden">
+      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 bg-white border-b border-border/40 overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={foreignersImgUrl}
@@ -33,7 +33,7 @@ export default function ForForeignersPage() {
               e.currentTarget.src = fallbackForeignersImgUrl;
             }}
           />
-          <div className="absolute inset-0 bg-primary/90" />
+          <div className="absolute inset-0 bg-white border-b border-border/40/90" />
         </div>
         
         <div className="absolute left-1/3 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-border/10 to-transparent" />
@@ -45,10 +45,10 @@ export default function ForForeignersPage() {
                 <span className="w-8 h-px bg-gold/50" />
                 {page.label}
               </span>
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.75rem] text-primary-foreground leading-[1.06] mb-8">
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.75rem] text-foreground leading-[1.06] mb-8">
                 {page.title}
               </h1>
-              <p className="text-lg sm:text-xl text-primary-foreground/70 leading-relaxed">
+              <p className="text-lg sm:text-xl text-foreground/70 leading-relaxed">
                 {page.intro}
               </p>
             </ScrollReveal>
@@ -61,8 +61,8 @@ export default function ForForeignersPage() {
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 mb-24">
           <ScrollReveal delay={0}>
             <div className="premium-card p-10 h-full flex flex-col transition-all duration-300 border-l-4 border-l-gold bg-white">
-              <div className="mb-8 w-14 h-14 rounded-full bg-muted/60 flex items-center justify-center">
-                <HelpCircle className="text-primary" size={24} strokeWidth={1.25} />
+              <div className="mb-8 w-20 h-20 rounded-full bg-muted/60 flex items-center justify-center">
+                <HelpCircle className="text-primary" size={36} strokeWidth={1.25} />
               </div>
               <h3 className="font-display text-2xl text-foreground mb-6">
                 {page.helpTitle}
@@ -80,8 +80,8 @@ export default function ForForeignersPage() {
 
           <ScrollReveal delay={100}>
             <div className="premium-card p-10 h-full flex flex-col transition-all duration-300 border-l-4 border-l-gold bg-white">
-              <div className="mb-8 w-14 h-14 rounded-full bg-muted/60 flex items-center justify-center">
-                <Globe className="text-primary" size={24} strokeWidth={1.25} />
+              <div className="mb-8 w-20 h-20 rounded-full bg-muted/60 flex items-center justify-center">
+                <Globe className="text-primary" size={36} strokeWidth={1.25} />
               </div>
               <h3 className="font-display text-2xl text-foreground mb-6">
                 {page.whomTitle}

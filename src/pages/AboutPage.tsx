@@ -43,8 +43,7 @@ export default function AboutPage() {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="relative bg-primary overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent" />
+      <section className="relative bg-white border-b border-border/40 overflow-hidden">
         <div className="section-padding section-container">
           <div className="grid lg:grid-cols-2 gap-0 min-h-[520px] items-center">
             {/* Left copy */}
@@ -53,14 +52,14 @@ export default function AboutPage() {
                 <span className="inline-block text-xs font-semibold uppercase tracking-[0.18em] text-gold mb-5">
                   {t.about.eyebrow}
                 </span>
-                <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-primary-foreground mb-8">
+                <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-foreground mb-8">
                   {t.about.heroTitle}
                 </h1>
                 <div className="w-10 h-px bg-gold mb-8" />
-                <p className="text-primary-foreground/75 text-base leading-relaxed mb-4">
+                <p className="text-foreground/75 text-base leading-relaxed mb-4">
                   {t.about.heroP1}
                 </p>
-                <p className="text-primary-foreground/75 text-base leading-relaxed">
+                <p className="text-foreground/75 text-base leading-relaxed">
                   {t.about.heroP2}
                 </p>
               </ScrollReveal>
@@ -178,8 +177,8 @@ export default function AboutPage() {
             {values.map((v, i) => (
               <ScrollReveal key={v.title} direction="up" delay={i * 100}>
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 rounded-full bg-primary/5 flex items-center justify-center mb-5">
-                    <v.icon size={24} strokeWidth={1.25} className="text-gold" />
+                  <div className="w-20 h-20 rounded-full bg-primary/5 flex items-center justify-center mb-5">
+                    <v.icon size={36} strokeWidth={1.25} className="text-gold" />
                   </div>
                   <h3 className="font-display text-xl text-foreground mb-3">{v.title}</h3>
                   <p className="text-sm text-foreground/65 leading-relaxed">{v.desc}</p>
@@ -202,11 +201,11 @@ export default function AboutPage() {
               <ScrollReveal key={i} direction="up" delay={i * 100}>
                 <div className="flex flex-col items-center text-center px-4">
                   {/* Icon placeholder */}
-                  <div className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center mb-4">
+                  <div className="w-14 h-14 rounded-full bg-primary-foreground/10 flex items-center justify-center mb-4">
                     {i === 0 && <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gold"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>}
                     {i === 1 && <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gold"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>}
                     {i === 2 && <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gold"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>}
-                    {i === 3 && <Globe size={20} strokeWidth={1.5} className="text-gold" />}
+                    {i === 3 && <Globe size={28} strokeWidth={1.5} className="text-gold" />}
                   </div>
                   <div className="font-display text-4xl lg:text-5xl font-light text-primary-foreground mb-2">
                     {stat.prefix ? (

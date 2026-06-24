@@ -26,7 +26,7 @@ export default function ExperiencePage() {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 bg-primary overflow-hidden">
+      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 bg-white border-b border-border/40 overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={warsawImgUrl}
@@ -36,7 +36,7 @@ export default function ExperiencePage() {
               e.currentTarget.src = fallbackOfficeImgUrl;
             }}
           />
-          <div className="absolute inset-0 bg-primary" />
+          <div className="absolute inset-0 bg-white border-b border-border/40" />
         </div>
         
         {/* Decorative line */}
@@ -50,10 +50,10 @@ export default function ExperiencePage() {
                 <span className="w-8 h-px bg-border" />
                 {t.experience.label}
               </span>
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.75rem] text-primary-foreground leading-[1.06] mb-8">
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.75rem] text-foreground leading-[1.06] mb-8">
                 {exp.title}
               </h1>
-              <p className="text-lg sm:text-xl text-primary-foreground/70 leading-relaxed">
+              <p className="text-lg sm:text-xl text-foreground/70 leading-relaxed">
                 {exp.intro}
               </p>
             </ScrollReveal>

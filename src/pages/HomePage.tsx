@@ -180,9 +180,9 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════ */}
       {/* 1. HERO                                                              */}
       {/* ═══════════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-primary min-h-[88vh] flex items-center">
+      <section className="relative overflow-hidden bg-white min-h-[88vh] flex items-center">
         {/* Background gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-[hsl(222,47%,16%)]" />
+        <div className="absolute inset-0 bg-white" />
 
         {/* Hero image — right half */}
         <div className="absolute inset-y-0 right-0 w-full lg:w-[55%] z-0">
@@ -194,26 +194,26 @@ export default function HomePage() {
               e.currentTarget.src = "/anna_and_robbie1.jpg";
             }}
           />
-          {/* Left-side gradient fade into navy */}
-          <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-primary to-transparent" />
+          {/* Left-side gradient fade into white */}
+          <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white to-transparent" />
           {/* Bottom fade */}
-          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-primary/60 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-white/80 to-transparent" />
         </div>
 
         {/* Mobile top-gradient over image */}
-        <div className="absolute inset-0 bg-primary/60 lg:hidden z-[1]" />
+        <div className="absolute inset-0 bg-white/80 lg:hidden z-[1]" />
 
         {/* Content */}
         <div className="relative z-10 section-padding section-container w-full py-16 lg:py-24 grid lg:grid-cols-2 gap-0">
           <div className="max-w-[600px]">
             <ScrollReveal>
-              <h1 className="font-display text-[2.4rem] sm:text-[3rem] lg:text-[3.4rem] text-primary-foreground leading-[1.07] tracking-tight mb-6">
+              <h1 className="font-display text-[2.4rem] sm:text-[3rem] lg:text-[3.4rem] text-foreground leading-[1.07] tracking-tight mb-6">
                 {t.home.heroTitle}
               </h1>
             </ScrollReveal>
 
             <ScrollReveal delay={120}>
-              <p className="text-primary-foreground/75 text-base lg:text-lg leading-relaxed mb-8 max-w-[52ch]">
+              <p className="text-foreground/80 text-base lg:text-lg leading-relaxed mb-8 max-w-[52ch]">
                 {t.home.heroDesc}
               </p>
             </ScrollReveal>
@@ -229,7 +229,7 @@ export default function HomePage() {
                 <Button
                   asChild
                   variant="outline"
-                  className="border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 px-7 py-3 h-auto text-sm rounded-none"
+                  className="border-primary/20 text-primary hover:bg-primary/5 px-7 py-3 h-auto text-sm rounded-none"
                 >
                   <Link to="/how-we-work">{t.home.heroBtn2}</Link>
                 </Button>
@@ -241,15 +241,15 @@ export default function HomePage() {
         {/* Name-card overlay — visible on desktop, bottom-right of image */}
         <div className="hidden lg:block absolute bottom-8 right-8 xl:bottom-12 xl:right-[max(2rem,calc((100vw-1280px)/2+2rem))] z-20">
           <ScrollReveal delay={400}>
-            <div className="bg-primary/90 backdrop-blur-sm border border-primary-foreground/20 p-6 max-w-[300px] shadow-2xl">
+            <div className="bg-white/95 backdrop-blur-sm border border-border/40 p-6 max-w-[300px] shadow-2xl">
               <div className="w-8 h-px bg-gold mb-3" />
-              <p className="font-display text-primary-foreground text-lg leading-snug mb-1">
+              <p className="font-display text-foreground text-lg leading-snug mb-1">
                 {t.home.nameCardName}
               </p>
               <p className="text-gold text-xs font-semibold uppercase tracking-widest mb-2">
                 {t.home.nameCardTitle}
               </p>
-              <p className="text-primary-foreground/65 text-xs leading-relaxed">
+              <p className="text-foreground/75 text-xs leading-relaxed">
                 {t.home.nameCardDesc}
               </p>
             </div>
@@ -311,7 +311,7 @@ export default function HomePage() {
                   <img
                     src="/arovia-logo-white.png"
                     alt="Arovia Finance"
-                    className="w-32 opacity-70 drop-shadow-lg"
+                    className="w-56 opacity-90 drop-shadow-2xl"
                     onError={(e) => {
                       e.currentTarget.style.display = "none";
                     }}
@@ -359,22 +359,22 @@ export default function HomePage() {
             </h2>
           </ScrollReveal>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {services.map((s, i) => (
               <ScrollReveal key={i} delay={i * 70}>
                 <Link to={s.href} className="group block h-full">
-                  <div className="bg-white border border-border/50 p-7 h-full flex flex-col hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
-                    <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mb-5 group-hover:bg-gold/20 transition-colors duration-300">
+                  <div className="bg-white border border-border/50 p-8 h-full flex flex-col hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div className="w-20 h-20 rounded-full bg-gold/15 flex items-center justify-center mb-6 group-hover:bg-gold/25 transition-colors duration-300 shadow-sm">
                       <s.icon
-                        size={22}
+                        size={40}
                         className="text-gold"
-                        strokeWidth={1.25}
+                        strokeWidth={1.5}
                       />
                     </div>
-                    <h3 className="font-display text-base lg:text-[1.05rem] text-foreground mb-2 leading-snug group-hover:text-primary transition-colors">
+                    <h3 className="font-display text-lg lg:text-[1.15rem] text-foreground mb-3 leading-snug group-hover:text-primary transition-colors">
                       {s.title}
                     </h3>
-                    <p className="text-[13px] text-muted-foreground leading-relaxed flex-1">
+                    <p className="text-[15px] text-muted-foreground leading-relaxed flex-1">
                       {s.desc}
                     </p>
                   </div>
@@ -398,37 +398,37 @@ export default function HomePage() {
 
           {/* Cream boxed container with steps */}
           <ScrollReveal>
-            <div className="bg-[hsl(var(--cream))] border border-border/40 rounded-sm px-8 py-12">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 sm:gap-2">
+            <div className="bg-[hsl(var(--cream))] border border-border/40 rounded-sm px-10 py-16">
+              <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-10 lg:gap-4">
                 {processSteps.map((step, i) => (
                   <div
                     key={i}
-                    className="flex items-center gap-3 sm:gap-0 sm:flex-1"
+                    className="flex items-start lg:items-center gap-6 lg:gap-0 lg:flex-1 h-full"
                   >
                     {/* Step block */}
-                    <div className="flex flex-col items-center sm:w-full">
-                      <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center mb-3 shadow-sm">
+                    <div className="flex flex-col items-center w-full h-full">
+                      <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-primary flex items-center justify-center mb-5 shadow-md">
                         <step.icon
-                          size={20}
+                          size={32}
                           className="text-primary-foreground"
                           strokeWidth={1.5}
                         />
                       </div>
-                      <span className="font-display text-xs text-gold font-bold mb-1">
+                      <span className="font-display text-sm lg:text-base text-gold font-bold mb-2">
                         {step.num}
                       </span>
-                      <h3 className="font-display text-sm text-foreground text-center leading-snug mb-1 max-w-[90px]">
+                      <h3 className="font-display text-base lg:text-lg text-foreground text-center leading-snug mb-3 max-w-[150px]">
                         {step.title}
                       </h3>
-                      <p className="text-[11px] text-muted-foreground text-center leading-snug max-w-[90px]">
+                      <p className="text-[13px] lg:text-[14px] text-muted-foreground text-center leading-relaxed max-w-[150px] flex-1">
                         {step.desc}
                       </p>
                     </div>
 
-                    {/* Arrow connector (not after last item) */}
+                    {/* Arrow connector */}
                     {i < processSteps.length - 1 && (
-                      <div className="hidden sm:flex items-center justify-center text-gold/50 mx-1 mt-[-2.5rem]">
-                        <ArrowRight size={18} />
+                      <div className="hidden lg:flex items-center justify-center text-gold/50 mx-2 mt-[-6rem]">
+                        <ArrowRight size={24} />
                       </div>
                     )}
                   </div>
@@ -459,9 +459,9 @@ export default function HomePage() {
           <img
             src={skylineImg}
             alt="Warsaw skyline"
-            className="w-full h-full object-cover opacity-25"
+            className="w-full h-full object-cover opacity-60 brightness-110 contrast-125"
           />
-          <div className="absolute inset-0 bg-primary/75" />
+          <div className="absolute inset-0 bg-primary/40" />
         </div>
 
         <div className="relative z-10 section-padding section-container max-w-3xl">

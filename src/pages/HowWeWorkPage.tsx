@@ -52,29 +52,28 @@ export default function HowWeWorkPage() {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="relative bg-primary overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent" />
+      <section className="relative bg-white overflow-hidden border-b border-border/40">
         <div className="section-padding section-container">
           <div className="grid lg:grid-cols-2 gap-0 min-h-[400px] items-center">
             <div className="py-16 lg:py-24 pr-0 lg:pr-16">
               <ScrollReveal>
-                <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-primary-foreground mb-6">
+                <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-foreground mb-6">
                   {t.how.heroTitle}
                 </h1>
                 <div className="w-10 h-px bg-gold mb-6" />
-                <p className="text-primary-foreground/75 text-base leading-relaxed max-w-md">
+                <p className="text-foreground/80 text-base leading-relaxed max-w-md">
                   {t.how.heroDesc}
                 </p>
               </ScrollReveal>
             </div>
-            <div className="hidden lg:block relative h-full min-h-[400px]">
+            <div className="hidden lg:block relative h-full min-h-[400px] z-0">
               <img
-                src={heroImgUrl}
+                src={promiseImgUrl}
                 alt="Financial advisor at work"
                 className="absolute inset-0 w-full h-full object-cover"
                 onError={(e) => { e.currentTarget.src = "/anna_and_robbie1.jpg"; }}
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/70 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-white to-transparent" />
             </div>
           </div>
         </div>

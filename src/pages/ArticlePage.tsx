@@ -257,13 +257,13 @@ export default function ArticlePage() {
       </div>
 
       {/* ─── BOTTOM CTA BAR ─── */}
-      <section className="bg-primary py-14">
+      <section className="bg-white border-b border-border/40 py-14">
         <div className="section-padding section-container flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
-            <h2 className="font-display text-2xl lg:text-3xl text-primary-foreground mb-1">
+            <h2 className="font-display text-2xl lg:text-3xl text-foreground mb-1">
               {t.knowledge.ctaTitle}
             </h2>
-            <p className="text-primary-foreground/60 text-sm">{t.knowledge.ctaDesc}</p>
+            <p className="text-foreground/60 text-sm">{t.knowledge.ctaDesc}</p>
           </div>
           <Button className="bg-gold text-primary hover:bg-gold/90 font-semibold flex-shrink-0 rounded-md" size="lg" asChild>
             <Link to="/contact">{t.nav.cta}</Link>

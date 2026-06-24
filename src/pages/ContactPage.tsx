@@ -58,20 +58,19 @@ export default function ContactPage() {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="relative bg-primary overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent" />
+      <section className="relative bg-white border-b border-border/40 overflow-hidden">
         <div className="section-padding max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-0 min-h-[380px] items-center">
             <div className="py-12 lg:py-20 pr-0 lg:pr-16">
               <ScrollReveal>
-                <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-primary-foreground mb-4">
+                <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-foreground mb-4">
                   {t.contact.heroTitle}
                 </h1>
                 <div className="w-10 h-px bg-gold mb-6" />
-                <p className="text-primary-foreground/75 text-base leading-relaxed mb-2">
+                <p className="text-foreground/75 text-base leading-relaxed mb-2">
                   {t.contact.heroSub}
                 </p>
-                <p className="text-primary-foreground/60 text-base leading-relaxed">
+                <p className="text-foreground/60 text-base leading-relaxed">
                   {t.contact.heroDesc}
                 </p>
               </ScrollReveal>
@@ -83,7 +82,7 @@ export default function ContactPage() {
                 className="absolute inset-0 w-full h-full object-cover"
                 onError={(e) => { e.currentTarget.src = "/anna_and_robbie1.jpg"; }}
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/70 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-white to-transparent" />
             </div>
           </div>
         </div>
@@ -100,7 +99,7 @@ export default function ContactPage() {
                 <h2 className="font-display text-2xl text-foreground mb-8">{t.contact.getInTouch}</h2>
                 <div className="space-y-6">
                   <a href="tel:+48733985458" className="flex items-start gap-4 group">
-                    <div className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-primary/10 transition-colors">
+                    <div className="w-14 h-14 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-primary/10 transition-colors">
                       <Phone size={16} strokeWidth={1.5} className="text-gold" />
                     </div>
                     <div>
@@ -112,7 +111,7 @@ export default function ContactPage() {
                   </a>
 
                   <a href="mailto:contact@aroviafinance.pl" className="flex items-start gap-4 group">
-                    <div className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-primary/10 transition-colors">
+                    <div className="w-14 h-14 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-primary/10 transition-colors">
                       <Mail size={16} strokeWidth={1.5} className="text-gold" />
                     </div>
                     <div>
@@ -124,7 +123,7 @@ export default function ContactPage() {
                   </a>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-14 h-14 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <MapPin size={16} strokeWidth={1.5} className="text-gold" />
                     </div>
                     <div>
@@ -134,7 +133,7 @@ export default function ContactPage() {
                   </div>
 
                   <a href="#" className="flex items-start gap-4 group">
-                    <div className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-primary/10 transition-colors">
+                    <div className="w-14 h-14 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-primary/10 transition-colors">
                       <Linkedin size={16} strokeWidth={1.5} className="text-gold" />
                     </div>
                     <div>

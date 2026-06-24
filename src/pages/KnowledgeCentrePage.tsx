@@ -44,20 +44,19 @@ export default function KnowledgeCentrePage() {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="relative bg-primary overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent" />
+      <section className="relative bg-white border-b border-border/40 overflow-hidden">
         <div className="section-padding section-container">
           <div className="grid lg:grid-cols-2 gap-0 min-h-[380px] items-center">
             <div className="py-12 lg:py-16 pr-0 lg:pr-16">
               <ScrollReveal>
-                <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-primary-foreground mb-4">
+                <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-foreground mb-4">
                   {t.knowledge.heroTitle}
                 </h1>
                 <div className="w-10 h-px bg-gold mb-6" />
-                <p className="text-primary-foreground/80 text-base leading-relaxed mb-3">
+                <p className="text-foreground/80 text-base leading-relaxed mb-3">
                   {t.knowledge.heroDesc}
                 </p>
-                <p className="text-primary-foreground/60 text-sm leading-relaxed max-w-7xl">
+                <p className="text-foreground/60 text-sm leading-relaxed max-w-7xl">
                   {t.knowledge.heroSub}
                 </p>
               </ScrollReveal>
@@ -88,8 +87,8 @@ export default function KnowledgeCentrePage() {
                   to={`/knowledge-centre?category=${cat.slug}`}
                   className="group flex flex-col items-center text-center p-6 rounded-sm border border-border/50 bg-background hover:border-gold/40 hover:shadow-[0_8px_32px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center mb-4 group-hover:bg-gold/10 transition-colors duration-300">
-                    <cat.icon size={22} strokeWidth={1.25} className="text-gold" />
+                  <div className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center mb-4 group-hover:bg-gold/15 transition-colors duration-300">
+                    <cat.icon size={32} strokeWidth={1.25} className="text-gold" />
                   </div>
                   <span className="text-sm font-medium text-foreground/80 group-hover:text-foreground transition-colors duration-200">
                     {cat.label}

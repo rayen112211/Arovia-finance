@@ -67,11 +67,9 @@ export default function MediaPage() {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-40 bg-primary overflow-hidden">
+      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-40 bg-white border-b border-border/40 overflow-hidden">
         {/* Abstract dark gradient bg */}
-        <div className="absolute inset-0 bg-primary" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent opacity-60" />
-        
+        <div className="absolute inset-0 bg-white border-b border-border/40" />
         <div className="relative section-padding section-container">
           <div className="max-w-3xl">
             <ScrollReveal>
@@ -79,10 +77,10 @@ export default function MediaPage() {
                 <span className="w-8 h-px bg-border" />
                 {t.mediaPage.label}
               </span>
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.75rem] text-primary-foreground leading-[1.06] mb-8">
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.75rem] text-foreground leading-[1.06] mb-8">
                 {t.mediaPage.title}
               </h1>
-              <p className="text-lg sm:text-xl text-primary-foreground/70 leading-relaxed">
+              <p className="text-lg sm:text-xl text-foreground/70 leading-relaxed">
                 {t.mediaPage.intro}
               </p>
             </ScrollReveal>
