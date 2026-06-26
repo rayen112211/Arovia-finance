@@ -96,62 +96,25 @@ export default function ContactPage() {
             {/* ── Column 1: Get in Touch ── */}
             <ScrollReveal direction="up" delay={100}>
               <div>
-                <h2 className="font-display text-2xl text-foreground mb-8">{t.contact.getInTouch}</h2>
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 rounded-full bg-gold/5 border border-gold/20 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
-                      <Phone size={20} strokeWidth={1.5} className="text-gold" />
-                    </div>
-                    <div className="flex flex-col gap-2">
-                      <p className="text-xs uppercase tracking-[0.1em] text-foreground/50 mb-0.5">{t.contact.phoneLabel}</p>
-                      <a href="tel:+48574100669" className="group flex flex-col">
-                        <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
-                          +48 574 100 669
-                        </span>
-                        <span className="text-xs text-muted-foreground">{language === 'pl' ? 'Jay Arora (klienci anglojęzyczni)' : 'Jay Arora (English-speaking clients)'}</span>
-                      </a>
-                      <a href="tel:+48695660944" className="group flex flex-col">
-                        <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
-                          +48 695 660 944
-                        </span>
-                        <span className="text-xs text-muted-foreground">{language === 'pl' ? 'Anna Jakimiak (klienci polsko- i anglojęzyczni)' : 'Anna Jakimiak (Polish- and English-speaking clients)'}</span>
-                      </a>
-                    </div>
-                  </div>
-
-                  <a href="mailto:info@aroviafinance.com" className="flex items-start gap-4 group">
-                    <div className="w-14 h-14 rounded-full bg-gold/5 border border-gold/20 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-gold/15 group-hover:border-gold/40 transition-colors duration-300 shadow-sm">
-                      <Mail size={20} strokeWidth={1.5} className="text-gold" />
-                    </div>
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.1em] text-foreground/50 mb-0.5">{t.contact.emailLabel}</p>
-                      <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
-                        info@aroviafinance.com
-                      </span>
-                    </div>
-                  </a>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 rounded-full bg-gold/5 border border-gold/20 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
-                      <MapPin size={20} strokeWidth={1.5} className="text-gold" />
-                    </div>
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.1em] text-foreground/50 mb-0.5">{t.contact.addressLabel}</p>
-                      <span className="text-sm font-medium text-foreground">Warsaw, Poland</span>
-                    </div>
-                  </div>
-
-                  <a href="#" className="flex items-start gap-4 group">
-                    <div className="w-14 h-14 rounded-full bg-gold/5 border border-gold/20 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-gold/15 group-hover:border-gold/40 transition-colors duration-300 shadow-sm">
-                      <Linkedin size={20} strokeWidth={1.5} className="text-gold" />
-                    </div>
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.1em] text-foreground/50 mb-0.5">{t.contact.linkedinLabel}</p>
-                      <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
-                        Arovia Finance
-                      </span>
-                    </div>
-                  </a>
+                <h3 className="font-display text-2xl text-foreground mb-6">
+                  {language === 'pl' ? 'Skontaktuj się z nami' : 'Get in Touch'}
+                </h3>
+                <div className="space-y-6 text-foreground/80 text-[15px] lg:text-[16px] leading-relaxed">
+                  <p className="font-medium text-foreground text-lg leading-snug">
+                    {language === 'pl'
+                      ? 'Szukasz profesjonalnej porady finansowej lub wsparcia kredytowego?'
+                      : 'Looking for expert financial advice or loan support?'}
+                  </p>
+                  <p>
+                    {language === 'pl'
+                      ? 'Napisz nam, czego potrzebujesz — jako mały, dedykowany zespół w Arovia Finance stosujemy indywidualne podejście do każdego zapytania. Dokładnie przeanalizujemy Twoją sytuację i wrócimy do Ciebie z jasnymi, praktycznymi opcjami i kolejnymi krokami.'
+                      : 'Tell us what you need — as a small, dedicated team at Arovia Finance, we take a personal approach to every enquiry and will carefully review your situation before getting back to you with clear, practical options and next steps.'}
+                  </p>
+                  <p>
+                    {language === 'pl'
+                      ? 'Bez call center. Bez szablonowych porad. Po prostu proste wskazówki dopasowane do Ciebie.'
+                      : 'No call centres. No generic advice. Just straightforward guidance tailored to you.'}
+                  </p>
                 </div>
               </div>
             </ScrollReveal>

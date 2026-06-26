@@ -48,33 +48,38 @@ export function Footer() {
           {/* Contact Details */}
           <div>
             <h4 className="text-gold font-semibold tracking-wider text-xs uppercase mb-6">{t.nav.contact}</h4>
-            <div className="flex flex-col gap-5">
-              <div className="flex items-start gap-3">
-                <Phone size={20} className="text-gold mt-1 flex-shrink-0" />
-                <div className="flex flex-col gap-2.5">
-                  <span className="text-xs text-gold/80 font-bold uppercase tracking-wider">{t.contactPreview.phone}</span>
+            <div className="flex flex-col gap-6">
+              {/* Phone item */}
+              <div className="grid grid-cols-[24px_80px_1fr] items-start gap-x-3">
+                <Phone size={22} className="text-gold mt-1 flex-shrink-0" />
+                <span className="text-[13px] text-gold/80 font-bold uppercase tracking-wider mt-1.5">{language === 'pl' ? 'Telefon' : 'Phone'}</span>
+                <div className="flex flex-col gap-3">
                   <a href="tel:+48574100669" className="group flex flex-col">
-                    <span className="text-[15px] font-semibold text-primary-foreground/95 group-hover:text-gold transition-colors">+48 574 100 669</span>
-                    <span className="text-[11px] text-primary-foreground/60">{language === 'pl' ? 'Jay Arora (angielski)' : 'Jay Arora (English)'}</span>
+                    <span className="text-[16px] font-semibold text-primary-foreground/95 group-hover:text-gold transition-colors">+48 574 100 669</span>
+                    <span className="text-[11.5px] text-primary-foreground/60">{language === 'pl' ? 'Jay Arora (angielski)' : 'Jay Arora (English)'}</span>
                   </a>
                   <a href="tel:+48695660944" className="group flex flex-col">
-                    <span className="text-[15px] font-semibold text-primary-foreground/95 group-hover:text-gold transition-colors">+48 695 660 944</span>
-                    <span className="text-[11px] text-primary-foreground/60">{language === 'pl' ? 'Anna Jakimiak (polski i angielski)' : 'Anna Jakimiak (Polish & English)'}</span>
+                    <span className="text-[16px] font-semibold text-primary-foreground/95 group-hover:text-gold transition-colors">+48 695 660 944</span>
+                    <span className="text-[11.5px] text-primary-foreground/60">{language === 'pl' ? 'Anna Jakimiak (polski i angielski)' : 'Anna Jakimiak (Polish & English)'}</span>
                   </a>
                 </div>
               </div>
-              <a href="mailto:info@aroviafinance.com" className="flex items-start gap-3 group">
-                <Mail size={20} className="text-gold mt-1 flex-shrink-0" />
+
+              {/* Email item */}
+              <a href="mailto:info@aroviafinance.com" className="grid grid-cols-[24px_80px_1fr] items-start gap-x-3 group">
+                <Mail size={22} className="text-gold mt-1 flex-shrink-0" />
+                <span className="text-[13px] text-gold/80 font-bold uppercase tracking-wider mt-1.5">{language === 'pl' ? 'E-mail' : 'Email'}</span>
                 <div className="flex flex-col">
-                  <span className="text-xs text-gold/80 font-bold uppercase tracking-wider">{t.contactPreview.email}</span>
-                  <span className="text-[15px] font-semibold text-primary-foreground/95 group-hover:text-gold transition-colors">info@aroviafinance.com</span>
+                  <span className="text-[16px] font-semibold text-primary-foreground/95 group-hover:text-gold transition-colors">info@aroviafinance.com</span>
                 </div>
               </a>
-              <div className="flex items-start gap-3">
-                <MapPin size={20} className="text-gold mt-1 flex-shrink-0" />
+
+              {/* Address item */}
+              <div className="grid grid-cols-[24px_80px_1fr] items-start gap-x-3">
+                <MapPin size={22} className="text-gold mt-1 flex-shrink-0" />
+                <span className="text-[13px] text-gold/80 font-bold uppercase tracking-wider mt-1.5">{language === 'pl' ? 'Adres' : 'Address'}</span>
                 <div className="flex flex-col">
-                  <span className="text-xs text-gold/80 font-bold uppercase tracking-wider">{t.contactPreview.location}</span>
-                  <span className="text-[15px] font-semibold text-primary-foreground/95">{t.contactPreview.locationValue}</span>
+                  <span className="text-[16px] font-semibold text-primary-foreground/95 leading-relaxed">{t.contactPreview.locationValue}</span>
                 </div>
               </div>
             </div>

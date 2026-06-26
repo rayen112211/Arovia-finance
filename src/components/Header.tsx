@@ -52,12 +52,12 @@ export function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden xl:flex items-center gap-0.5 xl:gap-1 flex-nowrap flex-shrink-0" aria-label="Main navigation">
+        <nav className="hidden xl:flex items-center gap-1 xl:gap-2 flex-nowrap flex-shrink-0" aria-label="Main navigation">
           {links.map((link) => (
             <Link
               key={link.to}
               to={link.to}
-              className={`relative text-xs xl:text-[13px] 2xl:text-sm font-medium px-2 xl:px-2.5 2xl:px-3 py-2 rounded-md transition-colors duration-200 group flex-shrink-0 whitespace-nowrap ${
+              className={`relative text-[13px] xl:text-[14.5px] 2xl:text-[16px] font-medium px-2.5 xl:px-3 2xl:px-4 py-2 rounded-md transition-colors duration-200 group flex-shrink-0 whitespace-nowrap ${
                 isActive(link.to)
                   ? "text-foreground"
                   : "text-foreground/70 hover:text-foreground"
@@ -66,7 +66,7 @@ export function Header() {
               {link.label}
               {/* Active indicator */}
               <span
-                className={`absolute bottom-0 left-2 xl:left-2.5 2xl:left-3 right-2 xl:right-2.5 2xl:right-3 h-px bg-foreground transition-transform duration-200 origin-left ${
+                className={`absolute bottom-0 left-2.5 xl:left-3 2xl:left-4 right-2.5 xl:right-3 2xl:right-4 h-px bg-foreground transition-transform duration-200 origin-left ${
                   isActive(link.to) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                 }`}
               />

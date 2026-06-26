@@ -4,7 +4,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-const skylineImgUrl = "/warsaw-night.jpg";
+const skylineImgUrl = "https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&q=80&w=1600";
 
 export default function InternationalClientsPage() {
   const { t } = useLanguage();
@@ -50,10 +50,10 @@ export default function InternationalClientsPage() {
           <img
             src={skylineImgUrl}
             alt="City skyline"
-            className="w-full h-full object-cover brightness-115"
-            onError={(e) => { e.currentTarget.src = "/anna_and_robbie.jpg"; }}
+            className="w-full h-full object-cover brightness-105"
+            onError={(e) => { e.currentTarget.src = "/warsaw.jpg"; }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/50 to-transparent" />
         </div>
 
         <div className="relative section-padding section-container py-16 lg:py-24 max-w-3xl">
