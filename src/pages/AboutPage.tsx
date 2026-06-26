@@ -88,7 +88,7 @@ export default function AboutPage() {
           <div className="space-y-16 lg:space-y-20">
             {/* Jay */}
             <ScrollReveal direction="up" delay={100}>
-              <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-20 items-start">
+              <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-10 lg:gap-20 items-start">
                 <div className="order-2 lg:order-1 flex-1">
                   <h3 className="font-display text-3xl lg:text-4xl text-foreground mb-2">Jay Arora</h3>
                   <p className="text-base font-semibold text-gold tracking-wide mb-6">Co-Founder &amp; Financial Advisor</p>
@@ -117,11 +117,11 @@ export default function AboutPage() {
                     </p>
                   </div>
                 </div>
-                <div className="order-1 lg:order-2 w-full rounded-sm overflow-hidden shadow-2xl">
+                <div className="order-1 lg:order-2 w-full aspect-[4/5] rounded-sm overflow-hidden shadow-2xl">
                   <img
                     src="/robbie-hq.jpg"
                     alt="Jay Arora"
-                    className="w-full h-auto object-contain"
+                    className="w-full h-full object-cover object-[65%_top]"
                   />
                 </div>
               </div>
