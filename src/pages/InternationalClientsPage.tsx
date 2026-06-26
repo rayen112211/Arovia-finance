@@ -4,7 +4,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-const skylineImgUrl = "https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&q=80&w=1600";
+const skylineImgUrl = "https://images.unsplash.com/photo-1572986427355-44e22a59d80d?auto=format&fit=crop&q=80&w=1600";
 
 export default function InternationalClientsPage() {
   const { t } = useLanguage();
