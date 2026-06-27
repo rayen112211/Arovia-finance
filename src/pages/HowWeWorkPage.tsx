@@ -96,7 +96,8 @@ export default function HowWeWorkPage() {
                     </div>
                     {/* Content */}
                     <div className="pt-2 flex-1">
-                      <h3 className="font-display text-2xl text-foreground mb-2.5 group-hover:text-primary transition-colors flex items-center">
+                      <h3 className="font-display text-2xl text-foreground mb-2.5 group-hover:text-primary transition-colors flex items-center gap-2">
+                        <span className="font-sans text-gold font-bold">{step.num}.</span>
                         <span>{step.title}</span>
                       </h3>
                       <p className="text-base text-foreground/75 leading-relaxed max-w-2xl">{step.desc}</p>
