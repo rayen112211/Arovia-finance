@@ -186,7 +186,7 @@ export default function HomePage() {
         <div className="absolute inset-y-0 right-0 w-full lg:w-[55%] z-0">
           <img
             src={heroTeamImg}
-            alt="Anna Jakimiak and Jay Arora, Founders of Arovia Finance"
+            alt="Jay Arora and Anna Jakimiak, Founders of Arovia Finance"
             className="w-full h-full object-cover object-top"
             onError={(e) => {
               e.currentTarget.src = "/anna_and_robbie1.jpg";
@@ -259,7 +259,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════ */}
       {/* 2. WHY CLIENTS CHOOSE AROVIA FINANCE                                */}
       {/* ═══════════════════════════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-24 bg-background border-b border-border/40">
+      <section className="py-20 lg:py-24 bg-[hsl(var(--cream))] border-b border-border/40">
         <div className="section-padding section-container">
           <ScrollReveal>
             <h2 className="font-display text-3xl lg:text-4xl text-foreground text-center mb-16">
@@ -412,7 +412,7 @@ export default function HomePage() {
                         strokeWidth={1.5}
                       />
                     </div>
-                    <span className="font-sans text-xl lg:text-3xl text-gold font-bold mb-2">
+                    <span className="font-sans text-lg lg:text-xl text-gold font-bold mb-2">
                       {step.num}
                     </span>
                     <h3 className="font-display text-base lg:text-lg text-foreground leading-snug mb-3 max-w-[150px]">

@@ -93,9 +93,6 @@ export default function HowWeWorkPage() {
                       <div className="w-20 h-20 rounded-full border border-gold/30 bg-gold/5 flex items-center justify-center mb-2.5 group-hover:bg-gold/10 transition-colors duration-300 shadow-sm">
                         <step.icon size={30} className="text-gold" strokeWidth={1.5} />
                       </div>
-                      <span className="font-sans text-sm text-gold font-bold uppercase tracking-wider mt-2">
-                        {language === "pl" ? `Krok ${step.num}` : `Step ${step.num}`}
-                      </span>
                     </div>
                     {/* Content */}
                     <div className="pt-2 flex-1">

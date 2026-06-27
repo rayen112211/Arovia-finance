@@ -69,7 +69,7 @@ export default function AboutPage() {
             <div className="hidden lg:block relative h-full min-h-[520px]">
               <img
                 src="/anna_and_robbie1-hq.jpg"
-                alt="Anna Jakimiak and Jay — Founders of Arovia Finance"
+                alt="Jay Arora and Anna Jakimiak — Founders of Arovia Finance"
                 className="absolute inset-0 w-full h-full object-cover object-top"
               />
             </div>

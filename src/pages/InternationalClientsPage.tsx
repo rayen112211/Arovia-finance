@@ -121,7 +121,7 @@ export default function InternationalClientsPage() {
       </section>
 
       {/* ─── BOTTOM CTA BAR ─── */}
-      <section className="bg-cream py-16 border-y border-border/40">
+      <section className="bg-background py-16 border-t border-border/40">
         <div className="section-padding section-container max-w-3xl text-center flex flex-col items-center gap-6">
           <div>
             <h2 className="font-display text-3xl lg:text-4xl text-primary mb-3">
