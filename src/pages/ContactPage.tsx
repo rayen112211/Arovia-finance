@@ -63,7 +63,7 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-2 gap-0 min-h-[320px] items-center">
             <div className="py-12 lg:py-16 pr-0 lg:pr-16">
               <ScrollReveal>
-                <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-foreground mb-6">
+                <h1 className="font-display text-[2.8rem] sm:text-[3.6rem] lg:text-[4.5rem] leading-[1.06] text-foreground mb-6">
                   {t.contact.heroTitle}
                 </h1>
                 <div className="w-10 h-px bg-gold mb-6" />
@@ -96,7 +96,7 @@ export default function ContactPage() {
             {/* ── Column 1: Get in Touch ── */}
             <ScrollReveal direction="up" delay={100}>
               <div>
-                <h3 className="font-display text-2xl text-foreground mb-6">
+                <h3 className="font-display text-3xl sm:text-4xl text-foreground mb-6">
                   {language === 'pl' ? 'Skontaktuj się z nami' : 'Get in Touch'}
                 </h3>
                 <div className="space-y-6 text-foreground/80 text-[15px] lg:text-[16px] leading-relaxed">
@@ -159,7 +159,7 @@ export default function ContactPage() {
             {/* ── Column 2: Send Us a Message ── */}
             <ScrollReveal direction="up" delay={200}>
               <div>
-                <h2 className="font-display text-2xl text-foreground mb-8">{t.contact.sendMessage}</h2>
+                <h2 className="font-display text-3xl sm:text-4xl text-foreground mb-8">{t.contact.sendMessage}</h2>
                 <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
                   <div>
                     <input
@@ -212,7 +212,7 @@ export default function ContactPage() {
             {/* ── Column 3: FAQ ── */}
             <ScrollReveal direction="up" delay={300}>
               <div>
-                <h2 className="font-display text-2xl text-foreground mb-8">{t.contact.faqTitle}</h2>
+                <h2 className="font-display text-3xl sm:text-4xl text-foreground mb-8">{t.contact.faqTitle}</h2>
                 <div>
                   {faqItems.map((item, i) => (
                     <AccordionItem key={i} q={item.q} a={item.a} />

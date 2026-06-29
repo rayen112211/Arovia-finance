@@ -26,7 +26,7 @@ const officeImg = "/a-relationship-built-on-trust.jpg";
 const skylineImg = "/warsaw.jpg";
 
 export default function HomePage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   // ─── Knowledge Centre articles (mirrored from KnowledgeCentrePage) ────────────
   const kcArticles = [
@@ -595,6 +595,20 @@ export default function HomePage() {
               </div>
             </ScrollReveal>
           </div>
+        </div>
+      </section>
+
+      {/* ─── PARTNER TRUST BADGE ─── */}
+      <section className="py-8 bg-white border-t border-border/40">
+        <div className="section-padding section-container flex flex-col items-center justify-center gap-3">
+          <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-semibold">
+            {language === 'pl' ? 'Partner Biznesowy' : 'Business Partner'}
+          </span>
+          <img
+            src="/logo-partner-ang-01.svg"
+            alt="ANG Odpowiedzialne Finanse"
+            className="h-10 sm:h-12 w-auto object-contain opacity-85 hover:opacity-100 transition-opacity duration-300"
+          />
         </div>
       </section>
 
