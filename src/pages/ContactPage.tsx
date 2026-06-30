@@ -125,43 +125,6 @@ export default function ContactPage() {
                       : 'No call centres. No generic advice. Just straightforward guidance tailored to you.'}
                   </p>
                 </div>
-
-                <div className="mt-8 pt-8 border-t border-border/40 space-y-6">
-                  {/* Phone Item */}
-                  <div className="flex items-start gap-4">
-                    <Phone className="text-gold mt-1 flex-shrink-0" size={20} />
-                    <div className="flex flex-col gap-4">
-                      <div className="flex flex-col">
-                        <span className="text-[13px] font-medium text-muted-foreground">{language === 'pl' ? 'Jay Arora (angielski)' : 'Jay Arora (English)'}</span>
-                        <a href="tel:+48574100669" className="text-[16px] font-semibold text-foreground hover:text-gold transition-colors">+48 574 100 669</a>
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-[13px] font-medium text-muted-foreground">{language === 'pl' ? 'Anna Jakimiak (polski i angielski)' : 'Anna Jakimiak (Polish & English)'}</span>
-                        <a href="tel:+48695660944" className="text-[16px] font-semibold text-foreground hover:text-gold transition-colors">+48 695 660 944</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Email Item */}
-                  <div className="flex items-start gap-4">
-                    <Mail className="text-gold mt-1 flex-shrink-0" size={20} />
-                    <div className="flex flex-col">
-                      <span className="text-[13px] font-medium text-muted-foreground">{language === 'pl' ? 'E-mail' : 'Email'}</span>
-                      <a href="mailto:info@aroviafinance.com" className="text-[16px] font-semibold text-foreground hover:text-gold transition-colors">info@aroviafinance.com</a>
-                    </div>
-                  </div>
-
-                  {/* Address Item */}
-                  <div className="flex items-start gap-4">
-                    <MapPin className="text-gold mt-1 flex-shrink-0" size={20} />
-                    <div className="flex flex-col">
-                      <span className="text-[13px] font-medium text-muted-foreground">{language === 'pl' ? 'Adres' : 'Address'}</span>
-                      <span className="text-[16px] font-semibold text-foreground leading-normal">
-                        {t.contactPreview.locationValue}
-                      </span>
-                    </div>
-                  </div>
-                </div>
               </div>
             </ScrollReveal>
 
