@@ -407,7 +407,7 @@ export default function HomePage() {
 
           {/* Cream boxed container with steps */}
           <ScrollReveal>
-            <div className="bg-[hsl(var(--cream))] border border-border/40 rounded-sm px-10 py-16">
+            <div className="bg-[hsl(var(--cream))] border border-border/40 rounded-sm px-5 sm:px-10 py-10 sm:py-16">
               <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-10 lg:gap-4">
                 {processSteps.map((step, i) => (
                   <div

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { useDocumentMetadata } from "@/hooks/useDocumentMetadata";
 
-const officeImgUrl = "/lets-work-together.png";
+const officeImgUrl = "/lets-work-together.jpg";
 
 export default function AboutPage() {
   const { t, language } = useLanguage();
