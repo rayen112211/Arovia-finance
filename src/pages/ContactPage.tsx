@@ -4,6 +4,7 @@ import { Phone, Mail, MapPin, Linkedin, ChevronDown } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { useDocumentMetadata } from "@/hooks/useDocumentMetadata";
 
 const officeImgUrl = "/anna_and_robbie1.jpg";
 
@@ -35,6 +36,14 @@ function AccordionItem({ q, a }: { q: string; a: string }) {
 
 export default function ContactPage() {
   const { t, language } = useLanguage();
+
+  const title = language === "pl"
+    ? "Kontakt | Biuro Arovia Finance w Warszawie"
+    : "Contact Us | Arovia Finance Warsaw Office";
+  const desc = language === "pl"
+    ? "Skontaktuj się z niezależnymi doradcami: Jay Arora i Anna Jakimiak. Umów się na profesjonalną konsultację kredytową w Warszawie."
+    : "Get in touch with independent advisors Jay Arora & Anna Jakimiak. Contact our Warsaw office for expert financial consultations.";
+  useDocumentMetadata(title, desc);
 
   const faqItems = [
     {

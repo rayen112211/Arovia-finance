@@ -3,11 +3,20 @@ import { Home, Briefcase, Globe, Building, BookOpen, ArrowRight } from "lucide-r
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { useDocumentMetadata } from "@/hooks/useDocumentMetadata";
 
 const heroImgUrl = "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=1400";
 
 export default function KnowledgeCentrePage() {
   const { t, language } = useLanguage();
+
+  const title = language === "pl"
+    ? "Baza Wiedzy | Poradniki Kredytowe i Finansowe"
+    : "Knowledge Centre | Financial Guides & Articles";
+  const desc = language === "pl"
+    ? "Przeczytaj porady ekspertów dotyczące kredytów hipotecznych, finansowania firm i inwestycji w nieruchomości w Polsce."
+    : "Read expert mortgage advice, business finance tips, and property investment guides for Warsaw and Poland.";
+  useDocumentMetadata(title, desc);
   const [searchParams] = useSearchParams();
   const activeCategory = searchParams.get("category");
 
@@ -24,25 +33,51 @@ export default function KnowledgeCentrePage() {
       slug: "5-steps-mortgage-foreigner",
       category: t.knowledge.mortgages.toUpperCase(),
       categorySlug: "mortgages",
-      title: "5 Steps to Getting a Mortgage in Poland as a Foreigner", // In a real app, article titles/content would also be translated or come from CMS
+      title: language === "pl" 
+        ? "5 kroków do uzyskania kredytu hipotecznego w Polsce przez obcokrajowca" 
+        : "5 Steps to Getting a Mortgage in Poland as a Foreigner",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
-      date: "May 15, 2024",
+      date: language === "pl" ? "15 maja 2024" : "May 15, 2024",
     },
     {
       slug: "business-finance-growth",
       category: t.knowledge.businessFinance.toUpperCase(),
       categorySlug: "business-finance",
-      title: "How to Finance Your Business Growth in Poland",
+      title: language === "pl"
+        ? "Jak sfinansować rozwój firmy w Polsce"
+        : "How to Finance Your Business Growth in Poland",
       image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800",
-      date: "May 10, 2024",
+      date: language === "pl" ? "10 maja 2024" : "May 10, 2024",
     },
     {
       slug: "buying-property-expat",
       category: t.knowledge.internationalClients.toUpperCase(),
       categorySlug: "international-clients",
-      title: "Buying Property in Poland as an Expat – What You Need to Know",
+      title: language === "pl"
+        ? "Zakup nieruchomości w Polsce przez obcokrajowca – co musisz wiedzieć"
+        : "Buying Property in Poland as an Expat – What You Need to Know",
       image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=800",
-      date: "May 5, 2024",
+      date: language === "pl" ? "5 maja 2024" : "May 5, 2024",
+    },
+    {
+      slug: "property-investment-guide",
+      category: t.knowledge.propertyInvestors.toUpperCase(),
+      categorySlug: "property-investors",
+      title: language === "pl"
+        ? "Maksymalizacja ROI: Przewodnik po inwestycjach rentierskich w Polsce"
+        : "Maximizing ROI: Guide to Buy-to-Let Investments in Poland",
+      image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800",
+      date: language === "pl" ? "25 czerwca 2026" : "June 25, 2026",
+    },
+    {
+      slug: "loan-to-value",
+      category: t.knowledge.financialEducation.toUpperCase(),
+      categorySlug: "financial-education",
+      title: language === "pl"
+        ? "Zrozumieć wskaźnik Loan-to-Value (LTV) w Polsce"
+        : "Understanding Loan-to-Value (LTV) in Poland",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
+      date: language === "pl" ? "20 czerwca 2026" : "June 20, 2026",
     },
   ];
 

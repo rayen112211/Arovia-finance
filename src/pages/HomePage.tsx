@@ -19,6 +19,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { useDocumentMetadata } from "@/hooks/useDocumentMetadata";
 
 // ─── Image URLs ───────────────────────────────────────────────────────────────
 const heroTeamImg = "/anna_and_robbie.jpg";
@@ -27,6 +28,14 @@ const skylineImg = "/warsaw.jpg";
 
 export default function HomePage() {
   const { t, language } = useLanguage();
+
+  const title = language === "pl"
+    ? "Arovia Finance | Ekspert Kredytowy Warszawa"
+    : "Arovia Finance | Independent Mortgage Advisory Warsaw";
+  const desc = language === "pl"
+    ? "Niezależny doradca kredytowy w Warszawie. Kredyty hipoteczne, konsolidacyjne i finansowanie firm. Ponad 15 lat doświadczenia w bankowości."
+    : "Expert independent mortgage and business finance advisory in Warsaw, Poland. Over 15 years of banking experience. Get personalized guidance.";
+  useDocumentMetadata(title, desc);
 
   // ─── Knowledge Centre articles (mirrored from KnowledgeCentrePage) ────────────
   const kcArticles = [

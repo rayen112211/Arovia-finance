@@ -3,11 +3,20 @@ import { MessageSquare, Globe, TrendingUp, MapPin, Check } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { useDocumentMetadata } from "@/hooks/useDocumentMetadata";
 
 const skylineImgUrl = "https://images.unsplash.com/photo-1572986427355-44e22a59d80d?auto=format&fit=crop&q=80&w=1600";
 
 export default function InternationalClientsPage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  const title = language === "pl"
+    ? "Klienci Zagraniczni | Kredyt dla Obcokrajowców"
+    : "International Clients | Mortgages for Expats";
+  const desc = language === "pl"
+    ? "Specjalistyczne doradztwo kredytowe dla obcokrajowców kupujących nieruchomości w Polsce. Pomoc w formalnościach i zezwoleniach."
+    : "Specialist mortgage advisory for expats and foreign nationals buying property in Poland. Clear guidance on residency and permits.";
+  useDocumentMetadata(title, desc);
 
   const features = [
     {

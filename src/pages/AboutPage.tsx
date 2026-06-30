@@ -4,11 +4,20 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { AnimatedNumber } from "@/components/AnimatedNumber";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { useDocumentMetadata } from "@/hooks/useDocumentMetadata";
 
 const officeImgUrl = "/lets-work-together.png";
 
 export default function AboutPage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  const title = language === "pl"
+    ? "O Nas | Eksperci Kredytowi Arovia Finance"
+    : "About Us | Arovia Finance Mortgage Experts";
+  const desc = language === "pl"
+    ? "Poznaj założycieli Arovia Finance - Jay Arora i Anna Jakimiak. Poznaj nasze wartości oraz wieloletnie doświadczenie w bankowości."
+    : "Meet Jay Arora & Anna Jakimiak, the founders of Arovia Finance. Learn about our independent mortgage advisory values and bank background.";
+  useDocumentMetadata(title, desc);
 
   const values = [
     {

@@ -3,12 +3,21 @@ import { Search, FileText, Lightbulb, Handshake, CheckCircle, Heart } from "luci
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { useDocumentMetadata } from "@/hooks/useDocumentMetadata";
 
 const heroImgUrl = "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1600";
 const promiseImgUrl = "https://images.unsplash.com/photo-1600210491892-03d54079d9f2?auto=format&fit=crop&q=80&w=1200";
 
 export default function HowWeWorkPage() {
   const { t, language } = useLanguage();
+
+  const title = language === "pl"
+    ? "Jak Działamy | Proces Doradztwa Kredytowego"
+    : "How We Work | Independent Financial Strategy";
+  const desc = language === "pl"
+    ? "Poznaj nasz przejrzysty, 6-stopniowy proces doradczy. Od analizy finansowej po wybór oferty bankowej i uruchomienie kredytu."
+    : "Discover our transparent 6-step advisory process. From initial review to lender engagement and completion, we guide you every step.";
+  useDocumentMetadata(title, desc);
 
   const steps = [
     {

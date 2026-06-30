@@ -95,12 +95,12 @@ export function Footer() {
             © {currentYear} Arovia Finance. {t.footer.rights}
           </p>
           <div className="flex gap-6">
-            <span className="text-xs text-primary-foreground/40 hover:text-primary-foreground/70 cursor-pointer transition-colors">
+            <Link to="/privacy-policy" className="text-xs text-primary-foreground/40 hover:text-primary-foreground/70 transition-colors">
               {t.footer.privacy}
-            </span>
-            <span className="text-xs text-primary-foreground/40 hover:text-primary-foreground/70 cursor-pointer transition-colors">
+            </Link>
+            <Link to="/terms" className="text-xs text-primary-foreground/40 hover:text-primary-foreground/70 transition-colors">
               {t.footer.terms}
-            </span>
+            </Link>
           </div>
         </div>
       </div>
