@@ -31,7 +31,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="lg:col-span-3">
-            <h4 className="text-gold font-semibold tracking-wider text-xs uppercase mb-6">{t.nav.home} / {t.nav.experience}</h4>
+            <h4 className="text-gold font-bold tracking-wider text-sm sm:text-base uppercase mb-6">{t.nav.home} / {t.nav.experience}</h4>
             <nav className="flex flex-col gap-3" aria-label="Footer navigation">
               {navLinks.map((link) => (
                 <Link
@@ -47,7 +47,7 @@ export function Footer() {
 
           {/* Contact Details */}
           <div className="lg:col-span-5">
-            <h4 className="text-gold font-semibold tracking-wider text-xs uppercase mb-6">{t.nav.contact}</h4>
+            <h4 className="text-gold font-bold tracking-wider text-sm sm:text-base uppercase mb-6">{t.nav.contact}</h4>
             <div className="flex flex-col gap-5">
               {/* Phone item */}
               <div className="flex items-start gap-3">
