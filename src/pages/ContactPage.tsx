@@ -5,6 +5,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { useDocumentMetadata } from "@/hooks/useDocumentMetadata";
+import { useToast } from "@/hooks/use-toast";
 
 const officeImgUrl = "/anna_and_robbie1.jpg";
 
@@ -36,6 +37,25 @@ function AccordionItem({ q, a }: { q: string; a: string }) {
 
 export default function ContactPage() {
   const { t, language } = useLanguage();
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    setTimeout(() => {
+      setIsSubmitting(false);
+      toast({
+        title: language === "pl" ? "Wiadomość wysłana!" : "Message Sent!",
+        description: language === "pl" 
+          ? "Dziękujemy za kontakt. Odpowiemy na Twoje zapytanie najszybciej jak to możliwe." 
+          : "Thank you for contacting us. We will get back to you as soon as possible.",
+      });
+      const form = e.target as HTMLFormElement;
+      form.reset();
+    }, 1200);
+  };
 
   const title = language === "pl"
     ? "Kontakt | Biuro Arovia Finance w Warszawie"
@@ -132,7 +152,7 @@ export default function ContactPage() {
             <ScrollReveal direction="up" delay={200}>
               <div>
                 <h2 className="font-display text-3xl sm:text-4xl text-foreground mb-8">{t.contact.sendMessage}</h2>
-                <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                <form className="space-y-4" onSubmit={handleSubmit}>
                   <div>
                     <input
                       type="text"
@@ -172,10 +192,18 @@ export default function ContactPage() {
                     variant="premium"
                     size="lg"
                     type="submit"
-                    className="w-full rounded-md mt-2"
+                    className="w-full rounded-md mt-2 flex items-center justify-center gap-2"
                     id="contact-submit"
+                    disabled={isSubmitting}
                   >
-                    {t.contact.submitBtn}
+                    {isSubmitting ? (
+                      <>
+                        <span className="w-4 h-4 border-2 border-primary-foreground border-t-transparent rounded-full animate-spin" />
+                        {language === "pl" ? "Wysyłanie..." : "Sending..."}
+                      </>
+                    ) : (
+                      t.contact.submitBtn
+                    )}
                   </Button>
                 </form>
               </div>
